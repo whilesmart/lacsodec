@@ -112,8 +112,86 @@
             <div class="main-content">
                 <div class="news-feed">
                     <div class="main">
-                        <img src="
-                        " alt="">
+                        <img src="{{ asset('images/news-feed.png') }}" alt="">
+                        <div class="content">
+                            <h2>Give your love to older people</h2>
+                            <div class="info">
+                                <div class="sub">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <p>Posted by:</p>
+                                </div>
+                                <div class="sub">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    <p>April 3, 2020</p>
+                                </div>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                        </div>
+                    </div>
+                    <div class="feeds">
+                        <div class="feed">
+                            <img src="{{ asset('images/news-feed-1.png') }}" alt="">
+                            <div class="content">
+                                <h3>No one has ever become poor by giving</h3>
+                                <div class="info">
+                                    <div class="sub">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        <p>Posted by:</p>
+                                    </div>
+                                    <div class="sub">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        <p>April 3, 2020</p>
+                                    </div>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                                <a href="/" class="custom-button white">
+                                    <span>Read more</span>
+                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="feed">
+                            <img src="{{ asset('images/news-feed-2.png') }}" alt="">
+                            <div class="content">
+                                <h3>Disability is not the end of your career</h3>
+                                <div class="info">
+                                    <div class="sub">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        <p>Posted by:</p>
+                                    </div>
+                                    <div class="sub">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        <p>April 3, 2020</p>
+                                    </div>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                                <a href="/" class="custom-button white">
+                                    <span>Read more</span>
+                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="feed">
+                            <img src="{{ asset('images/news-feed-3.png') }}" alt="">
+                            <div class="content">
+                                <h3>Proof That NGO BLOGS Is Exactly What You Are Looking…</h3>
+                                <div class="info">
+                                    <div class="sub">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        <p>Posted by:</p>
+                                    </div>
+                                    <div class="sub">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        <p>April 3, 2020</p>
+                                    </div>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                                <a href="/" class="custom-button white">
+                                    <span>Read more</span>
+                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -174,4 +252,8 @@
             </aside>
         </div>
     </section>
+
+    <x-numbers />
+    <x-contact />
+
 </x-layouts.app>
