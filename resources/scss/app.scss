@@ -916,7 +916,7 @@ section.numbers-section {
     }
 }
 
-/* ----------------------------- contsct section ---------------------------- */
+/* ----------------------------- contact section ---------------------------- */
 .contact-section {
     .con {
         display: flex;
@@ -999,6 +999,350 @@ section.numbers-section {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+/* ---------------------------- breadcrumb styles --------------------------- */
+.breadcrumb {
+    background-size: cover;
+    background-position: center;
+    .sub {
+        padding: 5rem;
+        background: linear-gradient(90deg, $primary, transparent);
+        .con {
+            h1 {
+                font-size: 2rem;
+                font-weight: 600px;
+                color: $white;
+            }
+            .breadcrumb-sub {
+                margin-top: 1rem;
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+                color: $white;
+                a {
+                    color: $secondary;
+                    text-transform: capitalize;
+                    &:last-child {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- about page styles --------------------------- */
+.about-us-page {
+    .breadcrumb {
+        background-image: url("../../public/images/about-us-breadcrumb.png");
+    }
+    .about-section-1 {
+        .con {
+            display: flex;
+            gap: 1rem;
+            .left {
+                flex-grow: 1;
+                p {
+                    color: $text;
+                    margin-bottom: 1rem;
+                }
+                .images {
+                    width: 100%;
+                    display: flex;
+                    gap: 1rem;
+                    margin-bottom: 1rem;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+            .right {
+                min-width: 300px;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                border-radius: $border-radius;
+            }
+        }
+    }
+    .about-section-2 {
+        background-color: $primary-light;
+        .con {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            > div {
+                width: 50%;
+            }
+            .left {
+                h1 {
+                    font-size: 2rem;
+                    font-weight: 600;
+                    color: $text;
+                    margin-bottom: 1rem;
+                }
+                > p {
+                    margin-bottom: 2rem;
+                }
+                ul {
+                    li {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 1rem;
+                        margin-bottom: 2rem;
+                        .fa {
+                            color: $primary;
+                            margin-top: 0.3rem;
+                        }
+                        .content {
+                            h3 {
+                                font-size: 1.1rem;
+                                font-weight: 600;
+                                color: $primary;
+                                margin-bottom: 0.5rem;
+                            }
+                            p {
+                                color: $text;
+                            }
+                        }
+                    }
+                }
+            }
+            .right {
+                position: relative;
+                .members {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    transform: translateY(10%);
+                    width: fit-content;
+                    padding: 3rem 5rem;
+                    background-color: $primary;
+                    border-radius: $border-radius;
+                    text-align: center;
+                    color: $white;
+                    z-index: 2;
+                    h3 {
+                        font-size: 2.5rem;
+                    }
+                    p {
+                        color: $white;
+                    }
+                }
+                img {
+                    width: 90%;
+                    height: 90%;
+                    margin-left: 10%;
+                    min-height: 50vh;
+                }
+            }
+        }
+    }
+
+    .about-section-3 {
+        .con {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            > div {
+                width: 50%;
+            }
+            .left {
+                h1 {
+                    font-size: 2rem;
+                    font-weight: 600;
+                    color: $text;
+                    margin-bottom: 1rem;
+                }
+                > p {
+                    margin-bottom: 2rem;
+                    width: 90%;
+                }
+                ul {
+                    li {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 1rem;
+                        .fa {
+                            color: $primary;
+                            margin-top: 0.3rem;
+                        }
+                        .content {
+                            h3 {
+                                font-size: 1.1rem;
+                                font-weight: 600;
+                                color: $primary;
+                                margin-bottom: 0.5rem;
+                            }
+                            p {
+                                color: $text;
+                            }
+                        }
+                    }
+                }
+            }
+            .right {
+                background-color: $white;
+                border-radius: $border-radius;
+                padding: 4rem;
+                box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.08);
+                .tabs {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1rem;
+                    margin-bottom: 2rem;
+                    .tab {
+                        width: 100%;
+                        border-radius: $border-radius;
+                        background-color: $primary-light;
+                        color: $primary;
+                        padding: 2rem 0;
+                        font-weight: 600;
+                        text-align: center;
+                        cursor: pointer;
+                        &.active {
+                            background-color: $primary;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+section.team-section {
+    .con {
+        > h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: $text;
+            font-weight: 600;
+            text-align: center;
+            text-transform: capitalize;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            @include for-tablet {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @include for-mobile {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .member {
+                width: 100%;
+                img {
+                    width: 100%;
+                    height: 230px;
+                    object-fit: cover;
+                    object-position: center;
+                    margin-bottom: 0.5rem;
+                    @include for-mobile {
+                        height: 150px;
+                    }
+                }
+                h4 {
+                    font-size: 1.1rem;
+                    color: $text;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    margin-bottom: 0.3rem;
+                }
+                p {
+                    font-size: 0.9em;
+                    color: $text;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- contact page styles --------------------------- */
+.contact-us-page {
+    .breadcrumb {
+        background-image: url("../../public/images/contact-us-breadcrumb.png");
+    }
+    .map-section {
+        iframe {
+            width: 100vw;
+            margin-bottom: 5rem;
+        }
+    }
+}
+
+/* ---------------------------- login page styles --------------------------- */
+.auth-page {
+    padding: 10rem 0;
+    .con {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        h1 {
+            font-size: 2rem;
+            color: $text;
+            font-weight: 600;
+            text-align: center;
+            text-transform: capitalize;
+        }
+        form {
+            background-color: $white;
+            border-radius: $border-radius;
+            padding: 2rem;
+            text-align: left;
+            .forgot-password {
+                font-size: 0.9rem;
+                color: $text;
+                font-weight: 600;
+            }
+            .custom-button {
+                padding: 0.7rem 4rem;
+                width: 100%;
+                justify-content: center;
+                margin-top: 2rem;
+                span {
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+            }
+        }
+        > p {
+            font-size: 1rem;
+            color: $text;
+            a {
+                color: $primary;
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    &.login-page {
+        .con {
+            form {
+                min-width: 500px;
+                width: 500px;
+            }
+        }
+    }
+    &.register-page {
+        .con {
+            form {
+                min-width: 700px;
+                width: 700px;
             }
         }
     }

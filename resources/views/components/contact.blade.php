@@ -41,7 +41,7 @@
                     <p>Address: NGO Street, Molyko - Buea</p>
                 </div>
                 <div class="sub">
-                    <i class="fa fa-envelop" aria-hidden="true"></i>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
                     <p>info@lacsodec.org,</p>
                 </div>
                 <div class="sub">

@@ -4,7 +4,7 @@
             <p> info@lacsodec.org</p>
             <div class="buttons">
                 <a href="/" class="custom-button transparent"><span>About us</span></a>
-                <a href="/" class="custom-button primary"><span>Login</span></a>
+                <a href="{{ route('login') }}" class="custom-button primary"><span>Login</span></a>
             </div>
         </div>
     </div>
@@ -27,11 +27,11 @@
             <nav>
                 <ul>
                     <li><a href="/" class="active">home</a></li>
-                    <li><a href="/">about us</a></li>
+                    <li><a href="{{ route('about-us') }}">about us</a></li>
                     <li><a href="/">blog</a></li>
                     <li><a href="/">events</a></li>
                     <li><a href="/">gallery</a></li>
-                    <li><a href="/">contact us</a></li>
+                    <li><a href="{{ route('contact-us') }}">contact us</a></li>
                 </ul>
             </nav>
             <a href="/" class="custom-button primary-dark"><span>Announcements</span></a>
