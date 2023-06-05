@@ -2,7 +2,8 @@
     <div class="auth-page login-page">
         <div class="con">
             <h1>Login</h1>
-            <form action="">
+            <form action="{{ route('login.perform') }}" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                 <div class="field">
                     <label for="">Email</label>
                     <input type="text" name="email" id="email" placeholder="Email">
