@@ -13,6 +13,7 @@ use Orchid\Support\Facades\Layout;
 use Orchid\Screen\Actions\ModalToggle;
 use Orchid\Screen\TD;
 use Orchid\Support\Facades\Toast;
+use Orchid\Screen\Actions\Button;
 
 class ExpertProfileScreen extends Screen
 {
@@ -66,6 +67,13 @@ class ExpertProfileScreen extends Screen
                 TD::make('location'),
                 TD::make('status'),
                 TD::make('details'),
+                TD::make('Actions')
+        ->alignRight()
+        ->render(function (ExpertProfile $expert) {
+            return Button::make('Delete Expert')
+                ->confirm('After deleting, the expert will be gone forever')
+                ->method('delete', ['expert' => $expert->id]);
+        }),
             ]),
 
             Layout::modal('ExpertProfile', Layout::rows([
@@ -118,5 +126,10 @@ class ExpertProfileScreen extends Screen
         ]);
 
         Toast::success($user->name. ' is now an expert');
+    }
+
+    public function delete(ExpertProfile $expert)
+    {
+        $expert->delete();
     }
 }
