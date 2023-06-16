@@ -46,6 +46,11 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles')
                 ->divider(),
+
+            Menu::make('Expert Profiles')
+                ->icon('user')
+                ->route('platform.expertprofile')
+                ->title('Expert Profiles')
         ];
     }
 

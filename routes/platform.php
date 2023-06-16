@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Orchid\Screens\ExpertProfileScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
@@ -74,3 +75,10 @@ Route::screen('roles', RoleListScreen::class)
     ->breadcrumbs(fn (Trail $trail) => $trail
         ->parent('platform.index')
         ->push(__('Roles'), route('platform.systems.roles')));
+
+Route::screen('expert-profile', ExpertProfileScreen::class)->name('platform.expertprofile')
+->breadcrumbs(function (Trail $trail){
+    return $trail
+        ->parent('platform.index')
+        ->push('ExpertProfile');
+});
