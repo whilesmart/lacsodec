@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use App\Orchid\Screens\Cso\CsoEditScreen;
+use App\Orchid\Screens\Cso\CsoListScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
@@ -74,3 +76,9 @@ Route::screen('roles', RoleListScreen::class)
     ->breadcrumbs(fn (Trail $trail) => $trail
         ->parent('platform.index')
         ->push(__('Roles'), route('platform.systems.roles')));
+
+Route::screen('cso/{cso?}', CsoEditScreen::class)
+    ->name('platform.cso.edit');
+
+Route::screen('csos', CsoListScreen::class)
+    ->name('platform.cso.list');
