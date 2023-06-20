@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use App\Orchid\Screens\Article\ArticleEditScreen;
+use App\Orchid\Screens\Article\ArticleListScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
@@ -74,3 +76,9 @@ Route::screen('roles', RoleListScreen::class)
     ->breadcrumbs(fn (Trail $trail) => $trail
         ->parent('platform.index')
         ->push(__('Roles'), route('platform.systems.roles')));
+
+Route::screen('article/{article?}', ArticleEditScreen::class)
+    ->name('platform.article.edit');
+
+Route::screen('articles', ArticleListScreen::class)
+    ->name('platform.article.list');
