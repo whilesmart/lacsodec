@@ -3,7 +3,7 @@
         <div class="con">
             <p> info@lacsodec.org</p>
             <div class="buttons">
-                <a href="/" class="custom-button transparent"><span>About us</span></a>
+                <a href="{{ route('contact-us') }}" class="custom-button transparent"><span>Contact us</span></a>
                 <a href="{{ route('login') }}" class="custom-button primary"><span>Login</span></a>
             </div>
         </div>
@@ -28,13 +28,18 @@
                 <ul>
                     <li><a href="/" class="active">home</a></li>
                     <li><a href="{{ route('about-us') }}">about us</a></li>
+                    <li><a href="{{ route('services') }}">services</a></li>
+                    <li><a href="{{ route('publications') }}">publications</a></li>
+                    <li><a href="{{ route('cso-library') }}">library</a></li>
+                    <li><a href="{{ route('impact-stories') }}">impact stories</a></li>
+                    <li><a href="{{ route('newsroom') }}">newsroom</a></li>
+                    <li><a href="{{ route('events') }}">events/Trainings</a></li>
+                    <li><a href="/">grants</a></li>
                     <li><a href="/">blog</a></li>
-                    <li><a href="/">events</a></li>
-                    <li><a href="/">gallery</a></li>
-                    <li><a href="{{ route('contact-us') }}">contact us</a></li>
+                    <li><a href="/">lodge</a></li>
                 </ul>
             </nav>
-            <a href="/" class="custom-button primary-dark"><span>Announcements</span></a>
+            <a href="/" class="custom-button primary-dark"><span>Donate</span></a>
         </div>
     </div>
 </header>
