@@ -16,6 +16,17 @@ class ExpertProfile extends Model
         'status',
         'location',
         'details',
+        'birthday',
+        'sex',
+        'birth_place',
+        'nationality',
+        'language',
+        'image',
+        'company',
+        'work_duration',
+        'certification',
+        'certification_date',
+        'certificate_image',
     ];
 
     public function user(): BelongsTo

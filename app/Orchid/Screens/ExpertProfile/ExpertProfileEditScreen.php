@@ -6,6 +6,8 @@ use App\Models\ExpertProfile;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Fields\Cropper;
+use Orchid\Screen\Fields\DateTimer;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Relation;
 use Orchid\Screen\Fields\Select;
@@ -112,6 +114,61 @@ class ExpertProfileEditScreen extends Screen
                     ->rows(5)
                     ->required(),
 
+                DateTimer::make('expert.birthday')
+                    ->title('Date of birth')
+                    ->format('Y-m-d')
+                    ->required(),
+
+                Select::make('expert.sex')
+                    ->options([
+                        'male' => 'Male',
+                        'female' => 'Female',
+                    ])
+                    ->title('Sex')
+                    ->required(),
+
+                Input::make('expert.birth_place')
+                    ->title('Place of birth')
+                    ->required(),
+
+                Select::make('expert.nationality')
+                    ->options([
+                        'cameroonian' => 'Cameroonian'
+                    ])
+                    ->title('Nationality')
+                    ->required(),
+
+                Select::make('expert.language')
+                    ->options([
+                        'english' => 'English',
+                        'french' => 'French',
+                    ])
+                    ->title('Language')
+                    ->required(),
+
+                Cropper::make('expert.image')
+                    ->title('Expert profile image')
+                    ->targetUrl()
+                    ->required(),
+
+                Input::make('expert.company')
+                    ->title('Company')
+                    ->required(),
+
+                Input::make('expert.work_duration')
+                    ->title('Work duration')
+                    ->required(),
+
+                Input::make('expert.certification')
+                    ->title('Certification'),
+
+                DateTimer::make('expert.certification_date')
+                    ->title('Date of certification')
+                    ->format('Y-m-d'),
+
+                Cropper::make('expert.certificate_image')
+                    ->title('Certification image')
+                    ->targetUrl(),
             ])
         ];
     }
