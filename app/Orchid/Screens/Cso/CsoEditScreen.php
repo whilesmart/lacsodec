@@ -3,6 +3,9 @@
 namespace App\Orchid\Screens\Cso;
 
 use App\Models\Cso;
+use App\Orchid\Layouts\Cso\CsoBasicInfo;
+use App\Orchid\Layouts\Cso\CsoContactInfo;
+use App\Orchid\Layouts\Cso\CsoInfo;
 use Illuminate\Http\Request;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Fields\Cropper;
@@ -84,46 +87,9 @@ class CsoEditScreen extends Screen
     public function layout(): iterable
     {
         return [
-            Layout::rows([
-                Input::make('cso.name')
-                    ->title('Name')
-                    ->placeholder('CSO name')
-                    ->help('Give the name of the CSO')
-                    ->required(),
-
-                Input::make('cso.location')
-                    ->title('Location')
-                    ->placeholder('CSO location')
-                    ->help('Give the location of the CSO')
-                    ->required(),
-
-                Input::make('cso.assessment_score')
-                    ->title('Assessment score')
-                    ->placeholder('CSO assessment score')
-                    ->help('Give the assessment score of the CSO')
-                    ->type('number')
-                    ->required(),
-
-                Input::make('cso.partnership')
-                    ->title('Partnership')
-                    ->placeholder('CSO partnership')
-                    ->help('Give the partnership of the CSO')
-                    ->required(),
-
-                Select::make('cso.status')
-                    ->options([
-                        'pending'   => 'Pending',
-                        'approved'   => 'Approved',
-                        'rejected'   => 'Rejected',
-                    ])
-                    ->title('Select CSO status')
-                    ->help('Select the status of the CSO'),
-
-                Cropper::make('cso.image')
-                    ->width(200)
-                    ->height(200)
-                    ->required()
-            ])
+            CsoBasicInfo::class,
+            CsoContactInfo::class,
+            CsoInfo::class
         ];
     }
 

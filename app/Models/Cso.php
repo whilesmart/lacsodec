@@ -12,7 +12,6 @@ class Cso extends Model
 
     protected $fillable = [
         'name',
-        'location',
         'assessment_score',
         'status',
         'partnership',

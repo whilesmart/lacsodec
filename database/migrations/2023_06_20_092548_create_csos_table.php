@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('csos', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('location');
             $table->integer('assessment_score');
             $table->enum('status', ['approved', 'pending', 'rejected'])->default('pending');
             $table->string('partnership');
