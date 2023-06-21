@@ -48,8 +48,8 @@ class PlatformProvider extends OrchidServiceProvider
                 ->divider(),
 
             Menu::make('Expert Profiles')
-                ->icon('user')
-                ->route('platform.expertprofile')
+                ->icon('bs.people')
+                ->route('platform.expert.list')
                 ->title('Expert Profiles')
         ];
     }
