@@ -14,17 +14,17 @@ return new class extends Migration
         Schema::create('expert_profiles', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('location');
-            $table->string('status');
+            $table->string('location')->nullable();
+            $table->string('status')->nullable();
             $table->longText('details');
-            $table->string('birthday');
-            $table->string('sex');
-            $table->string('birth_place');
-            $table->string('nationality');
-            $table->string('language');
-            $table->string('image');
-            $table->string('company');
-            $table->string('work_duration');
+            $table->string('birthday')->nullable();
+            $table->string('sex')->nullable();
+            $table->string('birth_place')->nullable();
+            $table->string('nationality')->nullable();
+            $table->string('language')->nullable();
+            $table->string('image')->nullable();
+            $table->string('company')->nullable();
+            $table->string('work_duration')->nullable();
             $table->string('certification')->nullable();
             $table->string('certification_date')->nullable();
             $table->string('certification_image')->nullable();
