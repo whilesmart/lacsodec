@@ -28,9 +28,10 @@ class CsoListLayout extends Table
     {
         return [
             TD::make('name', 'Name'),
-            TD::make('location', 'Location'),
+            TD::make('organization_type', 'Organization type'),
+            TD::make('registration_number', 'Registration number'),
+            TD::make('country', 'Country'),
             TD::make('created_at', 'Created'),
-            TD::make('updated_at', 'Last edit'),
             TD::make('Actions')
                 ->render(function (Cso $cso) {
                     return Link::make('Edit CSO')

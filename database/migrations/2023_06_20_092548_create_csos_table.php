@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('csos', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('assessment_score');
+            $table->integer('assessment_score')->nullable();
             $table->enum('status', ['approved', 'pending', 'rejected'])->default('pending');
-            $table->string('partnership');
-            $table->string('image');
-            $table->string('acronym');
+            $table->string('partnership')->nullable();
+            $table->string('image')->nullable();
+            $table->string('acronym')->nullable();
             $table->string('registration_date');
-            $table->string('organization_type')->default('association');
+            $table->string('organization_type');
             $table->string('registration_number');
             $table->string('country');
             $table->string('region');
@@ -40,8 +40,10 @@ return new class extends Migration
             $table->longText('mission');
             $table->string('primary_target_beneficiaries');
             $table->string('secondary_target_beneficiaries');
+            $table->string('domain');
             $table->boolean('board_directors')->default(false);
-            $table->string('african_coverage')->default('national');
+            $table->string('african_coverage');
+            $table->string('organization_leaderships');
             $table->timestamps();
         });
     }

@@ -36,14 +36,12 @@ class CsoBasicInfo extends Rows
                 ->title('Assessment score')
                 ->placeholder('CSO assessment score')
                 ->help('Give the assessment score of the CSO')
-                ->type('number')
-                ->required(),
+                ->type('number'),
 
             Input::make('cso.partnership')
                 ->title('Partnership')
                 ->placeholder('CSO partnership')
-                ->help('Give the partnership of the CSO')
-                ->required(),
+                ->help('Give the partnership of the CSO'),
 
             Select::make('cso.status')
                 ->options([
@@ -80,10 +78,35 @@ class CsoBasicInfo extends Rows
                 ->title('Type of organization')
                 ->help('Select the type of organization'),
 
+                Select::make('cso.country')
+                ->options([
+                    'cameroon' => 'Cameroon',
+                    'nigeria' => 'Nigeria',
+                    'ghana' => 'Ghana',
+                    'rwanda' => 'Rwanda',
+                ])
+                ->title('Country')
+                ->required(),
+
+                Input::make('cso.region')
+                ->title('Region')
+                ->required(),
+
+                Input::make('cso.division')
+                ->title('Division')
+                ->required(),
+
+                Input::make('cso.sub_division')
+                ->title('Sub division')
+                ->required(),
+
+                Input::make('cso.village')
+                ->title('Village')
+                ->required(),
+
             Cropper::make('cso.image')
                 ->width(200)
                 ->height(200)
-                ->required()
         ];
     }
 }
