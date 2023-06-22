@@ -12,16 +12,6 @@
                 <aside>
                     <nav>
                         <ul>
-                            <li>
-                                <a href="/">Environmental resources</a>
-                                <ul>
-                                    <li><a href="/">Lorem, ipsum</a></li>
-                                    <li><a href="/">Lorem, ipsum</a></li>
-                                    <li><a href="/">Lorem, ipsum</a></li>
-                                    <li><a href="/">Lorem, ipsum</a></li>
-                                    <li><a href="/">Lorem, ipsum</a></li>
-                                </ul>
-                            </li>
                             @foreach ($cso_domains as $domain)
                             <li><a href="/">{{$domain->name}}</a></li>
                             @endforeach

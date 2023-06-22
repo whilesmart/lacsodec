@@ -2,6 +2,7 @@
 
 namespace App\Orchid\Layouts\Cso;
 
+use App\Models\CsoActivityDomain;
 use Orchid\Screen\Field;
 use Orchid\Screen\Fields\CheckBox;
 use Orchid\Screen\Fields\Group;
@@ -48,68 +49,10 @@ class CsoInfo extends Rows
                     ->required(),
             ]),
 
-            Label::make('cso.domain')
-                ->title('Choose domain of activity'),
-            Radio::make('cso.domain')
-                ->value('Women empowerment')
-                ->title('Women empowerment'),
-            Radio::make('cso.domain')
-                ->value('Youth empowerment')
-                ->title('Youth empowerment'),
-            Radio::make('cso.domain')
-                ->value('Environmental protection')
-                ->title('Environmental protection'),
-            Radio::make('cso.domain')
-                ->value('Governance')
-                ->title('Governance'),
-            Radio::make('cso.domain')
-                ->value('Water')
-                ->title('Water'),
-            Radio::make('cso.domain')
-                ->value('Human rights')
-                ->title('Human rights'),
-            Radio::make('cso.domain')
-                ->value('Child protection')
-                ->title('Child protection'),
-            Radio::make('cso.domain')
-                ->value('Peace Building')
-                ->title('Peace Building'),
-            Radio::make('cso.domain')
-                ->value('Humanitarian response')
-                ->title('Humanitarian response'),
-            Radio::make('cso.domain')
-                ->value('GBV prevention/response')
-                ->title('GBV prevention/response'),
-            Radio::make('cso.domain')
-                ->value('Education')
-                ->title('Education'),
-            Radio::make('cso.domain')
-                ->value('CSO strengthening')
-                ->title('CSO strengthening'),
-            Radio::make('cso.domain')
-                ->value('ICT')
-                ->title('ICT'),
-            Radio::make('cso.domain')
-                ->value('Climate protection')
-                ->title('Climate protection'),
-            Radio::make('cso.domain')
-                ->value('Food security')
-                ->title('Food security'),
-            Radio::make('cso.domain')
-                ->value('Animal protection')
-                ->title('Animal protection'),
-            Radio::make('cso.domain')
-                ->value('Marine life protection')
-                ->title('Marine life protection'),
-            Radio::make('cso.domain')
-                ->value('Renewable energy')
-                ->title('Renewable energy'),
-            Radio::make('cso.domain')
-                ->value('Waste management')
-                ->title('Waste management'),
-            Radio::make('cso.domain')
-                ->value('others')
-                ->title('others'),
+            Select::make('cso.domain')
+            ->fromModel(CsoActivityDomain::class, 'name', 'name')
+            ->title('Choose domain of activity')
+            ->required(),
 
             Label::make('cso.board_directors')
                 ->title('Board of directors'),

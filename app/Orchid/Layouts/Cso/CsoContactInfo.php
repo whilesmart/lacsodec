@@ -59,7 +59,7 @@ class CsoContactInfo extends Rows
 
                 Input::make('cso.website')
                 ->title('CSO Website')
-                ->placeholder('https://cso.com')
+                ->type('url')
                 ->required(),
 
                 Input::make('cso.email')
