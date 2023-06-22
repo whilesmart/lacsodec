@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
+use App\Http\Controllers\CsoController;
 use Illuminate\Support\Facades\Route;
 
 /* |-------------------------------------------------------------------------- | Web Routes |-------------------------------------------------------------------------- | | Here is where you can register web routes for your application. These | routes are loaded by the RouteServiceProvider and all of them will | be assigned to the "web" middleware group. Make something great! | */
@@ -31,9 +32,7 @@ Route::get('/publications', function () {
     return view('publications');
 })->name('publications');
 
-Route::get('/cso-library', function () {
-    return view('cso-library');
-})->name('cso-library');
+Route::get('/cso-library', [CsoController::class, 'index'])->name('cso-library');
 
 Route::get('/impact-stories', function () {
     return view('impact-stories');
