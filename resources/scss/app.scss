@@ -348,8 +348,9 @@ header {
                         a {
                             display: flex;
                             align-items: center;
-                            height: 50px;
-                            padding: 0 2rem;
+                            height: 40px;
+                            padding: 0 1rem;
+                            font-size: 0.9rem;
                             color: $white;
                             text-transform: capitalize;
                             cursor: pointer;
@@ -366,8 +367,11 @@ header {
             }
             > .custom-button {
                 border-radius: 0;
-                height: 50px;
+                height: 40px;
                 padding: 0 2rem;
+                span {
+                    font-size: 0.9rem;
+                }
             }
         }
     }
@@ -753,7 +757,7 @@ section {
         margin-bottom: 1rem;
         h3 {
             color: $primary;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
             text-transform: capitalize;
@@ -891,6 +895,24 @@ section {
             }
         }
     }
+
+    .publication {
+        margin-bottom: 1rem;
+        img {
+            height: 150px;
+        }
+        h2 {
+            font-size: 1rem;
+            padding: 0;
+        }
+        p {
+            font-size: 0.9rem;
+        }
+        > a {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+    }
 }
 
 /* ------------------------- numbers section styles ------------------------- */
@@ -994,7 +1016,7 @@ section.numbers-section {
                         transition-duration: $transition-duration;
                         &:hover {
                             background-color: $primary;
-                            color: $primary;
+                            color: $white;
                             transition-duration: $transition-duration;
                         }
                     }
@@ -1345,5 +1367,354 @@ section.team-section {
                 width: 700px;
             }
         }
+    }
+}
+
+/* ---------------------------- services page styles --------------------------- */
+.services-page {
+    .breadcrumb {
+        background-image: url("../../public/images/services-breadcrumb.png");
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        .service {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1rem;
+            background-color: $primary;
+            color: $white;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            &:hover {
+                background-color: $primary-dark;
+            }
+        }
+    }
+}
+
+/* ---------------------------- publications page styles --------------------------- */
+.publications-page {
+    .breadcrumb {
+        background-image: url("../../public/images/publications-breadcrumb.png");
+    }
+
+    .publications-section {
+        .con {
+            display: flex;
+            gap: 2rem;
+            aside {
+                min-width: 270px;
+                height: fit-content;
+                background-color: $white;
+                padding: 1rem;
+                border-radius: $border-radius;
+                nav {
+                    ul {
+                        li {
+                            margin-bottom: 1rem;
+                            a {
+                                color: $text;
+                                font-size: 1rem;
+                                cursor: pointer;
+                                &:hover {
+                                    color: $primary;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .main-content {
+                flex-grow: 1;
+                width: 100%;
+                .publications-grid {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    column-gap: 2rem;
+                    row-gap: 2rem;
+                    margin-bottom: 5rem;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- pubication styles --------------------------- */
+.publication {
+    width: 100%;
+    img {
+        width: 100%;
+        height: 200px;
+        border-radius: $border-radius;
+        object-fit: cover;
+        object-position: center;
+    }
+    h2 {
+        color: $text;
+        font-size: 1.15rem;
+        font-weight: 600;
+        padding: 0.5rem 0;
+    }
+    p {
+        color: $text;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    > a {
+        display: block;
+        margin-top: 1rem;
+        color: $primary;
+        font-size: 1rem;
+        width: max-content;
+        &:hover {
+            color: $primary-dark;
+            text-decoration: underline;
+        }
+    }
+}
+
+/* ---------------------------- pagination styles --------------------------- */
+.pagination {
+    margin: 1rem 0;
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        li {
+            a {
+                display: block;
+                width: 40px;
+                height: 40px;
+                border-radius: 3px;
+                background-color: $gray;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1rem;
+                color: $text;
+                font-weight: 500;
+                cursor: pointer;
+                &:hover {
+                    background-color: $secondary;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- cso-library page styles --------------------------- */
+.cso-library-page {
+    .breadcrumb {
+        background-image: url("../../public/images/cso-library-breadcrumb.png");
+    }
+
+    .cso-library-section {
+        .con {
+            display: flex;
+            gap: 2rem;
+            aside {
+                min-width: 270px;
+                height: fit-content;
+                background-color: $white;
+                padding: 1rem;
+                border-radius: $border-radius;
+                nav {
+                    ul {
+                        li {
+                            margin-bottom: 1rem;
+                            a {
+                                color: $text;
+                                font-size: 1rem;
+                                cursor: pointer;
+                                &:hover {
+                                    color: $primary;
+                                }
+                            }
+                            ul {
+                                li {
+                                    margin: 1rem 0;
+                                    margin-left: 1rem;
+                                    a {
+                                        color: $light-text;
+                                        font-size: 1rem;
+                                        cursor: pointer;
+                                        &:hover {
+                                            color: $primary;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .main-content {
+                flex-grow: 1;
+                width: 100%;
+                .cso-library-grid {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    column-gap: 1rem;
+                    row-gap: 2rem;
+                    margin-bottom: 5rem;
+                    .cso-card {
+                        width: 100%;
+                        img {
+                            width: 100%;
+                            height: 150px;
+                            border-radius: $border-radius;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                        h2 {
+                            color: $text;
+                            font-size: 1.15rem;
+                            font-weight: 600;
+                            padding: 1rem 0 0.5rem 0;
+                        }
+                        p {
+                            color: $text;
+                            font-size: 1rem;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- impact-stories page styles --------------------------- */
+.impact-stories-page {
+    .breadcrumb {
+        background-image: url("../../public/images/impact-stories-breadcrumb.png");
+    }
+
+    .impact-stories-section {
+        .con {
+            display: flex;
+            gap: 2rem;
+            aside {
+                min-width: 300px;
+                max-width: 300px;
+                height: fit-content;
+                background-color: $white;
+                border-radius: $border-radius;
+            }
+            .main-content {
+                flex-grow: 1;
+                height: fit-content;
+                background-color: $white;
+                border-radius: $border-radius;
+                padding: 2rem;
+                img {
+                    width: 100%;
+                    height: 400px;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                h1 {
+                    font-size: 2rem;
+                    color: $text;
+                    font-weight: 600;
+                }
+                .info-container {
+                    display: flex;
+                    align-items: center;
+                    gap: 2rem;
+                    padding-bottom: 0.5em;
+                    margin: 1rem 0 2rem 0;
+                    border-bottom: 1px solid $border-color;
+                    .info {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        color: $text;
+                        .fa {
+                            color: $primary;
+                        }
+                    }
+                }
+                .images {
+                    width: 100%;
+                    display: flex;
+                    gap: 1rem;
+                    margin: 1rem 0;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                > p {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- newsroom page styles --------------------------- */
+.newsroom-page {
+    .breadcrumb {
+        background-image: url("../../public/images/newsroom-breadcrumb.png");
+    }
+
+    .newsroom-section {
+        .con {
+            display: flex;
+            gap: 2rem;
+            aside {
+                min-width: 300px;
+                max-width: 300px;
+                height: fit-content;
+                background-color: $white;
+                border-radius: $border-radius;
+            }
+            .main-content {
+                flex-grow: 1;
+                height: fit-content;
+                h1 {
+                    font-size: 2rem;
+                    color: $text;
+                    font-weight: 600;
+                    margin-bottom: 2rem;
+                }
+                .images {
+                    width: 100%;
+                    display: flex;
+                    gap: 1rem;
+                    margin: 0 0 1rem 0;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                > p {
+                    margin-bottom: 1rem;
+                }
+                .publications-grid {
+                    margin-top: 2rem;
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    column-gap: 1rem;
+                    row-gap: 2rem;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- events page styles --------------------------- */
+.events-page {
+    .breadcrumb {
+        background-image: url("../../public/images/events-breadcrumb.png");
     }
 }

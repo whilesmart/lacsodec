@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 use App\Orchid\Screens\Cso\CsoEditScreen;
 use App\Orchid\Screens\Cso\CsoListScreen;
+use App\Orchid\Screens\ExpertProfile\ExpertProfileEditScreen;
+use App\Orchid\Screens\ExpertProfile\ExpertProfileListScreen;
+use App\Orchid\Screens\ExpertProfileScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
@@ -82,3 +85,8 @@ Route::screen('cso/{cso?}', CsoEditScreen::class)
 
 Route::screen('csos', CsoListScreen::class)
     ->name('platform.cso.list');
+Route::screen('expert/{expert?}', ExpertProfileEditScreen::class)
+    ->name('platform.expert.edit');
+
+Route::screen('experts', ExpertProfileListScreen::class)
+    ->name('platform.expert.list');
