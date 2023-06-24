@@ -128,9 +128,14 @@ class AccomodationEditScreen extends Screen
                         ->title('no'),
                 ]),
 
+                Input::make('accomodation.accommodation_number')
+                    ->title('Accomodation number')
+                    ->placeholder('A01')
+                    ->required(),
+
                 Upload::make('accomodation.attachment')
-                ->title('Accomodation images')
-                ->acceptedFiles('image/*')
+                    ->title('Accomodation images')
+                    ->acceptedFiles('image/*')
             ])
         ];
     }

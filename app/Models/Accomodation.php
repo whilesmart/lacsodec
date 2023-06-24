@@ -19,11 +19,7 @@ class Accomodation extends Model
         'city',
         'quarter',
         'description',
-        'available'
+        'available',
+        'accommodation_number'
     ];
-
-    // public function images()
-    // {
-    //     return $this->hasOne(Attachment::class, 'id', 'image')->withDefault();
-    // }
 }
