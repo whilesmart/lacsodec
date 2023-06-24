@@ -22,7 +22,7 @@
                     <div class="cso-library-grid">
                         @foreach ($csos as $cso)
                         <div class="cso-card">
-                            <img src="{{  config('app.url').$cso->image }}" alt="" />
+                            <img src="{{ asset($cso->image) }}" alt="" />
                             <h2>{{$cso->name}}</h2>
                             <p>{{$cso->domain}}</p>
                         </div>
