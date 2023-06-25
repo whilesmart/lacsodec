@@ -42,6 +42,38 @@ Route::get('/events', function () {
     return view('events');
 })->name('events');
 
+Route::get('/grants', function () {
+    return view('grants');
+})->name('grants');
+
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');
+
+Route::get('/lodge', function () {
+    return view('lodge');
+})->name('lodge');
+
+Route::get('/donate', function () {
+    return view('donate');
+})->name('donate');
+
+Route::get('/cso-directory', function () {
+    return view('cso-directory');
+})->name('cso-directory');
+
+Route::get('/cso-directory-details', function () {
+    return view('cso-directory-details');
+})->name('cso-directory-details');
+
+Route::get('/expert-directory', function () {
+    return view('expert-directory');
+})->name('expert-directory');
+
+Route::get('/expert-directory-details', function () {
+    return view('expert-directory-details');
+})->name('expert-directory-details');
+
 Route::get('/login', [LoginController::class , 'create'])->name('login');
 Route::post('/login', [LoginController::class , 'store'])->name('login.perform');
 Route::get('/register', [RegisterController::class , 'create'])->name('register');
