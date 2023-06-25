@@ -318,6 +318,27 @@ header {
                         }
                     }
                 }
+                ul {
+                    display: flex;
+                    align-items: center;
+                    li {
+                        padding: 0 1rem;
+                        border-right: 1px solid $primary;
+                        &:last-child {
+                            border-right: none;
+                        }
+                        a {
+                            color: $primary;
+                            font-size: 1rem;
+                            font-size: 0.9rem;
+                            text-transform: uppercase;
+                            cursor: pointer;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -354,9 +375,6 @@ header {
                         padding: 0 1rem;
                         font-size: 0.9rem;
                         border-right: 1px solid $primary;
-                        @include for-mobile {
-                            padding: 0 0.5rem;
-                        }
                         &:last-child {
                             border-right: none;
                         }
@@ -2657,33 +2675,34 @@ section.other-expert-section {
                     column-gap: 1rem;
                     row-gap: 2rem;
                     margin-bottom: 5rem;
-                    .cso-card {
-                        width: 100%;
-                        img {
-                            width: 100%;
-                            height: 150px;
-                            border-radius: $border-radius;
-                            object-fit: cover;
-                            object-position: center;
-                        }
-                        h2 {
-                            color: $text;
-                            font-size: 1.15rem;
-                            font-weight: 600;
-                            padding: 1rem 0 0.5rem 0;
-                        }
-                        p {
-                            color: $text;
-                            font-size: 1rem;
-                            font-weight: 400;
-                        }
-                    }
                 }
             }
         }
     }
 }
 
+/* ----------------------------- cso card styles ---------------------------- */
+.cso-card {
+    width: 100%;
+    img {
+        width: 100%;
+        height: 150px;
+        border-radius: $border-radius;
+        object-fit: cover;
+        object-position: center;
+    }
+    h2 {
+        color: $text;
+        font-size: 1.15rem;
+        font-weight: 600;
+        padding: 1rem 0 0.5rem 0;
+    }
+    p {
+        color: $text;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+}
 /* ---------------------------- impact-stories page styles --------------------------- */
 .impact-stories-page {
     .breadcrumb {
@@ -2809,5 +2828,425 @@ section.other-expert-section {
 .events-page {
     .breadcrumb {
         background-image: url("../../public/images/events-breadcrumb.png");
+    }
+
+    .events-section {
+        .events-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 1rem;
+            row-gap: 2rem;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+    }
+}
+
+.event-card {
+    width: 100%;
+    background-color: $white;
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.08);
+    // border-radius: $border-radius;
+    padding: 1rem;
+    .img-con {
+        width: 100%;
+        height: auto;
+        position: relative;
+        img {
+            width: 100%;
+            height: 200px;
+            border-radius: $border-radius;
+            object-fit: cover;
+            object-position: center;
+        }
+        .type {
+            padding: 0.5rem 2rem;
+            font-size: 1rem;
+            border-top-right-radius: $border-radius;
+            position: absolute;
+            top: 0;
+            right: 0;
+            text-transform: capitalize;
+            &.event {
+                background-color: $primary;
+                color: $white;
+            }
+            &.training {
+                background-color: $orange-light;
+                color: $orange;
+            }
+        }
+    }
+    .flex {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .label {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            border-radius: $border-radius;
+            text-transform: capitalize;
+            &.paid {
+                background-color: $orange-light;
+                color: $orange;
+            }
+            &.free {
+                background-color: $green-light;
+                color: $green;
+            }
+            &.sponsored {
+                background-color: $blue-light;
+                color: $blue;
+            }
+        }
+        p {
+            font-size: 0.9rem;
+            color: $text;
+        }
+    }
+    .content {
+        p {
+            font-size: 1.1rem;
+            color: $text;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+/* ---------------------------- grants page styles --------------------------- */
+.grants-page {
+    .breadcrumb {
+        background-image: url("../../public/images/grants-breadcrumb.png");
+    }
+    .grants-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 3rem;
+        row-gap: 3rem;
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+}
+
+.grant-card {
+    width: 100%;
+    text-align: center;
+    .logo-con {
+        width: 100%;
+        height: 130px;
+        background-color: $white;
+        box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.08);
+        border-radius: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        img {
+            height: 70%;
+            width: auto;
+        }
+    }
+    .rating {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 1rem;
+        color: $gray;
+        .colored {
+            color: $secondary;
+        }
+    }
+    > p {
+        font-size: 1em;
+        color: $text;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-top: 0.5rem;
+    }
+}
+/* ---------------------------- blog page styles --------------------------- */
+.blog-page {
+    .breadcrumb {
+        background-image: url("../../public/images/blog-breadcrumb.png");
+    }
+
+    .blog-section {
+        .con {
+            display: flex;
+            gap: 2rem;
+            aside {
+                min-width: 300px;
+                max-width: 300px;
+                height: fit-content;
+                .publication {
+                    margin-bottom: 2rem;
+                }
+            }
+            .main-content {
+                flex-grow: 1;
+                width: 100%;
+                .publications-grid {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    column-gap: 2rem;
+                    row-gap: 2rem;
+                    margin-bottom: 5rem;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- lodge page styles --------------------------- */
+.lodge-page {
+    .breadcrumb {
+        background-image: url("../../public/images/lodge-breadcrumb.png");
+    }
+
+    .lodge-section {
+        .con {
+            display: flex;
+            gap: 2rem;
+            aside {
+                min-width: 300px;
+                max-width: 300px;
+                height: fit-content;
+                background-color: $white;
+                border-radius: $border-radius;
+                .facilities {
+                    margin-bottom: 2rem;
+                    .info {
+                        margin: 0.5rem 0 1rem 0;
+                        display: flex;
+                        gap: 1rem;
+                        .sub {
+                            display: flex;
+                            gap: 0.5rem;
+                            color: $white;
+                            .fa {
+                                margin-top: 0.2rem;
+                                font-size: 0.9rem;
+                            }
+                            p {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+            .main-content {
+                flex-grow: 1;
+                height: fit-content;
+                h1 {
+                    font-size: 2rem;
+                    color: $text;
+                    font-weight: 600;
+                    margin-bottom: 2rem;
+                }
+                > img {
+                    width: 100%;
+                    margin-bottom: 1rem;
+                    height: 400px;
+                    border-radius: $border-radius;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                > .link {
+                    font-size: 1rem;
+                    color: $primary;
+                    font-weight: 600;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                .images {
+                    width: 100%;
+                    display: flex;
+                    gap: 1rem;
+                    margin: 2rem 0;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                > p {
+                    margin-bottom: 1rem;
+                }
+                .publications-grid {
+                    margin-top: 2rem;
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    column-gap: 1rem;
+                    row-gap: 2rem;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- donate page styles --------------------------- */
+.donate-page {
+    .breadcrumb {
+        background-image: url("../../public/images/donate-breadcrumb.png");
+    }
+}
+
+/* ---------------------------- cso-directory page styles --------------------------- */
+.cso-directory-page {
+    .cso-directory-section {
+        .con {
+            .main-content {
+                width: 100%;
+                .cso-directory-grid {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    column-gap: 1rem;
+                    row-gap: 2rem;
+                    margin-bottom: 5rem;
+                }
+                .pagination {
+                    ul {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- expert-directory page styles --------------------------- */
+.expert-directory-page {
+    .expert-directory-section {
+        .con {
+            .main-content {
+                width: 100%;
+                .expert-directory-grid {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    column-gap: 1rem;
+                    row-gap: 2rem;
+                    margin-bottom: 5rem;
+                }
+                .pagination {
+                    ul {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- cso-directory-details page styles --------------------------- */
+.cso-directory-details-page {
+    > .top {
+        width: 100%;
+        height: 13rem;
+        background-color: $primary;
+    }
+    .cso-directory-details-section {
+        padding: 0;
+        .con {
+            display: flex;
+            gap: 2rem;
+            aside {
+                min-width: 300px;
+                max-width: 300px;
+                height: fit-content;
+                padding: 1rem;
+                border-radius: $border-radius;
+                margin-top: 1rem;
+            }
+            .main-content {
+                flex-grow: 1;
+                width: 100%;
+                margin-top: -5rem;
+                .top-image {
+                    width: 400px;
+                    height: auto;
+                    border-radius: $border-radius;
+                    object-fit: cover;
+                    margin-bottom: 1rem;
+                }
+                h1 {
+                    font-size: 3rem;
+                    color: $text;
+                    font-weight: 600;
+                    margin-bottom: 1rem;
+                }
+                > p {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- expert-directory-details page styles --------------------------- */
+.expert-directory-details-page {
+    > .top {
+        width: 100%;
+        height: 13rem;
+        background-color: $primary;
+    }
+    .expert-directory-details-section {
+        padding: 0;
+        .con {
+            display: flex;
+            gap: 2rem;
+            aside {
+                min-width: 300px;
+                max-width: 300px;
+                height: fit-content;
+                padding: 1rem;
+                border-radius: $border-radius;
+                margin-top: 1rem;
+            }
+            .main-content {
+                flex-grow: 1;
+                width: 100%;
+                margin-top: -5rem;
+                .top-image {
+                    width: 400px;
+                    height: auto;
+                    border-radius: $border-radius;
+                    object-fit: cover;
+                    margin-bottom: 1rem;
+                }
+                h1 {
+                    font-size: 3rem;
+                    color: $text;
+                    font-weight: 600;
+                    margin-bottom: 0.5rem;
+                }
+                h2 {
+                    font-size: 1.2rem;
+                    color: $primary;
+                    font-weight: 600;
+                    margin-bottom: 1rem;
+                }
+                > p {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
     }
 }
