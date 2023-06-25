@@ -3,7 +3,7 @@
     <div class="hero home">
         <div class="sub">
             <div class="con">
-                <h1><b>Our Helping</b><br>around the world.</h1>
+                <h1><b>{{ __('home.our helping') }}</b><br>around the world.</h1>
                 <p>Lorem ipsum dolor sit amet consectetur. Integer amet donec vitae neque amet et gravida. Pellentesque
                     amet magna massa elementum ut. Dictum ipsum luctus elit nascetur proin a.</p>
                 <div class="buttons">

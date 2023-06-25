@@ -6,10 +6,10 @@
                 <div class="language">
                     <ul>
                         <li>
-                            <a href="">en</a>
+                            <a href="{{ route('locale.setting', 'en') }}">en</a>
                         </li>
                         <li>
-                            <a href="">fr</a>
+                            <a href="{{ route('locale.setting', 'fr') }}">fr</a>
                         </li>
                     </ul>
                 </div>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\CsoController;
+use App\Http\Controllers\LocalizationController;
 use Illuminate\Support\Facades\Route;
 
 /* |-------------------------------------------------------------------------- | Web Routes |-------------------------------------------------------------------------- | | Here is where you can register web routes for your application. These | routes are loaded by the RouteServiceProvider and all of them will | be assigned to the "web" middleware group. Make something great! | */
@@ -97,6 +98,8 @@ Route::get('/newsroom', function () {
 Route::get('/events', function () {
     return view('events');
 })->name('events');
+
+Route::get('/locale/{locale}', [LocalizationController::class, 'changeLang'])->name('locale.setting');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::post('/logout', [LoginController::class , 'destroy']);
