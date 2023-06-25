@@ -3,7 +3,7 @@
         <div class="con">
             <div class="sub">
                 <img src="{{ asset('images/logos/lacsodec-logo-white.png') }}" alt="" class="logo">
-                <p>Lorem ipsum dolor sit amet consectetur. Nec sed sit et nunc consequat vitae.</p>
+                <p>We promote knowledge acquisition, resource sharing and fairness among CSOs of all levels, with the ultimate goal of benefiting the populace.</p>
                 <a href="/" class="custom-button secondary"><span>Donate now</span></a>
             </div>
             <div class="sub">
@@ -50,7 +50,7 @@
                     Address: NGO Street, <br>
                     Molyko - Buea
                 </p>
-                <p>Phone: +237 674 58 74 58</p>
+                <p>Phone: +237 677947449</p>
             </div>
             <div class="sub">
                 <h3>Newsletter</h3>
@@ -64,7 +64,7 @@
     </div>
     <div class="bottom">
         <div class="con">
-            <p>© Copyright Widom Of Life 2020 by Extracoding</p>
+            <p>Copyright © 2023 by <a href="https://whilesmart.com" target="__blank">whilesmart</a></p>
         </div>
     </div>
 </footer>

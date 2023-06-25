@@ -12,9 +12,7 @@
         <div class="con">
             <div class="left">
                 <img src="{{ asset('images/logos/lacsodec-logo.png') }}" alt="" class="logo">
-                <p>Lorem ipsum dolor sit amet consectetur. Enim in sed feugiat lectus vel erat eu lacus ullamcorper.
-                    Lectus a cursus auctor felis turpis amet ridiculus quam in. Malesuada habitant condimentum feugiat
-                    dolor sit. Nunc egestas.</p>
+                <p>We promote knowledge acquisition, resource sharing and fairness among CSOs of all levels, with the ultimate goal of benefiting the populace.</p>
             </div>
             <form action="">
                 <input type="text" name="" id="" placeholder="Enter any Keyword">
