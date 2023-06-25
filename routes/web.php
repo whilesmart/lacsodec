@@ -38,9 +38,9 @@ Route::get('/impact-stories', function () {
     return view('impact-stories');
 })->name('impact-stories');
 
-Route::get('/newsroom', function () {
+Route::get('/blogs', function () {
     return view('newsroom');
-})->name('newsroom');
+})->name('blogs');
 
 Route::get('/events', function () {
     return view('events');

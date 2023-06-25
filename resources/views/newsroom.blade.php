@@ -3,14 +3,14 @@
         <!-- breadcrumb -->
         @component('components.breacrumb')
             @slot('current')
-                Newsroom
+                Blogs
             @endslot
         @endcomponent
 
         <section class="newsroom-section">
             <div class="con">
                 <div class="main-content">
-                    <h1>Latest news from LACSODEC</h1>
+                    <h1>Latest blogs from LACSODEC</h1>
                     <div class="images">
                         <img src="{{ asset('images/home-img-1.png') }}" alt="" />
                         <img src="{{ asset('images/home-img-2.png') }}" alt="" />
