@@ -318,27 +318,6 @@ header {
                         }
                     }
                 }
-                ul {
-                    display: flex;
-                    align-items: center;
-                    li {
-                        padding: 0 1rem;
-                        border-right: 1px solid $primary;
-                        &:last-child {
-                            border-right: none;
-                        }
-                        a {
-                            color: $primary;
-                            font-size: 1rem;
-                            font-size: 0.9rem;
-                            text-transform: uppercase;
-                            cursor: pointer;
-                            &:hover {
-                                text-decoration: underline;
-                            }
-                        }
-                    }
-                }
             }
         }
     }
@@ -375,6 +354,9 @@ header {
                         padding: 0 1rem;
                         font-size: 0.9rem;
                         border-right: 1px solid $primary;
+                        @include for-mobile {
+                            padding: 0 0.5rem;
+                        }
                         &:last-child {
                             border-right: none;
                         }
@@ -501,12 +483,29 @@ header {
                     }
                 }
             }
-            > .custom-button {
-                border-radius: 0;
-                height: 40px;
-                padding: 0 2rem;
-                span {
-                    font-size: 0.9rem;
+            .right {
+                display: flex;
+                > .custom-button {
+                    border-radius: 0;
+                    height: 40px;
+                    padding: 0 2rem;
+                    span {
+                        font-size: 0.9rem;
+                    }
+                }
+                .toggler {
+                    display: none;
+                    @include for-mobile {
+                        display: flex;
+                        width: 40px;
+                        height: 40px;
+                        background-color: transparent;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        font-size: 1.5rem;
+                        color: $white;
+                    }
                 }
             }
         }
