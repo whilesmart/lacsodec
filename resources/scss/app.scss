@@ -271,7 +271,7 @@ form {
 /* ------------------------------ header styles ----------------------------- */
 header {
     @include for-mobile {
-        display: none;
+        // display: none;
     }
     .top {
         border-bottom: 2px solid $primary;
@@ -285,10 +285,21 @@ header {
                 .custom-button {
                     border-radius: 0;
                     padding: 1rem 1rem;
+                    @include for-mobile {
+                        display: none;
+                    }
+                    &:last-child {
+                        @include for-mobile {
+                            display: flex;
+                        }
+                    }
                 }
                 ul {
                     display: flex;
                     align-items: center;
+                    @include for-mobile {
+                        display: none;
+                    }
                     li {
                         padding: 0 1rem;
                         border-right: 1px solid $primary;
@@ -317,6 +328,12 @@ header {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            @include for-mobile {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
             .left {
                 display: flex;
                 align-items: center;
@@ -326,6 +343,9 @@ header {
                     height: 80px;
                     border-radius: 50%;
                     background-color: $background;
+                    @include for-mobile {
+                        display: none;
+                    }
                 }
                 ul {
                     display: flex;
@@ -334,6 +354,9 @@ header {
                         padding: 0 1rem;
                         font-size: 0.9rem;
                         border-right: 1px solid $primary;
+                        @include for-mobile {
+                            padding: 0 0.5rem;
+                        }
                         &:last-child {
                             border-right: none;
                         }
@@ -352,12 +375,18 @@ header {
                 border: 2px solid $primary;
                 border-radius: 3px;
                 background-color: $primary;
+                @include for-mobile {
+                    width: 100%;
+                }
                 input {
                     height: 35px;
                     padding: 0 1rem;
                     background-color: $primary-light;
                     border-radius: 3px 0 0 3px;
                     width: 200px;
+                    @include for-mobile {
+                        width: 100%;
+                    }
                 }
                 button {
                     height: 35px;
@@ -380,10 +409,59 @@ header {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            .logo {
+                display: none;
+                @include for-mobile {
+                    display: block;
+                    width: 30px;
+                }
+            }
             nav {
+                transition-duration: 0.3s;
+                position: relative;
+                @include for-mobile {
+                    // display: none;
+                    display: flex;
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    width: 0vw;
+                    height: 100vh;
+                    z-index: 9;
+                    background-color: $primary;
+                    overflow-x: hidden;
+                    transition-duration: 0.3s;
+                }
+                &.open {
+                    width: 100vw;
+                }
+                .close {
+                    display: none;
+                    @include for-mobile {
+                        position: absolute;
+                        top: 1rem;
+                        right: 1rem;
+                        display: flex;
+                        width: 40px;
+                        height: 40px;
+                        background-color: transparent;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.5rem;
+                        color: $white;
+                    }
+                }
                 ul {
                     display: flex;
                     align-items: center;
+                    @include for-mobile {
+                        flex-direction: column;
+                        gap: 1rem;
+                        min-width: 100vw;
+                        width: 100vw;
+                        justify-content: center;
+                    }
                     li {
                         a {
                             display: flex;
@@ -405,12 +483,29 @@ header {
                     }
                 }
             }
-            > .custom-button {
-                border-radius: 0;
-                height: 40px;
-                padding: 0 2rem;
-                span {
-                    font-size: 0.9rem;
+            .right {
+                display: flex;
+                > .custom-button {
+                    border-radius: 0;
+                    height: 40px;
+                    padding: 0 2rem;
+                    span {
+                        font-size: 0.9rem;
+                    }
+                }
+                .toggler {
+                    display: none;
+                    @include for-mobile {
+                        display: flex;
+                        width: 40px;
+                        height: 40px;
+                        background-color: transparent;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        font-size: 1.5rem;
+                        color: $white;
+                    }
                 }
             }
         }
@@ -1900,68 +1995,6 @@ section.other-expert-section {
                 }
                 > p {
                     margin-bottom: 1rem;
-                }
-            }
-        }
-    }
-}
-
-/* ---------------------------- newsroom page styles --------------------------- */
-.newsroom-page {
-    .breadcrumb {
-        background-image: url("../../public/images/newsroom-breadcrumb.png");
-    }
-
-    .newsroom-section {
-        .con {
-            display: flex;
-            gap: 2rem;
-            @include for-mobile {
-                flex-direction: column;
-            }
-            aside {
-                min-width: 300px;
-                max-width: 300px;
-                height: fit-content;
-                background-color: $white;
-                border-radius: $border-radius;
-                @include for-mobile {
-                    min-width: 100%;
-                    max-width: 100%;
-                }
-            }
-            .main-content {
-                flex-grow: 1;
-                height: fit-content;
-                h1 {
-                    font-size: 2rem;
-                    color: $text;
-                    font-weight: 600;
-                    margin-bottom: 2rem;
-                }
-                .images {
-                    width: 100%;
-                    display: flex;
-                    gap: 1rem;
-                    margin: 0 0 1rem 0;
-                    img {
-                        width: 100%;
-                        height: auto;
-                    }
-                }
-                > p {
-                    margin-bottom: 1rem;
-                }
-                .publications-grid {
-                    margin-top: 2rem;
-                    width: 100%;
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    column-gap: 1rem;
-                    row-gap: 2rem;
-                    @include for-mobile {
-                        grid-template-columns: repeat(1, 1fr);
-                    }
                 }
             }
         }

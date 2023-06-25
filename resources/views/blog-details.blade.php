@@ -3,7 +3,7 @@
         <!-- breadcrumb -->
         @component('components.breacrumb')
             @slot('current')
-                Impact Stories
+                Blog details
             @endslot
         @endcomponent
 

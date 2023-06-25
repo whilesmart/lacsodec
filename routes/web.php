@@ -31,13 +31,9 @@ Route::get('/cso-library', function () {
     return view('cso-library');
 })->name('cso-library');
 
-Route::get('/impact-stories', function () {
-    return view('impact-stories');
-})->name('impact-stories');
-
-Route::get('/newsroom', function () {
-    return view('newsroom');
-})->name('newsroom');
+Route::get('/blog-details', function () {
+    return view('blog-details');
+})->name('blog-details');
 
 Route::get('/events', function () {
     return view('events');
