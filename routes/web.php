@@ -23,10 +23,6 @@ Route::get('/services', function () {
     return view('services');
 })->name('services');
 
-Route::get('/publications', function () {
-    return view('publications');
-})->name('publications');
-
 Route::get('/cso-library', function () {
     return view('cso-library');
 })->name('cso-library');
@@ -89,10 +85,6 @@ Route::get('/cso-library', [CsoController::class , 'index'])->name('cso-library'
 Route::get('/impact-stories', function () {
     return view('impact-stories');
 })->name('impact-stories');
-
-Route::get('/newsroom', function () {
-    return view('newsroom');
-})->name('newsroom');
 
 Route::get('/events', function () {
     return view('events');
