@@ -13,7 +13,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            CsoActivitySeeder::class
+            CsoActivitySeeder::class,
+            CsoSeeder::class,
+            ExpertProfileSeeder::class
         ]);
     }
 }
