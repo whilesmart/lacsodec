@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use App\Orchid\Screens\Accomodation\AccomodationListScreen;
+use App\Orchid\Screens\Accomodation\AccomodationEditScreen;
 use App\Orchid\Screens\Cso\CsoEditScreen;
 use App\Orchid\Screens\Cso\CsoListScreen;
 use App\Orchid\Screens\ExpertProfile\ExpertProfileEditScreen;
@@ -90,3 +92,9 @@ Route::screen('expert/{expert?}', ExpertProfileEditScreen::class)
 
 Route::screen('experts', ExpertProfileListScreen::class)
     ->name('platform.expert.list');
+
+Route::screen('accomodation/{accomodation?}', AccomodationEditScreen::class)
+    ->name('platform.accomodation.edit');
+
+Route::screen('accomodations', AccomodationListScreen::class)
+    ->name('platform.accomodation.list');
