@@ -21,6 +21,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     @vite(['resources/scss/app.scss'])
+    @vite(['resources/js/script.js'])
 </head>
 
 <body>

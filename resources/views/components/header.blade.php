@@ -3,7 +3,17 @@
         <div class="con">
             <p> info@lacsodec.org</p>
             <div class="buttons">
-                <a href="/" class="custom-button transparent"><span>About us</span></a>
+                <div class="language">
+                    <ul>
+                        <li>
+                            <a href="">en</a>
+                        </li>
+                        <li>
+                            <a href="">fr</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="{{ route('contact-us') }}" class="custom-button transparent"><span>Contact us</span></a>
                 <a href="{{ route('login') }}" class="custom-button primary"><span>Login</span></a>
             </div>
         </div>
@@ -12,9 +22,17 @@
         <div class="con">
             <div class="left">
                 <img src="{{ asset('images/logos/lacsodec-logo.png') }}" alt="" class="logo">
-                <p>Lorem ipsum dolor sit amet consectetur. Enim in sed feugiat lectus vel erat eu lacus ullamcorper.
-                    Lectus a cursus auctor felis turpis amet ridiculus quam in. Malesuada habitant condimentum feugiat
-                    dolor sit. Nunc egestas.</p>
+                <ul>
+                    <li>
+                        <a href="{{ route('cso-directory') }}">CSO Directory</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('expert-directory') }}">Experts Directory</a>
+                    </li>
+                    <li>
+                        <a href="">HR Directory</a>
+                    </li>
+                </ul>
             </div>
             <form action="">
                 <input type="text" name="" id="" placeholder="Enter any Keyword">
@@ -24,17 +42,28 @@
     </div>
     <div class="navigation">
         <div class="con">
-            <nav>
+            <img src="{{ asset('images/logos/lacsodec-logo-white.png') }}" alt="" class="logo">
+            <nav id="navigation-menu">
+                <button type="button" class="close" id="navigation-close">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
                 <ul>
                     <li><a href="/" class="active">home</a></li>
                     <li><a href="{{ route('about-us') }}">about us</a></li>
-                    <li><a href="/">blog</a></li>
-                    <li><a href="/">events</a></li>
-                    <li><a href="/">gallery</a></li>
-                    <li><a href="{{ route('contact-us') }}">contact us</a></li>
+                    <li><a href="{{ route('services') }}">services</a></li>
+                    <li><a href="{{ route('publications') }}">publications</a></li>
+                    <li><a href="{{ route('cso-library') }}">CSO Library</a></li>
+                    <li><a href="{{ route('events') }}">events/Trainings</a></li>
+                    <li><a href="{{ route('grants') }}">grants</a></li>
+                    <li><a href="{{ route('blog') }}">blog</a></li>
+                    <li><a href="{{ route('lodge') }}">lodge</a></li>
                 </ul>
             </nav>
-            <a href="/" class="custom-button primary-dark"><span>Announcements</span></a>
+            <div class="right">
+                <a href="/" class="custom-button primary-dark"><span>Donate</span></a>
+                <button type="button" class="toggler" id="navigation-toggler"><i class="fa fa-bars"
+                        aria-hidden="true"></i></button>
+            </div>
         </div>
     </div>
 </header>
