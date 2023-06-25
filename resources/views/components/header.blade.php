@@ -48,7 +48,7 @@
                     <li><a href="{{ route('about-us') }}">about us</a></li>
                     <li><a href="{{ route('services') }}">services</a></li>
                     <li><a href="{{ route('publications') }}">publications</a></li>
-                    <li><a href="{{ route('cso-library') }}">library</a></li>
+                    <li><a href="{{ route('cso-library') }}">CSO Library</a></li>
                     <li><a href="{{ route('impact-stories') }}">impact stories</a></li>
                     <li><a href="{{ route('newsroom') }}">newsroom</a></li>
                     <li><a href="{{ route('events') }}">events/Trainings</a></li>
@@ -57,7 +57,7 @@
                     <li><a href="{{ route('lodge') }}">lodge</a></li>
                 </ul>
             </nav>
-            <a href="{{ route('donate') }}" class="custom-button primary-dark"><span>Donate</span></a>
+            <a href="/" class="custom-button primary-dark"><span>Donate</span></a>
         </div>
     </div>
 </header>
