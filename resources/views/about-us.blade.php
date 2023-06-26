@@ -121,32 +121,32 @@
                 <h2>Our team</h2>
 
                 <div class="team-grid">
-                    <div class="member">
+                    <div class="member-card">
                         <img src="{{ asset('images/team/team-member-1.png') }}" alt="">
                         <h4>Noel Nfebe</h4>
                         <p>IT Director</p>
                     </div>
-                    <div class="member">
+                    <div class="member-card">
                         <img src="{{ asset('images/team/team-member-2.png') }}" alt="">
                         <h4>Mensa Robert</h4>
                         <p>Medical Assistant</p>
                     </div>
-                    <div class="member">
+                    <div class="member-card">
                         <img src="{{ asset('images/team/team-member-3.png') }}" alt="">
                         <h4>Anisa Lulu</h4>
                         <p>President of Sales</p>
                     </div>
-                    <div class="member">
+                    <div class="member-card">
                         <img src="{{ asset('images/team/team-member-4.png') }}" alt="">
                         <h4>Rebecca Funto</h4>
                         <p>Nursing Assistant</p>
                     </div>
-                    <div class="member">
+                    <div class="member-card">
                         <img src="{{ asset('images/team/team-member-5.png') }}" alt="">
                         <h4>Uzodima Chinonzo</h4>
                         <p>Uzodima Chinonzo</p>
                     </div>
-                    <div class="member">
+                    <div class="member-card">
                         <img src="{{ asset('images/team/team-member-6.png') }}" alt="">
                         <h4>Iyalode Eko</h4>
                         <p>Dog Trainer</p>

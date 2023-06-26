@@ -13,7 +13,7 @@
                     <nav>
                         <ul>
                             @foreach ($cso_domains as $domain)
-                            <li><a href="/">{{$domain->name}}</a></li>
+                                <li><a href="/">{{ $domain->name }}</a></li>
                             @endforeach
                         </ul>
                     </nav>
@@ -21,11 +21,11 @@
                 <div class="main-content">
                     <div class="cso-library-grid">
                         @foreach ($csos as $cso)
-                        <div class="cso-card">
-                            <img src="{{  config('app.url').$cso->image }}" alt="" />
-                            <h2>{{$cso->name}}</h2>
-                            <p>{{$cso->domain}}</p>
-                        </div>
+                            <div class="cso-card">
+                                <img src="{{ asset($cso->image) }}" alt="" />
+                                <h2>{{ $cso->name }}</h2>
+                                <p>{{ $cso->domain }}</p>
+                            </div>
                         @endforeach
                     </div>
                     <div class="pagination">
