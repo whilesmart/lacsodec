@@ -110,27 +110,27 @@
                 <h2>Our team</h2>
 
                 <div class="team-grid">
-                    <div class="member">
+                    <div class="member-card">
                         <img src="{{ asset('images/team/team-member-1.png') }}" alt="">
                         <h4>Tanyi Christian</h4>
                         <p>Chief Executive Officer</p>
                     </div>
-                    <div class="member">
+                    <div class="member-card">
                         <img src="{{ asset('images/team/team-member-2.png') }}" alt="">
                         <h4>Akwese Nkatmbi</h4>
                         <p>General Manager</p>
                     </div>
-                    <div class="member">
+                    <div class="member-card">
                         <img src="{{ asset('images/team/team-member-3.png') }}" alt="">
                         <h4>Bate Godwill Bate</h4>
                         <p>Human Resource Manager</p>
                     </div>
-                    <div class="member">
+                    <div class="member-card">
                         <img src="{{ asset('images/team/team-member-4.png') }}" alt="">
                         <h4>Ngwathe Modest</h4>
                         <p>Finance Manager</p>
                     </div>
-                    <div class="member">
+                    <div class="member-card">
                         <img src="{{ asset('images/team/team-member-5.png') }}" alt="">
                         <h4>Chita Brine Chita</h4>
                         <p>IT Manager</p>
@@ -160,7 +160,7 @@
                         <h4>Wabo kevin</h4>
                         <p>MEAL Officer</p>
                     </div>
-                    <div class="member">
+                    <div class="member-card">
                         <img src="{{ asset('images/team/team-member-6.png') }}" alt="">
                         <h4>Njie Yannick</h4>
                         <p>Security and Safety Officer</p>
