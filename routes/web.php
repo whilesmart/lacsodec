@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\CsoController;
@@ -27,9 +28,7 @@ Route::get('/cso-library', function () {
     return view('cso-library');
 })->name('cso-library');
 
-Route::get('/blog-details', function () {
-    return view('blog-details');
-})->name('blog-details');
+Route::get('/blog/{blog}', [ArticleController::class, 'show'])->name('blog-details');
 
 Route::get('/events', function () {
     return view('events');
@@ -39,9 +38,7 @@ Route::get('/grants', function () {
     return view('grants');
 })->name('grants');
 
-Route::get('/blog', function () {
-    return view('blog');
-})->name('blog');
+Route::get('/blog', [ArticleController::class, 'index'])->name('blog');
 
 Route::get('/lodge', function () {
     return view('lodge');
