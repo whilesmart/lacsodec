@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CsoActivitySeeder::class,
             CsoSeeder::class,
-            ExpertProfileSeeder::class
+            ExpertProfileSeeder::class,
+            ArticleSeeder::class
         ]);
     }
 }
