@@ -9,6 +9,11 @@
                     <img src="{{ asset($expert->image) }}" alt="" class="top-image">
                     <h1>{{$expert->user->name}}</h1>
                     <h2>{{$expert->position}}</h2>
+                    <h4>Nationality: {{$expert->nationality}}</h4>
+                    <h4>Language: {{$expert->language}}</h4>
+                    <h4>Company: {{$expert->company}}</h4>
+                    <h4>Born in: {{$expert->birth_place}}</h4>
+                    <br>
                     <p>{{$expert->details}}</p>
                 </div>
                 <aside>

@@ -21,7 +21,7 @@ class ExpertProfileFactory extends Factory
             'user_id' => User::all()->random()->id,
             'location' => $this->faker->city(),
             'status' => $this->faker->randomElement(['available', 'busy', 'on vacation']),
-            'details' => $this->faker->paragraphs(3, true),
+            'details' => $this->faker->paragraphs(10, true),
             'birthday' => $this->faker->date(),
             'sex' => $this->faker->randomElement(['Male', 'Female']),
             'birth_place' => $this->faker->city(),
