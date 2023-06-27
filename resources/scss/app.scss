@@ -99,6 +99,9 @@ input::-webkit-inner-spin-button {
     @include for-extra-large {
         width: 1400px;
     }
+    @include for-large {
+        width: 1200px;
+    }
     @include for-tablet {
         width: 90%;
     }
@@ -270,9 +273,6 @@ form {
 
 /* ------------------------------ header styles ----------------------------- */
 header {
-    @include for-mobile {
-        // display: none;
-    }
     .top {
         border-bottom: 2px solid $primary;
         .con {
@@ -289,7 +289,7 @@ header {
                         display: none;
                     }
                     &:last-child {
-                        @include for-mobile {
+                        @include for-tablet {
                             display: flex;
                         }
                     }
@@ -297,11 +297,8 @@ header {
                 ul {
                     display: flex;
                     align-items: center;
-                    @include for-mobile {
-                        display: none;
-                    }
                     li {
-                        padding: 0 1rem;
+                        padding: 0 0.5rem;
                         border-right: 1px solid $primary;
                         &:last-child {
                             border-right: none;
@@ -343,7 +340,7 @@ header {
                     height: 80px;
                     border-radius: 50%;
                     background-color: $background;
-                    @include for-mobile {
+                    @include for-tablet {
                         display: none;
                     }
                 }
@@ -354,7 +351,10 @@ header {
                         padding: 0 1rem;
                         font-size: 0.9rem;
                         border-right: 1px solid $primary;
-                        @include for-mobile {
+                        &:first-child {
+                            padding-left: 0;
+                        }
+                        @include for-tablet {
                             padding: 0 0.5rem;
                         }
                         &:last-child {
@@ -384,7 +384,7 @@ header {
                     background-color: $primary-light;
                     border-radius: 3px 0 0 3px;
                     width: 200px;
-                    @include for-mobile {
+                    @include for-tablet {
                         width: 100%;
                     }
                 }
@@ -411,7 +411,7 @@ header {
             justify-content: space-between;
             .logo {
                 display: none;
-                @include for-mobile {
+                @include for-tablet {
                     display: block;
                     width: 30px;
                 }
@@ -419,7 +419,7 @@ header {
             nav {
                 transition-duration: 0.3s;
                 position: relative;
-                @include for-mobile {
+                @include for-tablet {
                     // display: none;
                     display: flex;
                     position: fixed;
@@ -437,7 +437,7 @@ header {
                 }
                 .close {
                     display: none;
-                    @include for-mobile {
+                    @include for-tablet {
                         position: absolute;
                         top: 1rem;
                         right: 1rem;
@@ -455,7 +455,7 @@ header {
                 ul {
                     display: flex;
                     align-items: center;
-                    @include for-mobile {
+                    @include for-tablet {
                         flex-direction: column;
                         gap: 1rem;
                         min-width: 100vw;
@@ -466,7 +466,7 @@ header {
                         a {
                             display: flex;
                             align-items: center;
-                            height: 40px;
+                            height: 32px;
                             padding: 0 1rem;
                             font-size: 0.9rem;
                             color: $white;
@@ -478,6 +478,12 @@ header {
                             &.active {
                                 background-color: $secondary;
                                 color: $text;
+                            }
+                            &.mobile-only {
+                                display: none;
+                                @include for-mobile {
+                                    display: flex;
+                                }
                             }
                         }
                     }
@@ -495,7 +501,7 @@ header {
                 }
                 .toggler {
                     display: none;
-                    @include for-mobile {
+                    @include for-tablet {
                         display: flex;
                         width: 40px;
                         height: 40px;
@@ -523,6 +529,9 @@ footer {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
+            @include for-tablet {
+                grid-template-columns: repeat(2, 1fr);
+            }
             @include for-mobile {
                 grid-template-columns: repeat(1, 1fr);
             }
@@ -708,7 +717,7 @@ section {
     .con {
         display: flex;
         gap: 5rem;
-        @include for-mobile {
+        @include for-tablet {
             flex-direction: column;
             gap: 2rem;
         }
@@ -776,7 +785,7 @@ section {
     .con {
         display: flex;
         gap: 2rem;
-        @include for-mobile {
+        @include for-tablet {
             flex-direction: column;
             gap: 1rem;
         }
@@ -784,9 +793,15 @@ section {
             min-width: 300px;
             max-width: 300px;
             height: auto;
-            @include for-mobile {
+            @include for-tablet {
                 min-width: 100%;
                 max-width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            @include for-mobile {
+                display: block;
             }
         }
         .main-content {
@@ -1029,7 +1044,6 @@ section {
             h5 {
                 color: $primary;
                 font-size: 1rem;
-                margin-bottom: 0.3rem;
                 font-weight: 500;
                 text-transform: capitalize;
             }
@@ -1132,7 +1146,7 @@ section.numbers-section {
     .con {
         display: flex;
         gap: 3rem;
-        @include for-mobile {
+        @include for-tablet {
             flex-direction: column;
             gap: 2rem;
         }
@@ -1142,7 +1156,7 @@ section.numbers-section {
             background-color: $white;
             border-radius: $border-radius;
             padding: 2rem;
-            @include for-mobile {
+            @include for-tablet {
                 width: 100%;
                 padding: 1rem;
             }
@@ -1387,12 +1401,12 @@ section.numbers-section {
             display: flex;
             align-items: center;
             gap: 3rem;
-            @include for-mobile {
+            @include for-tablet {
                 flex-direction: column;
             }
             > div {
                 width: 50%;
-                @include for-mobile {
+                @include for-tablet {
                     width: 100%;
                 }
             }
@@ -1697,8 +1711,8 @@ section.other-expert-section {
         .con {
             display: flex;
             gap: 2rem;
-            @include for-mobile {
-                flex-direction: column;
+            @include for-tablet {
+                flex-direction: column-reverse;
             }
             aside {
                 min-width: 270px;
@@ -1706,7 +1720,7 @@ section.other-expert-section {
                 background-color: $white;
                 padding: 1rem;
                 border-radius: $border-radius;
-                @include for-mobile {
+                @include for-tablet {
                     min-width: 100%;
                 }
                 nav {
@@ -1753,6 +1767,9 @@ section.other-expert-section {
         border-radius: $border-radius;
         object-fit: cover;
         object-position: center;
+        @include for-tablet {
+            height: 150px;
+        }
     }
     h2 {
         color: $text;
@@ -1817,8 +1834,8 @@ section.other-expert-section {
         .con {
             display: flex;
             gap: 2rem;
-            @include for-mobile {
-                flex-direction: column;
+            @include for-tablet {
+                flex-direction: column-reverse;
             }
             aside {
                 min-width: 270px;
@@ -1913,7 +1930,7 @@ section.other-expert-section {
         color: $text;
         font-size: 1.15rem;
         font-weight: 600;
-        padding: 1rem 0 0.5rem 0;
+        padding: 0.5rem 0;
     }
     p {
         color: $text;
@@ -2014,6 +2031,9 @@ section.other-expert-section {
             grid-template-columns: repeat(4, 1fr);
             column-gap: 1rem;
             row-gap: 2rem;
+            @include for-tablet {
+                grid-template-columns: repeat(3, 1fr);
+            }
             @include for-mobile {
                 grid-template-columns: repeat(1, 1fr);
             }
@@ -2042,6 +2062,9 @@ section.other-expert-section {
             border-radius: $border-radius;
             object-fit: cover;
             object-position: center;
+            @include for-tablet {
+                height: 150px;
+            }
         }
         .type {
             padding: 0.5rem 2rem;
@@ -2097,6 +2120,9 @@ section.other-expert-section {
             color: $text;
             font-weight: 500;
             margin-bottom: 0.5rem;
+            @include for-tablet {
+                font-size: 1rem;
+            }
         }
     }
 }
@@ -2112,6 +2138,9 @@ section.other-expert-section {
         grid-template-columns: repeat(5, 1fr);
         column-gap: 3rem;
         row-gap: 3rem;
+        @include for-tablet {
+            grid-template-columns: repeat(3, 1fr);
+        }
         @include for-mobile {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -2136,7 +2165,7 @@ section.other-expert-section {
         align-items: center;
         justify-content: center;
         margin-bottom: 1.5rem;
-        @include for-mobile {
+        @include for-tablet {
             height: 90px;
         }
         img {
@@ -2174,7 +2203,7 @@ section.other-expert-section {
         .con {
             display: flex;
             gap: 2rem;
-            @include for-mobile {
+            @include for-tablet {
                 flex-direction: column;
             }
             aside {
@@ -2218,7 +2247,7 @@ section.other-expert-section {
         .con {
             display: flex;
             gap: 2rem;
-            @include for-mobile {
+            @include for-tablet {
                 flex-direction: column;
             }
             aside {
@@ -2323,6 +2352,9 @@ section.other-expert-section {
                     column-gap: 1rem;
                     row-gap: 2rem;
                     margin-bottom: 5rem;
+                    @include for-tablet {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
                     @include for-mobile {
                         grid-template-columns: repeat(2, 1fr);
                     }
@@ -2350,6 +2382,9 @@ section.other-expert-section {
                     column-gap: 1rem;
                     row-gap: 2rem;
                     margin-bottom: 5rem;
+                    @include for-tablet {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
                     @include for-mobile {
                         grid-template-columns: repeat(2, 1fr);
                     }
