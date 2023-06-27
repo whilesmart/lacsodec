@@ -56,6 +56,7 @@
                     <li><a href="{{ route('grants') }}" class="{{ request()->is('grants') ? 'active' : ''}}">grants</a></li>
                     <li><a href="{{ route('blog') }}" class="{{ request()->is('blog') ? 'active' : ''}}">blog</a></li>
                     <li><a href="{{ route('lodge') }}" class="{{ request()->is('lodge') ? 'active' : ''}}">lodge</a></li>
+                    <li><a href="{{ route('lodge') }}" class="mobile-only {{ request()->is('contact-us') ? 'active' : ''}}">lodge</a></li>
                     <li><a href="{{ route('contact-us') }}" class="{{ request()->is('contact-us') ? 'active' : ''}}">contact-us</a></li>
                 </ul>
             </nav>
