@@ -273,6 +273,9 @@ form {
 
 /* ------------------------------ header styles ----------------------------- */
 header {
+    @include for-mobile {
+        // display: none;
+    }
     .top {
         border-bottom: 2px solid $primary;
         .con {

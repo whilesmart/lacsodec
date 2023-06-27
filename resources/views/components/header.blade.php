@@ -51,7 +51,6 @@
                     <li><a href="/" class="active">home</a></li>
                     <li><a href="{{ route('about-us') }}">about us</a></li>
                     <li><a href="{{ route('services') }}">services</a></li>
-                    <li><a href="{{ route('publications') }}">publications</a></li>
                     <li><a href="{{ route('cso-library') }}">CSO Library</a></li>
                     <li><a href="{{ route('events') }}">events/Trainings</a></li>
                     <li><a href="{{ route('grants') }}">grants</a></li>

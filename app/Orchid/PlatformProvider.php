@@ -46,13 +46,25 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles')
                 ->divider(),
+            
+                Menu::make('Articles')
+                ->icon('bs.file-earmark-post')
+                ->route('platform.article.list')
+                ->permission('platform.systems.roles')
+                ->divider(),
 
             Menu::make('Cso')
                 ->icon('bs.buildings-fill')
                 ->route('platform.cso.list')
                 ->permission('platform.systems.roles')
                 ->divider(),
-                
+
+            Menu::make('Accomodations')
+                ->icon('bs.buildings')
+                ->route('platform.accomodation.list')
+                ->permission('platform.systems.roles')
+                ->divider(),
+
             Menu::make('Expert Profiles')
                 ->icon('bs.people')
                 ->route('platform.expert.list')
