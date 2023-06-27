@@ -57,6 +57,7 @@
                     <li><a href="{{ route('grants') }}">grants</a></li>
                     <li><a href="{{ route('blog') }}">blog</a></li>
                     <li><a href="{{ route('lodge') }}">lodge</a></li>
+                    <li><a href="{{ route('lodge') }}" class="mobile-only">Contact us</a></li>
                 </ul>
             </nav>
             <div class="right">
