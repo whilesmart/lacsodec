@@ -19,6 +19,9 @@
                     </nav>
                 </aside>
                 <div class="main-content">
+                    <div class="cso-top">
+                        <a href="" class="custom-button secondary">Register CSO</a>
+                    </div>
                     <div class="cso-library-grid">
                         @foreach ($csos as $cso)
                             <a href="{{ route('cso-directory-details', ['cso' => $cso->id]) }}" class="cso-card">

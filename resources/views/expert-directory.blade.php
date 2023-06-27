@@ -10,12 +10,15 @@
         <section class="expert-directory-section">
             <div class="con">
                 <div class="main-content">
+                    <div class="expert-directory-top">
+                        <a href="" class="custom-button secondary">Register Expert profile</a>
+                    </div>
                     <div class="expert-directory-grid">
                         @foreach ($experts as $expert)
                             <a href="{{ route('expert-directory-details', ['expert' => $expert->id]) }}"
                                 class="member-card">
                                 <img src="{{ asset($expert->image) }}" alt="">
-                                <h4>{{ $expert->user->name }}</h4>
+                                {{-- <h4>{{ $expert->user->name }}</h4> --}}
                                 <p>IT Director</p>
                             </a>
                         @endforeach

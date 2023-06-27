@@ -175,7 +175,7 @@ form {
 /* ------------------------------ button styles ----------------------------- */
 .custom-button {
     padding: 0.5rem 1rem;
-    border-radius: $border-radius;
+    border-radius: 5px;
     // font-size: 16px;
     width: max-content;
     transition-duration: 0.3s;
@@ -469,7 +469,7 @@ header {
                         a {
                             display: flex;
                             align-items: center;
-                            height: 32px;
+                            height: 35px;
                             padding: 0 1rem;
                             font-size: 0.9rem;
                             color: $white;
@@ -496,7 +496,7 @@ header {
                 display: flex;
                 > .custom-button {
                     border-radius: 0;
-                    height: 40px;
+                    height: 35px;
                     padding: 0 2rem;
                     span {
                         font-size: 0.9rem;
@@ -1882,6 +1882,11 @@ section.other-expert-section {
             .main-content {
                 flex-grow: 1;
                 width: 100%;
+                .cso-top {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-bottom: 1rem;
+                }
                 .cso-library-grid {
                     width: 100%;
                     display: grid;
@@ -2378,6 +2383,11 @@ section.other-expert-section {
         .con {
             .main-content {
                 width: 100%;
+                .expert-directory-top {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-bottom: 1rem;
+                }
                 .expert-directory-grid {
                     width: 100%;
                     display: grid;
