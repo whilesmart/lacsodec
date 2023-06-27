@@ -4,6 +4,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\CsoController;
+use App\Http\Controllers\ExpertController;
 use Illuminate\Support\Facades\Route;
 
 /* |-------------------------------------------------------------------------- | Web Routes |-------------------------------------------------------------------------- | | Here is where you can register web routes for your application. These | routes are loaded by the RouteServiceProvider and all of them will | be assigned to the "web" middleware group. Make something great! | */
@@ -48,21 +49,13 @@ Route::get('/donate', function () {
     return view('donate');
 })->name('donate');
 
-Route::get('/cso-directory', function () {
-    return view('cso-directory');
-})->name('cso-directory');
+Route::get('/cso-directory', [CsoController::class, 'indexDirectory'])->name('cso-directory');
 
-Route::get('/cso-directory-details', function () {
-    return view('cso-directory-details');
-})->name('cso-directory-details');
+Route::get('/cso-directory-details/{cso}', [CsoController::class, 'show'])->name('cso-directory-details');
 
-Route::get('/expert-directory', function () {
-    return view('expert-directory');
-})->name('expert-directory');
+Route::get('/expert-directory', [ExpertController::class, 'index'])->name('expert-directory');
 
-Route::get('/expert-directory-details', function () {
-    return view('expert-directory-details');
-})->name('expert-directory-details');
+Route::get('/expert-directory-details/{expert}', [ExpertController::class, 'show'])->name('expert-directory-details');
 
 Route::get('/login', [LoginController::class , 'create'])->name('login');
 Route::post('/login', [LoginController::class , 'store'])->name('login.perform');
