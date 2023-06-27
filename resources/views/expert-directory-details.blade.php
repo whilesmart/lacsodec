@@ -8,7 +8,7 @@
                 <div class="main-content">
                     <img src="{{ asset($expert->image) }}" alt="" class="top-image">
                     <h1>{{$expert->user->name}}</h1>
-                    <h2>Dog Trainer</h2>
+                    <h2>{{$expert->position}}</h2>
                     <p>{{$expert->details}}</p>
                 </div>
                 <aside>
@@ -24,9 +24,9 @@
                 <div class="expert-grid">
                     @foreach ($otherExperts as $otherExpert)
                     <div class="member-card">
-                        <img src="{{ asset($expert->image) }}" alt="">
-                        <h4>{{$expert->user->name}}</h4>
-                        <p>IT Director</p>
+                        <img src="{{ asset($otherExpert->image) }}" alt="">
+                        <h4>{{$otherExpert->user->name}}</h4>
+                        <p>{{$otherExpert->position}}</p>
                     </div>
                     @endforeach
                 </div>
