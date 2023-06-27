@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,7 @@ class ExpertProfileFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => $this->faker->numberBetween(1, 10),
+            'user_id' => User::all()->random()->id,
             'location' => $this->faker->city(),
             'status' => $this->faker->randomElement(['available', 'busy', 'on vacation']),
             'details' => $this->faker->paragraphs(3, true),
@@ -26,12 +27,13 @@ class ExpertProfileFactory extends Factory
             'birth_place' => $this->faker->city(),
             'nationality' => $this->faker->country(),
             'language' => $this->faker->languageCode(),
-            'image' => $this->faker->imageUrl(),
+            'image' => 'https://img.freepik.com/free-icon/user_318-159711.jpg',
             'company' => $this->faker->company(),
             'work_duration' => $this->faker->numerify('# year(s)'),
             'certification' => $this->faker->sentence(),
             'certification_date' => $this->faker->date(),
             'certification_image' => $this->faker->imageUrl(),
+            'position' => $this->faker->jobTitle()
         ];
     }
 }

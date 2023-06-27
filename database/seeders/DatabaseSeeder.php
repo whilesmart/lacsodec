@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CsoActivitySeeder::class,
             CsoSeeder::class,
+            UserSeeder::class,
             ExpertProfileSeeder::class,
             ArticleSeeder::class
         ]);
