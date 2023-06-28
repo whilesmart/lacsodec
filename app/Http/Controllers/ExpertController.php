@@ -34,8 +34,7 @@ class ExpertController extends Controller
     {
         $user = $request->user();
         if(ExpertProfile::where('user_id', $user->id)->count() > 0) {
-            // return redirect()->back();
-            dd(ExpertProfile::where('user_id', $user->id)->first());
+            return redirect()->back()->with('message', 'You have already submitted your details to become an expert');
         }
         $fields = $request->validate([
             'location' => ['required', 'string'],
@@ -71,10 +70,10 @@ class ExpertController extends Controller
             'certification' => $fields['certification'],
             'certification_date' => $fields['certification_date'],
             'position' => $fields['position'],
-            'image' => $image_path,
-            'certification_image' => $certification_image_path,
+            'image' => '/storage/'.$image_path,
+            'certification_image' => '/storage/'.$certification_image_path,
         ]);
 
-        return redirect()->to('/expert-directory');
+        return redirect()->to('/expert-directory')->with('success', 'you have successfuly submited your registration. Please wait for admin approval');
     }
 }
