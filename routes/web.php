@@ -86,4 +86,7 @@ Route::get('/events', function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::post('/logout', [LoginController::class , 'destroy']);
+
+    Route::get('/register-expert', [ExpertController::class, 'create'])->name('register-expert');
+    Route::post('/register-expert', [ExpertController::class, 'store'])->name('store-expert');
 });

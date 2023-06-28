@@ -10,6 +10,9 @@
         <section class="expert-directory-section">
             <div class="con">
                 <div class="main-content">
+                <div class="expert-directory-top">
+                        <a href="{{ route('register-expert') }}" class="custom-button secondary"><span>Become an expert</span></a>
+                    </div>
                     <div class="expert-directory-grid">
                         @foreach ($experts as $expert)
                         <a href="{{ route('expert-directory-details', ['expert' => $expert->id]) }}" class="member-card">
