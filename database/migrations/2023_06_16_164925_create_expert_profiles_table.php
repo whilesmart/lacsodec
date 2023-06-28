@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('certification')->nullable();
             $table->string('certification_date')->nullable();
             $table->string('certification_image')->nullable();
+            $table->string('position')->nullable();
             $table->timestamps();
         });
     }
