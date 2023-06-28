@@ -11,22 +11,22 @@
                 <div class="social">
                     <ul>
                         <li>
-                            <a href="https://www.facebook.com/lukmefcameroon/">
+                            <a href="https://www.facebook.com/lukmefcameroon/" target="_blank">
                                 <i class="fab fa-facebook" aria-hidden="true"></i>
                             </a>
                         </li>
-                        <li>
+                        <!--<li>
                             <a href="">
                                 <i class="fab fa-pinterest" aria-hidden="true"></i>
                             </a>
-                        </li>
+                        </li>-->
                         <li>
-                            <a href="https://www.instagram.com/lukmefcam/">
+                            <a href="https://www.instagram.com/lukmefcam/" target="_blank">
                                 <i class="fab fa-instagram" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.twitter.com/lukmefcameroon/">
+                            <a href="https://www.twitter.com/lukmefcameroon/" target="_blank">
                                 <i class="fab fa-twitter" aria-hidden="true"></i>
                             </a>
                         </li>
