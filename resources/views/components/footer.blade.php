@@ -11,7 +11,7 @@
                 <div class="social">
                     <ul>
                         <li>
-                            <a href="">
+                            <a href="https://www.facebook.com/lukmefcameroon/">
                                 <i class="fab fa-facebook" aria-hidden="true"></i>
                             </a>
                         </li>
@@ -21,12 +21,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="https://www.instagram.com/lukmefcam/">
                                 <i class="fab fa-instagram" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="https://www.twitter.com/lukmefcameroon/">
                                 <i class="fab fa-twitter" aria-hidden="true"></i>
                             </a>
                         </li>
