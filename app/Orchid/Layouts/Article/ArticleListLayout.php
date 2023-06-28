@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Orchid\Layouts\ExpertProfile;
+namespace App\Orchid\Layouts\Article;
 
-use App\Models\ExpertProfile;
+use App\Models\Article;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\TD;
 
-class ExpertListLayout extends Table
+class ArticleListLayout extends Table
 {
     /**
      * Data source.
@@ -17,7 +17,7 @@ class ExpertListLayout extends Table
      *
      * @var string
      */
-    protected $target = 'experts';
+    protected $target = 'articles';
 
     /**
      * Get the table cells to be displayed.
@@ -27,15 +27,16 @@ class ExpertListLayout extends Table
     protected function columns(): iterable
     {
         return [
-            TD::make('user_id', 'User'),
-            TD::make('status', 'Status'),
-            TD::make('position', 'Position'),
+            TD::make('title', 'Title'),
+            TD::make('category', 'Category'),
             TD::make('created_at', 'Created'),
+            TD::make('updated_at', 'Last edit'),
             TD::make('Actions')
-                ->render(function (ExpertProfile $expert) {
-                    return Link::make('edit')
+                ->alignRight()
+                ->render(function (Article $article) {
+                    return Link::make('Edit')
                         ->icon('pencil')
-                        ->route('platform.expert.edit', $expert);
+                        ->route('platform.article.edit', $article);
                 }),
         ];
     }

@@ -21,11 +21,11 @@
                 <div class="main-content">
                     <div class="cso-library-grid">
                         @foreach ($csos as $cso)
-                            <div class="cso-card">
+                            <a href="{{ route('cso-directory-details', ['cso' => $cso->id]) }}" class="cso-card">
                                 <img src="{{ asset($cso->image) }}" alt="" />
                                 <h2>{{ $cso->name }}</h2>
                                 <p>{{ $cso->domain }}</p>
-                            </div>
+                            </a>
                         @endforeach
                     </div>
                     <div class="pagination">

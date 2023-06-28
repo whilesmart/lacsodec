@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\CsoController;
 use App\Http\Controllers\LocalizationController;
+use App\Http\Controllers\ExpertController;
 use Illuminate\Support\Facades\Route;
 
 /* |-------------------------------------------------------------------------- | Web Routes |-------------------------------------------------------------------------- | | Here is where you can register web routes for your application. These | routes are loaded by the RouteServiceProvider and all of them will | be assigned to the "web" middleware group. Make something great! | */
@@ -24,17 +26,11 @@ Route::get('/services', function () {
     return view('services');
 })->name('services');
 
-Route::get('/publications', function () {
-    return view('publications');
-})->name('publications');
-
 Route::get('/cso-library', function () {
     return view('cso-library');
 })->name('cso-library');
 
-Route::get('/blog-details', function () {
-    return view('blog-details');
-})->name('blog-details');
+Route::get('/blog/{blog}', [ArticleController::class, 'show'])->name('blog-details');
 
 Route::get('/events', function () {
     return view('events');
@@ -44,9 +40,7 @@ Route::get('/grants', function () {
     return view('grants');
 })->name('grants');
 
-Route::get('/blog', function () {
-    return view('blog');
-})->name('blog');
+Route::get('/blog', [ArticleController::class, 'index'])->name('blog');
 
 Route::get('/lodge', function () {
     return view('lodge');
@@ -56,21 +50,13 @@ Route::get('/donate', function () {
     return view('donate');
 })->name('donate');
 
-Route::get('/cso-directory', function () {
-    return view('cso-directory');
-})->name('cso-directory');
+Route::get('/cso-directory', [CsoController::class, 'indexDirectory'])->name('cso-directory');
 
-Route::get('/cso-directory-details', function () {
-    return view('cso-directory-details');
-})->name('cso-directory-details');
+Route::get('/cso-directory-details/{cso}', [CsoController::class, 'show'])->name('cso-directory-details');
 
-Route::get('/expert-directory', function () {
-    return view('expert-directory');
-})->name('expert-directory');
+Route::get('/expert-directory', [ExpertController::class, 'index'])->name('expert-directory');
 
-Route::get('/expert-directory-details', function () {
-    return view('expert-directory-details');
-})->name('expert-directory-details');
+Route::get('/expert-directory-details/{expert}', [ExpertController::class, 'show'])->name('expert-directory-details');
 
 Route::get('/login', [LoginController::class , 'create'])->name('login');
 Route::post('/login', [LoginController::class , 'store'])->name('login.perform');
@@ -90,10 +76,6 @@ Route::get('/cso-library', [CsoController::class , 'index'])->name('cso-library'
 Route::get('/impact-stories', function () {
     return view('impact-stories');
 })->name('impact-stories');
-
-Route::get('/newsroom', function () {
-    return view('newsroom');
-})->name('newsroom');
 
 Route::get('/events', function () {
     return view('events');

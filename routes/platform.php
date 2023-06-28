@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use App\Orchid\Screens\Article\ArticleEditScreen;
+use App\Orchid\Screens\Article\ArticleListScreen;
 use App\Orchid\Screens\Accomodation\AccomodationListScreen;
 use App\Orchid\Screens\Accomodation\AccomodationEditScreen;
 use App\Orchid\Screens\Cso\CsoEditScreen;
@@ -82,6 +84,12 @@ Route::screen('roles', RoleListScreen::class)
         ->parent('platform.index')
         ->push(__('Roles'), route('platform.systems.roles')));
 
+Route::screen('article/{article?}', ArticleEditScreen::class)
+    ->name('platform.article.edit');
+
+Route::screen('articles', ArticleListScreen::class)
+    ->name('platform.article.list');
+    
 Route::screen('cso/{cso?}', CsoEditScreen::class)
     ->name('platform.cso.edit');
 

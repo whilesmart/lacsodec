@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'failed' => "Ces informations d'identification ne correspondent pas.",
-    'password' => 'Le mot de passe fourni est incorrect.',
-    'throttle' => 'Trop de tentatives de connexion. Veuillez réessayer dans : secondes secondes.',
+    'These credentials do not match our records.' => "Ces informations d'identification ne correspondent pas.",
+    'The provided password is incorrect.' => 'Le mot de passe fourni est incorrect.',
+    'Too many login attempts. Please try again in :seconds seconds.' => 'Trop de tentatives de connexion. Veuillez réessayer dans : secondes secondes.',
 
 ];
