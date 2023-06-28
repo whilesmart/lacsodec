@@ -110,6 +110,6 @@ class CsoController extends Controller
             'image' => '/storage/'.$image_path
         ]);
 
-        return redirect()->to('/cso-directory');
+        return redirect()->to('/cso-directory')->with('success', 'Cso registered successfully. It will be made public after approval by admins');
     }
 }
