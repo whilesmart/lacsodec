@@ -10,7 +10,7 @@ class CsoController extends Controller
 {
     public function index()
     {
-        $csos = Cso::paginate(20);
+        $csos = Cso::where('status', 'approved')->paginate(20);
         $cso_domains = CsoActivityDomain::all();
         return view('cso-library', [
             'csos' => $csos,
@@ -20,7 +20,7 @@ class CsoController extends Controller
 
     public function indexDirectory()
     {
-        $csos = Cso::paginate(20);
+        $csos = Cso::where('status', 'approved')->paginate(20);
         return view('cso-directory', [
             'csos' => $csos,
         ]);

@@ -24,13 +24,7 @@
                         @endforeach
                     </div>
                     <div class="pagination">
-                        <ul>
-                            <li><a href="/">1</a></li>
-                            <li><a href="/">2</a></li>
-                            <li><a href="/">3</a></li>
-                            <li><a href="/">...</a></li>
-                            <li><a href="/">20</a></li>
-                        </ul>
+                        {{$csos->links()}}
                     </div>
                 </div>
             </div>
