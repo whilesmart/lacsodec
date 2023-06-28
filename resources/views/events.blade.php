@@ -20,7 +20,7 @@
                             <p>May 23, 2023</p>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur</p>
+                            <p>Lorem ipsum dolor sit amet consectetur dolor sit amet dolor sit amet</p>
                             <a href="/" class="custom-button primary"><span>Participate</span></a>
                         </div>
                     </div>
