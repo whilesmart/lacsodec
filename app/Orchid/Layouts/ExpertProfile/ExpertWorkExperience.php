@@ -28,6 +28,10 @@ class ExpertWorkExperience extends Rows
 
             Input::make('expert.work_duration')
                 ->title('Work duration'),
+
+            Input::make('expert.position')
+                ->title('Role/Position')
+                ->placeholder('Software engineer'),
         ];
     }
 }

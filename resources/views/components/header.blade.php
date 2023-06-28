@@ -48,15 +48,25 @@
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </button>
                 <ul>
-                    <li><a href="/" class="active">home</a></li>
-                    <li><a href="{{ route('about-us') }}">about us</a></li>
-                    <li><a href="{{ route('services') }}">services</a></li>
-                    <li><a href="{{ route('cso-library') }}">CSO Library</a></li>
-                    <li><a href="{{ route('events') }}">events/Trainings</a></li>
-                    <li><a href="{{ route('grants') }}">grants</a></li>
-                    <li><a href="{{ route('blog') }}">blog</a></li>
-                    <li><a href="{{ route('lodge') }}">lodge</a></li>
-                    <li><a href="{{ route('contact-us') }}" class="mobile-only">Contact us</a></li>
+                    <li><a href="/" class="{{ request()->is('/') ? 'active' : '' }}">home</a></li>
+                    <li><a href="{{ route('about-us') }}" class="{{ request()->is('about-us') ? 'active' : '' }}">about
+                            us</a></li>
+                    <li><a href="{{ route('services') }}"
+                            class="{{ request()->is('services') ? 'active' : '' }}">services</a></li>
+                    <li><a href="{{ route('cso-library') }}"
+                            class="{{ request()->is('cso-library') ? 'active' : '' }}">CSO Library</a></li>
+                    <li><a href="{{ route('events') }}"
+                            class="{{ request()->is('events') ? 'active' : '' }}">events/Trainings</a></li>
+                    <li><a href="{{ route('grants') }}"
+                            class="{{ request()->is('grants') ? 'active' : '' }}">grants</a></li>
+                    <li><a href="{{ route('blog') }}" class="{{ request()->is('blog') ? 'active' : '' }}">blog</a>
+                    </li>
+                    <li><a href="{{ route('lodge') }}" class="{{ request()->is('lodge') ? 'active' : '' }}">lodge</a>
+                    </li>
+                    <li><a href="{{ route('lodge') }}"
+                            class="mobile-only {{ request()->is('contact-us') ? 'active' : '' }}">lodge</a></li>
+                    <li><a href="{{ route('contact-us') }}"
+                            class="{{ request()->is('contact-us') ? 'active' : '' }}">contact-us</a></li>
                 </ul>
             </nav>
             <div class="right">
