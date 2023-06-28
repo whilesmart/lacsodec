@@ -117,6 +117,9 @@ form {
         padding: 2rem;
         text-align: left;
         margin-bottom: 1rem;
+        @include for-mobile {
+            padding: 1rem;
+        }
     }
     .flex {
         display: grid;
