@@ -29,7 +29,7 @@ Route::get('/cso-library', function () {
     return view('cso-library');
 })->name('cso-library');
 
-Route::get('/blog/{blog}', [ArticleController::class, 'show'])->name('blog-details');
+Route::get('/blog/{blog}', [ArticleController::class , 'show'])->name('blog-details');
 
 Route::get('/events', function () {
     return view('events');
@@ -39,7 +39,7 @@ Route::get('/grants', function () {
     return view('grants');
 })->name('grants');
 
-Route::get('/blog', [ArticleController::class, 'index'])->name('blog');
+Route::get('/blog', [ArticleController::class , 'index'])->name('blog');
 
 Route::get('/lodge', function () {
     return view('lodge');
@@ -49,13 +49,17 @@ Route::get('/donate', function () {
     return view('donate');
 })->name('donate');
 
-Route::get('/cso-directory', [CsoController::class, 'indexDirectory'])->name('cso-directory');
+Route::get('/register-cso', function () {
+    return view('register-cso');
+})->name('register-cso');
 
-Route::get('/cso-directory-details/{cso}', [CsoController::class, 'show'])->name('cso-directory-details');
+Route::get('/cso-directory', [CsoController::class , 'indexDirectory'])->name('cso-directory');
 
-Route::get('/expert-directory', [ExpertController::class, 'index'])->name('expert-directory');
+Route::get('/cso-directory-details/{cso}', [CsoController::class , 'show'])->name('cso-directory-details');
 
-Route::get('/expert-directory-details/{expert}', [ExpertController::class, 'show'])->name('expert-directory-details');
+Route::get('/expert-directory', [ExpertController::class , 'index'])->name('expert-directory');
+
+Route::get('/expert-directory-details/{expert}', [ExpertController::class , 'show'])->name('expert-directory-details');
 
 Route::get('/login', [LoginController::class , 'create'])->name('login');
 Route::post('/login', [LoginController::class , 'store'])->name('login.perform');
