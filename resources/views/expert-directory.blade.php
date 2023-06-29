@@ -12,11 +12,12 @@
                 <div class="main-content">
                     <div class="expert-directory-grid">
                         @foreach ($experts as $expert)
-                        <a href="{{ route('expert-directory-details', ['expert' => $expert->id]) }}" class="member-card">
-                            <img src="{{ asset($expert->image) }}" alt="">
-                            <h4>{{$expert->user->name}}</h4>
-                            <p>{{$expert->position}}</p>
-                        </a>
+                            <a href="{{ route('expert-directory-details', ['expert' => $expert->id]) }}"
+                                class="member-card">
+                                <img src="{{ asset($expert->image) }}" alt="">
+                                {{-- <h4>{{$expert->user->name}}</h4> --}}
+                                <p>{{ $expert->position }}</p>
+                            </a>
                         @endforeach
                     </div>
                     <div class="pagination">

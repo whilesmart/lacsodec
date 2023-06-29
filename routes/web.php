@@ -25,10 +25,6 @@ Route::get('/services', function () {
     return view('services');
 })->name('services');
 
-Route::get('/cso-library', function () {
-    return view('cso-library');
-})->name('cso-library');
-
 Route::get('/blog/{blog}', [ArticleController::class , 'show'])->name('blog-details');
 
 Route::get('/events', function () {
@@ -53,7 +49,7 @@ Route::get('/register-cso', function () {
     return view('register-cso');
 })->name('register-cso');
 
-Route::get('/cso-directory', [CsoController::class , 'indexDirectory'])->name('cso-directory');
+Route::get('/cso-directory', [CsoController::class , 'index'])->name('cso-directory');
 
 Route::get('/cso-directory-details/{cso}', [CsoController::class , 'show'])->name('cso-directory-details');
 
@@ -74,7 +70,7 @@ Route::get('/publications', function () {
     return view('publications');
 })->name('publications');
 
-Route::get('/cso-library', [CsoController::class , 'index'])->name('cso-library');
+// Route::get('/cso-library', [CsoController::class , 'index'])->name('cso-library');
 
 Route::get('/impact-stories', function () {
     return view('impact-stories');

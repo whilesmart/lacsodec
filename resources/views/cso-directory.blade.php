@@ -9,6 +9,15 @@
 
         <section class="cso-directory-section">
             <div class="con">
+                <aside>
+                    <nav>
+                        <ul>
+                            @foreach ($cso_domains as $domain)
+                                <li><a href="/">{{ $domain->name }}</a></li>
+                            @endforeach
+                        </ul>
+                    </nav>
+                </aside>
                 <div class="main-content">
                     <div class="cso-directory-top">
                         <a href="{{ route('register-cso') }}" class="custom-button secondary"><span>Register

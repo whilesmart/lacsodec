@@ -31,14 +31,18 @@
                             </div>
                             <div class="field">
                                 <label for="">Select CSO status </label>
-                                <input type="text" name="cso-status" id="cso-status" placeholder="cso-status"
-                                    value="" required>
+                                <select name="cso-status" id="cso-status">
+                                    {{-- select options data from backend --}}
+                                    <option value="option">Option</option>
+                                    <option value="approved">Approved</option>
+                                    <option value="rejected">Rejected</option>
+                                </select>
                             </div>
                         </div>
                         <div class="flex">
                             <div class="field">
                                 <label for="">Registration date</label>
-                                <input type="text" name="registration-date" id="registration-date"
+                                <input type="date" name="registration-date" id="registration-date"
                                     placeholder="registration-date" value="" required>
                             </div>
                             <div class="field">
@@ -50,13 +54,19 @@
                         <div class="flex">
                             <div class="field">
                                 <label for="">Type of organization</label>
-                                <input type="text" name="organization-type" id="organization-type"
-                                    placeholder="organization-type" value="" required>
+                                <select name="organization-type" id="organization-type">
+                                    {{-- select options data from backend --}}
+                                    <option value="option">Option</option>
+                                </select>
                             </div>
                             <div class="field">
                                 <label for="">Country</label>
-                                <input type="text" name="country" id="country" placeholder="country" value=""
-                                    required>
+                                <select name="country" id="country">
+                                    <option value="cameroon">Cameroon</option>
+                                    <option value="nigeria">Nigeria</option>
+                                    <option value="ghana">Ghana</option>
+                                    <option value="rwanda">Rwanda</option>
+                                </select>
                             </div>
                         </div>
                         <div class="flex">
@@ -83,6 +93,13 @@
                                     required>
                             </div>
                         </div>
+                        <div class="flex">
+                            <div class="field">
+                                <label for="">CSO Image</label>
+                                <input type="file" name="cso-image" id="cso-image" placeholder="cso-image"
+                                    value="" required>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-section">
@@ -94,8 +111,10 @@
                             </div>
                             <div class="field">
                                 <label for="">Sex of contact person</label>
-                                <input type="text" name="contact-sex" id="contact-sex" placeholder="contact-sex"
-                                    value="" required>
+                                <select name="contact-sex" id="contact-sex">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
                             </div>
                         </div>
                         <div class="flex">
@@ -159,8 +178,10 @@
                         <div class="flex">
                             <div class="field">
                                 <label for="">Choose domain of activity</label>
-                                <input type="text" name="domain-of-activity" id="domain-of-activity"
-                                    placeholder="domain-of-activity" value="" required>
+                                <select name="domain-of-activity" id="domain-of-activity">
+                                    {{-- select options data from backend --}}
+                                    <option value="option">Option</option>
+                                </select>
                             </div>
                             <div class="field">
                                 <label for="">Board of directors</label>
@@ -208,6 +229,10 @@
                             <input type="text" name="name" id="name" placeholder="name" value=""
                                 required>
                         </div>
+                    </div>
+
+                    <div class="form-section">
+                        <button type="submit" class="custom-button primary">Confirm CSO Registration</button>
                     </div>
                 </form>
             </section>

@@ -102,6 +102,9 @@ input::-webkit-inner-spin-button {
     @include for-large {
         width: 1200px;
     }
+    @include for-apple-ipad {
+        width: 90%;
+    }
     @include for-tablet {
         width: 90%;
     }
@@ -1306,7 +1309,7 @@ section.numbers-section {
     background-position: center;
     background-color: $primary-dark;
     .sub {
-        padding: 5rem;
+        padding: 3.5rem 0;
         background: linear-gradient(90deg, $primary, transparent);
         @include for-mobile {
             padding: 3rem 0;
@@ -1898,13 +1901,13 @@ section.other-expert-section {
     }
 }
 
-/* ---------------------------- cso-library page styles --------------------------- */
-.cso-library-page {
+/* ---------------------------- cso-directory page styles --------------------------- */
+.cso-directory-page {
     .breadcrumb {
-        background-image: url("../../public/images/cso-library-breadcrumb.png");
+        background-image: url("../../public/images/cso-directory-breadcrumb.png");
     }
 
-    .cso-library-section {
+    .cso-directory-section {
         .con {
             display: flex;
             gap: 2rem;
@@ -1953,7 +1956,12 @@ section.other-expert-section {
             .main-content {
                 flex-grow: 1;
                 width: 100%;
-                .cso-library-grid {
+                .cso-directory-top {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-bottom: 1rem;
+                }
+                .cso-directory-grid {
                     width: 100%;
                     display: grid;
                     grid-template-columns: repeat(4, 1fr);
@@ -2302,41 +2310,6 @@ section.other-expert-section {
 .donate-page {
     .breadcrumb {
         background-image: url("../../public/images/donate-breadcrumb.png");
-    }
-}
-
-/* ---------------------------- cso-directory page styles --------------------------- */
-.cso-directory-page {
-    .cso-directory-section {
-        .con {
-            .main-content {
-                width: 100%;
-                .cso-directory-top {
-                    display: flex;
-                    justify-content: flex-end;
-                    margin-bottom: 1rem;
-                }
-                .cso-directory-grid {
-                    width: 100%;
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    column-gap: 1rem;
-                    row-gap: 2rem;
-                    margin-bottom: 5rem;
-                    @include for-tablet {
-                        grid-template-columns: repeat(3, 1fr);
-                    }
-                    @include for-mobile {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
-                }
-                .pagination {
-                    ul {
-                        justify-content: center;
-                    }
-                }
-            }
-        }
     }
 }
 
