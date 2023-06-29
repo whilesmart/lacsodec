@@ -2319,6 +2319,11 @@ section.other-expert-section {
         .con {
             .main-content {
                 width: 100%;
+                .expert-directory-top {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-bottom: 1rem;
+                }
                 .expert-directory-grid {
                     width: 100%;
                     display: grid;

@@ -49,6 +49,10 @@ Route::get('/register-cso', function () {
     return view('register-cso');
 })->name('register-cso');
 
+Route::get('/register-expert-profile', function () {
+    return view('register-expert-profile');
+})->name('register-expert-profile');
+
 Route::get('/cso-directory', [CsoController::class , 'index'])->name('cso-directory');
 
 Route::get('/cso-directory-details/{cso}', [CsoController::class , 'show'])->name('cso-directory-details');

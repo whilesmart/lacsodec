@@ -33,7 +33,7 @@
                                 <label for="">Select CSO status </label>
                                 <select name="cso-status" id="cso-status">
                                     {{-- select options data from backend --}}
-                                    <option value="option">Option</option>
+                                    <option value="pending">Pending</option>
                                     <option value="approved">Approved</option>
                                     <option value="rejected">Rejected</option>
                                 </select>
