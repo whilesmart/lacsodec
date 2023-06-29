@@ -49,9 +49,9 @@ Route::get('/donate', function () {
     return view('donate');
 })->name('donate');
 
-Route::get('/register-cso', function () {
-    return view('register-cso');
-})->name('register-cso');
+Route::get('/register-cso', [CsoController::class, 'create'])->name('register-cso');
+
+Route::post('/register-cso', [CsoController::class, 'store'])->name('store-cso');
 
 Route::get('/cso-directory', [CsoController::class , 'indexDirectory'])->name('cso-directory');
 
