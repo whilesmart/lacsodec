@@ -12,12 +12,13 @@ class CsoController extends Controller
     {
         $csos = Cso::where('status', 'approved')->paginate(20);
         $cso_domains = CsoActivityDomain::all();
-        return view('cso-library', [
+        return view('cso-directory', [
             'csos' => $csos,
             'cso_domains' => $cso_domains
         ]);
     }
 
+    // I don't think this function is needed anymore
     public function indexDirectory()
     {
         $csos = Cso::where('status', 'approved')->paginate(20);

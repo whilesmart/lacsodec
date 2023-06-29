@@ -310,6 +310,10 @@
                         </div>
                     <button type="submit" class="custom-button">Create Cso</button>
                     </div>
+
+                    <div class="form-section">
+                        <button type="submit" class="custom-button primary">Confirm CSO Registration</button>
+                    </div>
                 </form>
             </section>
         </div>
