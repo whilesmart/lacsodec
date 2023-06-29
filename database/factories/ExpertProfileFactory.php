@@ -33,7 +33,7 @@ class ExpertProfileFactory extends Factory
             'certification' => $this->faker->sentence(),
             'certification_date' => $this->faker->date(),
             'certification_image' => $this->faker->imageUrl(),
-            'position' => $this->faker->jobTitle()
+            'position' => $this->faker->jobTitle(),
         ];
     }
 }

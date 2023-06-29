@@ -4,10 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Orchid\Screen\AsSource;
 use Orchid\Attachment\Attachable;
-use Orchid\Attachment\Models\Attachment;
+use Orchid\Screen\AsSource;
 
 class Accomodation extends Model
 {
@@ -20,6 +18,6 @@ class Accomodation extends Model
         'quarter',
         'description',
         'available',
-        'accommodation_number'
+        'accommodation_number',
     ];
 }

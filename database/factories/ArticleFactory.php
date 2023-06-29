@@ -19,7 +19,7 @@ class ArticleFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'content' => $this->faker->paragraph,
-            'author' => $this->faker->numberBetween(1,10),
+            'author' => $this->faker->numberBetween(1, 10),
             'published_at' => $this->faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now')->format('Y-m-d'),
             'category' => $this->faker->word,
             'slug' => $this->faker->unique()->slug,
