@@ -90,7 +90,7 @@ Route::screen('articles', ArticleListScreen::class)
     ->name('platform.article.list');
 
 Route::screen('cso/{cso?}', CsoEditScreen::class)
-        ->name('platform.cso.edit');
+    ->name('platform.cso.edit');
 
 Route::screen('csos', CsoListScreen::class)
     ->name('platform.cso.list');
