@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -15,64 +14,64 @@ class CsoActivitySeeder extends Seeder
     {
         DB::table('cso_activity_domains')->insert([
             [
-                'name' => 'Women empowerment'
+                'name' => 'Women empowerment',
             ],
             [
-                'name' => 'Youth empowerment'
+                'name' => 'Youth empowerment',
             ],
             [
-                'name' => 'Environmental protection'
+                'name' => 'Environmental protection',
             ],
             [
-                'name' => 'Governance'
+                'name' => 'Governance',
             ],
             [
-                'name' => 'Water'
+                'name' => 'Water',
             ],
             [
-                'name' => 'Human rights'
+                'name' => 'Human rights',
             ],
             [
-                'name' => 'Child protection'
+                'name' => 'Child protection',
             ],
             [
-                'name' => 'Peace Building'
+                'name' => 'Peace Building',
             ],
             [
-                'name' => 'Humanitarian response'
+                'name' => 'Humanitarian response',
             ],
             [
-                'name' => 'GBV prevention/response'
+                'name' => 'GBV prevention/response',
             ],
             [
-                'name' => 'Education'
+                'name' => 'Education',
             ],
             [
-                'name' => 'CSO strengthening'
+                'name' => 'CSO strengthening',
             ],
             [
-                'name' => 'ICT'
+                'name' => 'ICT',
             ],
             [
-                'name' => 'Climate protection'
+                'name' => 'Climate protection',
             ],
             [
-                'name' => 'Food security'
+                'name' => 'Food security',
             ],
             [
-                'name' => 'Animal protection'
+                'name' => 'Animal protection',
             ],
             [
-                'name' => 'Marine life protection'
+                'name' => 'Marine life protection',
             ],
             [
-                'name' => 'Renewable energy'
+                'name' => 'Renewable energy',
             ],
             [
-                'name' => 'Waste management'
+                'name' => 'Waste management',
             ],
             [
-                'name' => 'others'
+                'name' => 'others',
             ],
         ]);
     }

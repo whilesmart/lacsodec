@@ -17,14 +17,12 @@ class AccomodationListScreen extends Screen
     public function query(): iterable
     {
         return [
-            'accomodations' => Accomodation::paginate()
+            'accomodations' => Accomodation::paginate(),
         ];
     }
 
     /**
      * The name of the screen displayed in the header.
-     *
-     * @return string|null
      */
     public function name(): ?string
     {
@@ -36,7 +34,7 @@ class AccomodationListScreen extends Screen
      */
     public function description(): ?string
     {
-        return "All accomodations";
+        return 'All accomodations';
     }
 
     /**
@@ -49,7 +47,7 @@ class AccomodationListScreen extends Screen
         return [
             Link::make('Create new')
                 ->icon('pencil')
-                ->route('platform.accomodation.edit')
+                ->route('platform.accomodation.edit'),
         ];
     }
 
@@ -61,7 +59,7 @@ class AccomodationListScreen extends Screen
     public function layout(): iterable
     {
         return [
-            AccomodationListLayout::class
+            AccomodationListLayout::class,
         ];
     }
 }

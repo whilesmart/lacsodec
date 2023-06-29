@@ -22,9 +22,9 @@ class RolePermissionLayout extends Rows
     /**
      * The screen's layout elements.
      *
-     * @throws Throwable
-     *
      * @return Field[]
+     *
+     * @throws Throwable
      */
     public function fields(): array
     {
