@@ -104,7 +104,7 @@
                     <div class="form-section">
                         <div class="flex">
                             <div class="field">
-                                <label for="">Certifivation</label>
+                                <label for="">Certification</label>
                                 <input type="text" name="certification" id="certification"
                                     placeholder="Enter expert certification" value="" required>
                             </div>
