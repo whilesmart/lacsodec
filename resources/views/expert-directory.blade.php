@@ -17,10 +17,17 @@
                     <div class="expert-directory-grid">
                         @foreach ($experts as $expert)
                             <a href="{{ route('expert-directory-details', ['expert' => $expert->id]) }}"
-                                class="member-card">
+                                class="expert-card">
                                 <img src="{{ asset($expert->image) }}" alt="">
                                 <h4>{{ $expert->user->name }}</h4>
-                                <p>{{ $expert->position }}</p>
+                                <h5>{{ $expert->position }}</h5>
+                                <div class="flex">
+                                    <div class="left">
+                                        <span>{{ $expert->sex }}</span> <span>{{ $expert->work_duration }}</span>
+                                    </div>
+                                    <div class="status {{ $expert->status }}">{{ $expert->status }}</div>
+                                </div>
+                                <p>{{ $expert->location }}, {{ $expert->nationality }}, {{ $expert->company }}</p>
                             </a>
                         @endforeach
                     </div>

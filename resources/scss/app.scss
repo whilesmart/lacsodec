@@ -1649,6 +1649,88 @@ section.other-expert-section {
     }
 }
 
+/* --------------------------- expert card styles --------------------------- */
+.expert-card {
+    width: 100%;
+    background-color: $white;
+    padding: 1rem;
+    border-radius: 5px;
+    img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 0.5rem;
+        @include for-mobile {
+            height: 150px;
+        }
+    }
+    h4 {
+        font-size: 1.1rem;
+        color: $text;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-bottom: 0.3rem;
+    }
+    h5 {
+        font-size: 0.9rem;
+        color: $light-text;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+    p {
+        font-size: 0.9em;
+        color: $text;
+        margin-top: 0.5rem;
+    }
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0.3rem 0;
+        .left {
+            font-size: 0.9rem;
+            color: $light-text;
+            span {
+                &:first-child {
+                    padding: 0 0.8rem 0 0;
+                    margin: 0 0.3rem 0 0;
+                    position: relative;
+                    &::after {
+                        display: block;
+                        content: "";
+                        position: absolute;
+                        right: 0;
+                        width: 4px;
+                        height: 4px;
+                        background-color: $light-text;
+                        top: calc(50% - 2px);
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+        .status {
+            padding: 0.3rem 1rem;
+            font-size: 0.9rem;
+            text-transform: capitalize;
+            border-radius: 5px;
+            &.busy {
+                background-color: $orange-light;
+                color: $orange;
+            }
+            &.available {
+                background-color: $green-light;
+                color: $green;
+            }
+            &.vacation {
+                background-color: $blue-light;
+                color: $blue;
+            }
+        }
+    }
+}
+
 /* ---------------------------- contact page styles --------------------------- */
 .contact-us-page {
     .breadcrumb {
