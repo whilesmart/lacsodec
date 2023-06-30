@@ -12,6 +12,7 @@ class CsoController extends Controller
     {
         $csos = Cso::where('status', 'approved')->paginate(20);
         $cso_domains = CsoActivityDomain::all();
+
         return view('cso-directory', [
             'csos' => $csos,
             'cso_domains' => $cso_domains,
@@ -111,7 +112,7 @@ class CsoController extends Controller
             'board_directors' => ($fields['board_directors'] == 'true') ? true : false,
             'african_coverage' => $fields['african_coverage'],
             'organization_leaderships' => $fields['organization_leaderships'],
-            'image' => '/storage/' . $image_path,
+            'image' => '/storage/'.$image_path,
         ]);
 
         return redirect()->to('/cso-directory')->with('success', 'Cso registered successfully. It will be made public after approval by admins');
