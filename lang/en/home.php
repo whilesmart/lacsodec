@@ -10,6 +10,6 @@ return [
     |
     */
 
-    'our helping' => 'Our Helping',
+    'Our helping' => 'Our Helping',
 
 ];
