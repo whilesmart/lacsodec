@@ -66,7 +66,7 @@ class ExpertPersonalInfo extends Rows
 
             Select::make('expert.nationality')
                 ->options([
-                    'cameroonian' => 'Cameroonian'
+                    'cameroonian' => 'Cameroonian',
                 ])
                 ->title('Nationality'),
 

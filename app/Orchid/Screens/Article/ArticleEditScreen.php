@@ -6,18 +6,17 @@ use App\Models\Article;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Orchid\Screen\Screen;
+use Illuminate\Support\Str;
+use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Fields\Cropper;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Quill;
 use Orchid\Screen\Fields\Relation;
-use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Fields\Select;
-use Orchid\Screen\Fields\Upload;
-use Orchid\Support\Facades\Layout;
-use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Fields\TextArea;
+use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Alert;
-use Illuminate\Support\Str;
-use Orchid\Screen\Fields\Cropper;
+use Orchid\Support\Facades\Layout;
 
 class ArticleEditScreen extends Screen
 {
@@ -29,21 +28,18 @@ class ArticleEditScreen extends Screen
     /**
      * Query data.
      *
-     * @param Article $article
      *
      * @return array
      */
     public function query(Article $article): iterable
     {
         return [
-            'article' => $article
+            'article' => $article,
         ];
     }
 
     /**
      * The name of the screen displayed in the header.
-     *
-     * @return string|null
      */
     public function name(): ?string
     {
@@ -61,7 +57,7 @@ class ArticleEditScreen extends Screen
             Button::make('Create article')
                 ->icon('pencil')
                 ->method('createOrUpdate')
-                ->canSee(!$this->article->exists),
+                ->canSee(! $this->article->exists),
 
             Button::make('Update')
                 ->icon('note')
@@ -103,7 +99,7 @@ class ArticleEditScreen extends Screen
 
                 Select::make('article.category')
                     ->options([
-                        'sports'   => 'Sports',
+                        'sports' => 'Sports',
                         'politics' => 'Politics',
                         'entertainment' => 'Entertainment',
                     ])
@@ -120,13 +116,11 @@ class ArticleEditScreen extends Screen
                     ->width(400)
                     ->height(400)
                     ->required(),
-            ])
+            ]),
         ];
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function createOrUpdate(Request $request)
@@ -135,7 +129,7 @@ class ArticleEditScreen extends Screen
         $published_at = $this->article->exists ? $this->article->published_at : Carbon::now();
         $this->article->fill(array_merge($request->get('article'), [
             'published_at' => $published_at,
-            'slug' => $slug
+            'slug' => $slug,
         ]))->save();
 
         Alert::info('You have successfully created an article.');

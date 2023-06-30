@@ -22,21 +22,18 @@ class ExpertProfileEditScreen extends Screen
     /**
      * Query data.
      *
-     * @param Post $expert
-     *
+     * @param  Post  $expert
      * @return array
      */
     public function query(ExpertProfile $expert): iterable
     {
         return [
-            'expert' => $expert
+            'expert' => $expert,
         ];
     }
 
     /**
      * The name of the screen displayed in the header.
-     *
-     * @return string|null
      */
     public function name(): ?string
     {
@@ -48,7 +45,7 @@ class ExpertProfileEditScreen extends Screen
      */
     public function description(): ?string
     {
-        return "Expert profile";
+        return 'Expert profile';
     }
 
     /**
@@ -62,7 +59,7 @@ class ExpertProfileEditScreen extends Screen
             Button::make('Create expert')
                 ->icon('pencil')
                 ->method('createOrUpdate')
-                ->canSee(!$this->expert->exists),
+                ->canSee(! $this->expert->exists),
 
             Button::make('Update')
                 ->icon('note')
@@ -86,13 +83,11 @@ class ExpertProfileEditScreen extends Screen
         return [
             ExpertPersonalInfo::class,
             ExpertWorkExperience::class,
-            ExpertAchievements::class
+            ExpertAchievements::class,
         ];
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function createOrUpdate(Request $request)
@@ -101,6 +96,7 @@ class ExpertProfileEditScreen extends Screen
         $experts = ExpertProfile::where('user_id', $this->expert->user_id)->count();
         if ($experts > 0) {
             Toast::error('The selected user is already an expert');
+
             return;
         }
 

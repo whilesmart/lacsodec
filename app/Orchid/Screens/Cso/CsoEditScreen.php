@@ -8,12 +8,8 @@ use App\Orchid\Layouts\Cso\CsoContactInfo;
 use App\Orchid\Layouts\Cso\CsoInfo;
 use Illuminate\Http\Request;
 use Orchid\Screen\Actions\Button;
-use Orchid\Screen\Fields\Cropper;
-use Orchid\Screen\Fields\Input;
-use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Alert;
-use Orchid\Support\Facades\Layout;
 
 class CsoEditScreen extends Screen
 {
@@ -25,25 +21,22 @@ class CsoEditScreen extends Screen
     /**
      * Query data.
      *
-     * @param Cso $cso
      *
      * @return array
      */
     public function query(Cso $cso): iterable
     {
         return [
-            'cso' => $cso
+            'cso' => $cso,
         ];
     }
 
     /**
      * The name of the screen displayed in the header.
-     *
-     * @return string|null
      */
     public function name(): ?string
     {
-        return $this->cso->exists ? 'Edit cso ' . $this->cso->name : 'Creating a new CSO';
+        return $this->cso->exists ? 'Edit cso '.$this->cso->name : 'Creating a new CSO';
     }
 
     /**
@@ -51,7 +44,7 @@ class CsoEditScreen extends Screen
      */
     public function description(): ?string
     {
-        return "Cso";
+        return 'Cso';
     }
 
     /**
@@ -65,7 +58,7 @@ class CsoEditScreen extends Screen
             Button::make('Create Cso')
                 ->icon('pencil')
                 ->method('createOrUpdate')
-                ->canSee(!$this->cso->exists),
+                ->canSee(! $this->cso->exists),
 
             Button::make('Update')
                 ->icon('note')
@@ -89,13 +82,11 @@ class CsoEditScreen extends Screen
         return [
             CsoBasicInfo::class,
             CsoContactInfo::class,
-            CsoInfo::class
+            CsoInfo::class,
         ];
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function createOrUpdate(Request $request)

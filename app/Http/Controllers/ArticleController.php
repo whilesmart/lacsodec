@@ -11,9 +11,10 @@ class ArticleController extends Controller
     {
         $blogs = Article::paginate(20);
         $featuredBlogs = Article::orderBy('created_at', 'desc')->limit(3)->get();
+
         return view('blog', [
             'blogs' => $blogs,
-            'featuredBlogs' => $featuredBlogs
+            'featuredBlogs' => $featuredBlogs,
         ]);
     }
 
@@ -21,9 +22,10 @@ class ArticleController extends Controller
     {
         $blog = Article::where('slug', $blog)->first();
         $featuredBlogs = Article::orderBy('created_at', 'desc')->where('id', '!=', $blog->id)->limit(3)->get();
+
         return view('blog-details', [
             'blog' => $blog,
-            'featuredBlogs' => $featuredBlogs
+            'featuredBlogs' => $featuredBlogs,
         ]);
     }
 }

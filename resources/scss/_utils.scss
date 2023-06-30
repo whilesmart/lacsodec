@@ -21,6 +21,12 @@
     }
 }
 
+@mixin for-apple-ipad {
+    @media screen and (max-width: 1190px) {
+        @content;
+    }
+}
+
 @mixin for-extra-large {
     @media screen and (min-width: 2000px) {
         @content;
