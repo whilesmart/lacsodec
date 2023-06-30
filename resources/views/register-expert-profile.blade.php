@@ -21,15 +21,22 @@
                                         <span>{{$message}}</span>
                                     @enderror
                             </div>
-                        </div>
-                        <div class="flex">
                             <div class="field">
-                                <label for="">Expert status</label>
-                                <input type="text" name="status" id="status" placeholder="Enter expert status"
-                                    value="{{ old('status') }}" required>
-                                    @error('status')
+                                <label for="">Phone number</label>
+                                <input type="text" name="phone_number" id="phone_number" placeholder="+237656000000"
+                                    value="{{ old('phone_number') }}" required>
+                                    @error('phone_number')
                                         <span>{{$message}}</span>
                                     @enderror
+                            </div>
+                        </div>
+                        <div class="flex">
+                        <div class="field">
+                                <label for="">Sex</label>
+                                <select name="sex" id="contact-sex" value="{{ old('sex') }}" required>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
                             </div>
                             <div class="field">
                                 <label for="">Date of birth</label>
@@ -48,13 +55,6 @@
                                     @error('birth_place')
                                         <span>{{$message}}</span>
                                 @enderror
-                            </div>
-                            <div class="field">
-                                <label for="">Sex</label>
-                                <select name="sex" id="contact-sex" value="{{ old('sex') }}" required>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>
                             </div>
                         </div>
                         <div class="field">

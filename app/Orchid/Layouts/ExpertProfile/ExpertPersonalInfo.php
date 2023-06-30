@@ -39,10 +39,14 @@ class ExpertPersonalInfo extends Rows
                 ->placeholder('Enter Expert location')
                 ->help('The location of the expert'),
 
-            Input::make('expert.status')
-                ->title('Expert status')
-                ->placeholder('Enter Expert status')
-                ->help('The status of the expert'),
+            Select::make('expert.status')
+                ->options([
+                    'pending' => 'Pending',
+                    'approved' => 'Approved',
+                    'rejected' => 'Rejected',
+                ])
+                ->title('Select expert status')
+                ->help('Select the status of the expert'),
 
             TextArea::make('expert.details')
                 ->title('details')
@@ -76,6 +80,9 @@ class ExpertPersonalInfo extends Rows
                     'french' => 'French',
                 ])
                 ->title('Language'),
+
+            Input::make('expert.phone_number')
+                ->title('Phone number'),
 
             Cropper::make('expert.image')
                 ->title('Expert profile image')

@@ -35,7 +35,7 @@ class ExpertController extends Controller
     public function store(Request $request)
     {
         $user = $request->user();
-        if(ExpertProfile::where('user_id', $user->id)->count() > 0) {
+        if (ExpertProfile::where('user_id', $user->id)->count() > 0) {
             return redirect()->back()->with('message', 'You have already submitted your details to become an expert');
         }
         $fields = $request->validate([
@@ -43,7 +43,6 @@ class ExpertController extends Controller
             'details' => ['required', 'string'],
             'birthday' => ['required', 'string'],
             'sex' => ['required', 'string'],
-            'status' => ['required', 'string'],
             'birth_place' => ['required', 'string'],
             'nationality' => ['required', 'string'],
             'language' => ['required', 'string'],
@@ -53,6 +52,7 @@ class ExpertController extends Controller
             'certification' => ['required', 'string'],
             'certification_date' => ['required', 'string'],
             'position' => ['required', 'string'],
+            'phone_number' => ['required', 'string'],
             'image' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg', 'max:2048'],
             'certification_image' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg', 'max:2048'],
         ]);
@@ -66,7 +66,7 @@ class ExpertController extends Controller
             'details' => $fields['details'],
             'birthday' => $fields['birthday'],
             'sex' => $fields['sex'],
-            'status' => $fields['status'],
+            'status' => 'pending',
             'birth_place' => $fields['birth_place'],
             'nationality' => $fields['nationality'],
             'company' => $fields['company'],
@@ -74,6 +74,7 @@ class ExpertController extends Controller
             'certification' => $fields['certification'],
             'certification_date' => $fields['certification_date'],
             'position' => $fields['position'],
+            'phone_number' => $fields['phone_number'],
             'image' => '/storage/'.$image_path,
             'certification_image' => '/storage/'.$certification_image_path,
         ]);
