@@ -17,14 +17,12 @@ class CsoListScreen extends Screen
     public function query(): iterable
     {
         return [
-            'csos' => Cso::paginate()
+            'csos' => Cso::paginate(),
         ];
     }
 
     /**
      * The name of the screen displayed in the header.
-     *
-     * @return string|null
      */
     public function name(): ?string
     {
@@ -36,7 +34,7 @@ class CsoListScreen extends Screen
      */
     public function description(): ?string
     {
-        return "All CSOs";
+        return 'All CSOs';
     }
 
     /**
@@ -49,7 +47,7 @@ class CsoListScreen extends Screen
         return [
             Link::make('Create new Cso')
                 ->icon('pencil')
-                ->route('platform.cso.edit')
+                ->route('platform.cso.edit'),
         ];
     }
 
@@ -61,7 +59,7 @@ class CsoListScreen extends Screen
     public function layout(): iterable
     {
         return [
-            CsoListLayout::class
+            CsoListLayout::class,
         ];
     }
 }

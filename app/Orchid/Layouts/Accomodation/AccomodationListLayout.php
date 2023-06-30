@@ -32,11 +32,11 @@ class AccomodationListLayout extends Table
             TD::make('city', 'City'),
             TD::make('created_at', 'Created'),
             TD::make('Actions')
-            ->render(function (Accomodation $accomodation) {
-                return Link::make('Edit accomodation')
-                    ->icon('pencil')
-                    ->route('platform.accomodation.edit', $accomodation);
-            }),
+                ->render(function (Accomodation $accomodation) {
+                    return Link::make('Edit accomodation')
+                        ->icon('pencil')
+                        ->route('platform.accomodation.edit', $accomodation);
+                }),
         ];
 
     }

@@ -45,9 +45,9 @@ class CsoBasicInfo extends Rows
 
             Select::make('cso.status')
                 ->options([
-                    'pending'   => 'Pending',
-                    'approved'   => 'Approved',
-                    'rejected'   => 'Rejected',
+                    'pending' => 'Pending',
+                    'approved' => 'Approved',
+                    'rejected' => 'Rejected',
                 ])
                 ->title('Select CSO status')
                 ->help('Select the status of the CSO'),
@@ -65,20 +65,20 @@ class CsoBasicInfo extends Rows
 
             Select::make('cso.organization_type')
                 ->options([
-                    'Association'   => 'Association',
-                    'Accredited NGO'   => 'Accredited NGO',
-                    'trade union'   => 'trade union',
-                    'CIG'   => 'CIG',
-                    'Cooperative'   => 'Cooperative',
-                    'Media'   => 'Media',
-                    'Village development Association'   => 'Village development Association',
-                    'CSO Network'   => 'CSO Network',
-                    'Faith Based organization'   => 'Faith Based organization',
+                    'Association' => 'Association',
+                    'Accredited NGO' => 'Accredited NGO',
+                    'trade union' => 'trade union',
+                    'CIG' => 'CIG',
+                    'Cooperative' => 'Cooperative',
+                    'Media' => 'Media',
+                    'Village development Association' => 'Village development Association',
+                    'CSO Network' => 'CSO Network',
+                    'Faith Based organization' => 'Faith Based organization',
                 ])
                 ->title('Type of organization')
                 ->help('Select the type of organization'),
 
-                Select::make('cso.country')
+            Select::make('cso.country')
                 ->options([
                     'cameroon' => 'Cameroon',
                     'nigeria' => 'Nigeria',
@@ -88,25 +88,25 @@ class CsoBasicInfo extends Rows
                 ->title('Country')
                 ->required(),
 
-                Input::make('cso.region')
+            Input::make('cso.region')
                 ->title('Region')
                 ->required(),
 
-                Input::make('cso.division')
+            Input::make('cso.division')
                 ->title('Division')
                 ->required(),
 
-                Input::make('cso.sub_division')
+            Input::make('cso.sub_division')
                 ->title('Sub division')
                 ->required(),
 
-                Input::make('cso.village')
+            Input::make('cso.village')
                 ->title('Village')
                 ->required(),
 
             Cropper::make('cso.image')
                 ->width(200)
-                ->height(200)
+                ->height(200),
         ];
     }
 }

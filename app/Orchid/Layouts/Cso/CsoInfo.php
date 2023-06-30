@@ -4,7 +4,6 @@ namespace App\Orchid\Layouts\Cso;
 
 use App\Models\CsoActivityDomain;
 use Orchid\Screen\Field;
-use Orchid\Screen\Fields\CheckBox;
 use Orchid\Screen\Fields\Group;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Label;
@@ -50,9 +49,9 @@ class CsoInfo extends Rows
             ]),
 
             Select::make('cso.domain')
-            ->fromModel(CsoActivityDomain::class, 'name', 'name')
-            ->title('Choose domain of activity')
-            ->required(),
+                ->fromModel(CsoActivityDomain::class, 'name', 'name')
+                ->title('Choose domain of activity')
+                ->required(),
 
             Label::make('cso.board_directors')
                 ->title('Board of directors'),
@@ -81,10 +80,10 @@ class CsoInfo extends Rows
 
             Select::make('cso.african_coverage')
                 ->options([
-                    'national'   => 'National',
-                    'regional'   => 'Regional (more than one african country)',
+                    'national' => 'National',
+                    'regional' => 'Regional (more than one african country)',
                 ])
-                ->title('African coverage of CSO')
+                ->title('African coverage of CSO'),
         ];
     }
 }
