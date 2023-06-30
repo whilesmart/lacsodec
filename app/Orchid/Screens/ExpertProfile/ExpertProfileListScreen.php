@@ -17,7 +17,7 @@ class ExpertProfileListScreen extends Screen
     public function query(): iterable
     {
         return [
-            'experts' => ExpertProfile::paginate()
+            'experts' => ExpertProfile::paginate(),
         ];
     }
 
@@ -34,7 +34,7 @@ class ExpertProfileListScreen extends Screen
      */
     public function description(): ?string
     {
-        return "All expert profiles";
+        return 'All expert profiles';
     }
 
     /**
@@ -47,7 +47,7 @@ class ExpertProfileListScreen extends Screen
         return [
             Link::make('Create new')
                 ->icon('pencil')
-                ->route('platform.expert.edit')
+                ->route('platform.expert.edit'),
         ];
     }
 
@@ -59,7 +59,7 @@ class ExpertProfileListScreen extends Screen
     public function layout(): iterable
     {
         return [
-            ExpertListLayout::class
+            ExpertListLayout::class,
         ];
     }
 }

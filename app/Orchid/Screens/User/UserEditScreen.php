@@ -38,7 +38,7 @@ class UserEditScreen extends Screen
         $user->load(['roles']);
 
         return [
-            'user'       => $user,
+            'user' => $user,
             'permission' => $user->getStatusPermission(),
         ];
     }
@@ -180,9 +180,9 @@ class UserEditScreen extends Screen
     }
 
     /**
-     * @throws \Exception
-     *
      * @return \Illuminate\Http\RedirectResponse
+     *
+     * @throws \Exception
      */
     public function remove(User $user)
     {

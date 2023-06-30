@@ -10,8 +10,9 @@ class ExpertController extends Controller
     public function index()
     {
         $experts = ExpertProfile::with('user')->paginate(20);
+
         return view('expert-directory', [
-            'experts' => $experts
+            'experts' => $experts,
         ]);
     }
 
@@ -19,15 +20,16 @@ class ExpertController extends Controller
     {
         $expert = ExpertProfile::with('user')->findOrFail($expert);
         $otherExperts = ExpertProfile::with('user')->where('id', '!=', $expert->id)->limit(4)->get();
+
         return view('expert-directory-details', [
             'expert' => $expert,
-            'otherExperts' => $otherExperts
+            'otherExperts' => $otherExperts,
         ]);
     }
 
     public function create(Request $request)
     {
-        return view('register-expert');
+        return view('register-expert-profile');
     }
 
     public function store(Request $request)
@@ -41,6 +43,7 @@ class ExpertController extends Controller
             'details' => ['required', 'string'],
             'birthday' => ['required', 'string'],
             'sex' => ['required', 'string'],
+            'status' => ['required', 'string'],
             'birth_place' => ['required', 'string'],
             'nationality' => ['required', 'string'],
             'language' => ['required', 'string'],
@@ -63,6 +66,7 @@ class ExpertController extends Controller
             'details' => $fields['details'],
             'birthday' => $fields['birthday'],
             'sex' => $fields['sex'],
+            'status' => $fields['status'],
             'birth_place' => $fields['birth_place'],
             'nationality' => $fields['nationality'],
             'company' => $fields['company'],

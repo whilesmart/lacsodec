@@ -1,0 +1,28 @@
+name: Laravel Pint Style Check
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  laravel-pint-style-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Copy environment variables
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+
+      - name: Install dependencies
+        run: composer install --no-progress --no-suggest
+
+      - name: Generate Key
+        run: php artisan key:generate
+
+      - name: Run Pint style checks
+        run: ./vendor/bin/pint --test
