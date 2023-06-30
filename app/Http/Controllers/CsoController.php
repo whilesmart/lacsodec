@@ -12,15 +12,18 @@ class CsoController extends Controller
     {
         $csos = Cso::where('status', 'approved')->paginate(20);
         $cso_domains = CsoActivityDomain::all();
-        return view('cso-library', [
+
+        return view('cso-directory', [
             'csos' => $csos,
-            'cso_domains' => $cso_domains
+            'cso_domains' => $cso_domains,
         ]);
     }
 
+    // I don't think this function is needed anymore
     public function indexDirectory()
     {
         $csos = Cso::where('status', 'approved')->paginate(20);
+
         return view('cso-directory', [
             'csos' => $csos,
         ]);
@@ -31,18 +34,20 @@ class CsoController extends Controller
         $cso = Cso::findOrFail($cso);
         $otherCsos = Cso::where('id', '!=', $cso->id)->limit(3)->get();
         $latestCsos = Cso::where('id', '!=', $cso->id)->orderBy('created_at', 'desc')->limit(4)->get();
+
         return view('cso-directory-details', [
             'cso' => $cso,
             'otherCsos' => $otherCsos,
-            'latestCsos' => $latestCsos
+            'latestCsos' => $latestCsos,
         ]);
     }
 
     public function create(Request $request)
     {
         $domains = CsoActivityDomain::all();
+
         return view('register-cso', [
-            'domains' => $domains
+            'domains' => $domains,
         ]);
     }
 
@@ -75,7 +80,7 @@ class CsoController extends Controller
             'board_directors' => ['required', 'string'],
             'african_coverage' => ['required', 'string'],
             'organization_leaderships' => ['required', 'string'],
-            'image' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg', 'max:2048']
+            'image' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg', 'max:2048'],
         ]);
 
         $image_path = $request->file('image')->store();
@@ -104,10 +109,10 @@ class CsoController extends Controller
             'vision_statement' => $fields['vision_statement'],
             'primary_target_beneficiaries' => $fields['primary_target_beneficiaries'],
             'domain' => $fields['domain'],
-            'board_directors' => ($fields['board_directors'] == 'true')?true:false,
+            'board_directors' => ($fields['board_directors'] == 'true') ? true : false,
             'african_coverage' => $fields['african_coverage'],
             'organization_leaderships' => $fields['organization_leaderships'],
-            'image' => '/storage/'.$image_path
+            'image' => '/storage/'.$image_path,
         ]);
 
         return redirect()->to('/cso-directory')->with('success', 'Cso registered successfully. It will be made public after approval by admins');

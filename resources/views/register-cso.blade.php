@@ -9,16 +9,17 @@
 
         <div class="con">
             <section>
-                <form action="{{ route('store-cso') }}" class="create-cso-form" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('store-cso') }}" class="create-cso-form" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="form-section">
                         <div class="flex">
                             <div class="field">
                                 <label for="">Name</label>
-                                <input type="text" name="name" id="name" placeholder="CSO name" value="{{ old('name') }}"
-                                    required>
+                                <input type="text" name="name" id="name" placeholder="CSO name"
+                                    value="{{ old('name') }}" required>
                                 @error('name')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -26,7 +27,7 @@
                                 <input type="number" name="assessment_score" id="assessment-score"
                                     placeholder="CSO sssessment score" value="{{ old('assessment_score') }}" required>
                                 @error('assessment_score')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -34,9 +35,9 @@
                             <div class="field">
                                 <label for="">Partnership</label>
                                 <input type="text" name="partnership" id="partnership" placeholder="CSO partnership"
-                                value="{{ old('partnership') }}" required>
+                                    value="{{ old('partnership') }}" required>
                                 @error('partnership')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -46,7 +47,7 @@
                                 <input type="date" name="registration_date" id="registration-date"
                                     placeholder="registration-date" value="{{ old('registration_date') }}" required>
                                 @error('registration_date')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -54,26 +55,28 @@
                                 <input type="text" name="registration_number" id="registration-number"
                                     placeholder="registration-number" value="{{ old('registration_number') }}" required>
                                 @error('registration_number')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
                         <div class="flex">
                             <div class="field">
                                 <label for="">Type of organization</label>
-                                <select name="organization_type" id="organization-type" value="{{ old('organization_type') }}" required>
+                                <select name="organization_type" id="organization-type"
+                                    value="{{ old('organization_type') }}" required>
                                     <option value="Association">Association</option>
                                     <option value="Accredited NGO">Accredited NGO</option>
                                     <option value="trade union">trade union</option>
                                     <option value="CIG">CIG</option>
                                     <option value="Cooperative">Cooperative</option>
                                     <option value="Media">Media</option>
-                                    <option value="Village development Association">Village development Association</option>
+                                    <option value="Village development Association">Village development Association
+                                    </option>
                                     <option value="CSO Network">CSO Network</option>
                                     <option value="Faith Based organization">Faith Based organization</option>
                                 </select>
                                 @error('organization_type')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -85,25 +88,25 @@
                                     <option value="rwanda">Rwanda</option>
                                 </select>
                                 @error('country')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
                         <div class="flex">
                             <div class="field">
                                 <label for="">Region</label>
-                                <input type="text" name="region" id="region" placeholder="region" value="{{ old('region') }}"
-                                    required>
+                                <input type="text" name="region" id="region" placeholder="region"
+                                    value="{{ old('region') }}" required>
                                 @error('region')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
                                 <label for="">Devision</label>
                                 <input type="text" name="division" id="division" placeholder="division"
-                                value="{{ old('division') }}" required>
+                                    value="{{ old('division') }}" required>
                                 @error('division')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -111,24 +114,24 @@
                             <div class="field">
                                 <label for="">Sub devision</label>
                                 <input type="text" name="sub_division" id="sub-division" placeholder="sub-division"
-                                value="{{ old('sub_division') }}" required>
+                                    value="{{ old('sub_division') }}" required>
                             </div>
                             <div class="field">
                                 <label for="">Village</label>
-                                <input type="text" name="village" id="village" placeholder="village" value="{{ old('village') }}"
-                                    required>
+                                <input type="text" name="village" id="village" placeholder="village"
+                                    value="{{ old('village') }}" required>
                                 @error('village')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
                         <div class="flex">
                             <label for="image">
                                 <span>Choose image</span>
-                            <input type="file" name="image" id="" accept="image/*" />
-                            @error('image')
-                                <span>{{ $message }}</span>
-                            @enderror
+                                <input type="file" name="image" id="" accept="image/*" />
+                                @error('image')
+                                    <span>{{ $message }}</span>
+                                @enderror
                             </label>
                         </div>
                     </div>
@@ -140,17 +143,18 @@
                                 <input type="text" name="contact_person_name" id="contact-name"
                                     placeholder="contact-name" value="{{ old('contact_person_name') }}" required>
                                 @error('contact_person_name')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
                                 <label for="">Sex of contact person</label>
-                                <select name="contact_person_sex" id="contact-sex" value="{{ old('contact_person_sex') }}" required>
+                                <select name="contact_person_sex" id="contact-sex"
+                                    value="{{ old('contact_person_sex') }}" required>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                 </select>
                                 @error('contact_person_sex')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -160,7 +164,7 @@
                                 <input type="email" name="contact_person_email" id="contact-email"
                                     placeholder="contact-email" value="{{ old('contact_person_email') }}" required>
                                 @error('contact_person_email')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -168,7 +172,7 @@
                                 <input type="tel" name="contact_person_tel" id="contact-phone"
                                     placeholder="contact-phone" value="{{ old('contact_person_tel') }}" required>
                                 @error('contact_person_tel')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -176,9 +180,10 @@
                             <div class="field">
                                 <label for="">Position of contact person</label>
                                 <input type="text" name="contact_person_position" id="contact-position"
-                                    placeholder="contact-position" value="{{ old('contact_person_position') }}" required>
+                                    placeholder="contact-position" value="{{ old('contact_person_position') }}"
+                                    required>
                                 @error('contact_person_position')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -186,7 +191,7 @@
                                 <input type="text" name="address" id="cso-address" placeholder="cso-address"
                                     value="{{ old('address') }}" required>
                                 @error('address')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -196,7 +201,7 @@
                                 <input type="url" name="website" id="cso-website" placeholder="cso-website"
                                     value="{{ old('website') }}" required>
                                 @error('website')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -204,7 +209,7 @@
                                 <input type="email" name="email" id="cso-email" placeholder="cso-email"
                                     value="{{ old('email') }}" required>
                                 @error('email')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -214,7 +219,7 @@
                                 <input type="tel" name="tel" id="cso-contact" placeholder="cso-contact"
                                     value="{{ old('tel') }}" required>
                                 @error('tel')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -227,15 +232,16 @@
                                 <input type="text" name="vision_statement" id="vision-statement"
                                     placeholder="vision-statement" value="{{ old('vision_statement') }}" required>
                                 @error('vision_statement')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
                                 <label for="">Primary target beneficiaries</label>
                                 <input type="text" name="primary_target_beneficiaries" id="primary-meneficiaries"
-                                    placeholder="primary-meneficiaries" value="{{ old('primary_target_beneficiaries') }}" required>
+                                    placeholder="primary-meneficiaries"
+                                    value="{{ old('primary_target_beneficiaries') }}" required>
                                 @error('primary_target_beneficiaries')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -244,31 +250,33 @@
                                 <label for="">Choose domain of activity</label>
                                 <select name="domain" id="domain-of-activity" value="{{ old('domain') }}" required>
                                     @foreach ($domains as $domain)
-                                        <option value="{{$domain->name}}">{{$domain->name}}</option>
+                                        <option value="{{ $domain->name }}">{{ $domain->name }}</option>
                                     @endforeach
                                 </select>
                                 @error('domain')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
                                 <label for="">Board of directors</label>
                                 <div class="radio-flex">
                                     <div class="sub">
-                                        <input type="radio" name="board_directors" value="true" id="board-of-directors-yes">
+                                        <input type="radio" name="board_directors" value="true"
+                                            id="board-of-directors-yes">
                                         <label for="board-of-directors-yes">
                                             Yes
                                         </label>
                                     </div>
                                     <div class="sub">
-                                        <input type="radio" name="board_directors" value="false" id="board-of-directors-no">
+                                        <input type="radio" name="board_directors" value="false"
+                                            id="board-of-directors-no">
                                         <label for="board-of-directors-no">
                                             No
                                         </label>
                                     </div>
                                 </div>
                                 @error('board_directors')
-                                    <span>{{$message}}</span>
+                                    <span>{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -276,39 +284,47 @@
                             <label for="">Organisation leadership</label>
                             <div class="radio-flex">
                                 <div class="sub">
-                                    <input type="radio" name="organization_leaderships" id="leadership-women" value="Women headed organization">
+                                    <input type="radio" name="organization_leaderships" id="leadership-women"
+                                        value="Women headed organization">
                                     <label for="leadership-women">
                                         Women headed organization
                                     </label>
                                 </div>
                                 <div class="sub">
-                                    <input type="radio" name="organization_leaderships" id="leadership-youth" value="Youth lead organization">
+                                    <input type="radio" name="organization_leaderships" id="leadership-youth"
+                                        value="Youth lead organization">
                                     <label for="leadership-youth">
                                         Youth lead organization
                                     </label>
                                 </div>
                                 <div class="sub">
-                                    <input type="radio" name="organization_leaderships" id="leadership-General" value="General">
+                                    <input type="radio" name="organization_leaderships" id="leadership-General"
+                                        value="General">
                                     <label for="leadership-General">
                                         General
                                     </label>
                                 </div>
                             </div>
                             @error('organization_leaderships')
-                                    <span>{{$message}}</span>
+                                <span>{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="field">
                             <label for="">African coverage CSO</label>
-                            <select name="african_coverage" id="" value="{{ old('african_coverage') }}" required>
+                            <select name="african_coverage" id="" value="{{ old('african_coverage') }}"
+                                required>
                                 <option value="national">National</option>
                                 <option value="regional">Regional (more than one african country)</option>
                             </select>
                             @error('african_coverage')
-                                    <span>{{$message}}</span>
+                                <span>{{ $message }}</span>
                             @enderror
                         </div>
-                    <button type="submit" class="custom-button">Create Cso</button>
+                        <button type="submit" class="custom-button">Create Cso</button>
+                    </div>
+
+                    <div class="form-section">
+                        <button type="submit" class="custom-button primary">Confirm CSO Registration</button>
                     </div>
                 </form>
             </section>
