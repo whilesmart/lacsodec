@@ -17,14 +17,12 @@ class ArticleListScreen extends Screen
     public function query(): iterable
     {
         return [
-            'articles' => Article::paginate()
+            'articles' => Article::paginate(),
         ];
     }
 
     /**
      * The name of the screen displayed in the header.
-     *
-     * @return string|null
      */
     public function name(): ?string
     {
@@ -41,7 +39,7 @@ class ArticleListScreen extends Screen
         return [
             Link::make('Create new')
                 ->icon('pencil')
-                ->route('platform.article.edit')
+                ->route('platform.article.edit'),
         ];
     }
 
@@ -53,7 +51,7 @@ class ArticleListScreen extends Screen
     public function layout(): iterable
     {
         return [
-            ArticleListLayout::class
+            ArticleListLayout::class,
         ];
     }
 }

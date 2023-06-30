@@ -25,6 +25,10 @@ Route::get('/services', function () {
     return view('services');
 })->name('services');
 
+Route::get('/cso-library', function () {
+    return view('cso-library');
+})->name('cso-library');
+
 Route::get('/blog/{blog}', [ArticleController::class , 'show'])->name('blog-details');
 
 Route::get('/events', function () {
