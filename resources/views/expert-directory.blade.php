@@ -19,7 +19,7 @@
                             <a href="{{ route('expert-directory-details', ['expert' => $expert->id]) }}"
                                 class="member-card">
                                 <img src="{{ asset($expert->image) }}" alt="">
-                                {{-- <h4>{{$expert->user->name}}</h4> --}}
+                                <h4>{{ $expert->user->name }}</h4>
                                 <p>{{ $expert->position }}</p>
                             </a>
                         @endforeach

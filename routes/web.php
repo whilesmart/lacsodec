@@ -45,9 +45,13 @@ Route::get('/donate', function () {
     return view('donate');
 })->name('donate');
 
-Route::get('/register-cso', function () {
-    return view('register-cso');
-})->name('register-cso');
+Route::get('/register-cso', [CsoController::class , 'create'])->name('register-cso');
+
+Route::post('/register-cso', [CsoController::class , 'store'])->name('store-cso');
+
+Route::get('/register-expert-profile', function () {
+    return view('register-expert-profile');
+})->name('register-expert-profile');
 
 Route::get('/register-expert-profile', function () {
     return view('register-expert-profile');
