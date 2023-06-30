@@ -53,7 +53,15 @@ Route::get('/register-cso', [CsoController::class, 'create'])->name('register-cs
 
 Route::post('/register-cso', [CsoController::class, 'store'])->name('store-cso');
 
-Route::get('/cso-directory', [CsoController::class, 'indexDirectory'])->name('cso-directory');
+Route::get('/register-expert-profile', function () {
+    return view('register-expert-profile');
+})->name('register-expert-profile');
+
+Route::get('/register-expert-profile', function () {
+    return view('register-expert-profile');
+})->name('register-expert-profile');
+
+Route::get('/cso-directory', [CsoController::class, 'index'])->name('cso-directory');
 
 Route::get('/cso-directory-details/{cso}', [CsoController::class, 'show'])->name('cso-directory-details');
 
@@ -74,7 +82,7 @@ Route::get('/publications', function () {
     return view('publications');
 })->name('publications');
 
-Route::get('/cso-library', [CsoController::class, 'index'])->name('cso-library');
+// Route::get('/cso-library', [CsoController::class , 'index'])->name('cso-library');
 
 Route::get('/impact-stories', function () {
     return view('impact-stories');
