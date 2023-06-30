@@ -20,7 +20,7 @@ class ExpertProfileFactory extends Factory
         return [
             'user_id' => User::all()->random()->id,
             'location' => $this->faker->city(),
-            'status' => $this->faker->randomElement(['available', 'busy', 'on vacation']),
+            'status' => $this->faker->randomElement(['approved', 'pending', 'rejected']),
             'details' => $this->faker->paragraphs(10, true),
             'birthday' => $this->faker->date(),
             'sex' => $this->faker->randomElement(['Male', 'Female']),
@@ -34,6 +34,7 @@ class ExpertProfileFactory extends Factory
             'certification_date' => $this->faker->date(),
             'certification_image' => $this->faker->imageUrl(),
             'position' => $this->faker->jobTitle(),
+            'phone_number' => $this->faker->phoneNumber(),
         ];
     }
 }

@@ -1,7 +1,6 @@
 @import "./utils";
 @import "./variables";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 * {
     padding: 0;
     margin: 0;
@@ -50,22 +49,18 @@ body {
     //   font-size: 12px;
     // }
     /* scrollbar ******************************* */
-
     &::-webkit-scrollbar {
         width: 0.6rem;
     }
-
     &::-webkit-scrollbar-track {
         box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
         background-color: transparent;
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
     }
-
     &::-webkit-scrollbar-thumb {
         background-color: $primary;
         outline: 1px solid slategrey;
     }
-
     /* end scrollbar ******************************* */
 }
 
@@ -86,7 +81,9 @@ ul {
     padding: 0;
 }
 
+
 /* Chrome, Safari, Edge, Opera */
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -155,7 +152,7 @@ form {
             gap: 0.5rem;
             input {
                 display: none;
-                &[type="radio"]:checked ~ label {
+                &[type="radio"]:checked~label {
                     border: 2px solid $primary;
                     color: $primary;
                     background-color: $primary-light;
@@ -231,7 +228,9 @@ form {
     }
 }
 
+
 /* ------------------------------ button styles ----------------------------- */
+
 .custom-button {
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -330,7 +329,9 @@ form {
     }
 }
 
+
 /* ------------------------------ header styles ----------------------------- */
+
 header {
     .top {
         border-bottom: 2px solid $primary;
@@ -554,7 +555,7 @@ header {
             }
             .right {
                 display: flex;
-                > .custom-button {
+                >.custom-button {
                     border-radius: 0;
                     height: 35px;
                     padding: 0 2rem;
@@ -584,13 +585,14 @@ header {
     }
 }
 
+
 /* ------------------------------ footer styles ----------------------------- */
+
 footer {
     background-color: $primary;
     .top {
         padding: 2rem 0;
-        @include for-mobile {
-        }
+        @include for-mobile {}
         .con {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -692,7 +694,9 @@ footer {
     }
 }
 
+
 /* ------------------------- general section styles ------------------------- */
+
 section {
     padding: 5rem 0;
     @include for-mobile {
@@ -724,7 +728,9 @@ section {
     }
 }
 
+
 /* ------------------------------- hero styles ------------------------------ */
+
 .hero {
     width: 100%;
     height: auto;
@@ -769,7 +775,9 @@ section {
     }
 }
 
+
 /* ---------------------------- home page styles ---------------------------- */
+
 .hero.home {
     background-image: url("../../public/images/home-hero-bg.png");
     background-size: cover;
@@ -883,7 +891,7 @@ section {
                     border-left: 4px solid $primary;
                     position: relative;
                     background-color: red;
-                    > img {
+                    >img {
                         width: 100%;
                         min-height: 350px;
                         object-fit: cover;
@@ -901,12 +909,7 @@ section {
                         justify-content: flex-end;
                         padding: 2rem;
                         color: $white;
-                        background: linear-gradient(
-                            180deg,
-                            rgba(255, 255, 255, 0) 0%,
-                            rgba(0, 0, 0, 0.71) 79%,
-                            #000000 100%
-                        );
+                        background: linear-gradient( 180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.71) 79%, #000000 100%);
                         @include for-mobile {
                             padding: 1rem;
                         }
@@ -934,7 +937,7 @@ section {
                                 }
                             }
                         }
-                        > p {
+                        >p {
                             color: $white;
                             font-size: 1rem;
                         }
@@ -956,7 +959,7 @@ section {
                             border: none;
                             padding-bottom: 0;
                         }
-                        > img {
+                        >img {
                             width: 200px;
                             min-height: 130px;
                             height: 100%;
@@ -989,7 +992,7 @@ section {
                                 }
                             }
                         }
-                        > p {
+                        >p {
                             color: $white;
                             font-size: 1rem;
                         }
@@ -1029,7 +1032,6 @@ section {
             text-transform: capitalize;
         }
     }
-
     .event {
         h4 {
             color: $primary;
@@ -1058,7 +1060,6 @@ section {
             gap: 1rem;
         }
     }
-
     .expert {
         display: flex;
         align-items: center;
@@ -1090,7 +1091,6 @@ section {
             }
         }
     }
-
     .cso {
         display: flex;
         align-items: center;
@@ -1120,7 +1120,6 @@ section {
             }
         }
     }
-
     .donation-datails {
         .range {
             margin: 1rem 0;
@@ -1160,7 +1159,6 @@ section {
             }
         }
     }
-
     .publication {
         margin-bottom: 1rem;
         img {
@@ -1173,14 +1171,16 @@ section {
         p {
             font-size: 0.9rem;
         }
-        > a {
+        >a {
             margin-top: 0.5rem;
             font-size: 0.9rem;
         }
     }
 }
 
+
 /* ------------------------- numbers section styles ------------------------- */
+
 section.numbers-section {
     background-color: $primary;
     background-image: url("../../public//images/world-map.png");
@@ -1207,7 +1207,9 @@ section.numbers-section {
     }
 }
 
+
 /* ----------------------------- contact section ---------------------------- */
+
 .contact-section {
     .con {
         display: flex;
@@ -1250,7 +1252,7 @@ section.numbers-section {
                 font-size: 1.5rem;
                 margin-bottom: 1rem;
             }
-            > p {
+            >p {
                 color: $text;
                 font-size: 1rem;
             }
@@ -1303,7 +1305,9 @@ section.numbers-section {
     }
 }
 
+
 /* ---------------------------- breadcrumb styles --------------------------- */
+
 .breadcrumb {
     background-size: cover;
     background-position: center;
@@ -1341,7 +1345,9 @@ section.numbers-section {
     }
 }
 
+
 /* ---------------------------- about page styles --------------------------- */
+
 .about-us-page {
     .breadcrumb {
         background-image: url("../../public/images/about-us-breadcrumb.png");
@@ -1394,7 +1400,7 @@ section.numbers-section {
             @include for-mobile {
                 flex-direction: column;
             }
-            > div {
+            >div {
                 width: 50%;
                 @include for-mobile {
                     width: 100%;
@@ -1407,7 +1413,7 @@ section.numbers-section {
                     color: $text;
                     margin-bottom: 1rem;
                 }
-                > p {
+                >p {
                     margin-bottom: 2rem;
                 }
                 ul {
@@ -1464,7 +1470,6 @@ section.numbers-section {
             }
         }
     }
-
     .about-section-3 {
         .con {
             display: flex;
@@ -1473,7 +1478,7 @@ section.numbers-section {
             @include for-tablet {
                 flex-direction: column;
             }
-            > div {
+            >div {
                 width: 50%;
                 @include for-tablet {
                     width: 100%;
@@ -1486,7 +1491,7 @@ section.numbers-section {
                     color: $text;
                     margin-bottom: 1rem;
                 }
-                > p {
+                >p {
                     margin-bottom: 2rem;
                     width: 90%;
                 }
@@ -1548,7 +1553,7 @@ section.numbers-section {
 
 section.team-section {
     .con {
-        > h2 {
+        >h2 {
             font-size: 2rem;
             margin-bottom: 2rem;
             color: $text;
@@ -1574,7 +1579,7 @@ section.team-section {
 section.other-cso-section {
     background-color: $primary-light;
     .con {
-        > h2 {
+        >h2 {
             font-size: 2rem;
             margin-bottom: 2rem;
             color: $text;
@@ -1600,7 +1605,7 @@ section.other-cso-section {
 section.other-expert-section {
     background-color: $primary-light;
     .con {
-        > h2 {
+        >h2 {
             font-size: 2rem;
             margin-bottom: 2rem;
             color: $text;
@@ -1623,7 +1628,9 @@ section.other-expert-section {
     }
 }
 
+
 /* --------------------------- member card styles --------------------------- */
+
 .member-card {
     width: 100%;
     img {
@@ -1649,7 +1656,9 @@ section.other-expert-section {
     }
 }
 
+
 /* --------------------------- expert card styles --------------------------- */
+
 .expert-card {
     width: 100%;
     background-color: $white;
@@ -1731,7 +1740,9 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- contact page styles --------------------------- */
+
 .contact-us-page {
     .breadcrumb {
         background-image: url("../../public/images/contact-us-breadcrumb.png");
@@ -1744,7 +1755,9 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- login page styles --------------------------- */
+
 .auth-page {
     padding: 10rem 0;
     @include for-mobile {
@@ -1784,7 +1797,7 @@ section.other-expert-section {
                 }
             }
         }
-        > p {
+        >p {
             font-size: 1rem;
             color: $text;
             a {
@@ -1822,12 +1835,13 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- services page styles --------------------------- */
+
 .services-page {
     .breadcrumb {
         background-image: url("../../public/images/services-breadcrumb.png");
     }
-
     .services-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -1852,12 +1866,13 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- publications page styles --------------------------- */
+
 .publications-page {
     .breadcrumb {
         background-image: url("../../public/images/publications-breadcrumb.png");
     }
-
     .publications-section {
         .con {
             display: flex;
@@ -1909,7 +1924,9 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- pubication styles --------------------------- */
+
 .publication {
     width: 100%;
     img {
@@ -1932,16 +1949,19 @@ section.other-expert-section {
         color: $text;
         font-size: 1rem;
         font-weight: 400;
-        display: block; /* Fallback for non-webkit */
+        display: block;
+        /* Fallback for non-webkit */
         display: -webkit-box;
-        height: 3.6em; /* Fallback for non-webkit, line-height * 2 */
+        height: 3.6em;
+        /* Fallback for non-webkit, line-height * 2 */
         line-height: 1.3em;
-        -webkit-line-clamp: 3; /* if you change this, make sure to change the fallback line-height and height */
+        -webkit-line-clamp: 3;
+        /* if you change this, make sure to change the fallback line-height and height */
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
     }
-    > a {
+    >a {
         display: block;
         margin-top: 1rem;
         color: $primary;
@@ -1954,7 +1974,9 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- pagination styles --------------------------- */
+
 .pagination {
     margin: 1rem 0;
     ul {
@@ -1983,12 +2005,13 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- cso-directory page styles --------------------------- */
+
 .cso-directory-page {
     .breadcrumb {
         background-image: url("../../public/images/cso-directory-breadcrumb.png");
     }
-
     .cso-directory-section {
         .con {
             display: flex;
@@ -2059,7 +2082,9 @@ section.other-expert-section {
     }
 }
 
+
 /* ----------------------------- cso card styles ---------------------------- */
+
 .cso-card {
     width: 100%;
     img {
@@ -2082,12 +2107,13 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- impact-stories page styles --------------------------- */
+
 .impact-stories-page {
     .breadcrumb {
         background-image: url("../../public/images/impact-stories-breadcrumb.png");
     }
-
     .impact-stories-section {
         .con {
             display: flex;
@@ -2153,7 +2179,7 @@ section.other-expert-section {
                         height: auto;
                     }
                 }
-                > p {
+                >p {
                     margin-bottom: 1rem;
                 }
             }
@@ -2161,12 +2187,13 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- events page styles --------------------------- */
+
 .events-page {
     .breadcrumb {
         background-image: url("../../public/images/events-breadcrumb.png");
     }
-
     .events-section {
         .events-grid {
             width: 100%;
@@ -2263,11 +2290,14 @@ section.other-expert-section {
             color: $text;
             font-weight: 500;
             margin-bottom: 0.5rem;
-            display: block; /* Fallback for non-webkit */
+            display: block;
+            /* Fallback for non-webkit */
             display: -webkit-box;
-            height: 2.6em; /* Fallback for non-webkit, line-height * 2 */
+            height: 2.6em;
+            /* Fallback for non-webkit, line-height * 2 */
             line-height: 1.3em;
-            -webkit-line-clamp: 2; /* if you change this, make sure to change the fallback line-height and height */
+            -webkit-line-clamp: 2;
+            /* if you change this, make sure to change the fallback line-height and height */
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -2278,7 +2308,9 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- grants page styles --------------------------- */
+
 .grants-page {
     .breadcrumb {
         background-image: url("../../public/images/grants-breadcrumb.png");
@@ -2336,7 +2368,7 @@ section.other-expert-section {
             color: $secondary;
         }
     }
-    > p {
+    >p {
         font-size: 1em;
         color: $text;
         font-weight: 600;
@@ -2344,12 +2376,14 @@ section.other-expert-section {
         margin-top: 0.5rem;
     }
 }
+
+
 /* ---------------------------- blog page styles --------------------------- */
+
 .blog-page {
     .breadcrumb {
         background-image: url("../../public/images/blog-breadcrumb.png");
     }
-
     .blog-section {
         .con {
             display: flex;
@@ -2388,14 +2422,18 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- donate page styles --------------------------- */
+
 .donate-page {
     .breadcrumb {
         background-image: url("../../public/images/donate-breadcrumb.png");
     }
 }
 
+
 /* ---------------------------- expert-directory page styles --------------------------- */
+
 .expert-directory-page {
     .expert-directory-section {
         .con {
@@ -2430,9 +2468,11 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- cso-directory-details page styles --------------------------- */
+
 .cso-directory-details-page {
-    > .top {
+    >.top {
         width: 100%;
         height: 13rem;
         background-color: $primary;
@@ -2477,7 +2517,7 @@ section.other-expert-section {
                     font-weight: 600;
                     margin-bottom: 1rem;
                 }
-                > p {
+                >p {
                     margin-bottom: 1rem;
                 }
             }
@@ -2485,9 +2525,11 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- expert-directory-details page styles --------------------------- */
+
 .expert-directory-details-page {
-    > .top {
+    >.top {
         width: 100%;
         height: 13rem;
         background-color: $primary;
@@ -2538,7 +2580,7 @@ section.other-expert-section {
                     font-weight: 600;
                     margin-bottom: 1rem;
                 }
-                > p {
+                >p {
                     margin-bottom: 1rem;
                 }
             }
@@ -2546,12 +2588,13 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- publications page styles --------------------------- */
+
 .publications-page {
     .breadcrumb {
         background-image: url("../../public/images/publications-breadcrumb.png");
     }
-
     .publications-section {
         .con {
             display: flex;
@@ -2594,7 +2637,9 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- pagination styles --------------------------- */
+
 .pagination {
     margin: 1rem 0;
     ul {
@@ -2623,7 +2668,9 @@ section.other-expert-section {
     }
 }
 
+
 /* ----------------------------- cso card styles ---------------------------- */
+
 .cso-card {
     width: 100%;
     img {
@@ -2645,12 +2692,14 @@ section.other-expert-section {
         font-weight: 400;
     }
 }
+
+
 /* ---------------------------- impact-stories page styles --------------------------- */
+
 .impact-stories-page {
     .breadcrumb {
         background-image: url("../../public/images/impact-stories-breadcrumb.png");
     }
-
     .impact-stories-section {
         .con {
             display: flex;
@@ -2706,7 +2755,7 @@ section.other-expert-section {
                         height: auto;
                     }
                 }
-                > p {
+                >p {
                     margin-bottom: 1rem;
                 }
             }
@@ -2714,12 +2763,13 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- newsroom page styles --------------------------- */
+
 .newsroom-page {
     .breadcrumb {
         background-image: url("../../public/images/newsroom-breadcrumb.png");
     }
-
     .newsroom-section {
         .con {
             display: flex;
@@ -2750,7 +2800,7 @@ section.other-expert-section {
                         height: auto;
                     }
                 }
-                > p {
+                >p {
                     margin-bottom: 1rem;
                 }
                 .publications-grid {
@@ -2841,12 +2891,13 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- lodge page styles --------------------------- */
+
 .lodge-page {
     .breadcrumb {
         background-image: url("../../public/images/lodge-breadcrumb.png");
     }
-
     .lodge-section {
         .con {
             display: flex;
@@ -2890,7 +2941,7 @@ section.other-expert-section {
                     font-weight: 600;
                     margin-bottom: 2rem;
                 }
-                > img {
+                >img {
                     width: 100%;
                     margin-bottom: 1rem;
                     height: 400px;
@@ -2898,7 +2949,7 @@ section.other-expert-section {
                     object-fit: cover;
                     object-position: center;
                 }
-                > .link {
+                >.link {
                     font-size: 1rem;
                     color: $primary;
                     font-weight: 600;
@@ -2916,7 +2967,7 @@ section.other-expert-section {
                         height: auto;
                     }
                 }
-                > p {
+                >p {
                     margin-bottom: 1rem;
                 }
                 .publications-grid {
@@ -2932,14 +2983,18 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- donate page styles --------------------------- */
+
 .donate-page {
     .breadcrumb {
         background-image: url("../../public/images/donate-breadcrumb.png");
     }
 }
 
+
 /* ---------------------------- expert-directory page styles --------------------------- */
+
 .expert-directory-page {
     .expert-directory-section {
         .con {
@@ -2963,9 +3018,11 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- cso-directory-details page styles --------------------------- */
+
 .cso-directory-details-page {
-    > .top {
+    >.top {
         width: 100%;
         height: 13rem;
         background-color: $primary;
@@ -3000,7 +3057,7 @@ section.other-expert-section {
                     font-weight: 600;
                     margin-bottom: 1rem;
                 }
-                > p {
+                >p {
                     margin-bottom: 1rem;
                 }
             }
@@ -3008,9 +3065,11 @@ section.other-expert-section {
     }
 }
 
+
 /* ---------------------------- expert-directory-details page styles --------------------------- */
+
 .expert-directory-details-page {
-    > .top {
+    >.top {
         width: 100%;
         height: 13rem;
         background-color: $primary;
@@ -3051,7 +3110,7 @@ section.other-expert-section {
                     font-weight: 600;
                     margin-bottom: 1rem;
                 }
-                > p {
+                >p {
                     margin-bottom: 1rem;
                 }
             }

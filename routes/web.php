@@ -49,18 +49,6 @@ Route::get('/donate', function () {
     return view('donate');
 })->name('donate');
 
-Route::get('/register-cso', [CsoController::class, 'create'])->name('register-cso');
-
-Route::post('/register-cso', [CsoController::class, 'store'])->name('store-cso');
-
-Route::get('/register-expert-profile', function () {
-    return view('register-expert-profile');
-})->name('register-expert-profile');
-
-Route::get('/register-expert-profile', function () {
-    return view('register-expert-profile');
-})->name('register-expert-profile');
-
 Route::get('/cso-directory', [CsoController::class, 'index'])->name('cso-directory');
 
 Route::get('/cso-directory-details/{cso}', [CsoController::class, 'show'])->name('cso-directory-details');
@@ -94,4 +82,10 @@ Route::get('/events', function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::post('/logout', [LoginController::class, 'destroy']);
+
+    Route::get('/register-expert-profile', [ExpertController::class, 'create'])->name('register-expert-profile');
+    Route::post('/register-expert-profile', [ExpertController::class, 'store'])->name('store-expert');
+
+    Route::get('/register-cso', [CsoController::class, 'create'])->name('register-cso');
+    Route::post('/register-cso', [CsoController::class, 'store'])->name('store-cso');
 });
