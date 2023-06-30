@@ -21,7 +21,9 @@
     <div class="section-2">
         <div class="con">
             <div class="left">
-                <img src="{{ asset('images/logos/lacsodec-logo.png') }}" alt="" class="logo">
+                <a href="/">
+                    <img src="{{ asset('images/logos/lacsodec-logo.png') }}" alt="" class="logo">
+                </a>
                 <ul>
                     <li>
                         <a href="{{ route('cso-directory') }}">CSO Directory</a>
