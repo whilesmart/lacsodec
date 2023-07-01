@@ -29,7 +29,7 @@ Route::get('/cso-library', function () {
     return view('cso-library');
 })->name('cso-library');
 
-Route::get('/blog/{blog}', [ArticleController::class , 'show'])->name('blog-details');
+Route::get('/blog/{blog}', [ArticleController::class, 'show'])->name('blog-details');
 
 Route::get('/events', function () {
     return view('events');
@@ -39,7 +39,7 @@ Route::get('/grants', function () {
     return view('grants');
 })->name('grants');
 
-Route::get('/blog', [ArticleController::class , 'index'])->name('blog');
+Route::get('/blog', [ArticleController::class, 'index'])->name('blog');
 
 Route::get('/lodge', function () {
     return view('lodge');
@@ -53,18 +53,18 @@ Route::get('/my-csos', function () {
     return view('my-csos');
 })->name('my-csos');
 
-Route::get('/cso-directory', [CsoController::class , 'index'])->name('cso-directory');
+Route::get('/cso-directory', [CsoController::class, 'index'])->name('cso-directory');
 
-Route::get('/cso-directory-details/{cso}', [CsoController::class , 'show'])->name('cso-directory-details');
+Route::get('/cso-directory-details/{cso}', [CsoController::class, 'show'])->name('cso-directory-details');
 
-Route::get('/expert-directory', [ExpertController::class , 'index'])->name('expert-directory');
+Route::get('/expert-directory', [ExpertController::class, 'index'])->name('expert-directory');
 
-Route::get('/expert-directory-details/{expert}', [ExpertController::class , 'show'])->name('expert-directory-details');
+Route::get('/expert-directory-details/{expert}', [ExpertController::class, 'show'])->name('expert-directory-details');
 
-Route::get('/login', [LoginController::class , 'create'])->name('login');
-Route::post('/login', [LoginController::class , 'store'])->name('login.perform');
-Route::get('/register', [RegisterController::class , 'create'])->name('register');
-Route::post('/signup', [RegisterController::class , 'store'])->name('register.perform');
+Route::get('/login', [LoginController::class, 'create'])->name('login');
+Route::post('/login', [LoginController::class, 'store'])->name('login.perform');
+Route::get('/register', [RegisterController::class, 'create'])->name('register');
+Route::post('/signup', [RegisterController::class, 'store'])->name('register.perform');
 
 Route::get('/services', function () {
     return view('services');
@@ -85,11 +85,11 @@ Route::get('/events', function () {
 })->name('events');
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::post('/logout', [LoginController::class , 'destroy']);
+    Route::post('/logout', [LoginController::class, 'destroy']);
 
-    Route::get('/register-expert-profile', [ExpertController::class , 'create'])->name('register-expert-profile');
-    Route::post('/register-expert-profile', [ExpertController::class , 'store'])->name('store-expert');
+    Route::get('/register-expert-profile', [ExpertController::class, 'create'])->name('register-expert-profile');
+    Route::post('/register-expert-profile', [ExpertController::class, 'store'])->name('store-expert');
 
-    Route::get('/register-cso', [CsoController::class , 'create'])->name('register-cso');
-    Route::post('/register-cso', [CsoController::class , 'store'])->name('store-cso');
+    Route::get('/register-cso', [CsoController::class, 'create'])->name('register-cso');
+    Route::post('/register-cso', [CsoController::class, 'store'])->name('store-cso');
 });
