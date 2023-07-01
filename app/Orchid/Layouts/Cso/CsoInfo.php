@@ -31,21 +31,19 @@ class CsoInfo extends Rows
         return [
             TextArea::make('cso.vision_statement')
                 ->title('CSO Vision statement')
-                ->placeholder('CSO name')
+                ->placeholder('CSO vision statement')
                 ->required(),
 
             TextArea::make('cso.mission')
-                ->title('CSO Vision statement')
-                ->placeholder('CSO name')
-                ->required(),
+                ->title('CSO mission')
+                ->placeholder('CSO mission'),
 
             Group::make([
                 Input::make('cso.primary_target_beneficiaries')
                     ->title('Primary target beneficiaries')
                     ->required(),
                 Input::make('cso.secondary_target_beneficiaries')
-                    ->title('Secondary target beneficiaries')
-                    ->required(),
+                    ->title('Secondary target beneficiaries'),
             ]),
 
             Select::make('cso.domain')

@@ -91,7 +91,9 @@ class CsoEditScreen extends Screen
      */
     public function createOrUpdate(Request $request)
     {
-        $this->cso->fill($request->get('cso'))->save();
+        $this->cso->fill(array_merge($request->get('cso'), [
+            'created_by' => $request->user()->id,
+        ]))->save();
 
         Alert::info('You have successfully created a cso.');
 

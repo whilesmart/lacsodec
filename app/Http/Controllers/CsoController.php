@@ -113,6 +113,8 @@ class CsoController extends Controller
             'african_coverage' => $fields['african_coverage'],
             'organization_leaderships' => $fields['organization_leaderships'],
             'image' => '/storage/'.$image_path,
+            'user_id' => $request->user()->id,
+            'created_by' => $request->user()->id,
         ]);
 
         return redirect()->to('/cso-directory')->with('success', 'Cso registered successfully. It will be made public after approval by admins');

@@ -2,6 +2,7 @@
 
 namespace App\Orchid\Layouts\Cso;
 
+use App\Models\User;
 use Orchid\Screen\Field;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Select;
@@ -70,6 +71,11 @@ class CsoContactInfo extends Rows
             Input::make('cso.tel')
                 ->title('CSO Contact phone number')
                 ->placeholder('+237656000000')
+                ->required(),
+
+            Select::make('cso.user_id')
+                ->fromModel(User::class, 'name', 'id')
+                ->title('Cso user')
                 ->required(),
         ];
     }
