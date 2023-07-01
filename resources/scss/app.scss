@@ -335,6 +335,9 @@ form {
 header {
     .top {
         border-bottom: 2px solid $primary;
+        @include for-mobile {
+            // padding: 0.5rem 0;
+        }
         .con {
             display: flex;
             align-items: center;
@@ -344,9 +347,15 @@ header {
                 align-items: center;
                 .dropdown {
                     .custom-button {
+                        @include for-mobile {
+                            display: flex;
+                        }
                         img {
                             width: 20px;
                             height: 20px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            object-position: center;
                         }
                     }
                     .dropdown-menu {
@@ -495,11 +504,17 @@ header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            .logo {
+            > a {
                 display: none;
                 @include for-tablet {
                     display: block;
-                    width: 30px;
+                }
+                .logo {
+                    display: none;
+                    @include for-tablet {
+                        display: block;
+                        width: 30px;
+                    }
                 }
             }
             nav {
@@ -3105,6 +3120,79 @@ section.other-expert-section {
                 }
                 > p {
                     margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- cso-directory page styles --------------------------- */
+
+.my-csos-page {
+    .my-csos-section {
+        .con {
+            .my-csos-top {
+                display: flex;
+                justify-content: flex-end;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+/* ------------------------------ table styles ------------------------------ */
+.table-wrapper {
+    padding: 1rem;
+    border-radius: $border-radius;
+    background-color: $white;
+    .pagination {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0;
+        margin-top: 1rem;
+        ul {
+            li {
+                a {
+                    width: 30px;
+                    height: 30px;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+table.custom-table {
+    thead {
+        tr {
+            th {
+                background-color: $primary !important;
+                color: $white !important;
+            }
+        }
+    }
+    tr {
+        td {
+            .actions {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                > a {
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 4px;
+                    background-color: $gray;
+                    font-size: 0.9rem;
+                    &.edit {
+                        background-color: $blue-light;
+                        color: $blue;
+                    }
+                    &.delete {
+                        background-color: $red-light;
+                        color: $red;
+                    }
                 }
             }
         }

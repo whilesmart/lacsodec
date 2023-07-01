@@ -18,11 +18,11 @@
                 <div class="dropdown">
                     <button class="custom-button primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <img src="{{ asset('images/expert-2.png') }}" alt="" class="logo">
+                        <img src="{{ asset('images/expert-2.png') }}" alt="">
                         John Doe
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">CSO's</a></li>
+                        <li><a class="dropdown-item" href="{{ route('my-csos') }}">CSO's</a></li>
                         <li><a class="dropdown-item" href="{{ route('contact-us') }}">Expert Profile</a></li>
                         <li><a class="dropdown-item" href="{{ route('contact-us') }}">Human Resource</a></li>
                         <li><a class="dropdown-item" href="{{ route('contact-us') }}">Settings</a></li>
@@ -34,7 +34,8 @@
     <div class="section-2">
         <div class="con">
             <div class="left">
-                <img src="{{ asset('images/logos/lacsodec-logo.png') }}" alt="" class="logo">
+                <a href="{{ route('welcome') }}"><img src="{{ asset('images/logos/lacsodec-logo.png') }}" alt=""
+                        class="logo"></a>
                 <ul>
                     <li>
                         <a href="{{ route('cso-directory') }}">CSO Directory</a>
@@ -55,7 +56,8 @@
     </div>
     <div class="navigation">
         <div class="con">
-            <img src="{{ asset('images/logos/lacsodec-logo-white.png') }}" alt="" class="logo">
+            <a href="{{ route('welcome') }}"><img src="{{ asset('images/logos/lacsodec-logo-white.png') }}"
+                    alt="" class="logo"></a>
             <nav id="navigation-menu">
                 <button type="button" class="close" id="navigation-close">
                     <i class="fa fa-times" aria-hidden="true"></i>
@@ -84,7 +86,7 @@
                 </ul>
             </nav>
             <div class="right">
-                <a href="/" class="custom-button primary-dark"><span>Donate</span></a>
+                <a href="{{ route('donate') }}" class="custom-button primary-dark"><span>Donate</span></a>
                 <button type="button" class="toggler" id="navigation-toggler"><i class="fa fa-bars"
                         aria-hidden="true"></i></button>
             </div>
