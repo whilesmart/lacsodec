@@ -15,6 +15,19 @@
                 </div>
                 <a href="{{ route('contact-us') }}" class="custom-button transparent"><span>Contact us</span></a>
                 <a href="{{ route('login') }}" class="custom-button primary"><span>Login</span></a>
+                <div class="dropdown">
+                    <button class="custom-button primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="{{ asset('images/expert-2.png') }}" alt="" class="logo">
+                        John Doe
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">CSO's</a></li>
+                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">Expert Profile</a></li>
+                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">Human Resource</a></li>
+                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">Settings</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -48,21 +61,32 @@
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </button>
                 <ul>
-                    <li><a href="/" class="{{ request()->is('/') ? 'active' : ''}}">home</a></li>
-                    <li><a href="{{ route('about-us') }}" class="{{ request()->is('about-us') ? 'active' : ''}}">about us</a></li>
-                    <li><a href="{{ route('services') }}" class="{{ request()->is('services') ? 'active' : ''}}">services</a></li>
-                    <li><a href="{{ route('cso-library') }}" class="{{ request()->is('cso-library') ? 'active' : ''}}">CSO Library</a></li>
-                    <li><a href="{{ route('events') }}" class="{{ request()->is('events') ? 'active' : ''}}">events/Trainings</a></li>
-                    <li><a href="{{ route('grants') }}" class="{{ request()->is('grants') ? 'active' : ''}}">grants</a></li>
-                    <li><a href="{{ route('blog') }}" class="{{ request()->is('blog') ? 'active' : ''}}">blog</a></li>
-                    <li><a href="{{ route('lodge') }}" class="{{ request()->is('lodge') ? 'active' : ''}}">lodge</a></li>
-                    <li><a href="{{ route('lodge') }}" class="mobile-only {{ request()->is('contact-us') ? 'active' : ''}}">lodge</a></li>
-                    <li><a href="{{ route('contact-us') }}" class="{{ request()->is('contact-us') ? 'active' : ''}}">contact-us</a></li>
+                    <li><a href="/" class="{{ request()->is('/') ? 'active' : '' }}">home</a></li>
+                    <li><a href="{{ route('about-us') }}"
+                            class="{{ request()->is('about-us') ? 'active' : '' }}">about
+                            us</a></li>
+                    <li><a href="{{ route('services') }}"
+                            class="{{ request()->is('services') ? 'active' : '' }}">services</a></li>
+                    <li><a href="{{ route('cso-library') }}"
+                            class="{{ request()->is('cso-library') ? 'active' : '' }}">CSO Library</a></li>
+                    <li><a href="{{ route('events') }}"
+                            class="{{ request()->is('events') ? 'active' : '' }}">events/Trainings</a></li>
+                    <li><a href="{{ route('grants') }}"
+                            class="{{ request()->is('grants') ? 'active' : '' }}">grants</a></li>
+                    <li><a href="{{ route('blog') }}" class="{{ request()->is('blog') ? 'active' : '' }}">blog</a>
+                    </li>
+                    <li><a href="{{ route('lodge') }}" class="{{ request()->is('lodge') ? 'active' : '' }}">lodge</a>
+                    </li>
+                    <li><a href="{{ route('lodge') }}"
+                            class="mobile-only {{ request()->is('contact-us') ? 'active' : '' }}">lodge</a></li>
+                    <li><a href="{{ route('contact-us') }}"
+                            class="{{ request()->is('contact-us') ? 'active' : '' }}">contact-us</a></li>
                 </ul>
             </nav>
             <div class="right">
                 <a href="/" class="custom-button primary-dark"><span>Donate</span></a>
-                <button type="button" class="toggler" id="navigation-toggler"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                <button type="button" class="toggler" id="navigation-toggler"><i class="fa fa-bars"
+                        aria-hidden="true"></i></button>
             </div>
         </div>
     </div>
