@@ -50,10 +50,6 @@ Route::get('/donate', function () {
     return view('donate');
 })->name('donate');
 
-Route::get('/my-csos', function () {
-    return view('my-csos');
-})->name('my-csos');
-
 Route::get('/cso-directory', [CsoController::class, 'index'])->name('cso-directory');
 
 Route::get('/cso-directory-details/{cso}', [CsoController::class, 'show'])->name('cso-directory-details');
@@ -95,4 +91,5 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/register-cso', [CsoController::class, 'create'])->name('register-cso');
     Route::post('/register-cso', [CsoController::class, 'store'])->name('store-cso');
+    Route::get('/my-csos', [CsoController::class, 'userCsos'])->name('my-csos');
 });
