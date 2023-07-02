@@ -13,9 +13,9 @@ Civil Society Registry Sofware
 
 ## Contributing
 ### Linting
-Linting ensures consistent code formatting and helps maintain code quality. Before submitting a pull request (PR), contributors should make sure their changes pass the lint check.
-To run the linting process, execute the following command:
-- `./vendor/bin/pint` [Format the codebase]
-- `./vendor/bin/pint --test` [Test the codebase for formatting issues]
+We use `pint` for, execute the following commands:
 
-Make sure there are no linting errors or warnings before requesting code reviews for your PR. This helps keep the codebase clean and maintains consistent coding standards.
+    ./vendor/bin/pint (formats the codebase)
+    ./vendor/bin/pint --test (check for linting errors)
+
+It's important to make sure that there are no linting errors or warnings before requesting code reviews for your PR. 
