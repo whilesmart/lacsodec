@@ -123,8 +123,17 @@ class CsoController extends Controller
     public function userCsos(Request $request)
     {
         $csos = $request->user()->created_csos()->paginate(20);
+
         return view('my-csos', [
-            'csos' => $csos
+            'csos' => $csos,
         ]);
+    }
+
+    public function delete(Request $request, $cso)
+    {
+        $cso = Cso::findOrFail($cso);
+        $cso->delete();
+
+        return redirect()->back()->with('success', 'cso successfully deleted');
     }
 }

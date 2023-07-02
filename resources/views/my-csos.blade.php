@@ -37,8 +37,11 @@
                                     <td>
                                         <div class="actions">
                                             <a class="edit" href=""><i class="fas fa-edit "></i></a>
-                                            <a class="delete" href=""><i class="fa fa-trash"
+                                            <a class="delete" onclick="event.preventDefault(); document.getElementById('delete-form').submit(); return confirm('Do you really want to delete this cso?')"><i class="fa fa-trash"
                                                     aria-hidden="true"></i></a>
+                                            <form action="{{ route('delete-cso', ['cso' => $cso->id]) }}" method="post" id="delete-form">
+                                                @csrf
+                                            </form>    
                                         </div>
                                     </td>
                                 </tr>

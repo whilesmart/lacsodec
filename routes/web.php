@@ -92,4 +92,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/register-cso', [CsoController::class, 'create'])->name('register-cso');
     Route::post('/register-cso', [CsoController::class, 'store'])->name('store-cso');
     Route::get('/my-csos', [CsoController::class, 'userCsos'])->name('my-csos');
+    Route::post('/cso/delete/{cso}', [CsoController::class, 'delete'])->name('delete-cso');
 });
