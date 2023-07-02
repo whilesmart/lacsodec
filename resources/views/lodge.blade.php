@@ -10,40 +10,18 @@
         <section class="lodge-section">
             <div class="con">
                 <div class="main-content">
-                    <img src="{{ asset('images/home-img-1.png') }}" alt="" />
-                    <h1>Latest news from LACSODEC</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <a href="" class="link">Read the Story</a>
+                    <img src="{{ asset('images/lodge-breadcrumb.png') }}" alt="" />
+                    <h1>Latest accomodations from LACSODEC</h1>
+                    @foreach ($accomodations as $accomodation)
+                    <p>{{$accomodation->name}}</p>
+                    <a href="" class="link">More details</a>
                     <div class="images">
-                        <img src="{{ asset('images/home-img-1.png') }}" alt="" />
-                        <img src="{{ asset('images/home-img-2.png') }}" alt="" />
+                        @foreach ($accomodation->attachment as $image)
+                        <img src="{{ asset($image->url()) }}" alt="" />
+                        @endforeach
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
+                    <p>{{$accomodation->description}}</p>
+                    @endforeach
 
                 </div>
                 <aside>
@@ -69,21 +47,13 @@
                                 <p>No Smoking</p>
                             </div>
                         </div>
+                        @foreach ($accomodations as $accomodation)
                         <div class="publication">
-                            <img src="{{ asset('images/publication-1.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <a href="">Download</a>
+                            <img src="{{ asset($accomodation->attachment->first()->url()) }}" alt="" />
+                            <h2>{{$accomodation->name}}</h2>
+                            <a href="">Details</a>
                         </div>
-                        <div class="publication">
-                            <img src="{{ asset('images/publication-2.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <a href="">Download</a>
-                        </div>
-                        <div class="publication">
-                            <img src="{{ asset('images/publication-3.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <a href="">Download</a>
-                        </div>
+                        @endforeach
                     </div>
                 </aside>
             </div>

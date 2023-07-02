@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccomodationController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
@@ -42,9 +43,7 @@ Route::get('/grants', function () {
 
 Route::get('/blog', [ArticleController::class, 'index'])->name('blog');
 
-Route::get('/lodge', function () {
-    return view('lodge');
-})->name('lodge');
+Route::get('/lodge', [AccomodationController::class, 'index'])->name('lodge');
 
 Route::get('/donate', function () {
     return view('donate');
