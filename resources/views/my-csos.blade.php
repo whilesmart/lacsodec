@@ -27,101 +27,30 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($csos as $cso)
                                 <tr>
-                                    <td>Kris-O'Keefe</td>
-                                    <td>Commodity</td>
-                                    <td>7e0b0d2f-6b2c-3512</td>
-                                    <td>South Africa</td>
-                                    <td>3523</td>
+                                    <td>{{$cso->name}}</td>
+                                    <td>{{$cso->organization_type}}</td>
+                                    <td>{{$cso->registration_number}}</td>
+                                    <td>{{$cso->country}}</td>
+                                    <td>{{$cso->created_at}}</td>
                                     <td>
                                         <div class="actions">
                                             <a class="edit" href=""><i class="fas fa-edit "></i></a>
-                                            <a class="delete" href=""><i class="fa fa-trash"
+                                            <a class="delete" onclick="event.preventDefault(); document.getElementById('delete-form').submit(); return confirm('Do you really want to delete this cso?')"><i class="fa fa-trash"
                                                     aria-hidden="true"></i></a>
+                                            <form action="{{ route('delete-cso', ['cso' => $cso->id]) }}" method="post" id="delete-form">
+                                                @csrf
+                                            </form>    
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>Kris-O'Keefe</td>
-                                    <td>Commodity</td>
-                                    <td>7e0b0d2f-6b2c-3512</td>
-                                    <td>South Africa</td>
-                                    <td>3523</td>
-                                    <td>
-                                        <div class="actions">
-                                            <a class="edit" href=""><i class="fas fa-edit "></i></a>
-                                            <a class="delete" href=""><i class="fa fa-trash"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Kris-O'Keefe</td>
-                                    <td>Commodity</td>
-                                    <td>7e0b0d2f-6b2c-3512</td>
-                                    <td>South Africa</td>
-                                    <td>3523</td>
-                                    <td>
-                                        <div class="actions">
-                                            <a class="edit" href=""><i class="fas fa-edit "></i></a>
-                                            <a class="delete" href=""><i class="fa fa-trash"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Kris-O'Keefe</td>
-                                    <td>Commodity</td>
-                                    <td>7e0b0d2f-6b2c-3512</td>
-                                    <td>South Africa</td>
-                                    <td>3523</td>
-                                    <td>
-                                        <div class="actions">
-                                            <a class="edit" href=""><i class="fas fa-edit "></i></a>
-                                            <a class="delete" href=""><i class="fa fa-trash"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Kris-O'Keefe</td>
-                                    <td>Commodity</td>
-                                    <td>7e0b0d2f-6b2c-3512</td>
-                                    <td>South Africa</td>
-                                    <td>3523</td>
-                                    <td>
-                                        <div class="actions">
-                                            <a class="edit" href=""><i class="fas fa-edit "></i></a>
-                                            <a class="delete" href=""><i class="fa fa-trash"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Kris-O'Keefe</td>
-                                    <td>Commodity</td>
-                                    <td>7e0b0d2f-6b2c-3512</td>
-                                    <td>South Africa</td>
-                                    <td>3523</td>
-                                    <td>
-                                        <div class="actions">
-                                            <a class="edit" href=""><i class="fas fa-edit "></i></a>
-                                            <a class="delete" href=""><i class="fa fa-trash"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
                     <div class="pagination">
-                        <ul>
-                            <li><a href="/">1</a></li>
-                            <li><a href="/">2</a></li>
-                            <li><a href="/">3</a></li>
-                            <li><a href="/">...</a></li>
-                            <li><a href="/">20</a></li>
-                        </ul>
+                        {{$csos->links()}}
                     </div>
                 </div>
             </div>

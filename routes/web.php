@@ -50,10 +50,6 @@ Route::get('/donate', function () {
     return view('donate');
 })->name('donate');
 
-Route::get('/my-csos', function () {
-    return view('my-csos');
-})->name('my-csos');
-
 Route::get('/cso-directory', [CsoController::class, 'index'])->name('cso-directory');
 
 Route::get('/cso-directory-details/{cso}', [CsoController::class, 'show'])->name('cso-directory-details');
@@ -88,11 +84,13 @@ Route::get('/events', function () {
 Route::get('/locale/{locale}', [LocalizationController::class, 'changeLang'])->name('locale.setting');
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::post('/logout', [LoginController::class, 'destroy']);
+    Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
 
     Route::get('/register-expert-profile', [ExpertController::class, 'create'])->name('register-expert-profile');
     Route::post('/register-expert-profile', [ExpertController::class, 'store'])->name('store-expert');
 
     Route::get('/register-cso', [CsoController::class, 'create'])->name('register-cso');
     Route::post('/register-cso', [CsoController::class, 'store'])->name('store-cso');
+    Route::get('/my-csos', [CsoController::class, 'userCsos'])->name('my-csos');
+    Route::post('/cso/delete/{cso}', [CsoController::class, 'delete'])->name('delete-cso');
 });

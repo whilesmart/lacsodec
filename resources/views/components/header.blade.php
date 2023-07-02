@@ -14,20 +14,28 @@
                     </ul>
                 </div>
                 <a href="{{ route('contact-us') }}" class="custom-button transparent"><span>Contact us</span></a>
+                @guest
                 <a href="{{ route('login') }}" class="custom-button primary"><span>Login</span></a>
+                @endguest
+                @auth
                 <div class="dropdown">
                     <button class="custom-button primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <img src="{{ asset('images/expert-2.png') }}" alt="">
-                        John Doe
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="">
+                        {{Auth::user()->name}}
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('my-csos') }}">CSO's</a></li>
                         <li><a class="dropdown-item" href="{{ route('contact-us') }}">Expert Profile</a></li>
                         <li><a class="dropdown-item" href="{{ route('contact-us') }}">Human Resource</a></li>
                         <li><a class="dropdown-item" href="{{ route('contact-us') }}">Settings</a></li>
+                        <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                        <form action="{{ route('logout') }}" method="post" id="logout-form">
+                            @csrf
+                        </form>
                     </ul>
                 </div>
+                @endauth
             </div>
         </div>
     </div>
