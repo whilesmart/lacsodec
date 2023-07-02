@@ -84,7 +84,7 @@ Route::get('/events', function () {
 Route::get('/locale/{locale}', [LocalizationController::class, 'changeLang'])->name('locale.setting');
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::post('/logout', [LoginController::class, 'destroy']);
+    Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
 
     Route::get('/register-expert-profile', [ExpertController::class, 'create'])->name('register-expert-profile');
     Route::post('/register-expert-profile', [ExpertController::class, 'store'])->name('store-expert');
