@@ -113,8 +113,27 @@ class CsoController extends Controller
             'african_coverage' => $fields['african_coverage'],
             'organization_leaderships' => $fields['organization_leaderships'],
             'image' => '/storage/'.$image_path,
+            'user_id' => $request->user()->id,
+            'created_by' => $request->user()->id,
         ]);
 
         return redirect()->to('/cso-directory')->with('success', 'Cso registered successfully. It will be made public after approval by admins');
+    }
+
+    public function userCsos(Request $request)
+    {
+        $csos = $request->user()->created_csos()->paginate(20);
+
+        return view('my-csos', [
+            'csos' => $csos,
+        ]);
+    }
+
+    public function delete(Request $request, $cso)
+    {
+        $cso = Cso::findOrFail($cso);
+        $cso->delete();
+
+        return redirect()->back()->with('success', 'cso successfully deleted');
     }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\CsoController;
 use App\Http\Controllers\ExpertController;
+use App\Http\Controllers\LocalizationController;
 use Illuminate\Support\Facades\Route;
 
 /* |-------------------------------------------------------------------------- | Web Routes |-------------------------------------------------------------------------- | | Here is where you can register web routes for your application. These | routes are loaded by the RouteServiceProvider and all of them will | be assigned to the "web" middleware group. Make something great! | */
@@ -49,18 +50,6 @@ Route::get('/donate', function () {
     return view('donate');
 })->name('donate');
 
-Route::get('/register-cso', [CsoController::class, 'create'])->name('register-cso');
-
-Route::post('/register-cso', [CsoController::class, 'store'])->name('store-cso');
-
-Route::get('/register-expert-profile', function () {
-    return view('register-expert-profile');
-})->name('register-expert-profile');
-
-Route::get('/register-expert-profile', function () {
-    return view('register-expert-profile');
-})->name('register-expert-profile');
-
 Route::get('/cso-directory', [CsoController::class, 'index'])->name('cso-directory');
 
 Route::get('/cso-directory-details/{cso}', [CsoController::class, 'show'])->name('cso-directory-details');
@@ -92,6 +81,16 @@ Route::get('/events', function () {
     return view('events');
 })->name('events');
 
+Route::get('/locale/{locale}', [LocalizationController::class, 'changeLang'])->name('locale.setting');
+
 Route::group(['middleware' => ['auth']], function () {
-    Route::post('/logout', [LoginController::class, 'destroy']);
+    Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
+
+    Route::get('/register-expert-profile', [ExpertController::class, 'create'])->name('register-expert-profile');
+    Route::post('/register-expert-profile', [ExpertController::class, 'store'])->name('store-expert');
+
+    Route::get('/register-cso', [CsoController::class, 'create'])->name('register-cso');
+    Route::post('/register-cso', [CsoController::class, 'store'])->name('store-cso');
+    Route::get('/my-csos', [CsoController::class, 'userCsos'])->name('my-csos');
+    Route::post('/cso/delete/{cso}', [CsoController::class, 'delete'])->name('delete-cso');
 });
