@@ -9,7 +9,6 @@ use Orchid\Screen\Fields\CheckBox;
 use Orchid\Screen\Fields\Group;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Label;
-use Orchid\Screen\Fields\Radio;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Fields\Upload;
