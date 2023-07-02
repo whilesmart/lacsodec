@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -48,6 +49,8 @@ class CsoFactory extends Factory
             'board_directors' => $this->faker->boolean(),
             'african_coverage' => $this->faker->word(),
             'organization_leaderships' => $this->faker->sentence(),
+            'user_id' => User::all()->random()->id,
+            'created_by' => User::all()->random()->id,
         ];
     }
 }

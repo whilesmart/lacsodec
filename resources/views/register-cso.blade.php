@@ -320,7 +320,6 @@
                                 <span>{{ $message }}</span>
                             @enderror
                         </div>
-                        <button type="submit" class="custom-button">Create Cso</button>
                     </div>
 
                     <div class="form-section">
