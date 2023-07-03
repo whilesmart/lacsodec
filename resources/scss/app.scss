@@ -2219,6 +2219,11 @@ section.other-expert-section {
         background-image: url("../../public/images/events-breadcrumb.png");
     }
     .events-section {
+    .events-top {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 1rem;
+    }
         .events-grid {
             width: 100%;
             display: grid;

@@ -4,6 +4,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\CsoController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\ExpertController;
 use App\Http\Controllers\LocalizationController;
 use Illuminate\Support\Facades\Route;
@@ -32,9 +33,7 @@ Route::get('/cso-library', function () {
 
 Route::get('/blog/{blog}', [ArticleController::class, 'show'])->name('blog-details');
 
-Route::get('/events', function () {
-    return view('events');
-})->name('events');
+Route::get('/events', [EventController::class, 'index'])->name('events');
 
 Route::get('/grants', function () {
     return view('grants');
@@ -77,10 +76,6 @@ Route::get('/impact-stories', function () {
     return view('impact-stories');
 })->name('impact-stories');
 
-Route::get('/events', function () {
-    return view('events');
-})->name('events');
-
 Route::get('/locale/{locale}', [LocalizationController::class, 'changeLang'])->name('locale.setting');
 
 Route::group(['middleware' => ['auth']], function () {
@@ -93,4 +88,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/register-cso', [CsoController::class, 'store'])->name('store-cso');
     Route::get('/my-csos', [CsoController::class, 'userCsos'])->name('my-csos');
     Route::post('/cso/delete/{cso}', [CsoController::class, 'delete'])->name('delete-cso');
+
+    Route::get('/events/create', [EventController::class, 'create'])->name('create-event');
+    Route::post('/events/create', [EventController::class, 'store'])->name('store-event');
 });
