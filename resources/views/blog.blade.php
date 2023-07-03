@@ -11,42 +11,14 @@
             <div class="con">
                 <div class="main-content">
                     <div class="publications-grid">
+                        @foreach ($blogs as $blog) 
                         <div class="publication">
-                            <img src="{{ asset('images/publication-1.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur. Pretium turpis eget augue mauris scelerisque.</p>
-                            <a href="">Read More</a>
+                            <img src="{{ asset($blog->image) }}" alt="" />
+                            <h2>{{$blog->title}}</h2>
+                            <p>{{$blog->description}}</p>
+                            <a href="{{ route('blog-details', ['blog' => $blog->slug]) }}">Read More</a>
                         </div>
-                        <div class="publication">
-                            <img src="{{ asset('images/publication-2.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur. Pretium turpis eget augue mauris scelerisque.</p>
-                            <a href="">Read More</a>
-                        </div>
-                        <div class="publication">
-                            <img src="{{ asset('images/publication-3.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur. Pretium turpis eget augue mauris scelerisque.</p>
-                            <a href="">Read More</a>
-                        </div>
-                        <div class="publication">
-                            <img src="{{ asset('images/publication-4.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur. Pretium turpis eget augue mauris scelerisque.</p>
-                            <a href="">Read More</a>
-                        </div>
-                        <div class="publication">
-                            <img src="{{ asset('images/publication-5.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur. Pretium turpis eget augue mauris scelerisque.</p>
-                            <a href="">Read More</a>
-                        </div>
-                        <div class="publication">
-                            <img src="{{ asset('images/publication-6.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur. Pretium turpis eget augue mauris scelerisque.</p>
-                            <a href="">Read More</a>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="pagination">
                         <ul>
@@ -63,24 +35,14 @@
                         <div class="top">
                             <h3>Featured</h3>
                         </div>
+                        @foreach ($featuredBlogs as $blog)
                         <div class="publication">
-                            <img src="{{ asset('images/publication-1.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur. Pretium turpis eget augue mauris scelerisque.</p>
-                            <a href="">Read More</a>
+                        <img src="{{ asset($blog->image) }}" alt="" />
+                            <h2>{{$blog->title}}</h2>
+                            <p>{{$blog->description}}</p>
+                            <a href="{{ route('blog-details', ['blog' => $blog->slug]) }}">Read More</a>
                         </div>
-                        <div class="publication">
-                            <img src="{{ asset('images/publication-2.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur. Pretium turpis eget augue mauris scelerisque.</p>
-                            <a href="">Read More</a>
-                        </div>
-                        <div class="publication">
-                            <img src="{{ asset('images/publication-4.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur. Pretium turpis eget augue mauris scelerisque.</p>
-                            <a href="">Read More</a>
-                        </div>
+                        @endforeach
                     </div>
                 </aside>
             </div>

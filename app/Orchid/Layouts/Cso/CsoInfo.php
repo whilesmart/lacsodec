@@ -4,7 +4,6 @@ namespace App\Orchid\Layouts\Cso;
 
 use App\Models\CsoActivityDomain;
 use Orchid\Screen\Field;
-use Orchid\Screen\Fields\CheckBox;
 use Orchid\Screen\Fields\Group;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Label;
@@ -32,27 +31,25 @@ class CsoInfo extends Rows
         return [
             TextArea::make('cso.vision_statement')
                 ->title('CSO Vision statement')
-                ->placeholder('CSO name')
+                ->placeholder('CSO vision statement')
                 ->required(),
 
             TextArea::make('cso.mission')
-                ->title('CSO Vision statement')
-                ->placeholder('CSO name')
-                ->required(),
+                ->title('CSO mission')
+                ->placeholder('CSO mission'),
 
             Group::make([
                 Input::make('cso.primary_target_beneficiaries')
                     ->title('Primary target beneficiaries')
                     ->required(),
                 Input::make('cso.secondary_target_beneficiaries')
-                    ->title('Secondary target beneficiaries')
-                    ->required(),
+                    ->title('Secondary target beneficiaries'),
             ]),
 
             Select::make('cso.domain')
-            ->fromModel(CsoActivityDomain::class, 'name', 'name')
-            ->title('Choose domain of activity')
-            ->required(),
+                ->fromModel(CsoActivityDomain::class, 'name', 'name')
+                ->title('Choose domain of activity')
+                ->required(),
 
             Label::make('cso.board_directors')
                 ->title('Board of directors'),
@@ -81,10 +78,10 @@ class CsoInfo extends Rows
 
             Select::make('cso.african_coverage')
                 ->options([
-                    'national'   => 'National',
-                    'regional'   => 'Regional (more than one african country)',
+                    'national' => 'National',
+                    'regional' => 'Regional (more than one african country)',
                 ])
-                ->title('African coverage of CSO')
+                ->title('African coverage of CSO'),
         ];
     }
 }

@@ -8,16 +8,11 @@ use Orchid\Platform\Dashboard;
 use Orchid\Platform\ItemPermission;
 use Orchid\Platform\OrchidServiceProvider;
 use Orchid\Screen\Actions\Menu;
-use Orchid\Support\Color;
 
 class PlatformProvider extends OrchidServiceProvider
 {
     /**
      * Bootstrap the application services.
-     *
-     * @param Dashboard $dashboard
-     *
-     * @return void
      */
     public function boot(Dashboard $dashboard): void
     {
@@ -47,6 +42,18 @@ class PlatformProvider extends OrchidServiceProvider
                 ->permission('platform.systems.roles')
                 ->divider(),
 
+            Menu::make('Articles')
+                ->icon('bs.file-earmark-post')
+                ->route('platform.article.list')
+                ->permission('platform.systems.roles')
+                ->divider(),
+
+            Menu::make('Events')
+                ->icon('bs.file-earmark-post')
+                ->route('platform.event.list')
+                ->permission('platform.systems.roles')
+                ->divider(),
+
             Menu::make('Cso')
                 ->icon('bs.buildings-fill')
                 ->route('platform.cso.list')
@@ -62,7 +69,7 @@ class PlatformProvider extends OrchidServiceProvider
             Menu::make('Expert Profiles')
                 ->icon('bs.people')
                 ->route('platform.expert.list')
-                ->title('Expert Profiles')
+                ->title('Expert Profiles'),
         ];
     }
 

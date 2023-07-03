@@ -29,6 +29,7 @@ class ExpertListLayout extends Table
         return [
             TD::make('user_id', 'User'),
             TD::make('status', 'Status'),
+            TD::make('position', 'Position'),
             TD::make('created_at', 'Created'),
             TD::make('Actions')
                 ->render(function (ExpertProfile $expert) {

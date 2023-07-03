@@ -25,23 +25,18 @@ class AccomodationEditScreen extends Screen
 
     /**
      * Query data.
-     *
-     * @param Accomodation $accomodation
-     *
-     * @return array
      */
     public function query(Accomodation $accomodation): array
     {
         $accomodation->load('attachment');
+
         return [
-            'accomodation' => $accomodation
+            'accomodation' => $accomodation,
         ];
     }
 
     /**
      * The name of the screen displayed in the header.
-     *
-     * @return string|null
      */
     public function name(): ?string
     {
@@ -53,7 +48,7 @@ class AccomodationEditScreen extends Screen
      */
     public function description(): ?string
     {
-        return "Accomodations";
+        return 'Accomodations';
     }
 
     /**
@@ -67,7 +62,7 @@ class AccomodationEditScreen extends Screen
             Button::make('Create accomodation')
                 ->icon('pencil')
                 ->method('createOrUpdate')
-                ->canSee(!$this->accomodation->exists),
+                ->canSee(! $this->accomodation->exists),
 
             Button::make('Update')
                 ->icon('note')
@@ -98,7 +93,7 @@ class AccomodationEditScreen extends Screen
                 Select::make('accomodation.country')
                     ->title('Country')
                     ->options([
-                        'cameroon' => 'Cameroon'
+                        'cameroon' => 'Cameroon',
                     ])
                     ->required(),
 
@@ -135,14 +130,12 @@ class AccomodationEditScreen extends Screen
 
                 Upload::make('accomodation.attachment')
                     ->title('Accomodation images')
-                    ->acceptedFiles('image/*')
-            ])
+                    ->acceptedFiles('image/*'),
+            ]),
         ];
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function createOrUpdate(Request $request)

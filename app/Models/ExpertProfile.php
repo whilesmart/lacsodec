@@ -27,6 +27,8 @@ class ExpertProfile extends Model
         'certification',
         'certification_date',
         'certificate_image',
+        'position',
+        'phone_number',
     ];
 
     public function user(): BelongsTo

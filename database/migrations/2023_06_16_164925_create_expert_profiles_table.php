@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('location')->nullable();
-            $table->string('status')->nullable();
+            $table->enum('status', ['approved', 'pending', 'rejected'])->default('pending');
             $table->longText('details');
             $table->string('birthday')->nullable();
             $table->string('sex')->nullable();
@@ -28,6 +28,8 @@ return new class extends Migration
             $table->string('certification')->nullable();
             $table->string('certification_date')->nullable();
             $table->string('certification_image')->nullable();
+            $table->string('position')->nullable();
+            $table->string('phone_number')->nullable();
             $table->timestamps();
         });
     }

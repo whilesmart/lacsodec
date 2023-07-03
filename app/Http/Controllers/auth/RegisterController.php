@@ -33,6 +33,6 @@ class RegisterController extends Controller
 
         Auth::login($user);
 
-        return redirect()->intended('/')->with('success', "Account successfully registered");
+        return redirect()->intended('/')->with('success', 'Account successfully registered');
     }
 }

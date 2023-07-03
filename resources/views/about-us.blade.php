@@ -3,7 +3,7 @@
         <!-- breadcrumb -->
         @component('components.breacrumb')
             @slot('current')
-                Aboout us
+                About us
             @endslot
         @endcomponent
 

@@ -1,7 +1,6 @@
 @import "./utils";
 @import "./variables";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 * {
     padding: 0;
     margin: 0;
@@ -12,6 +11,9 @@
     border: none;
     outline: none;
     // border: 1px solid $primary;
+}
+a {
+    text-decoration: none;
 }
 
 :root {
@@ -50,22 +52,18 @@ body {
     //   font-size: 12px;
     // }
     /* scrollbar ******************************* */
-
     &::-webkit-scrollbar {
         width: 0.6rem;
     }
-
     &::-webkit-scrollbar-track {
         box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
         background-color: transparent;
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
     }
-
     &::-webkit-scrollbar-thumb {
         background-color: $primary;
         outline: 1px solid slategrey;
     }
-
     /* end scrollbar ******************************* */
 }
 
@@ -87,6 +85,7 @@ ul {
 }
 
 /* Chrome, Safari, Edge, Opera */
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -99,6 +98,12 @@ input::-webkit-inner-spin-button {
     @include for-extra-large {
         width: 1400px;
     }
+    @include for-large {
+        width: 1200px;
+    }
+    @include for-apple-ipad {
+        width: 90%;
+    }
     @include for-tablet {
         width: 90%;
     }
@@ -108,13 +113,69 @@ input::-webkit-inner-spin-button {
 }
 
 form {
+    .form-section {
+        background-color: $white;
+        border-radius: $border-radius;
+        padding: 2rem;
+        text-align: left;
+        margin-bottom: 1rem;
+        @include for-mobile {
+            padding: 1rem;
+        }
+    }
     .flex {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
-        @include for-mobile {
+        @include for-tablet {
             grid-template-columns: 1fr;
             gap: 0;
+        }
+    }
+    .radio-flex {
+        display: flex;
+        gap: 1rem;
+        height: 45px;
+        align-items: center;
+        @include for-tablet {
+            height: auto;
+            display: grid;
+            row-gap: 0.5rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include for-mobile {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .sub {
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            input {
+                display: none;
+                &[type="radio"]:checked ~ label {
+                    border: 2px solid $primary;
+                    color: $primary;
+                    background-color: $primary-light;
+                }
+            }
+            label {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 45px;
+                width: 100%;
+                border: 2px solid $gray;
+                color: $light-text;
+                border-radius: 5px;
+                padding: 0 1rem;
+                text-transform: capitalize;
+                cursor: pointer;
+                &:hover {
+                    background-color: rgba(238, 238, 238, 0.493);
+                }
+            }
         }
     }
     .button-flex {
@@ -170,9 +231,10 @@ form {
 }
 
 /* ------------------------------ button styles ----------------------------- */
+
 .custom-button {
     padding: 0.5rem 1rem;
-    border-radius: $border-radius;
+    border-radius: 5px;
     // font-size: 16px;
     width: max-content;
     transition-duration: 0.3s;
@@ -269,12 +331,13 @@ form {
 }
 
 /* ------------------------------ header styles ----------------------------- */
+
 header {
-    @include for-mobile {
-        // display: none;
-    }
     .top {
         border-bottom: 2px solid $primary;
+        @include for-mobile {
+            // padding: 0.5rem 0;
+        }
         .con {
             display: flex;
             align-items: center;
@@ -282,38 +345,64 @@ header {
             .buttons {
                 display: flex;
                 align-items: center;
+                .dropdown {
+                    .custom-button {
+                        @include for-mobile {
+                            display: flex;
+                        }
+                        img {
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+                    .dropdown-menu {
+                        border-radius: 0;
+                        border: 1px solid $primary;
+                        li {
+                            a {
+                                &:hover {
+                                    background-color: $primary-light;
+                                    color: $primary;
+                                }
+                            }
+                        }
+                    }
+                }
                 .custom-button {
                     border-radius: 0;
-                    padding: 1rem 1rem;
+                    padding: 0.5rem 1rem;
+                    font-size: 0.9rem;
                     @include for-mobile {
                         display: none;
                     }
                     &:last-child {
-                        @include for-mobile {
+                        @include for-tablet {
                             display: flex;
                         }
                     }
                 }
-                ul {
-                    display: flex;
-                    align-items: center;
-                    @include for-mobile {
-                        display: none;
-                    }
-                    li {
-                        padding: 0 1rem;
-                        border-right: 1px solid $primary;
-                        &:last-child {
-                            border-right: none;
-                        }
-                        a {
-                            color: $primary;
-                            font-size: 1rem;
-                            font-size: 0.9rem;
-                            text-transform: uppercase;
-                            cursor: pointer;
-                            &:hover {
-                                text-decoration: underline;
+                .language {
+                    ul {
+                        display: flex;
+                        align-items: center;
+                        li {
+                            padding: 0 0.5rem;
+                            border-right: 1px solid $primary;
+                            &:last-child {
+                                border-right: none;
+                            }
+                            a {
+                                color: $primary;
+                                font-size: 1rem;
+                                font-size: 0.9rem;
+                                text-transform: uppercase;
+                                cursor: pointer;
+                                &:hover {
+                                    text-decoration: underline;
+                                }
                             }
                         }
                     }
@@ -323,7 +412,10 @@ header {
     }
     .section-2 {
         background-color: $primary-light;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
+        @include for-mobile {
+            padding: 1rem 0;
+        }
         .con {
             display: flex;
             align-items: center;
@@ -343,7 +435,7 @@ header {
                     height: 80px;
                     border-radius: 50%;
                     background-color: $background;
-                    @include for-mobile {
+                    @include for-tablet {
                         display: none;
                     }
                 }
@@ -354,7 +446,10 @@ header {
                         padding: 0 1rem;
                         font-size: 0.9rem;
                         border-right: 1px solid $primary;
-                        @include for-mobile {
+                        &:first-child {
+                            padding-left: 0;
+                        }
+                        @include for-tablet {
                             padding: 0 0.5rem;
                         }
                         &:last-child {
@@ -384,7 +479,7 @@ header {
                     background-color: $primary-light;
                     border-radius: 3px 0 0 3px;
                     width: 200px;
-                    @include for-mobile {
+                    @include for-tablet {
                         width: 100%;
                     }
                 }
@@ -409,17 +504,23 @@ header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            .logo {
+            > a {
                 display: none;
-                @include for-mobile {
+                @include for-tablet {
                     display: block;
-                    width: 30px;
+                }
+                .logo {
+                    display: none;
+                    @include for-tablet {
+                        display: block;
+                        width: 30px;
+                    }
                 }
             }
             nav {
                 transition-duration: 0.3s;
                 position: relative;
-                @include for-mobile {
+                @include for-tablet {
                     // display: none;
                     display: flex;
                     position: fixed;
@@ -437,7 +538,7 @@ header {
                 }
                 .close {
                     display: none;
-                    @include for-mobile {
+                    @include for-tablet {
                         position: absolute;
                         top: 1rem;
                         right: 1rem;
@@ -455,7 +556,7 @@ header {
                 ul {
                     display: flex;
                     align-items: center;
-                    @include for-mobile {
+                    @include for-tablet {
                         flex-direction: column;
                         gap: 1rem;
                         min-width: 100vw;
@@ -466,7 +567,7 @@ header {
                         a {
                             display: flex;
                             align-items: center;
-                            height: 40px;
+                            height: 35px;
                             padding: 0 1rem;
                             font-size: 0.9rem;
                             color: $white;
@@ -479,6 +580,12 @@ header {
                                 background-color: $secondary;
                                 color: $text;
                             }
+                            &.mobile-only {
+                                display: none;
+                                @include for-mobile {
+                                    display: flex;
+                                }
+                            }
                         }
                     }
                 }
@@ -487,15 +594,18 @@ header {
                 display: flex;
                 > .custom-button {
                     border-radius: 0;
-                    height: 40px;
+                    height: 35px;
                     padding: 0 2rem;
                     span {
                         font-size: 0.9rem;
                     }
+                    @include for-tablet {
+                        height: 40px;
+                    }
                 }
                 .toggler {
                     display: none;
-                    @include for-mobile {
+                    @include for-tablet {
                         display: flex;
                         width: 40px;
                         height: 40px;
@@ -513,6 +623,7 @@ header {
 }
 
 /* ------------------------------ footer styles ----------------------------- */
+
 footer {
     background-color: $primary;
     .top {
@@ -523,6 +634,9 @@ footer {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
+            @include for-tablet {
+                grid-template-columns: repeat(2, 1fr);
+            }
             @include for-mobile {
                 grid-template-columns: repeat(1, 1fr);
             }
@@ -618,6 +732,7 @@ footer {
 }
 
 /* ------------------------- general section styles ------------------------- */
+
 section {
     padding: 5rem 0;
     @include for-mobile {
@@ -650,6 +765,7 @@ section {
 }
 
 /* ------------------------------- hero styles ------------------------------ */
+
 .hero {
     width: 100%;
     height: auto;
@@ -695,6 +811,7 @@ section {
 }
 
 /* ---------------------------- home page styles ---------------------------- */
+
 .hero.home {
     background-image: url("../../public/images/home-hero-bg.png");
     background-size: cover;
@@ -708,7 +825,7 @@ section {
     .con {
         display: flex;
         gap: 5rem;
-        @include for-mobile {
+        @include for-tablet {
             flex-direction: column;
             gap: 2rem;
         }
@@ -764,7 +881,7 @@ section {
                 display: flex;
                 gap: 1rem;
                 img {
-                    width: 100%;
+                    width: calc(50% - 0.5rem);
                     height: auto;
                 }
             }
@@ -776,7 +893,7 @@ section {
     .con {
         display: flex;
         gap: 2rem;
-        @include for-mobile {
+        @include for-tablet {
             flex-direction: column;
             gap: 1rem;
         }
@@ -784,9 +901,15 @@ section {
             min-width: 300px;
             max-width: 300px;
             height: auto;
-            @include for-mobile {
+            @include for-tablet {
                 min-width: 100%;
                 max-width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            @include for-mobile {
+                display: block;
             }
         }
         .main-content {
@@ -948,7 +1071,6 @@ section {
             text-transform: capitalize;
         }
     }
-
     .event {
         h4 {
             color: $primary;
@@ -977,7 +1099,6 @@ section {
             gap: 1rem;
         }
     }
-
     .expert {
         display: flex;
         align-items: center;
@@ -1009,7 +1130,6 @@ section {
             }
         }
     }
-
     .cso {
         display: flex;
         align-items: center;
@@ -1029,7 +1149,6 @@ section {
             h5 {
                 color: $primary;
                 font-size: 1rem;
-                margin-bottom: 0.3rem;
                 font-weight: 500;
                 text-transform: capitalize;
             }
@@ -1040,7 +1159,6 @@ section {
             }
         }
     }
-
     .donation-datails {
         .range {
             margin: 1rem 0;
@@ -1080,7 +1198,6 @@ section {
             }
         }
     }
-
     .publication {
         margin-bottom: 1rem;
         img {
@@ -1101,6 +1218,7 @@ section {
 }
 
 /* ------------------------- numbers section styles ------------------------- */
+
 section.numbers-section {
     background-color: $primary;
     background-image: url("../../public//images/world-map.png");
@@ -1128,11 +1246,12 @@ section.numbers-section {
 }
 
 /* ----------------------------- contact section ---------------------------- */
+
 .contact-section {
     .con {
         display: flex;
         gap: 3rem;
-        @include for-mobile {
+        @include for-tablet {
             flex-direction: column;
             gap: 2rem;
         }
@@ -1142,7 +1261,7 @@ section.numbers-section {
             background-color: $white;
             border-radius: $border-radius;
             padding: 2rem;
-            @include for-mobile {
+            @include for-tablet {
                 width: 100%;
                 padding: 1rem;
             }
@@ -1224,12 +1343,14 @@ section.numbers-section {
 }
 
 /* ---------------------------- breadcrumb styles --------------------------- */
+
 .breadcrumb {
     background-size: cover;
     background-position: center;
     background-color: $primary-dark;
     .sub {
-        padding: 5rem;
+        width: 100%;
+        padding: 3.5rem 0;
         background: linear-gradient(90deg, $primary, transparent);
         @include for-mobile {
             padding: 3rem 0;
@@ -1253,12 +1374,16 @@ section.numbers-section {
                         color: $white;
                     }
                 }
+                @include for-mobile {
+                    margin-top: 0.5rem;
+                }
             }
         }
     }
 }
 
 /* ---------------------------- about page styles --------------------------- */
+
 .about-us-page {
     .breadcrumb {
         background-image: url("../../public/images/about-us-breadcrumb.png");
@@ -1282,7 +1407,7 @@ section.numbers-section {
                     gap: 1rem;
                     margin-bottom: 1rem;
                     img {
-                        width: 100%;
+                        width: calc(50% - 0.5rem);
                         height: auto;
                     }
                 }
@@ -1381,18 +1506,17 @@ section.numbers-section {
             }
         }
     }
-
     .about-section-3 {
         .con {
             display: flex;
             align-items: center;
             gap: 3rem;
-            @include for-mobile {
+            @include for-tablet {
                 flex-direction: column;
             }
             > div {
                 width: 50%;
-                @include for-mobile {
+                @include for-tablet {
                     width: 100%;
                 }
             }
@@ -1541,6 +1665,7 @@ section.other-expert-section {
 }
 
 /* --------------------------- member card styles --------------------------- */
+
 .member-card {
     width: 100%;
     img {
@@ -1566,20 +1691,105 @@ section.other-expert-section {
     }
 }
 
+/* --------------------------- expert card styles --------------------------- */
+
+.expert-card {
+    width: 100%;
+    background-color: $white;
+    padding: 1rem;
+    border-radius: 5px;
+    img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 0.5rem;
+        @include for-mobile {
+            height: 150px;
+        }
+    }
+    h4 {
+        font-size: 1.1rem;
+        color: $text;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-bottom: 0.3rem;
+    }
+    h5 {
+        font-size: 0.9rem;
+        color: $light-text;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+    p {
+        font-size: 0.9em;
+        color: $text;
+        margin-top: 0.5rem;
+    }
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0.3rem 0;
+        .left {
+            font-size: 0.9rem;
+            color: $light-text;
+            span {
+                &:first-child {
+                    padding: 0 0.8rem 0 0;
+                    margin: 0 0.3rem 0 0;
+                    position: relative;
+                    &::after {
+                        display: block;
+                        content: "";
+                        position: absolute;
+                        right: 0;
+                        width: 4px;
+                        height: 4px;
+                        background-color: $light-text;
+                        top: calc(50% - 2px);
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+        .status {
+            padding: 0.3rem 1rem;
+            font-size: 0.9rem;
+            text-transform: capitalize;
+            border-radius: 5px;
+            &.busy {
+                background-color: $orange-light;
+                color: $orange;
+            }
+            &.available {
+                background-color: $green-light;
+                color: $green;
+            }
+            &.vacation {
+                background-color: $blue-light;
+                color: $blue;
+            }
+        }
+    }
+}
+
 /* ---------------------------- contact page styles --------------------------- */
+
 .contact-us-page {
     .breadcrumb {
         background-image: url("../../public/images/contact-us-breadcrumb.png");
     }
     .map-section {
         iframe {
-            width: 100vw;
+            width: 100%;
             margin-bottom: 5rem;
         }
     }
 }
 
 /* ---------------------------- login page styles --------------------------- */
+
 .auth-page {
     padding: 10rem 0;
     @include for-mobile {
@@ -1658,11 +1868,11 @@ section.other-expert-section {
 }
 
 /* ---------------------------- services page styles --------------------------- */
+
 .services-page {
     .breadcrumb {
         background-image: url("../../public/images/services-breadcrumb.png");
     }
-
     .services-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -1688,17 +1898,17 @@ section.other-expert-section {
 }
 
 /* ---------------------------- publications page styles --------------------------- */
+
 .publications-page {
     .breadcrumb {
         background-image: url("../../public/images/publications-breadcrumb.png");
     }
-
     .publications-section {
         .con {
             display: flex;
             gap: 2rem;
-            @include for-mobile {
-                flex-direction: column;
+            @include for-tablet {
+                flex-direction: column-reverse;
             }
             aside {
                 min-width: 270px;
@@ -1706,7 +1916,7 @@ section.other-expert-section {
                 background-color: $white;
                 padding: 1rem;
                 border-radius: $border-radius;
-                @include for-mobile {
+                @include for-tablet {
                     min-width: 100%;
                 }
                 nav {
@@ -1745,6 +1955,7 @@ section.other-expert-section {
 }
 
 /* ---------------------------- pubication styles --------------------------- */
+
 .publication {
     width: 100%;
     img {
@@ -1753,6 +1964,9 @@ section.other-expert-section {
         border-radius: $border-radius;
         object-fit: cover;
         object-position: center;
+        @include for-tablet {
+            height: 150px;
+        }
     }
     h2 {
         color: $text;
@@ -1764,6 +1978,17 @@ section.other-expert-section {
         color: $text;
         font-size: 1rem;
         font-weight: 400;
+        display: block;
+        /* Fallback for non-webkit */
+        display: -webkit-box;
+        height: 3.6em;
+        /* Fallback for non-webkit, line-height * 2 */
+        line-height: 1.3em;
+        -webkit-line-clamp: 3;
+        /* if you change this, make sure to change the fallback line-height and height */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     > a {
         display: block;
@@ -1779,6 +2004,7 @@ section.other-expert-section {
 }
 
 /* ---------------------------- pagination styles --------------------------- */
+
 .pagination {
     margin: 1rem 0;
     ul {
@@ -1807,18 +2033,18 @@ section.other-expert-section {
     }
 }
 
-/* ---------------------------- cso-library page styles --------------------------- */
-.cso-library-page {
-    .breadcrumb {
-        background-image: url("../../public/images/cso-library-breadcrumb.png");
-    }
+/* ---------------------------- cso-directory page styles --------------------------- */
 
-    .cso-library-section {
+.cso-directory-page {
+    .breadcrumb {
+        background-image: url("../../public/images/cso-directory-breadcrumb.png");
+    }
+    .cso-directory-section {
         .con {
             display: flex;
             gap: 2rem;
-            @include for-mobile {
-                flex-direction: column;
+            @include for-tablet {
+                flex-direction: column-reverse;
             }
             aside {
                 min-width: 270px;
@@ -1862,7 +2088,12 @@ section.other-expert-section {
             .main-content {
                 flex-grow: 1;
                 width: 100%;
-                .cso-library-grid {
+                .cso-directory-top {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-bottom: 1rem;
+                }
+                .cso-directory-grid {
                     width: 100%;
                     display: grid;
                     grid-template-columns: repeat(4, 1fr);
@@ -1872,27 +2103,6 @@ section.other-expert-section {
                     @include for-mobile {
                         grid-template-columns: repeat(2, 1fr);
                     }
-                    .cso-card {
-                        width: 100%;
-                        img {
-                            width: 100%;
-                            height: 150px;
-                            border-radius: $border-radius;
-                            object-fit: cover;
-                            object-position: center;
-                        }
-                        h2 {
-                            color: $text;
-                            font-size: 1.15rem;
-                            font-weight: 600;
-                            padding: 1rem 0 0.5rem 0;
-                        }
-                        p {
-                            color: $text;
-                            font-size: 1rem;
-                            font-weight: 400;
-                        }
-                    }
                 }
             }
         }
@@ -1900,6 +2110,7 @@ section.other-expert-section {
 }
 
 /* ----------------------------- cso card styles ---------------------------- */
+
 .cso-card {
     width: 100%;
     img {
@@ -1913,7 +2124,7 @@ section.other-expert-section {
         color: $text;
         font-size: 1.15rem;
         font-weight: 600;
-        padding: 1rem 0 0.5rem 0;
+        padding: 0.5rem 0;
     }
     p {
         color: $text;
@@ -1923,11 +2134,11 @@ section.other-expert-section {
 }
 
 /* ---------------------------- impact-stories page styles --------------------------- */
+
 .impact-stories-page {
     .breadcrumb {
         background-image: url("../../public/images/impact-stories-breadcrumb.png");
     }
-
     .impact-stories-section {
         .con {
             display: flex;
@@ -2002,11 +2213,11 @@ section.other-expert-section {
 }
 
 /* ---------------------------- events page styles --------------------------- */
+
 .events-page {
     .breadcrumb {
         background-image: url("../../public/images/events-breadcrumb.png");
     }
-
     .events-section {
         .events-grid {
             width: 100%;
@@ -2014,6 +2225,9 @@ section.other-expert-section {
             grid-template-columns: repeat(4, 1fr);
             column-gap: 1rem;
             row-gap: 2rem;
+            @include for-tablet {
+                grid-template-columns: repeat(3, 1fr);
+            }
             @include for-mobile {
                 grid-template-columns: repeat(1, 1fr);
             }
@@ -2022,6 +2236,595 @@ section.other-expert-section {
             display: flex;
             justify-content: center;
             margin-top: 3rem;
+        }
+    }
+}
+
+.event-card {
+    width: 100%;
+    background-color: $white;
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.08);
+    // border-radius: $border-radius;
+    padding: 1rem;
+    .img-con {
+        width: 100%;
+        height: auto;
+        position: relative;
+        img {
+            width: 100%;
+            height: 200px;
+            border-radius: $border-radius;
+            object-fit: cover;
+            object-position: center;
+            @include for-tablet {
+                height: 150px;
+            }
+        }
+        .type {
+            padding: 0.5rem 2rem;
+            font-size: 1rem;
+            border-top-right-radius: $border-radius;
+            position: absolute;
+            top: 0;
+            right: 0;
+            text-transform: capitalize;
+            &.event {
+                background-color: $primary;
+                color: $white;
+            }
+            &.training {
+                background-color: $orange-light;
+                color: $orange;
+            }
+        }
+    }
+    .flex {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .label {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            border-radius: $border-radius;
+            text-transform: capitalize;
+            &.paid {
+                background-color: $orange-light;
+                color: $orange;
+            }
+            &.free {
+                background-color: $green-light;
+                color: $green;
+            }
+            &.sponsored {
+                background-color: $blue-light;
+                color: $blue;
+            }
+        }
+        p {
+            font-size: 0.9rem;
+            color: $text;
+        }
+    }
+    .content {
+        p {
+            font-size: 1.1rem;
+            color: $text;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: block;
+            /* Fallback for non-webkit */
+            display: -webkit-box;
+            height: 2.6em;
+            /* Fallback for non-webkit, line-height * 2 */
+            line-height: 1.3em;
+            -webkit-line-clamp: 2;
+            /* if you change this, make sure to change the fallback line-height and height */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @include for-tablet {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+/* ---------------------------- grants page styles --------------------------- */
+
+.grants-page {
+    .breadcrumb {
+        background-image: url("../../public/images/grants-breadcrumb.png");
+    }
+    .grants-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 3rem;
+        row-gap: 3rem;
+        @include for-tablet {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include for-mobile {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+}
+
+.grant-card {
+    width: 100%;
+    text-align: center;
+    .logo-con {
+        width: 100%;
+        height: 130px;
+        background-color: $white;
+        box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.08);
+        border-radius: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        @include for-tablet {
+            height: 90px;
+        }
+        img {
+            height: 70%;
+            width: auto;
+        }
+    }
+    .rating {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 1rem;
+        color: $gray;
+        .colored {
+            color: $secondary;
+        }
+    }
+    > p {
+        font-size: 1em;
+        color: $text;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-top: 0.5rem;
+    }
+}
+
+/* ---------------------------- blog page styles --------------------------- */
+
+.blog-page {
+    .breadcrumb {
+        background-image: url("../../public/images/blog-breadcrumb.png");
+    }
+    .blog-section {
+        .con {
+            display: flex;
+            gap: 2rem;
+            @include for-tablet {
+                flex-direction: column;
+            }
+            aside {
+                min-width: 300px;
+                max-width: 300px;
+                height: fit-content;
+                @include for-mobile {
+                    max-width: 100%;
+                    min-width: 100%;
+                }
+                .publication {
+                    margin-bottom: 2rem;
+                }
+            }
+            .main-content {
+                flex-grow: 1;
+                width: 100%;
+                .publications-grid {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    column-gap: 2rem;
+                    row-gap: 2rem;
+                    margin-bottom: 5rem;
+                    @include for-mobile {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- donate page styles --------------------------- */
+
+.donate-page {
+    .breadcrumb {
+        background-image: url("../../public/images/donate-breadcrumb.png");
+    }
+}
+
+/* ---------------------------- expert-directory page styles --------------------------- */
+
+.expert-directory-page {
+    .expert-directory-section {
+        .con {
+            .main-content {
+                width: 100%;
+                .expert-directory-top {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-bottom: 1rem;
+                }
+                .expert-directory-grid {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    column-gap: 1rem;
+                    row-gap: 2rem;
+                    margin-bottom: 5rem;
+                    @include for-tablet {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                    @include for-mobile {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+                .pagination {
+                    ul {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- cso-directory-details page styles --------------------------- */
+
+.cso-directory-details-page {
+    > .top {
+        width: 100%;
+        height: 13rem;
+        background-color: $primary;
+    }
+    .cso-directory-details-section {
+        padding: 0;
+        .con {
+            display: flex;
+            gap: 2rem;
+            @include for-mobile {
+                flex-direction: column;
+            }
+            aside {
+                min-width: 300px;
+                max-width: 300px;
+                height: fit-content;
+                padding-top: 1rem;
+                border-radius: $border-radius;
+                margin-top: 1rem;
+                @include for-mobile {
+                    min-width: 100%;
+                    max-width: 100%;
+                }
+            }
+            .main-content {
+                flex-grow: 1;
+                width: 100%;
+                margin-top: -5rem;
+                .top-image {
+                    width: 400px;
+                    height: auto;
+                    border-radius: $border-radius;
+                    object-fit: cover;
+                    margin-bottom: 1rem;
+                    @include for-mobile {
+                        width: 100%;
+                    }
+                }
+                h1 {
+                    font-size: 3rem;
+                    color: $text;
+                    font-weight: 600;
+                    margin-bottom: 1rem;
+                }
+                > p {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- expert-directory-details page styles --------------------------- */
+
+.expert-directory-details-page {
+    > .top {
+        width: 100%;
+        height: 13rem;
+        background-color: $primary;
+    }
+    .expert-directory-details-section {
+        padding: 0;
+        .con {
+            display: flex;
+            gap: 2rem;
+            @include for-mobile {
+                flex-direction: column;
+            }
+            aside {
+                min-width: 300px;
+                max-width: 300px;
+                height: fit-content;
+                padding-top: 1rem;
+                border-radius: $border-radius;
+                margin-top: 1rem;
+                @include for-mobile {
+                    min-width: 100%;
+                    max-width: 100%;
+                }
+            }
+            .main-content {
+                flex-grow: 1;
+                width: 100%;
+                margin-top: -5rem;
+                .top-image {
+                    width: 400px;
+                    height: auto;
+                    border-radius: $border-radius;
+                    object-fit: cover;
+                    margin-bottom: 1rem;
+                    @include for-mobile {
+                        width: 100%;
+                    }
+                }
+                h1 {
+                    font-size: 3rem;
+                    color: $text;
+                    font-weight: 600;
+                    margin-bottom: 0.5rem;
+                }
+                h2 {
+                    font-size: 1.2rem;
+                    color: $primary;
+                    font-weight: 600;
+                    margin-bottom: 1rem;
+                }
+                > p {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- publications page styles --------------------------- */
+
+.publications-page {
+    .breadcrumb {
+        background-image: url("../../public/images/publications-breadcrumb.png");
+    }
+    .publications-section {
+        .con {
+            display: flex;
+            gap: 2rem;
+            aside {
+                min-width: 270px;
+                height: fit-content;
+                background-color: $white;
+                padding: 1rem;
+                border-radius: $border-radius;
+                nav {
+                    ul {
+                        li {
+                            margin-bottom: 1rem;
+                            a {
+                                color: $text;
+                                font-size: 1rem;
+                                cursor: pointer;
+                                &:hover {
+                                    color: $primary;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .main-content {
+                flex-grow: 1;
+                width: 100%;
+                .publications-grid {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    column-gap: 2rem;
+                    row-gap: 2rem;
+                    margin-bottom: 5rem;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- pagination styles --------------------------- */
+
+.pagination {
+    margin: 1rem 0;
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        li {
+            a {
+                display: block;
+                width: 40px;
+                height: 40px;
+                border-radius: 3px;
+                background-color: $gray;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1rem;
+                color: $text;
+                font-weight: 500;
+                cursor: pointer;
+                &:hover {
+                    background-color: $secondary;
+                }
+            }
+        }
+    }
+}
+
+/* ----------------------------- cso card styles ---------------------------- */
+
+.cso-card {
+    width: 100%;
+    img {
+        width: 100%;
+        height: 150px;
+        border-radius: $border-radius;
+        object-fit: cover;
+        object-position: center;
+    }
+    h2 {
+        color: $text;
+        font-size: 1.15rem;
+        font-weight: 600;
+        padding: 1rem 0 0.5rem 0;
+    }
+    p {
+        color: $text;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+}
+
+/* ---------------------------- impact-stories page styles --------------------------- */
+
+.impact-stories-page {
+    .breadcrumb {
+        background-image: url("../../public/images/impact-stories-breadcrumb.png");
+    }
+    .impact-stories-section {
+        .con {
+            display: flex;
+            gap: 2rem;
+            aside {
+                min-width: 300px;
+                max-width: 300px;
+                height: fit-content;
+                background-color: $white;
+                border-radius: $border-radius;
+            }
+            .main-content {
+                flex-grow: 1;
+                height: fit-content;
+                background-color: $white;
+                border-radius: $border-radius;
+                padding: 2rem;
+                img {
+                    width: 100%;
+                    height: 400px;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                h1 {
+                    font-size: 2rem;
+                    color: $text;
+                    font-weight: 600;
+                }
+                .info-container {
+                    display: flex;
+                    align-items: center;
+                    gap: 2rem;
+                    padding-bottom: 0.5em;
+                    margin: 1rem 0 2rem 0;
+                    border-bottom: 1px solid $border-color;
+                    .info {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        color: $text;
+                        .fa {
+                            color: $primary;
+                        }
+                    }
+                }
+                .images {
+                    width: 100%;
+                    display: flex;
+                    gap: 1rem;
+                    margin: 1rem 0;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                > p {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- newsroom page styles --------------------------- */
+
+.newsroom-page {
+    .breadcrumb {
+        background-image: url("../../public/images/newsroom-breadcrumb.png");
+    }
+    .newsroom-section {
+        .con {
+            display: flex;
+            gap: 2rem;
+            aside {
+                min-width: 300px;
+                max-width: 300px;
+                height: fit-content;
+                background-color: $white;
+                border-radius: $border-radius;
+            }
+            .main-content {
+                flex-grow: 1;
+                height: fit-content;
+                h1 {
+                    font-size: 2rem;
+                    color: $text;
+                    font-weight: 600;
+                    margin-bottom: 2rem;
+                }
+                .images {
+                    width: 100%;
+                    display: flex;
+                    gap: 1rem;
+                    margin: 0 0 1rem 0;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                > p {
+                    margin-bottom: 1rem;
+                }
+                .publications-grid {
+                    margin-top: 2rem;
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    column-gap: 1rem;
+                    row-gap: 2rem;
+                }
+            }
         }
     }
 }
@@ -2101,119 +2904,12 @@ section.other-expert-section {
     }
 }
 
-/* ---------------------------- grants page styles --------------------------- */
-.grants-page {
-    .breadcrumb {
-        background-image: url("../../public/images/grants-breadcrumb.png");
-    }
-    .grants-grid {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        column-gap: 3rem;
-        row-gap: 3rem;
-        @include for-mobile {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    .pagination {
-        display: flex;
-        justify-content: center;
-        margin-top: 3rem;
-    }
-}
-
-.grant-card {
-    width: 100%;
-    text-align: center;
-    .logo-con {
-        width: 100%;
-        height: 130px;
-        background-color: $white;
-        box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.08);
-        border-radius: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-        @include for-mobile {
-            height: 90px;
-        }
-        img {
-            height: 70%;
-            width: auto;
-        }
-    }
-    .rating {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        font-size: 1rem;
-        color: $gray;
-        .colored {
-            color: $secondary;
-        }
-    }
-    > p {
-        font-size: 1em;
-        color: $text;
-        font-weight: 600;
-        text-transform: capitalize;
-        margin-top: 0.5rem;
-    }
-}
-/* ---------------------------- blog page styles --------------------------- */
-.blog-page {
-    .breadcrumb {
-        background-image: url("../../public/images/blog-breadcrumb.png");
-    }
-
-    .blog-section {
-        .con {
-            display: flex;
-            gap: 2rem;
-            @include for-mobile {
-                flex-direction: column;
-            }
-            aside {
-                min-width: 300px;
-                max-width: 300px;
-                height: fit-content;
-                @include for-mobile {
-                    max-width: 100%;
-                    min-width: 100%;
-                }
-                .publication {
-                    margin-bottom: 2rem;
-                }
-            }
-            .main-content {
-                flex-grow: 1;
-                width: 100%;
-                .publications-grid {
-                    width: 100%;
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    column-gap: 2rem;
-                    row-gap: 2rem;
-                    margin-bottom: 5rem;
-                    @include for-mobile {
-                        grid-template-columns: repeat(1, 1fr);
-                    }
-                }
-            }
-        }
-    }
-}
-
 /* ---------------------------- lodge page styles --------------------------- */
+
 .lodge-page {
     .breadcrumb {
         background-image: url("../../public/images/lodge-breadcrumb.png");
     }
-
     .lodge-section {
         .con {
             display: flex;
@@ -2227,10 +2923,6 @@ section.other-expert-section {
                 height: fit-content;
                 background-color: $white;
                 border-radius: $border-radius;
-                @include for-mobile {
-                    min-width: 100%;
-                    max-width: 100%;
-                }
                 .facilities {
                     margin-bottom: 2rem;
                     .info {
@@ -2283,7 +2975,7 @@ section.other-expert-section {
                     gap: 1rem;
                     margin: 2rem 0;
                     img {
-                        width: 100%;
+                        width: calc(50% - 0.5rem);
                         height: auto;
                     }
                 }
@@ -2304,40 +2996,15 @@ section.other-expert-section {
 }
 
 /* ---------------------------- donate page styles --------------------------- */
+
 .donate-page {
     .breadcrumb {
         background-image: url("../../public/images/donate-breadcrumb.png");
     }
 }
 
-/* ---------------------------- cso-directory page styles --------------------------- */
-.cso-directory-page {
-    .cso-directory-section {
-        .con {
-            .main-content {
-                width: 100%;
-                .cso-directory-grid {
-                    width: 100%;
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    column-gap: 1rem;
-                    row-gap: 2rem;
-                    margin-bottom: 5rem;
-                    @include for-mobile {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
-                }
-                .pagination {
-                    ul {
-                        justify-content: center;
-                    }
-                }
-            }
-        }
-    }
-}
-
 /* ---------------------------- expert-directory page styles --------------------------- */
+
 .expert-directory-page {
     .expert-directory-section {
         .con {
@@ -2350,9 +3017,6 @@ section.other-expert-section {
                     column-gap: 1rem;
                     row-gap: 2rem;
                     margin-bottom: 5rem;
-                    @include for-mobile {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
                 }
                 .pagination {
                     ul {
@@ -2365,6 +3029,7 @@ section.other-expert-section {
 }
 
 /* ---------------------------- cso-directory-details page styles --------------------------- */
+
 .cso-directory-details-page {
     > .top {
         width: 100%;
@@ -2376,20 +3041,13 @@ section.other-expert-section {
         .con {
             display: flex;
             gap: 2rem;
-            @include for-mobile {
-                flex-direction: column;
-            }
             aside {
                 min-width: 300px;
                 max-width: 300px;
                 height: fit-content;
-                padding-top: 1rem;
+                padding: 1rem;
                 border-radius: $border-radius;
                 margin-top: 1rem;
-                @include for-mobile {
-                    min-width: 100%;
-                    max-width: 100%;
-                }
             }
             .main-content {
                 flex-grow: 1;
@@ -2401,9 +3059,6 @@ section.other-expert-section {
                     border-radius: $border-radius;
                     object-fit: cover;
                     margin-bottom: 1rem;
-                    @include for-mobile {
-                        width: 100%;
-                    }
                 }
                 h1 {
                     font-size: 3rem;
@@ -2420,6 +3075,7 @@ section.other-expert-section {
 }
 
 /* ---------------------------- expert-directory-details page styles --------------------------- */
+
 .expert-directory-details-page {
     > .top {
         width: 100%;
@@ -2431,20 +3087,13 @@ section.other-expert-section {
         .con {
             display: flex;
             gap: 2rem;
-            @include for-mobile {
-                flex-direction: column;
-            }
             aside {
                 min-width: 300px;
                 max-width: 300px;
                 height: fit-content;
-                padding-top: 1rem;
+                padding: 1rem;
                 border-radius: $border-radius;
                 margin-top: 1rem;
-                @include for-mobile {
-                    min-width: 100%;
-                    max-width: 100%;
-                }
             }
             .main-content {
                 flex-grow: 1;
@@ -2456,9 +3105,6 @@ section.other-expert-section {
                     border-radius: $border-radius;
                     object-fit: cover;
                     margin-bottom: 1rem;
-                    @include for-mobile {
-                        width: 100%;
-                    }
                 }
                 h1 {
                     font-size: 3rem;
@@ -2474,6 +3120,79 @@ section.other-expert-section {
                 }
                 > p {
                     margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------- cso-directory page styles --------------------------- */
+
+.my-csos-page {
+    .my-csos-section {
+        .con {
+            .my-csos-top {
+                display: flex;
+                justify-content: flex-end;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+/* ------------------------------ table styles ------------------------------ */
+.table-wrapper {
+    padding: 1rem;
+    border-radius: $border-radius;
+    background-color: $white;
+    .pagination {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0;
+        margin-top: 1rem;
+        ul {
+            li {
+                a {
+                    width: 30px;
+                    height: 30px;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+table.custom-table {
+    thead {
+        tr {
+            th {
+                background-color: $primary !important;
+                color: $white !important;
+            }
+        }
+    }
+    tr {
+        td {
+            .actions {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                > a {
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 4px;
+                    background-color: $gray;
+                    font-size: 0.9rem;
+                    &.edit {
+                        background-color: $blue-light;
+                        color: $blue;
+                    }
+                    &.delete {
+                        background-color: $red-light;
+                        color: $red;
+                    }
                 }
             }
         }

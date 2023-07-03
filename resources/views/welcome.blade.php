@@ -3,8 +3,9 @@
     <div class="hero home">
         <div class="sub">
             <div class="con">
-                <h1><b>Our Helping</b><br>around the world.</h1>
-                <p>We facilitate knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind.</p>
+                <h1><b>{{ __('home.Our helping') }}</b><br>around the world.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur. Integer amet donec vitae neque amet et gravida. Pellentesque
+                    amet magna massa elementum ut. Dictum ipsum luctus elit nascetur proin a.</p>
                 <div class="buttons">
                     <a href="/" class="custom-button secondary"><span>Donate now</span></a>
                     <a href="/" class="custom-button white-border"><span>join us</span></a>
