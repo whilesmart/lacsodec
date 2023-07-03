@@ -77,8 +77,6 @@
                             us</a></li>
                     <li><a href="{{ route('services') }}"
                             class="{{ request()->is('services') ? 'active' : '' }}">services</a></li>
-                    <li><a href="{{ route('cso-library') }}"
-                            class="{{ request()->is('cso-library') ? 'active' : '' }}">CSO Library</a></li>
                     <li><a href="{{ route('events') }}"
                             class="{{ request()->is('events') ? 'active' : '' }}">events/Trainings</a></li>
                     <li><a href="{{ route('grants') }}"

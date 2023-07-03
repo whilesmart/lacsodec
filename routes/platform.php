@@ -8,6 +8,8 @@ use App\Orchid\Screens\Article\ArticleEditScreen;
 use App\Orchid\Screens\Article\ArticleListScreen;
 use App\Orchid\Screens\Cso\CsoEditScreen;
 use App\Orchid\Screens\Cso\CsoListScreen;
+use App\Orchid\Screens\Event\EventEditScreen;
+use App\Orchid\Screens\Event\EventListScreen;
 use App\Orchid\Screens\ExpertProfile\ExpertProfileEditScreen;
 use App\Orchid\Screens\ExpertProfile\ExpertProfileListScreen;
 use App\Orchid\Screens\PlatformScreen;
@@ -105,3 +107,9 @@ Route::screen('accomodation/{accomodation?}', AccomodationEditScreen::class)
 
 Route::screen('accomodations', AccomodationListScreen::class)
     ->name('platform.accomodation.list');
+
+Route::screen('event/{event?}', EventEditScreen::class)
+    ->name('platform.event.edit');
+
+Route::screen('events', EventListScreen::class)
+    ->name('platform.event.list');

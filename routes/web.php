@@ -4,6 +4,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\CsoController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\ExpertController;
 use App\Http\Controllers\LocalizationController;
 use Illuminate\Support\Facades\Route;
@@ -26,15 +27,9 @@ Route::get('/services', function () {
     return view('services');
 })->name('services');
 
-Route::get('/cso-library', function () {
-    return view('cso-library');
-})->name('cso-library');
-
 Route::get('/blog/{blog}', [ArticleController::class, 'show'])->name('blog-details');
 
-Route::get('/events', function () {
-    return view('events');
-})->name('events');
+Route::get('/events', [EventController::class, 'index'])->name('events');
 
 Route::get('/grants', function () {
     return view('grants');
@@ -71,15 +66,9 @@ Route::get('/publications', function () {
     return view('publications');
 })->name('publications');
 
-// Route::get('/cso-library', [CsoController::class , 'index'])->name('cso-library');
-
 Route::get('/impact-stories', function () {
     return view('impact-stories');
 })->name('impact-stories');
-
-Route::get('/events', function () {
-    return view('events');
-})->name('events');
 
 Route::get('/locale/{locale}', [LocalizationController::class, 'changeLang'])->name('locale.setting');
 
