@@ -88,7 +88,4 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/register-cso', [CsoController::class, 'store'])->name('store-cso');
     Route::get('/my-csos', [CsoController::class, 'userCsos'])->name('my-csos');
     Route::post('/cso/delete/{cso}', [CsoController::class, 'delete'])->name('delete-cso');
-
-    Route::get('/events/create', [EventController::class, 'create'])->name('create-event');
-    Route::post('/events/create', [EventController::class, 'store'])->name('store-event');
 });

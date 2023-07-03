@@ -9,9 +9,6 @@
 
         <section class="events-section">
             <div class="con">
-            <div class="events-top">
-                        <a href="{{ route('create-event') }}" class="custom-button secondary"><span>Create event</span></a>
-                    </div>
                 <div class="events-grid">
                     @foreach ($events as $event)
                     <div class="event-card">
