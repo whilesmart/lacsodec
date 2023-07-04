@@ -11,35 +11,37 @@
                 <div class="social">
                     <ul>
                         <li>
-                            <a href="">
+                            <a href="https://www.facebook.com/lukmefcameroon/" target="_blank">
                                 <i class="fab fa-facebook" aria-hidden="true"></i>
                             </a>
                         </li>
-                        <li>
+                        <!-- LACSODEC HAS NO PINTEREST ACCOUNT
+                            <li>
                             <a href="">
                                 <i class="fab fa-pinterest" aria-hidden="true"></i>
                             </a>
-                        </li>
+                        </li> -->
                         <li>
-                            <a href="">
+                            <a href="https://www.instagram.com/lukmefcam/" target="_blank">
                                 <i class="fab fa-instagram" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="https://www.twitter.com/lukmefcameroon/" target="_blank">
                                 <i class="fab fa-twitter" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="https://www.youtube.com/@lukmefcameroon253/" target="_blank">
                                 <i class="fab fa-youtube" aria-hidden="true"></i>
                             </a>
                         </li>
-                        <li>
+                        <!-- LinkedIn still pending
+                            <li>
                             <a href="">
                                 <i class="fab fa-linkedin" aria-hidden="true"></i>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
