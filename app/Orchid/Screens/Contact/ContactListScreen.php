@@ -4,8 +4,8 @@ namespace App\Orchid\Screens\Contact;
 
 use App\Models\ContactInfo;
 use App\Orchid\Layouts\Contact\ContactListLayout;
-use Orchid\Screen\Screen;
 use Orchid\Screen\Actions\Link;
+use Orchid\Screen\Screen;
 
 class ContactListScreen extends Screen
 {
@@ -17,14 +17,12 @@ class ContactListScreen extends Screen
     public function query(): iterable
     {
         return [
-            'contactInfos' => ContactInfo::paginate()
+            'contactInfos' => ContactInfo::paginate(),
         ];
     }
 
     /**
      * The name of the screen displayed in the header.
-     *
-     * @return string|null
      */
     public function name(): ?string
     {
@@ -41,7 +39,7 @@ class ContactListScreen extends Screen
         return [
             Link::make('Create new')
                 ->icon('pencil')
-                ->route('platform.contact.edit')
+                ->route('platform.contact.edit'),
         ];
     }
 
@@ -53,7 +51,7 @@ class ContactListScreen extends Screen
     public function layout(): iterable
     {
         return [
-            ContactListLayout::class
+            ContactListLayout::class,
         ];
     }
 }

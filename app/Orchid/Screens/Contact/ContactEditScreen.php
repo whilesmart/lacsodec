@@ -4,11 +4,11 @@ namespace App\Orchid\Screens\Contact;
 
 use App\Models\ContactInfo;
 use Illuminate\Http\Request;
-use Orchid\Screen\Screen;
 use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Alert;
 use Orchid\Support\Facades\Layout;
-use Orchid\Screen\Fields\Input;
 
 class ContactEditScreen extends Screen
 {
@@ -19,22 +19,16 @@ class ContactEditScreen extends Screen
 
     /**
      * Query data.
-     *
-     * @param ContactInfo $contactInfo
-     *
-     * @return array
      */
     public function query(ContactInfo $contactInfo): array
     {
         return [
-            'contactInfo' => $contactInfo
+            'contactInfo' => $contactInfo,
         ];
     }
 
     /**
      * The name of the screen displayed in the header.
-     *
-     * @return string|null
      */
     public function name(): ?string
     {
@@ -46,7 +40,7 @@ class ContactEditScreen extends Screen
      */
     public function description(): ?string
     {
-        return "Contact info";
+        return 'Contact info';
     }
 
     /**
@@ -60,7 +54,7 @@ class ContactEditScreen extends Screen
             Button::make('Create contact info')
                 ->icon('pencil')
                 ->method('createOrUpdate')
-                ->canSee(!$this->contactInfo->exists),
+                ->canSee(! $this->contactInfo->exists),
 
             Button::make('Update')
                 ->icon('note')
@@ -92,22 +86,20 @@ class ContactEditScreen extends Screen
                     ->title('Listing email address')
                     ->type('email')
                     ->required(),
-                
+
                 Input::make('contactInfo.phone_number')
                     ->title('Phone number')
                     ->type('tel')
                     ->required(),
-                
+
                 Input::make('contactInfo.location')
                     ->title('Location')
                     ->required(),
-            ])
+            ]),
         ];
     }
 
-     /**
-     * @param \Illuminate\Http\Request $request
-     *
+    /**
      * @return \Illuminate\Http\RedirectResponse
      */
     public function createOrUpdate(Request $request)

@@ -3,9 +3,9 @@
 namespace App\Orchid\Layouts\Contact;
 
 use App\Models\ContactInfo;
+use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\TD;
-use Orchid\Screen\Actions\Link;
 
 class ContactListLayout extends Table
 {
