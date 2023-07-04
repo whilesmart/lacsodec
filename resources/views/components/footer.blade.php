@@ -36,12 +36,11 @@
                                 <i class="fab fa-youtube" aria-hidden="true"></i>
                             </a>
                         </li>
-                        <!-- LinkedIn still pending
-                            <li>
-                            <a href="">
+                        <li>
+                            <a href="https://www.linkedin.com/company/martin-luther-king-jr-memorial-foundation-lukmef-/mycompany/" target="_blank">
                                 <i class="fab fa-linkedin" aria-hidden="true"></i>
                             </a>
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
             </div>
