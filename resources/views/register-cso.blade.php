@@ -19,7 +19,7 @@
                                 <input type="text" name="name" id="name" placeholder="CSO name"
                                     value="{{ old('name') }}" required>
                                 @error('name')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -27,7 +27,7 @@
                                 <input type="number" name="assessment_score" id="assessment-score"
                                     placeholder="CSO sssessment score" value="{{ old('assessment_score') }}" required>
                                 @error('assessment_score')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                                 <input type="text" name="partnership" id="partnership" placeholder="CSO partnership"
                                     value="{{ old('partnership') }}" required>
                                 @error('partnership')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                                 <input type="date" name="registration_date" id="registration-date"
                                     placeholder="registration-date" value="{{ old('registration_date') }}" required>
                                 @error('registration_date')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -55,7 +55,7 @@
                                 <input type="text" name="registration_number" id="registration-number"
                                     placeholder="registration-number" value="{{ old('registration_number') }}" required>
                                 @error('registration_number')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                                     <option value="Faith Based organization">Faith Based organization</option>
                                 </select>
                                 @error('organization_type')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -88,7 +88,7 @@
                                     <option value="rwanda">Rwanda</option>
                                 </select>
                                 @error('country')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                                 <input type="text" name="region" id="region" placeholder="region"
                                     value="{{ old('region') }}" required>
                                 @error('region')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -106,7 +106,7 @@
                                 <input type="text" name="division" id="division" placeholder="division"
                                     value="{{ old('division') }}" required>
                                 @error('division')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                                 <input type="text" name="village" id="village" placeholder="village"
                                     value="{{ old('village') }}" required>
                                 @error('village')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                                 <span>Choose image</span>
                                 <input type="file" name="image" id="" accept="image/*" />
                                 @error('image')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </label>
                         </div>
@@ -143,7 +143,7 @@
                                 <input type="text" name="contact_person_name" id="contact-name"
                                     placeholder="contact-name" value="{{ old('contact_person_name') }}" required>
                                 @error('contact_person_name')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -154,7 +154,7 @@
                                     <option value="female">Female</option>
                                 </select>
                                 @error('contact_person_sex')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -164,7 +164,7 @@
                                 <input type="email" name="contact_person_email" id="contact-email"
                                     placeholder="contact-email" value="{{ old('contact_person_email') }}" required>
                                 @error('contact_person_email')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -172,7 +172,7 @@
                                 <input type="tel" name="contact_person_tel" id="contact-phone"
                                     placeholder="contact-phone" value="{{ old('contact_person_tel') }}" required>
                                 @error('contact_person_tel')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -183,7 +183,7 @@
                                     placeholder="contact-position" value="{{ old('contact_person_position') }}"
                                     required>
                                 @error('contact_person_position')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -191,7 +191,7 @@
                                 <input type="text" name="address" id="cso-address" placeholder="cso-address"
                                     value="{{ old('address') }}" required>
                                 @error('address')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -201,7 +201,7 @@
                                 <input type="url" name="website" id="cso-website" placeholder="cso-website"
                                     value="{{ old('website') }}" required>
                                 @error('website')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -209,7 +209,7 @@
                                 <input type="email" name="email" id="cso-email" placeholder="cso-email"
                                     value="{{ old('email') }}" required>
                                 @error('email')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -219,7 +219,7 @@
                                 <input type="tel" name="tel" id="cso-contact" placeholder="cso-contact"
                                     value="{{ old('tel') }}" required>
                                 @error('tel')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -232,7 +232,7 @@
                                 <input type="text" name="vision_statement" id="vision-statement"
                                     placeholder="vision-statement" value="{{ old('vision_statement') }}" required>
                                 @error('vision_statement')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -241,7 +241,7 @@
                                     placeholder="primary-meneficiaries"
                                     value="{{ old('primary_target_beneficiaries') }}" required>
                                 @error('primary_target_beneficiaries')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -254,7 +254,7 @@
                                     @endforeach
                                 </select>
                                 @error('domain')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -276,7 +276,7 @@
                                     </div>
                                 </div>
                                 @error('board_directors')
-                                    <span>{{ $message }}</span>
+                                    <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -306,7 +306,7 @@
                                 </div>
                             </div>
                             @error('organization_leaderships')
-                                <span>{{ $message }}</span>
+                                <span class="error-msg">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="field">
@@ -317,7 +317,7 @@
                                 <option value="regional">Regional (more than one african country)</option>
                             </select>
                             @error('african_coverage')
-                                <span>{{ $message }}</span>
+                                <span class="error-msg">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
