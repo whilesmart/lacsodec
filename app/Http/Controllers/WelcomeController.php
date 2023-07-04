@@ -25,6 +25,6 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        return 'Welcome to Inzidi API';
+        return 'Welcome to Lacsodec API';
     }
 }

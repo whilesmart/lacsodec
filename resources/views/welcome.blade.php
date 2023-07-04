@@ -6,8 +6,8 @@
                 <h1><b>{{ __('home.Our helping') }}</b><br>{{__('home.around the world.')}}</h1>
                 <p>{{__('home.We facilitate knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind.')}}</p>
                 <div class="buttons">
-                    <a href="/" class="custom-button secondary"><span>{{__('home.Donate now')}}</span></a>
-                    <a href="/" class="custom-button white-border"><span>{{__('home.join us')}}</span></a>
+                    <a href="{{ route('register-cso') }}" class="custom-button secondary"><span>{{__('home.Register a CSO')}}</span></a>
+                    <a href="{{ route('register') }}" class="custom-button white-border"><span>{{__('home.join us')}}</span></a>
                 </div>
             </div>
         </div>
@@ -44,151 +44,105 @@
                     <div class="top">
                         <h3>Recent Event</h3>
                     </div>
+                    @if ($latestEvent)
                     <div class="event">
-                        <h4>Donate to Others for Self</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit sed do eiusmod tempor
-                            incididunt ut lab et dolo magn aliqua. Mauris
-                        </p>
+                        <h4>{{$latestEvent->name}}</h4>
                         <div class="info">
                             <i class="fa fa-map-marker" aria-hidden="true"></i>
-                            <p>The Official Yearly Meeting
-                                Molyko - Buea</p>
+                            <p>{{$latestEvent->type}}</p>
                         </div>
                         <div class="info">
                             <i class="fa fa-clock" aria-hidden="true"></i>
-                            <p>08:00 AM - 05:00 PM</p>
+                            <p>{{$latestEvent->date}}</p>
                         </div>
                     </div>
-                    <a href="/" class="custom-button white">
+                    <a href="{{$latestEvent->url}}" target="__blank" class="custom-button white">
                         <span>View more</span>
                         <i class="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
+                    @endif
                 </div>
                 <div class="aside-section">
                     <div class="top">
                         <h3>Latest Experts</h3>
                     </div>
+                    @foreach ($latestExperts as $expert)
                     <div class="expert">
-                        <img src="{{ asset('images/expert-1.png') }}" alt="" />
+                        <img src="{{ asset($expert->image) }}" alt="" />
                         <div class="info">
-                            <h5>Opeolu Tijani</h5>
-                            <p>Receptionist</p>
+                            <h5>{{$expert->user->name}}</h5>
+                            <p>{{$expert->position}}</p>
                         </div>
                     </div>
-                    <div class="expert">
-                        <img src="{{ asset('images/expert-2.png') }}" alt="" />
-                        <div class="info">
-                            <h5>Mensa Robert</h5>
-                            <p>Account manager</p>
-                        </div>
-                    </div>
-                    <div class="expert">
-                        <img src="{{ asset('images/expert-3.png') }}" alt="" />
-                        <div class="info">
-                            <h5>Uche Ngozi</h5>
-                            <p>Product manager</p>
-                        </div>
-                    </div>
-                    <div class="expert">
-                        <img src="{{ asset('images/expert-4.png') }}" alt="" />
-                        <div class="info">
-                            <h5>Badmus Eniola</h5>
-                            <p>CTO</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </aside>
             <div class="main-content">
                 <div class="news-feed">
                     <div class="main">
-                        <img src="{{ asset('images/news-feed.png') }}" alt="">
+                        @if ($latestArticles[0])
+                        <img src="{{ asset($latestArticles[0]->image) }}" alt="">
                         <div class="content">
-                            <h2>Give your love to older people</h2>
+                            <h2>{{$latestArticles[0]->name}}</h2>
                             <div class="info">
                                 <div class="sub">
                                     <i class="fa fa-user" aria-hidden="true"></i>
-                                    <p>Posted by:</p>
+                                    <p>Posted by: {{$latestArticles[0]->user->name}}</p>
                                 </div>
                                 <div class="sub">
                                     <i class="fa fa-calendar" aria-hidden="true"></i>
-                                    <p>April 3, 2020</p>
+                                    <p>{{$latestArticles[0]->created_at}}</p>
                                 </div>
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                            <p>{{$latestArticles[0]->description}}</p>
                         </div>
+                        @endif
                     </div>
                     <div class="feeds">
+                        @foreach ($latestArticles as $article)
+                        @if (!$loop->first)
                         <div class="feed">
-                            <img src="{{ asset('images/news-feed-1.png') }}" alt="">
+                            <img src="{{ asset($article->image) }}" alt="">
                             <div class="content">
-                                <h3>No one has ever become poor by giving</h3>
+                                <h3>{{$article->title}}</h3>
                                 <div class="info">
                                     <div class="sub">
                                         <i class="fa fa-user" aria-hidden="true"></i>
-                                        <p>Posted by:</p>
+                                        <p>Posted by: {{$article->user->name}}</p>
                                     </div>
                                     <div class="sub">
                                         <i class="fa fa-calendar" aria-hidden="true"></i>
-                                        <p>April 3, 2020</p>
+                                        <p>{{$article->created_at}}</p>
                                     </div>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                                <a href="/" class="custom-button white">
+                                <p>{{$article->description}}</p>
+                                <a href="{{ route('blog-details', ['blog' => $article->slug]) }}" class="custom-button white">
                                     <span>Read more</span>
                                     <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
-                        <div class="feed">
-                            <img src="{{ asset('images/news-feed-2.png') }}" alt="">
-                            <div class="content">
-                                <h3>Disability is not the end of your career</h3>
-                                <div class="info">
-                                    <div class="sub">
-                                        <i class="fa fa-user" aria-hidden="true"></i>
-                                        <p>Posted by:</p>
-                                    </div>
-                                    <div class="sub">
-                                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                                        <p>April 3, 2020</p>
-                                    </div>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                                <a href="/" class="custom-button white">
-                                    <span>Read more</span>
-                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="feed">
-                            <img src="{{ asset('images/news-feed-3.png') }}" alt="">
-                            <div class="content">
-                                <h3>Proof That NGO BLOGS Is Exactly What You Are Looking…</h3>
-                                <div class="info">
-                                    <div class="sub">
-                                        <i class="fa fa-user" aria-hidden="true"></i>
-                                        <p>Posted by:</p>
-                                    </div>
-                                    <div class="sub">
-                                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                                        <p>April 3, 2020</p>
-                                    </div>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                                <a href="/" class="custom-button white">
-                                    <span>Read more</span>
-                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
+                        @endif
+                        @endforeach
                     </div>
                 </div>
             </div>
             <aside>
                 <x-donation-card />
-                <x-latest-cso />
+                <div class="aside-section">
+    <div class="top">
+        <h3>Latest CSO</h3>
+    </div>
+    @foreach ($latestCsos as $cso)
+    <div class="cso">
+        <img src="{{ asset('images/cso-1.png') }}" alt="" />
+        <div class="info">
+            <h5>{{$cso->name}}</h5>
+            <p>{{$cso->created_at}}</p>
+        </div>
+    </div>
+    @endforeach
+</div>
             </aside>
         </div>
     </section>
