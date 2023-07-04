@@ -7,7 +7,7 @@
             @endslot
         @endcomponent
 
-        <x-contact />
+        <x-contact :contactInfo="$contactInfo"></x-contact>
 
         <section class="map-section">
             <iframe

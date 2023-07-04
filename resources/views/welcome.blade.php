@@ -44,6 +44,7 @@
                     <div class="top">
                         <h3>Recent Event</h3>
                     </div>
+                    @if ($latestEvent)
                     <div class="event">
                         <h4>{{$latestEvent->name}}</h4>
                         <div class="info">
@@ -59,6 +60,7 @@
                         <span>View more</span>
                         <i class="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
+                    @endif
                 </div>
                 <div class="aside-section">
                     <div class="top">
@@ -78,6 +80,7 @@
             <div class="main-content">
                 <div class="news-feed">
                     <div class="main">
+                        @if ($latestArticles[0])
                         <img src="{{ asset($latestArticles[0]->image) }}" alt="">
                         <div class="content">
                             <h2>{{$latestArticles[0]->name}}</h2>
@@ -93,6 +96,7 @@
                             </div>
                             <p>{{$latestArticles[0]->description}}</p>
                         </div>
+                        @endif
                     </div>
                     <div class="feeds">
                         @foreach ($latestArticles as $article)
@@ -144,6 +148,6 @@
     </section>
 
     <x-numbers />
-    <x-contact />
+    <x-contact :contactInfo="$contactInfo"></x-contact>
 
 </x-layouts.app>
