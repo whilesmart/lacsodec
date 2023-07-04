@@ -7,7 +7,9 @@
             @endslot
         @endcomponent
 
+        @if ($contactInfo)
         <x-contact :contactInfo="$contactInfo"></x-contact>
+        @endif
 
         <section class="map-section">
             <iframe

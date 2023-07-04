@@ -148,6 +148,8 @@
     </section>
 
     <x-numbers />
+    @if ($contactInfo)
     <x-contact :contactInfo="$contactInfo"></x-contact>
+    @endif
 
 </x-layouts.app>
