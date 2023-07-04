@@ -6,10 +6,22 @@
                 <div class="language">
                     <ul>
                         <li>
-                            <a href="{{ route('locale.setting', 'en') }}">en</a>
+                            <a href="{{ route('locale.setting', 'en') }}">
+                                @if (Lang::locale() == 'en')
+                                <b style="font-size: larger;">en</b>
+                                @else
+                                en
+                                @endif
+                            </a>
                         </li>
                         <li>
-                            <a href="{{ route('locale.setting', 'fr') }}">fr</a>
+                            <a href="{{ route('locale.setting', 'fr') }}">
+                                @if (Lang::locale() == 'fr')
+                                <b style="font-size: large;">fr</b>
+                                @else
+                                fr
+                                @endif
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -19,8 +31,7 @@
                 @endguest
                 @auth
                 <div class="dropdown">
-                    <button class="custom-button primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <button class="custom-button primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="">
                         {{Auth::user()->name}}
                     </button>
@@ -42,14 +53,25 @@
     <div class="section-2">
         <div class="con">
             <div class="left">
-                <a href="{{ route('welcome') }}"><img src="{{ asset('images/logos/lacsodec-logo.png') }}" alt=""
-                        class="logo"></a>
+                <a href="{{ route('welcome') }}"><img src="{{ asset('images/logos/lacsodec-logo.png') }}" alt="" class="logo"></a>
                 <ul>
                     <li>
-                        <a href="{{ route('cso-directory') }}">CSO Directory</a>
+                        <a href="{{ route('cso-directory') }}">
+                            @if (Request::routeIs('cso-directory'))
+                            <b style="font-size: large;">CSO Directory</b>
+                            @else
+                            CSO Directory
+                            @endif
+                        </a>
                     </li>
                     <li>
-                        <a href="{{ route('expert-directory') }}">Experts Directory</a>
+                        <a href="{{ route('expert-directory') }}">
+                            @if (Request::routeIs('expert-directory'))
+                            <b style="font-size: large;">Experts Directory</b>
+                            @else
+                            Experts Directory
+                            @endif
+                        </a>
                     </li>
                     <li>
                         <a href="">HR Directory</a>
@@ -64,37 +86,29 @@
     </div>
     <div class="navigation">
         <div class="con">
-            <a href="{{ route('welcome') }}"><img src="{{ asset('images/logos/lacsodec-logo-white.png') }}"
-                    alt="" class="logo"></a>
+            <a href="{{ route('welcome') }}"><img src="{{ asset('images/logos/lacsodec-logo-white.png') }}" alt="" class="logo"></a>
             <nav id="navigation-menu">
                 <button type="button" class="close" id="navigation-close">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </button>
                 <ul>
                     <li><a href="/" class="{{ request()->is('/') ? 'active' : '' }}">home</a></li>
-                    <li><a href="{{ route('about-us') }}"
-                            class="{{ request()->is('about-us') ? 'active' : '' }}">about
+                    <li><a href="{{ route('about-us') }}" class="{{ request()->is('about-us') ? 'active' : '' }}">about
                             us</a></li>
-                    <li><a href="{{ route('services') }}"
-                            class="{{ request()->is('services') ? 'active' : '' }}">services</a></li>
-                    <li><a href="{{ route('events') }}"
-                            class="{{ request()->is('events') ? 'active' : '' }}">events/Trainings</a></li>
-                    <li><a href="{{ route('grants') }}"
-                            class="{{ request()->is('grants') ? 'active' : '' }}">grants</a></li>
+                    <li><a href="{{ route('services') }}" class="{{ request()->is('services') ? 'active' : '' }}">services</a></li>
+                    <li><a href="{{ route('events') }}" class="{{ request()->is('events') ? 'active' : '' }}">events/Trainings</a></li>
+                    <li><a href="{{ route('grants') }}" class="{{ request()->is('grants') ? 'active' : '' }}">grants</a></li>
                     <li><a href="{{ route('blog') }}" class="{{ request()->is('blog') ? 'active' : '' }}">blog</a>
                     </li>
                     <li><a href="{{ route('lodge') }}" class="{{ request()->is('lodge') ? 'active' : '' }}">lodge</a>
                     </li>
-                    <li><a href="{{ route('lodge') }}"
-                            class="mobile-only {{ request()->is('contact-us') ? 'active' : '' }}">lodge</a></li>
-                    <li><a href="{{ route('contact-us') }}"
-                            class="{{ request()->is('contact-us') ? 'active' : '' }}">contact-us</a></li>
+                    <li><a href="{{ route('lodge') }}" class="mobile-only {{ request()->is('contact-us') ? 'active' : '' }}">lodge</a></li>
+                    <li><a href="{{ route('contact-us') }}" class="{{ request()->is('contact-us') ? 'active' : '' }}">contact-us</a></li>
                 </ul>
             </nav>
             <div class="right">
                 <a href="{{ route('donate') }}" class="custom-button primary-dark"><span>Donate</span></a>
-                <button type="button" class="toggler" id="navigation-toggler"><i class="fa fa-bars"
-                        aria-hidden="true"></i></button>
+                <button type="button" class="toggler" id="navigation-toggler"><i class="fa fa-bars" aria-hidden="true"></i></button>
             </div>
         </div>
     </div>
