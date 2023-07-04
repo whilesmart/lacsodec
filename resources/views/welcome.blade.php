@@ -3,12 +3,11 @@
     <div class="hero home">
         <div class="sub">
             <div class="con">
-                <h1><b>{{ __('home.Our helping') }}</b><br>around the world.</h1>
-                <p>Lorem ipsum dolor sit amet consectetur. Integer amet donec vitae neque amet et gravida. Pellentesque
-                    amet magna massa elementum ut. Dictum ipsum luctus elit nascetur proin a.</p>
+                <h1><b>{{ __('home.Our helping') }}</b><br>{{__('home.around the world.')}}</h1>
+                <p>{{__('home.We facilitate knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind.')}}</p>
                 <div class="buttons">
-                    <a href="/" class="custom-button secondary"><span>Donate now</span></a>
-                    <a href="/" class="custom-button white-border"><span>join us</span></a>
+                    <a href="/" class="custom-button secondary"><span>{{__('home.Donate now')}}</span></a>
+                    <a href="/" class="custom-button white-border"><span>{{__('home.join us')}}</span></a>
                 </div>
             </div>
         </div>
@@ -26,17 +25,9 @@
                 <a href="/" class="custom-button secondary"><span>Learn more</span></a>
             </div>
             <div class="right">
-                <p><b>
-                        Lorem ipsum dolor sit amet consectetur. Adipiscing vel varius nam a aliquet sed aliquam eu. Enim
-                        sed non duis in tincidunt. Posuere eu quis odio ju.</b></p>
-                <p>
-                    Duis et nisl at tellus nisl. Venenatis suscipit posuere diam orci ornare habitasse. Eget sem sed
-                    aliquet ultrices enim viverra velit. Dolor dapibus tincidunt risus id. Enim in egestas nibh risus
-                    ullamcorper sapien. Eleifend tellus tristique mi lorem. Ipsum tempus dictumst platea amet at vel est
-                    felis volutpat. Vulputate condimentum sit neque ullamcorper egestas. Iaculis molestie aliquam quis
-                    elementum erat risus. Bibendum risus purus nullam sed bibendum lacus.</p>
-                <p>Duis tempus diam eu pretium purus facilisi quam. Sapien velit ante dignissim urna. Mattis praesent
-                    faucibus tellus laoreet nibh felis amet eu odio.</p>
+                <p><b>{{__('home.WHO WE ARE')}}</b></p>
+                <p>{{__('home.The LUKMEF Africa Civil Society Development Centre (LACSODEC) is a Civil Society Organization (CSO) service providing agency facilitating knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind.')}}</p>
+                <p>{{__('home.LACSODEC was founded in {year} by Tanyi Christian under the LUKMEF vision for Sustainable Development and Empowerment of communities and other local civil society actors to improve on service delivery. LACSODEC is located in NGO Street, Molyko – Buea, in the SW Region of Cameroon with registration number {insert here}.')}}</p>
 
                 <div class="images">
                     <img src="{{ asset('images/home-img-1.png') }}" alt="" />

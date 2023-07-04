@@ -3,11 +3,11 @@
         <div class="con">
             <div class="sub">
                 <img src="{{ asset('images/logos/lacsodec-logo-white.png') }}" alt="" class="logo">
-                <p>Lorem ipsum dolor sit amet consectetur. Nec sed sit et nunc consequat vitae.</p>
-                <a href="/" class="custom-button secondary"><span>Donate now</span></a>
+                <p>{{__('footer.We promote knowledge acquisition, resource sharing and fairness among CSOs of all levels, with the ultimate goal of benefiting the populace.')}}</p>
+                <a href="/" class="custom-button secondary"><span>{{__('footer.Donate now')}}</span></a>
             </div>
             <div class="sub">
-                <h3>Follow us on</h3>
+                <h3>{{__('footer.Follow us on')}}</h3>
                 <div class="social">
                     <ul>
                         <li>
@@ -44,27 +44,27 @@
                 </div>
             </div>
             <div class="sub">
-                <h3>contact us</h3>
+                <h3>{{__('footer.contact us')}}</h3>
                 <p>
                     Email: info@lacsodec.org,<br>
                     Address: NGO Street, <br>
                     Molyko - Buea
                 </p>
-                <p>Phone: +237 674 58 74 58</p>
+                <p>Phone: +237 677947449</p>
             </div>
             <div class="sub">
-                <h3>Newsletter</h3>
-                <p>Join our subscribers list to get the latest news and updates delivered directly in your inbox.</p>
+                <h3>{{__('footer.Newsletter')}}</h3>
+                <p>{{__('footer.Join our subscribers list to get the latest news and updates delivered directly in your inbox.')}}</p>
                 <form action="">
                     <input type="text" name="" id="" placeholder="Your email address">
-                    <button type="submit">Sign up</button>
+                    <button type="submit">{{__('footer.Sign up')}}</button>
                 </form>
             </div>
         </div>
     </div>
     <div class="bottom">
         <div class="con">
-            <p>© Copyright Widom Of Life 2020 by Extracoding</p>
+            <p>{{__('footer.Copyright © 2023 by')}} <a href="https://whilesmart.com" target="__blank">whilesmart</a></p>
         </div>
     </div>
 </footer>
