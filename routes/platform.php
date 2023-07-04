@@ -6,6 +6,8 @@ use App\Orchid\Screens\Accomodation\AccomodationEditScreen;
 use App\Orchid\Screens\Accomodation\AccomodationListScreen;
 use App\Orchid\Screens\Article\ArticleEditScreen;
 use App\Orchid\Screens\Article\ArticleListScreen;
+use App\Orchid\Screens\Contact\ContactEditScreen;
+use App\Orchid\Screens\Contact\ContactListScreen;
 use App\Orchid\Screens\Cso\CsoEditScreen;
 use App\Orchid\Screens\Cso\CsoListScreen;
 use App\Orchid\Screens\Event\EventEditScreen;
@@ -113,3 +115,9 @@ Route::screen('event/{event?}', EventEditScreen::class)
 
 Route::screen('events', EventListScreen::class)
     ->name('platform.event.list');
+
+Route::screen('contact/{contact?}', ContactEditScreen::class)
+    ->name('platform.contact.edit');
+
+Route::screen('contacts', ContactListScreen::class)
+    ->name('platform.contact.list');
