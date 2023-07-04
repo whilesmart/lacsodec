@@ -18,28 +18,28 @@
                     <label for="">Email</label>
                     <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required>
                     @if ($errors->has('email'))
-                    <span class="">{{ $errors->first('email') }}</span>
+                    <span class="error-msg">{{ $errors->first('email') }}</span>
                     @endif
                 </div>
                 <div class="field">
                     <label for="">Password</label>
                     <input type="password" name="password" id="password" placeholder="Enter password" value="{{ old('password') }}" required>
                     @if ($errors->has('password'))
-                    <span class="">{{ $errors->first('password') }}</span>
+                    <span class="error-msg">{{ $errors->first('password') }}</span>
                     @endif
                 </div>
                 <div class="field">
                     <label for="password_confirmation">Confirm password</label>
                     <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirm password" value="{{ old('password_confirmation') }}" required>
                     @if ($errors->has('password_confirmation'))
-                    <span class="">{{ $errors->first('password_confirmation') }}</span>
+                    <span class="error-msg">{{ $errors->first('password_confirmation') }}</span>
                     @endif
                 </div>
                 <div class="field">
                     <label for="">Country</label>
                     <input type="text" name="country" id="country" placeholder="Country" value="{{ old('country') }}" required>
                     @if ($errors->has('country'))
-                    <span class="">{{ $errors->first('country') }}</span>
+                    <span class="error-msg">{{ $errors->first('country') }}</span>
                     @endif
                 </div>
                 <button type="submit" class="custom-button secondary">

@@ -6,14 +6,13 @@ use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\CsoController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ExpertController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocalizationController;
 use Illuminate\Support\Facades\Route;
 
 /* |-------------------------------------------------------------------------- | Web Routes |-------------------------------------------------------------------------- | | Here is where you can register web routes for your application. These | routes are loaded by the RouteServiceProvider and all of them will | be assigned to the "web" middleware group. Make something great! | */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [HomeController::class, 'index'])->name('welcome');
 
 Route::get('/about-us', function () {
     return view('about-us');
