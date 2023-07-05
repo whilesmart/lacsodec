@@ -4,24 +4,24 @@ use App\Http\Controllers\AccomodationController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CsoController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\ExpertController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocalizationController;
 use Illuminate\Support\Facades\Route;
 
 /* |-------------------------------------------------------------------------- | Web Routes |-------------------------------------------------------------------------- | | Here is where you can register web routes for your application. These | routes are loaded by the RouteServiceProvider and all of them will | be assigned to the "web" middleware group. Make something great! | */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [HomeController::class, 'index'])->name('welcome');
 
 Route::get('/about-us', function () {
     return view('about-us');
 })->name('about-us');
 
-Route::get('/contact-us', function () {
-    return view('contact-us');
-})->name('contact-us');
+Route::get('/contact-us', [ContactController::class, 'index'])->name('contact-us');
+Route::post('/contact-us', [ContactController::class, 'store'])->name('contact-mail');
 
 Route::get('/services', function () {
     return view('services');
@@ -29,9 +29,7 @@ Route::get('/services', function () {
 
 Route::get('/blog/{blog}', [ArticleController::class, 'show'])->name('blog-details');
 
-Route::get('/events', function () {
-    return view('events');
-})->name('events');
+Route::get('/events', [EventController::class, 'index'])->name('events');
 
 Route::get('/grants', function () {
     return view('grants');
@@ -40,6 +38,10 @@ Route::get('/grants', function () {
 Route::get('/blog', [ArticleController::class, 'index'])->name('blog');
 
 Route::get('/lodge', [AccomodationController::class, 'index'])->name('lodge');
+
+Route::get('/lodge-details', function () {
+    return view('lodge-details');
+})->name('lodge-details');
 
 Route::get('/donate', function () {
     return view('donate');
@@ -69,10 +71,6 @@ Route::get('/publications', function () {
 Route::get('/impact-stories', function () {
     return view('impact-stories');
 })->name('impact-stories');
-
-Route::get('/events', function () {
-    return view('events');
-})->name('events');
 
 Route::get('/locale/{locale}', [LocalizationController::class, 'changeLang'])->name('locale.setting');
 

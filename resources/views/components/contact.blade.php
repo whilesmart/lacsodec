@@ -2,29 +2,50 @@
     <div class="con">
         <div class="left">
             <h2>Get in touch</h2>
-            <form action="">
+            <form action="{{ route('contact-mail') }}" method="post">
+                @csrf
                 <div class="flex">
                     <div class="field">
                         <label for="">Name</label>
-                        <input type="text" name="name" id="name" placeholder="Name">
+                        <input type="text" name="name" id="name" placeholder="Name" value="{{ old('name') }}" required>
+                        @error('name')
+                            <span class="error-msg">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="field">
                         <label for="">Phone</label>
-                        <input type="text" name="phone" id="phone" placeholder="Phone">
+                        <input type="text" name="phone" id="phone" placeholder="Phone" value="{{ old('phone') }}" required>
+                        @error('phone')
+                            <span class="error-msg">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
                 <div class="field">
                     <label for="">Email</label>
-                    <input type="text" name="email" id="email" placeholder="Email">
+                    <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required>
+                    @error('email')
+                        <span class="error-msg">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="field">
                     <label for="">Subject</label>
-                    <input type="text" name="subject" id="subject" placeholder="Subject">
+                    <input type="text" name="subject" id="subject" placeholder="Subject" value="{{ old('subject') }}" required>
+                    @error('subject')
+                        <span class="error-msg">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="field">
-                    <label for="">Phone</label>
-                    <textarea name="message" id="" cols="30" rows="10" placeholder="Enter your message"></textarea>
+                    <label for="">Message</label>
+                    <textarea name="message" id="" cols="30" rows="10" placeholder="Enter your message" value="{{ old('message') }}" required></textarea>
+                    @error('message')
+                        <span class="error-msg">{{ $message }}</span>
+                    @enderror
                 </div>
+                @if(Session::has('success'))
+                    <div class="alert alert-success">
+                        {{Session::get('success')}}
+                    </div>
+                @endif
                 <button type="submit" class="custom-button secondary">
                     <span>send</span>
                     <i class="fa fa-paper-plane" aria-hidden="true"></i>
@@ -38,15 +59,15 @@
             <div class="info">
                 <div class="sub">
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <p>Address: NGO Street, Molyko - Buea</p>
+                    <p>Address: {{$contactInfo->location}}</p>
                 </div>
                 <div class="sub">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <p>info@lacsodec.org,</p>
+                    <p>{{$contactInfo->listed_email_address}}</p>
                 </div>
                 <div class="sub">
                     <i class="fa fa-phone" aria-hidden="true"></i>
-                    <p>Phone: (+237) 674 58 74 58</p>
+                    <p>Phone: {{$contactInfo->phone_number}}</p>
                 </div>
             </div>
             <div class="social">

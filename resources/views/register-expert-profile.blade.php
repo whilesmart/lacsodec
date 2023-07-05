@@ -18,7 +18,7 @@
                                 <input type="text" name="location" id="location" placeholder="Enter expert location"
                                     value="{{ old('location') }}" required>
                                     @error('location')
-                                        <span>{{$message}}</span>
+                                        <span class="error-msg">{{$message}}</span>
                                     @enderror
                             </div>
                             <div class="field">
@@ -26,7 +26,7 @@
                                 <input type="text" name="phone_number" id="phone_number" placeholder="+237656000000"
                                     value="{{ old('phone_number') }}" required>
                                     @error('phone_number')
-                                        <span>{{$message}}</span>
+                                        <span class="error-msg">{{$message}}</span>
                                     @enderror
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                                 <input type="date" name="birthday" id="date-of-birth"
                                     placeholder="Enter expert date-of-birth" value="{{ old('birthday') }}" required>
                                     @error('birthday')
-                                        <span>{{$message}}</span>
+                                        <span class="error-msg">{{$message}}</span>
                                     @enderror
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                                 <input type="text" name="birth_place" id="place-of-birth"
                                     placeholder="Enter expert place-of-birth" value="{{ old('birth_place') }}" required>
                                     @error('birth_place')
-                                        <span>{{$message}}</span>
+                                        <span class="error-msg">{{$message}}</span>
                                 @enderror
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                             <label for="">Details</label>
                             <textarea name="details" id="details" cols="30" rows="10" value="{{ old('details') }}" required></textarea>
                             @error('details')
-                                <span>{{$message}}</span>
+                                <span class="error-msg">{{$message}}</span>
                             @enderror
                         </div>
                         <div class="flex">
@@ -83,7 +83,10 @@
                             <div class="field">
                                 <label for="">Image</label>
                                 <input type="file" name="image" id="image" placeholder="image" value="" accept="image/*"
-                                    required>
+                                >
+                                @error('image')
+                                    <span class="error-msg">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -95,7 +98,7 @@
                                 <input type="text" name="company" id="company" placeholder="Enter expert company"
                                 value="{{ old('company') }}" required>
                                 @error('company')
-                                        <span>{{$message}}</span>
+                                        <span class="error-msg">{{$message}}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -103,7 +106,7 @@
                                 <input type="text" name="work_duration" id="work-duration"
                                     placeholder="Enter expert work duration" value="{{ old('work_duration') }}" required>
                                 @error('work_duration')
-                                    <span>{{$message}}</span>
+                                    <span class="error-msg">{{$message}}</span>
                                 @enderror
                             </div>
                         </div>
@@ -113,7 +116,7 @@
                                 <input type="text" name="position" id="role" placeholder="Enter expert role"
                                 value="{{ old('position') }}" required>
                                 @error('position')
-                                        <span>{{$message}}</span>
+                                        <span class="error-msg">{{$message}}</span>
                                 @enderror
                             </div>
                         </div>
@@ -126,7 +129,7 @@
                                 <input type="text" name="certification" id="certification"
                                     placeholder="Enter expert certification" value="{{ old('certification') }}" required>
                                 @error('certification')
-                                    <span>{{$message}}</span>
+                                    <span class="error-msg">{{$message}}</span>
                                 @enderror
                             </div>
                             <div class="field">
@@ -134,7 +137,7 @@
                                 <input type="date" name="certification_date" id="date-of-certification"
                                     placeholder="Enter expert date-of-certification" value="{{ old('certification_date') }}" required>
                                 @error('certification_date')
-                                    <span>{{$message}}</span>
+                                    <span class="error-msg">{{$message}}</span>
                                 @enderror
                             </div>
                         </div>
@@ -142,7 +145,10 @@
                             <div class="field">
                                 <label for="">Certification Image</label>
                                 <input type="file" name="certification_image" id="image" placeholder="image" accept="image/*"
-                                    value="" required>
+                                    value="">
+                                @error('certification_image')
+                                    <span class="error-msg">{{$message}}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
