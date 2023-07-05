@@ -9,83 +9,220 @@
 
         <section class="lodge-section">
             <div class="con">
-                <div class="main-content">
-                    <img src="{{ asset('images/home-img-1.png') }}" alt="" />
-                    <h1>Latest news from LACSODEC</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <a href="" class="link">Read the Story</a>
-                    <div class="images">
-                        <img src="{{ asset('images/home-img-1.png') }}" alt="" />
-                        <img src="{{ asset('images/home-img-2.png') }}" alt="" />
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-
-                </div>
                 <aside>
                     <div class="aside-section">
                         <div class="top">
-                            <h3>Home Facilities</h3>
+                            <h3>Filters</h3>
                         </div>
-                        <div class="facilities">
-                            <div class="info">
-                                <img src="{{ asset('images/icons/wifi.svg') }}" alt="" />
-                                <p>Free wifi</p>
+                        <form class="filters">
+                            <div class="sub">
+                                <h4>Location</h4>
+                                <select name="" id="">
+                                    <option value="">Yaounde</option>
+                                    <option value="">Douala</option>
+                                    <option value="">Buea</option>
+                                    <option value="">Bamenda</option>
+                                </select>
                             </div>
-                            <div class="info">
-                                <img src="{{ asset('images/icons/bottle.svg') }}" alt="" />
-                                <p>Baby Shower</p>
+                            <div class="sub">
+                                <h4>Category</h4>
+                                <ul>
+                                    <li>
+                                        <div class="left">
+                                            <input type="checkbox" name="star-1" id="star-1">
+                                            <label for="star-1">1 star</label>
+                                        </div>
+                                        <div class="right">4</div>
+                                    </li>
+                                    <li>
+                                        <div class="left">
+                                            <input type="checkbox" name="star-2" id="star-2">
+                                            <label for="star-2">2 star</label>
+                                        </div>
+                                        <div class="right">6</div>
+                                    </li>
+                                    <li>
+                                        <div class="left">
+                                            <input type="checkbox" name="star-3" id="star-3">
+                                            <label for="star-3">3 star</label>
+                                        </div>
+                                        <div class="right">21</div>
+                                    </li>
+                                    <li>
+                                        <div class="left">
+                                            <input type="checkbox" name="star-4" id="star-4">
+                                            <label for="star-4">4 star</label>
+                                        </div>
+                                        <div class="right">14</div>
+                                    </li>
+                                    <li>
+                                        <div class="left">
+                                            <input type="checkbox" name="star-5" id="star-5">
+                                            <label for="star-5">5 star</label>
+                                        </div>
+                                        <div class="right">1</div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><input type="checkbox" name="unclassified"
+                                                id="unclassified">
+                                            <label for="unclassified">unclassified</label>
+                                        </div>
+                                        <div class="right">216</div>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="info">
-                                <img src="{{ asset('images/icons/save.svg') }}" alt="" />
-                                <p>Watching machine</p>
+                            <div class="sub">
+                                <h4>equipments</h4>
+                                <ul>
+                                    <li>
+                                        <div class="left"><input type="checkbox" name="swimming-pool"
+                                                id="swimming-pool">
+                                            <label for="swimming-pool">swimming pool</label>
+                                        </div>
+                                        <div class="right">16</div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><input type="checkbox" name="smoking" id="smoking">
+                                            <label for="smoking">smoking</label>
+                                        </div>
+                                        <div class="right">26</div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><input type="checkbox" name="wifi" id="wifi">
+                                            <label for="wifi">wifi</label>
+                                        </div>
+                                        <div class="right">216</div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><input type="checkbox" name="restaurant" id="restaurant">
+                                            <label for="restaurant">restaurant</label>
+                                        </div>
+                                        <div class="right">26</div>
+                                    </li>
+                                    <li>
+                                        <div class="left"><input type="checkbox" name="parking" id="parking">
+                                            <label for="parking">parking</label>
+                                        </div>
+                                        <div class="right">26</div>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="info">
-                                <img src="{{ asset('images/icons/no-smooking.svg') }}" alt="" />
-                                <p>No Smoking</p>
+                            <div class="sub">
+                                <button type="submit" class="custom-button primary">Filter</button>
                             </div>
-                        </div>
-                        <div class="publication">
-                            <img src="{{ asset('images/publication-1.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <a href="">Download</a>
-                        </div>
-                        <div class="publication">
-                            <img src="{{ asset('images/publication-2.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <a href="">Download</a>
-                        </div>
-                        <div class="publication">
-                            <img src="{{ asset('images/publication-3.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <a href="">Download</a>
-                        </div>
+                        </form>
                     </div>
                 </aside>
+                <div class="main-content">
+                    <div class="lodges">
+                        <div class="lodge-card">
+                            <img src="{{ asset('images/lodge/lodge-1.jpg') }}" alt="">
+                            <div class="content">
+                                <h2>Star land hotel bastos</h2>
+                                <div class="rating">
+                                    <i class="fa fa-star colored" aria-hidden="true"></i>
+                                    <i class="fa fa-star colored" aria-hidden="true"></i>
+                                    <i class="fa fa-star colored" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                <div class="location">
+                                    <div class="sub">Yaounde</div>
+                                    <div class="sub">Centre ville</div>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nobis. Totam error
+                                    saepe, est maiores, amet, quia id repellat ullam ex voluptate atque ipsum aperiam
+                                    tempore sapiente! Sint, sed illum.</p>
+                                <a href="" class="custom-button primary">View details</a>
+                            </div>
+                        </div>
+                        <div class="lodge-card">
+                            <img src="{{ asset('images/lodge/lodge-2.jpg') }}" alt="">
+                            <div class="content">
+                                <h2>Star land hotel bastos</h2>
+                                <div class="rating">
+                                    <i class="fa fa-star colored" aria-hidden="true"></i>
+                                    <i class="fa fa-star colored" aria-hidden="true"></i>
+                                    <i class="fa fa-star colored" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                <div class="location">
+                                    <div class="sub">Yaounde</div>
+                                    <div class="sub">Centre ville</div>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nobis. Totam error
+                                    saepe, est maiores, amet, quia id repellat ullam ex voluptate atque ipsum aperiam
+                                    tempore sapiente! Sint, sed illum.</p>
+                                <a href="" class="custom-button primary">View details</a>
+                            </div>
+                        </div>
+                        <div class="lodge-card">
+                            <img src="{{ asset('images/lodge/lodge-3.jpg') }}" alt="">
+                            <div class="content">
+                                <h2>Star land hotel bastos</h2>
+                                <div class="rating">
+                                    <i class="fa fa-star colored" aria-hidden="true"></i>
+                                    <i class="fa fa-star colored" aria-hidden="true"></i>
+                                    <i class="fa fa-star colored" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                <div class="location">
+                                    <div class="sub">Yaounde</div>
+                                    <div class="sub">Centre ville</div>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nobis. Totam error
+                                    saepe, est maiores, amet, quia id repellat ullam ex voluptate atque ipsum aperiam
+                                    tempore sapiente! Sint, sed illum.</p>
+                                <a href="" class="custom-button primary">View details</a>
+                            </div>
+                        </div>
+                        <div class="lodge-card">
+                            <img src="{{ asset('images/lodge/lodge-4.jpg') }}" alt="">
+                            <div class="content">
+                                <h2>Star land hotel bastos</h2>
+                                <div class="rating">
+                                    <i class="fa fa-star colored" aria-hidden="true"></i>
+                                    <i class="fa fa-star colored" aria-hidden="true"></i>
+                                    <i class="fa fa-star colored" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                <div class="location">
+                                    <div class="sub">Yaounde</div>
+                                    <div class="sub">Centre ville</div>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nobis. Totam error
+                                    saepe, est maiores, amet, quia id repellat ullam ex voluptate atque ipsum aperiam
+                                    tempore sapiente! Sint, sed illum.</p>
+                                <a href="" class="custom-button primary">View details</a>
+                            </div>
+                        </div>
+                        <div class="lodge-card">
+                            <img src="{{ asset('images/lodge/lodge-5.jpg') }}" alt="">
+                            <div class="content">
+                                <h2>Star land hotel bastos</h2>
+                                <div class="rating">
+                                    <i class="fa fa-star colored" aria-hidden="true"></i>
+                                    <i class="fa fa-star colored" aria-hidden="true"></i>
+                                    <i class="fa fa-star colored" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                <div class="location">
+                                    <div class="sub">Yaounde</div>
+                                    <div class="sub">Centre ville</div>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nobis. Totam error
+                                    saepe, est maiores, amet, quia id repellat ullam ex voluptate atque ipsum aperiam
+                                    tempore sapiente! Sint, sed illum.</p>
+                                <a href="" class="custom-button primary">View details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
