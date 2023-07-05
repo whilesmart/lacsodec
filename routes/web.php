@@ -40,6 +40,10 @@ Route::get('/lodge', function () {
     return view('lodge');
 })->name('lodge');
 
+Route::get('/lodge-details', function () {
+    return view('lodge-details');
+})->name('lodge-details');
+
 Route::get('/donate', function () {
     return view('donate');
 })->name('donate');
