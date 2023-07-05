@@ -116,7 +116,7 @@ Route::screen('event/{event?}', EventEditScreen::class)
 Route::screen('events', EventListScreen::class)
     ->name('platform.event.list');
 
-Route::screen('contact/{contact?}', ContactEditScreen::class)
+Route::screen('contact/{contactInfo?}', ContactEditScreen::class)
     ->name('platform.contact.edit');
 
 Route::screen('contacts', ContactListScreen::class)

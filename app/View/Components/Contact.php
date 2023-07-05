@@ -12,9 +12,16 @@ class Contact extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public ContactInfo $contactInfo)
-    {
+    public $contactInfo;
 
+    public function __construct(?ContactInfo $contactInfo = null)
+    {
+        $this->contactInfo = $contactInfo ?: new ContactInfo([
+            'form_email_address' => 'info@lacsodec.org',
+            'listed_email_address' => 'info@lacsodec.org',
+            'phone_number' => '+237677947449',
+            'location' => 'NGO Street, Molyko - Buea',
+        ]);
     }
 
     /**
