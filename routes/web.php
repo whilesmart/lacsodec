@@ -39,9 +39,7 @@ Route::get('/blog', [ArticleController::class, 'index'])->name('blog');
 
 Route::get('/lodge', [AccomodationController::class, 'index'])->name('lodge');
 
-Route::get('/lodge-details', function () {
-    return view('lodge-details');
-})->name('lodge-details');
+Route::get('/lodge-details/{accomodation}', [AccomodationController::class, 'show'])->name('lodge-details');
 
 Route::get('/donate', function () {
     return view('donate');

@@ -14,4 +14,13 @@ class AccomodationController extends Controller
             'accomodations' => $accomodations,
         ]);
     }
+
+    public function show($accomodation)
+    {
+        $accomodation = Accomodation::with('attachment')->findOrFail($accomodation);
+
+        return view('lodge-details', [
+            'accomodation' => $accomodation,
+        ]);
+    }
 }

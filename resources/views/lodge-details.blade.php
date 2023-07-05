@@ -10,7 +10,7 @@
         <section class="lodge-details-section">
             <div class="con">
                 <div class="main-content">
-                    <h1>Star land hotel bastos</h1>
+                    <h1>{{$accomodation->name}}</h1>
                     <div class="rating">
                         <i class="fa fa-star colored" aria-hidden="true"></i>
                         <i class="fa fa-star colored" aria-hidden="true"></i>
@@ -19,36 +19,36 @@
                         <i class="fa fa-star" aria-hidden="true"></i>
                     </div>
                     <div class="location">
-                        <div class="sub">Yaounde</div>
-                        <div class="sub">Centre ville</div>
+                        <div class="sub">{{$accomodation->city}}</div>
+                        <div class="sub">{{$accomodation->quarter}}</div>
                     </div>
 
                     <div class="images">
-                        <img src="{{ asset('images/lodge/lodge-1.jpg') }}" alt="">
+                        @foreach ($accomodation->attachment as $image)
+                            @if ($loop->first)
+                            <img src="{{ asset($image->url()) }}" alt="">
+                            @endif
+                        @endforeach
+                        
                         <div class="sub">
-                            <img src="{{ asset('images/lodge/lodge-2.jpg') }}" alt="">
-                            <!-- Button trigger modal -->
+                            @foreach ($accomodation->attachment as $image)
+                                @if ($loop->iteration == 2)
+                                <img src="{{ asset($image->url()) }}" alt="">
+                                @endif
+                                @if ($loop->iteration == 3)
+                                    <!-- Button trigger modal -->
                             <div class="more" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <img src="{{ asset('images/lodge/lodge-3.jpg') }}" alt="">
+                                <img src="{{ asset($image->url()) }}" alt="">
                                 <div class="content">
-                                    +6 other photos
+                                    +{{$loop->count}} other photos
                                 </div>
                             </div>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
 
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aliquid accusamus placeat
-                        suscipit vitae, tempore quasi, aut sequi, dicta blanditiis quo iste eum reprehenderit qui
-                        minus sunt voluptates beatae quam.</p>
+                    <p>{{$accomodation->description}}</p>
 
 
                     {{-- modal  --}}
@@ -61,26 +61,12 @@
                                 <div class="modal-body">
                                     <div id="carouselExample" class="carousel slide">
                                         <div class="carousel-inner">
+                                            @foreach ($accomodation->attachment as $image)
                                             <div class="carousel-item active">
-                                                <img src="{{ asset('images/lodge/lodge-1.jpg') }}" class="d-block w-100"
+                                                <img src="{{ asset($image->url()) }}" class="d-block w-100"
                                                     alt="...">
                                             </div>
-                                            <div class="carousel-item">
-                                                <img src="{{ asset('images/lodge/lodge-2.jpg') }}" class="d-block w-100"
-                                                    alt="...">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="{{ asset('images/lodge/lodge-3.jpg') }}" class="d-block w-100"
-                                                    alt="...">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="{{ asset('images/lodge/lodge-4.jpg') }}" class="d-block w-100"
-                                                    alt="...">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="{{ asset('images/lodge/lodge-5.jpg') }}" class="d-block w-100"
-                                                    alt="...">
-                                            </div>
+                                            @endforeach
                                         </div>
                                         <button class="carousel-control-prev" type="button"
                                             data-bs-target="#carouselExample" data-bs-slide="prev">

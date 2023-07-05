@@ -115,10 +115,11 @@
                 </aside>
                 <div class="main-content">
                     <div class="lodges">
+                        @foreach ($accomodations as $accomodation)
                         <div class="lodge-card">
-                            <img src="{{ asset('images/lodge/lodge-1.jpg') }}" alt="">
+                            <img src="{{ asset($accomodation->attachment[0]->url()) }}" alt="">
                             <div class="content">
-                                <h2>Star land hotel bastos</h2>
+                                <h2>{{$accomodation->name}}</h2>
                                 <div class="rating">
                                     <i class="fa fa-star colored" aria-hidden="true"></i>
                                     <i class="fa fa-star colored" aria-hidden="true"></i>
@@ -127,100 +128,17 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                 </div>
                                 <div class="location">
-                                    <div class="sub">Yaounde</div>
-                                    <div class="sub">Centre ville</div>
+                                    <div class="sub">{{$accomodation->city}}</div>
+                                    <div class="sub">{{$accomodation->quarter}}</div>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nobis. Totam error
-                                    saepe, est maiores, amet, quia id repellat ullam ex voluptate atque ipsum aperiam
-                                    tempore sapiente! Sint, sed illum.</p>
-                                <a href="" class="custom-button primary">View details</a>
-                            </div>
-                        </div>
-                        <div class="lodge-card">
-                            <img src="{{ asset('images/lodge/lodge-2.jpg') }}" alt="">
-                            <div class="content">
-                                <h2>Star land hotel bastos</h2>
-                                <div class="rating">
-                                    <i class="fa fa-star colored" aria-hidden="true"></i>
-                                    <i class="fa fa-star colored" aria-hidden="true"></i>
-                                    <i class="fa fa-star colored" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </div>
-                                <div class="location">
-                                    <div class="sub">Yaounde</div>
-                                    <div class="sub">Centre ville</div>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nobis. Totam error
-                                    saepe, est maiores, amet, quia id repellat ullam ex voluptate atque ipsum aperiam
-                                    tempore sapiente! Sint, sed illum.</p>
-                                <a href="" class="custom-button primary">View details</a>
-                            </div>
-                        </div>
-                        <div class="lodge-card">
-                            <img src="{{ asset('images/lodge/lodge-3.jpg') }}" alt="">
-                            <div class="content">
-                                <h2>Star land hotel bastos</h2>
-                                <div class="rating">
-                                    <i class="fa fa-star colored" aria-hidden="true"></i>
-                                    <i class="fa fa-star colored" aria-hidden="true"></i>
-                                    <i class="fa fa-star colored" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </div>
-                                <div class="location">
-                                    <div class="sub">Yaounde</div>
-                                    <div class="sub">Centre ville</div>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nobis. Totam error
-                                    saepe, est maiores, amet, quia id repellat ullam ex voluptate atque ipsum aperiam
-                                    tempore sapiente! Sint, sed illum.</p>
-                                <a href="" class="custom-button primary">View details</a>
-                            </div>
-                        </div>
-                        <div class="lodge-card">
-                            <img src="{{ asset('images/lodge/lodge-4.jpg') }}" alt="">
-                            <div class="content">
-                                <h2>Star land hotel bastos</h2>
-                                <div class="rating">
-                                    <i class="fa fa-star colored" aria-hidden="true"></i>
-                                    <i class="fa fa-star colored" aria-hidden="true"></i>
-                                    <i class="fa fa-star colored" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </div>
-                                <div class="location">
-                                    <div class="sub">Yaounde</div>
-                                    <div class="sub">Centre ville</div>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nobis. Totam error
-                                    saepe, est maiores, amet, quia id repellat ullam ex voluptate atque ipsum aperiam
-                                    tempore sapiente! Sint, sed illum.</p>
-                                <a href="" class="custom-button primary">View details</a>
-                            </div>
-                        </div>
-                        <div class="lodge-card">
-                            <img src="{{ asset('images/lodge/lodge-5.jpg') }}" alt="">
-                            <div class="content">
-                                <h2>Star land hotel bastos</h2>
-                                <div class="rating">
-                                    <i class="fa fa-star colored" aria-hidden="true"></i>
-                                    <i class="fa fa-star colored" aria-hidden="true"></i>
-                                    <i class="fa fa-star colored" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </div>
-                                <div class="location">
-                                    <div class="sub">Yaounde</div>
-                                    <div class="sub">Centre ville</div>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nobis. Totam error
-                                    saepe, est maiores, amet, quia id repellat ullam ex voluptate atque ipsum aperiam
-                                    tempore sapiente! Sint, sed illum.</p>
-                                <a href="" class="custom-button primary">View details</a>
+                                <p>{{$accomodation->description}}</p>
+                                <a href="{{ route('lodge-details', ['accomodation' => $accomodation->id]) }}" class="custom-button primary">View details</a>
                             </div>
                         </div>
                         @endforeach
+                    </div>
+                    <div class="pagination">
+                        {{$accomodations->links()}}
                     </div>
                 </div>
 
