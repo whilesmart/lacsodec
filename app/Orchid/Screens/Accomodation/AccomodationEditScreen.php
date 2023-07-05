@@ -5,10 +5,10 @@ namespace App\Orchid\Screens\Accomodation;
 use App\Models\Accomodation;
 use Illuminate\Http\Request;
 use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Fields\CheckBox;
 use Orchid\Screen\Fields\Group;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Label;
-use Orchid\Screen\Fields\Radio;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Fields\Upload;
@@ -115,11 +115,11 @@ class AccomodationEditScreen extends Screen
                 Label::make('accomodation.available')
                     ->title('Available?'),
                 Group::make([
-                    Radio::make('accomodation.available')
-                        ->value(true)
+                    CheckBox::make('accomodation.available')
+                        ->value(1)
                         ->title('yes'),
-                    Radio::make('accomodation.available')
-                        ->value(false)
+                    CheckBox::make('accomodation.available')
+                        ->value(0)
                         ->title('no'),
                 ]),
 
