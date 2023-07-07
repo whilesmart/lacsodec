@@ -14,14 +14,15 @@
                         <div class="top">
                             <h3>Filters</h3>
                         </div>
-                        <form class="filters">
+                        <form class="filters" action="{{ route('lodge') }}" method="GET">
                             <div class="sub">
                                 <h4>Location</h4>
-                                <select name="" id="">
-                                    <option value="">Yaounde</option>
-                                    <option value="">Douala</option>
-                                    <option value="">Buea</option>
-                                    <option value="">Bamenda</option>
+                                <select name="location" id="">
+                                    <option value="yaounde">Yaounde</option>
+                                    <option value="douala">Douala</option>
+                                    <option value="buea">Buea</option>
+                                    <option value="bamenda">Bamenda</option>
+                                    <option value="all">All</option>
                                 </select>
                             </div>
                             <div class="sub">
