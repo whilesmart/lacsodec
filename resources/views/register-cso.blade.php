@@ -23,17 +23,7 @@
                                 @enderror
                             </div>
                             <div class="field">
-                                <label for="">Assessment score </label>
-                                <input type="number" name="assessment_score" id="assessment-score"
-                                    placeholder="CSO sssessment score" value="{{ old('assessment_score') }}" required>
-                                @error('assessment_score')
-                                    <span class="error-msg">{{ $message }}</span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="flex">
-                            <div class="field">
-                                <label for="">Partnership</label>
+                                <label for="">Acronym</label>
                                 <input type="text" name="partnership" id="partnership" placeholder="CSO partnership"
                                     value="{{ old('partnership') }}" required>
                                 @error('partnership')
@@ -70,6 +60,7 @@
                                     <option value="CIG">CIG</option>
                                     <option value="Cooperative">Cooperative</option>
                                     <option value="Media">Media</option>
+                                    <option value="CBO">CBO</option>
                                     <option value="Village development Association">Village development Association
                                     </option>
                                     <option value="CSO Network">CSO Network</option>
@@ -94,7 +85,7 @@
                         </div>
                         <div class="flex">
                             <div class="field">
-                                <label for="">Region</label>
+                                <label for="">State/Region/Country</label>
                                 <input type="text" name="region" id="region" placeholder="region"
                                     value="{{ old('region') }}" required>
                                 @error('region')
@@ -102,7 +93,7 @@
                                 @enderror
                             </div>
                             <div class="field">
-                                <label for="">Devision</label>
+                                <label for="">Region/Province</label>
                                 <input type="text" name="division" id="division" placeholder="division"
                                     value="{{ old('division') }}" required>
                                 @error('division')
@@ -112,7 +103,7 @@
                         </div>
                         <div class="flex">
                             <div class="field">
-                                <label for="">Sub devision</label>
+                                <label for="">Sub Division</label>
                                 <input type="text" name="sub_division" id="sub-division" placeholder="sub-division"
                                     value="{{ old('sub_division') }}" required>
                             </div>
@@ -127,7 +118,7 @@
                         </div>
                         <div class="flex">
                             <label for="image">
-                                <span>Choose image</span>
+                                <span>Upload Logo( jpeg or PNG)</span>
                                 <input type="file" name="image" id="" accept="image/*" />
                                 @error('image')
                                     <span class="error-msg">{{ $message }}</span>
@@ -187,7 +178,7 @@
                                 @enderror
                             </div>
                             <div class="field">
-                                <label for="">CSO address</label>
+                                <label for="">CSO physical address</label>
                                 <input type="text" name="address" id="cso-address" placeholder="cso-address"
                                     value="{{ old('address') }}" required>
                                 @error('address')
@@ -197,8 +188,8 @@
                         </div>
                         <div class="flex">
                             <div class="field">
-                                <label for="">CSO website</label>
-                                <input type="url" name="website" id="cso-website" placeholder="cso-website"
+                                <label for="">CSO Website</label>
+                                <input type="text" name="website" id="cso-website" placeholder="cso-website"
                                     value="{{ old('website') }}" required>
                                 @error('website')
                                     <span class="error-msg">{{ $message }}</span>

@@ -54,13 +54,13 @@ class CsoContactInfo extends Rows
                 ->required(),
 
             Input::make('cso.address')
-                ->title('CSO address')
+                ->title('CSO Physical Address')
                 ->placeholder('')
                 ->required(),
 
             Input::make('cso.website')
                 ->title('CSO Website')
-                ->type('url')
+                ->type('string')
                 ->required(),
 
             Input::make('cso.email')

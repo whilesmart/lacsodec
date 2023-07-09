@@ -32,14 +32,20 @@ class CsoBasicInfo extends Rows
                 ->help('Give the name of the CSO')
                 ->required(),
 
-            Input::make('cso.assessment_score')
+            Select::make('cso.assessment_score')
                 ->title('Assessment score')
+                ->options([
+                    'Assessment Level 01' => 'Assessment Level 01',
+                    'Assessment Level 02' => 'Assessment Level 02',
+                    'Assessment Level 03' => 'Assessment Level 03',
+                    'Assessment Level 04' => 'Assessment Level 04',
+                    'Assessment Level 05' => 'Assessment Level 05',
+                ])
                 ->placeholder('CSO assessment score')
-                ->help('Give the assessment score of the CSO')
-                ->type('number'),
+                ->help('Give the assessment score of the CSO'),
 
             Input::make('cso.partnership')
-                ->title('Partnership')
+                ->title('Acronym')
                 ->placeholder('CSO partnership')
                 ->help('Give the partnership of the CSO'),
 
@@ -73,6 +79,7 @@ class CsoBasicInfo extends Rows
                     'Media' => 'Media',
                     'Village development Association' => 'Village development Association',
                     'CSO Network' => 'CSO Network',
+                    'CBO' => 'CBO',
                     'Faith Based organization' => 'Faith Based organization',
                 ])
                 ->title('Type of organization')
@@ -89,15 +96,15 @@ class CsoBasicInfo extends Rows
                 ->required(),
 
             Input::make('cso.region')
-                ->title('Region')
+                ->title('State/Region/Country')
                 ->required(),
 
             Input::make('cso.division')
-                ->title('Division')
+                ->title('Region/Province')
                 ->required(),
 
             Input::make('cso.sub_division')
-                ->title('Sub division')
+                ->title('Sub Division')
                 ->required(),
 
             Input::make('cso.village')
