@@ -92,6 +92,13 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+.alert-block {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 50%;
+}
+
 .con {
     width: 1400px;
     margin: 0 auto;

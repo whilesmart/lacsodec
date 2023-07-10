@@ -9,7 +9,7 @@ class ExpertController extends Controller
 {
     public function index()
     {
-        $experts = ExpertProfile::with('user')->paginate(20);
+        $experts = ExpertProfile::with('user')->where('status', 'approved')->paginate(20);
 
         return view('expert-directory', [
             'experts' => $experts,
@@ -19,7 +19,7 @@ class ExpertController extends Controller
     public function show($expert)
     {
         $expert = ExpertProfile::with('user')->findOrFail($expert);
-        $otherExperts = ExpertProfile::with('user')->where('id', '!=', $expert->id)->limit(4)->get();
+        $otherExperts = ExpertProfile::with('user')->where('id', '!=', $expert->id)->where('status', 'approved')->limit(4)->get();
 
         return view('expert-directory-details', [
             'expert' => $expert,
@@ -36,7 +36,7 @@ class ExpertController extends Controller
     {
         $user = $request->user();
         if (ExpertProfile::where('user_id', $user->id)->count() > 0) {
-            return redirect()->back()->with('message', 'You have already submitted your details to become an expert');
+            return redirect()->back()->with('error', 'You have already submitted your details to become an expert. Please wait for the administrators to approve');
         }
         $fields = $request->validate([
             'location' => ['required', 'string'],
