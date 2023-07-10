@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('name');
+            $table->string('image');
             $table->string('type');
             $table->string('date');
             $table->string('url');

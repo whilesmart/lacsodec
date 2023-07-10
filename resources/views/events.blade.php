@@ -13,7 +13,7 @@
                     @foreach ($events as $event)
                     <div class="event-card">
                         <div class="img-con">
-                            <img src="{{ asset('images/publication-1.png') }}" alt="" />
+                            <img src="{{ asset($event->image) }}" alt="" />
                             <div class="type event">{{$event->type}}</div>
                         </div>
                         <div class="flex">

@@ -15,6 +15,7 @@ class Event extends Model
         'user_id',
         'type',
         'name',
+        'image',
         'url',
         'entrance',
         'date',
