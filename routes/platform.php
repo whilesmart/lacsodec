@@ -12,6 +12,7 @@ use App\Orchid\Screens\Cso\CsoEditScreen;
 use App\Orchid\Screens\Cso\CsoListScreen;
 use App\Orchid\Screens\Event\EventEditScreen;
 use App\Orchid\Screens\Event\EventListScreen;
+use App\Orchid\Screens\EventRegistration\EventRegistrationListScreen;
 use App\Orchid\Screens\ExpertProfile\ExpertProfileEditScreen;
 use App\Orchid\Screens\ExpertProfile\ExpertProfileListScreen;
 use App\Orchid\Screens\PlatformScreen;
@@ -121,3 +122,6 @@ Route::screen('contact/{contactInfo?}', ContactEditScreen::class)
 
 Route::screen('contacts', ContactListScreen::class)
     ->name('platform.contact.list');
+
+Route::screen('event-registrations', EventRegistrationListScreen::class)
+    ->name('platform.event-registration.list');

@@ -22,7 +22,7 @@
                         </div>
                         <div class="content">
                             <p>{{$event->name}}</p>
-                            <a href="{{$event->url}}" target="__blank" class="custom-button primary"><span>Participate</span></a>
+                            <a href="{{ route('event-participate', ['event' => $event->id]) }}" class="custom-button primary"><span>Participate</span></a>
                         </div>
                     </div>
                     @endforeach

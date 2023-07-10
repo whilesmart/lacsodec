@@ -54,6 +54,12 @@ class PlatformProvider extends OrchidServiceProvider
                 ->permission('platform.systems.roles')
                 ->divider(),
 
+            Menu::make('Event registrations')
+                ->icon('bs.file-earmark-check-fill')
+                ->route('platform.event-registration.list')
+                ->permission('platform.systems.roles')
+                ->divider(),
+
             Menu::make('Cso')
                 ->icon('bs.buildings-fill')
                 ->route('platform.cso.list')

@@ -30,6 +30,8 @@ Route::get('/services', function () {
 Route::get('/blog/{blog}', [ArticleController::class, 'show'])->name('blog-details');
 
 Route::get('/events', [EventController::class, 'index'])->name('events');
+Route::get('/event/{event}/participate', [EventController::class, 'createRegistration'])->name('event-participate');
+Route::post('/event/{event}/participate', [EventController::class, 'participate'])->name('event-participate-store');
 
 Route::get('/grants', function () {
     return view('grants');
