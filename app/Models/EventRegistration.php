@@ -7,22 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Orchid\Screen\AsSource;
 
-class Event extends Model
+class EventRegistration extends Model
 {
     use HasFactory, AsSource;
 
+    public $with = ['event'];
+
     protected $fillable = [
-        'user_id',
-        'type',
+        'event_id',
         'name',
-        'image',
-        'url',
-        'entrance',
-        'date',
+        'email',
+        'phone',
+        'other_details',
     ];
 
-    public function user(): BelongsTo
+    public function event(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Event::class);
     }
 }
