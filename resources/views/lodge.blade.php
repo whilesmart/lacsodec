@@ -129,7 +129,7 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                 </div>
                                 <div class="location">
-                                    <div class="sub">{{$accomodation->city}}</div>
+                                    <div class="sub">{{$accomodation->city??''}}</div>
                                     <div class="sub">{{$accomodation->quarter}}</div>
                                 </div>
                                 <p>{{$accomodation->description}}</p>

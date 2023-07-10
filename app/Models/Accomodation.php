@@ -13,11 +13,11 @@ class Accomodation extends Model
 
     protected $fillable = [
         'name',
-        'country',
         'city',
         'quarter',
         'description',
         'available',
         'accommodation_number',
+        'floor_number',
     ];
 }
