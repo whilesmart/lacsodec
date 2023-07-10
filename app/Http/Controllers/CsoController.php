@@ -55,7 +55,6 @@ class CsoController extends Controller
     {
         $fields = $request->validate([
             'name' => ['required', 'string'],
-            'assessment_score' => ['integer', 'required'],
             'partnership' => ['required', 'string'],
             'registration_date' => ['required', 'string'],
             'organization_type' => ['required', 'string'],
@@ -87,7 +86,6 @@ class CsoController extends Controller
 
         $cso = Cso::create([
             'name' => $fields['name'],
-            'assessment_score' => $fields['assessment_score'],
             'partnership' => $fields['partnership'],
             'registration_date' => $fields['registration_date'],
             'organization_type' => $fields['organization_type'],
