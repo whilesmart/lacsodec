@@ -3016,6 +3016,7 @@ section.other-expert-section {
     }
     > img {
         width: 250px;
+        min-width: 250px;
         height: 200px;
         object-fit: cover;
         object-position: center;
@@ -3432,6 +3433,40 @@ table.custom-table {
                     }
                 }
             }
+        }
+    }
+}
+
+.booking-modal {
+    h3 {
+        font-size: 1rem;
+        color: $text;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+        color: $text;
+        font-weight: 600;
+        line-height: 1rem;
+    }
+    > p {
+        font-size: 1rem;
+        color: $light-text;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+    .info {
+        h1 {
+            font-size: 2rem;
+            color: $primary;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1rem;
+            color: $text;
+            font-weight: 600;
         }
     }
 }
