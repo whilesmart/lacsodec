@@ -28,8 +28,9 @@ class AccomodationListLayout extends Table
     {
         return [
             TD::make('name', 'Name'),
-            TD::make('country', 'Country'),
             TD::make('city', 'City'),
+            TD::make('quarter', 'Quarter'),
+            TD::make('floor_number', 'Floor number'),
             TD::make('created_at', 'Created'),
             TD::make('Actions')
                 ->render(function (Accomodation $accomodation) {

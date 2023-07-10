@@ -136,6 +136,13 @@
                                     <a href="{{ route('lodge-details', ['accomodation' => $accomodation->id]) }}"
                                         class="custom-button primary">View details</a>
                                 </div>
+                                <div class="location">
+                                    <div class="sub">{{ $accomodation->city ?? '' }}</div>
+                                    <div class="sub">{{ $accomodation->quarter }}</div>
+                                </div>
+                                <p>{{ $accomodation->description }}</p>
+                                <a href="{{ route('lodge-details', ['accomodation' => $accomodation->id]) }}"
+                                    class="custom-button primary">View details</a>
                             </div>
                         @endforeach
                     </div>

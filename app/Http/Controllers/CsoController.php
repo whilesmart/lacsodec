@@ -19,21 +19,11 @@ class CsoController extends Controller
         ]);
     }
 
-    // I don't think this function is needed anymore
-    public function indexDirectory()
-    {
-        $csos = Cso::where('status', 'approved')->paginate(20);
-
-        return view('cso-directory', [
-            'csos' => $csos,
-        ]);
-    }
-
     public function show($cso)
     {
         $cso = Cso::findOrFail($cso);
-        $otherCsos = Cso::where('id', '!=', $cso->id)->limit(3)->get();
-        $latestCsos = Cso::where('id', '!=', $cso->id)->orderBy('created_at', 'desc')->limit(4)->get();
+        $otherCsos = Cso::where('id', '!=', $cso->id)->where('status', 'approved')->limit(3)->get();
+        $latestCsos = Cso::where('id', '!=', $cso->id)->where('status', 'approved')->orderBy('created_at', 'desc')->limit(4)->get();
 
         return view('cso-directory-details', [
             'cso' => $cso,
@@ -55,7 +45,6 @@ class CsoController extends Controller
     {
         $fields = $request->validate([
             'name' => ['required', 'string'],
-            'assessment_score' => ['integer', 'required'],
             'partnership' => ['required', 'string'],
             'registration_date' => ['required', 'string'],
             'organization_type' => ['required', 'string'],
@@ -87,7 +76,6 @@ class CsoController extends Controller
 
         $cso = Cso::create([
             'name' => $fields['name'],
-            'assessment_score' => $fields['assessment_score'],
             'partnership' => $fields['partnership'],
             'registration_date' => $fields['registration_date'],
             'organization_type' => $fields['organization_type'],

@@ -5,6 +5,7 @@ namespace App\Orchid\Screens\Event;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Fields\Cropper;
 use Orchid\Screen\Fields\DateTimer;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Select;
@@ -111,6 +112,12 @@ class EventEditScreen extends Screen
                 DateTimer::make('event.date')
                     ->title('Event date')
                     ->rows(3)
+                    ->required(),
+
+                Cropper::make('event.image')
+                    ->title('Event image')
+                    ->width(400)
+                    ->height(400)
                     ->required(),
             ]),
         ];

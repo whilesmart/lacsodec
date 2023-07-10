@@ -19,7 +19,7 @@ class CsoFactory extends Factory
     {
         return [
             'name' => $this->faker->company(),
-            'assessment_score' => $this->faker->numberBetween(0, 100),
+            'assessment_score' => $this->faker->randomElement(['Assessment Level 01', 'Assessment Level 02', 'Assessment Level 03', 'Assessment Level 04', 'Assessment Level 05']),
             'status' => $this->faker->randomElement(['approved', 'pending', 'rejected']),
             'partnership' => $this->faker->sentence(),
             'image' => $this->faker->imageUrl(),

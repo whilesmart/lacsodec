@@ -6,9 +6,7 @@ use App\Models\Accomodation;
 use Illuminate\Http\Request;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Fields\CheckBox;
-use Orchid\Screen\Fields\Group;
 use Orchid\Screen\Fields\Input;
-use Orchid\Screen\Fields\Label;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Fields\Upload;
@@ -90,17 +88,17 @@ class AccomodationEditScreen extends Screen
                     ->placeholder('Akwa Palace')
                     ->required(),
 
-                Select::make('accomodation.country')
-                    ->title('Country')
+                Select::make('accomodation.type')
+                    ->title('Accomodation type')
                     ->options([
-                        'cameroon' => 'Cameroon',
+                        'hall' => 'Hall',
+                        'room' => 'Room',
                     ])
                     ->required(),
 
                 Input::make('accomodation.city')
                     ->title('City')
-                    ->placeholder('Douala')
-                    ->required(),
+                    ->placeholder('Douala'),
 
                 Input::make('accomodation.quarter')
                     ->title('Quarter')
@@ -112,20 +110,19 @@ class AccomodationEditScreen extends Screen
                     ->rows(3)
                     ->required(),
 
-                Label::make('accomodation.available')
-                    ->title('Available?'),
-                Group::make([
-                    CheckBox::make('accomodation.available')
-                        ->value(1)
-                        ->title('yes'),
-                    CheckBox::make('accomodation.available')
-                        ->value(0)
-                        ->title('no'),
-                ]),
+                CheckBox::make('accomodation.available')
+                    ->title('Available?')
+                    ->sendTrueOrFalse(),
 
                 Input::make('accomodation.accommodation_number')
                     ->title('Accomodation number')
                     ->placeholder('A01')
+                    ->required(),
+
+                Input::make('accomodation.floor_number')
+                    ->title('Accomodation floor number')
+                    ->placeholder(1)
+                    ->type('number')
                     ->required(),
 
                 Upload::make('accomodation.attachment')
