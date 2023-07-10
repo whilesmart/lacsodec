@@ -249,6 +249,32 @@
                                 @enderror
                             </div>
                             <div class="field">
+                                <label for="second_domain">Choose second domain of activity</label>
+                                <select name="second_domain" id="domain-of-activity" value="{{ old('second_domain') }}">
+                                    @foreach ($domains as $domain)
+                                        <option value="{{ $domain->name }}">{{ $domain->name }}</option>
+                                    @endforeach
+                                    <option value="">none</option>
+                                </select>
+                                @error('second_domain')
+                                    <span class="error-msg">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="flex">
+                        <div class="field">
+                                <label for="third_domain">Choose third domain of activity</label>
+                                <select name="third_domain" id="domain-of-activity" value="{{ old('third_domain') }}">
+                                    @foreach ($domains as $domain)
+                                        <option value="{{ $domain->name }}">{{ $domain->name }}</option>
+                                    @endforeach
+                                    <option value="">none</option>
+                                </select>
+                                @error('third_domain')
+                                    <span class="error-msg">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        <div class="field">
                                 <label for="">Board of directors</label>
                                 <div class="radio-flex">
                                     <div class="sub">
