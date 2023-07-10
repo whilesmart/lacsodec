@@ -117,29 +117,30 @@
                 <div class="main-content">
                     <div class="lodges">
                         @foreach ($accomodations as $accomodation)
-                        <div class="lodge-card">
-                            <img src="{{ asset($accomodation->attachment[0]->url()) }}" alt="">
-                            <div class="content">
-                                <h2>{{$accomodation->name}}</h2>
-                                <div class="rating">
-                                    <i class="fa fa-star colored" aria-hidden="true"></i>
-                                    <i class="fa fa-star colored" aria-hidden="true"></i>
-                                    <i class="fa fa-star colored" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
+                            <div class="lodge-card">
+                                <img src="{{ asset($accomodation->attachment[0]->url()) }}" alt="">
+                                <div class="content">
+                                    <h2>{{ $accomodation->name }}</h2>
+                                    <div class="rating">
+                                        <i class="fa fa-star colored" aria-hidden="true"></i>
+                                        <i class="fa fa-star colored" aria-hidden="true"></i>
+                                        <i class="fa fa-star colored" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="location">
+                                        <div class="sub">{{ $accomodation->city }}</div>
+                                        <div class="sub">{{ $accomodation->quarter }}</div>
+                                    </div>
+                                    <p>{{ $accomodation->description }}</p>
+                                    <a href="{{ route('lodge-details', ['accomodation' => $accomodation->id]) }}"
+                                        class="custom-button primary">View details</a>
                                 </div>
-                                <div class="location">
-                                    <div class="sub">{{$accomodation->city}}</div>
-                                    <div class="sub">{{$accomodation->quarter}}</div>
-                                </div>
-                                <p>{{$accomodation->description}}</p>
-                                <a href="{{ route('lodge-details', ['accomodation' => $accomodation->id]) }}" class="custom-button primary">View details</a>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                     <div class="pagination">
-                        {{$accomodations->links()}}
+                        {{ $accomodations->links() }}
                     </div>
                 </div>
 
