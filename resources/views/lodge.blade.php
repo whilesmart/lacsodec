@@ -118,7 +118,11 @@
                     <div class="lodges">
                         @foreach ($accomodations as $accomodation)
                             <div class="lodge-card">
-                                <img src="{{ asset($accomodation->attachment[0]->url()) }}" alt="">
+                            @foreach ($accomodation->attachment as $image)
+                                @if ($loop->first)
+                                    <img src="{{ asset($image->url()) }}" alt="">
+                                @endif
+                            @endforeach
                                 <div class="content">
                                     <h2>{{ $accomodation->name }}</h2>
                                     <div class="rating">
