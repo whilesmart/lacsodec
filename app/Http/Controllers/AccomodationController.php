@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Accomodation;
+use App\Models\Booking;
 use Illuminate\Http\Request;
 
 class AccomodationController extends Controller
@@ -28,5 +29,26 @@ class AccomodationController extends Controller
         return view('lodge-details', [
             'accomodation' => $accomodation,
         ]);
+    }
+
+    public function book(Request $request, $accomodation)
+    {
+        $fields = $request->validate([
+            'name' => ['string', 'required'],
+            'arrival' => ['string', 'required'],
+            'departure' => ['string', 'required'],
+            'email' => ['email', 'nullable'],
+            'phone' => ['string', 'required'],
+        ]);
+        $booking = Booking::create([
+            'name' => $fields['name'],
+            'arrival' => $fields['arrival'],
+            'departure' => $fields['departure'],
+            'email' => $fields['email'] ?? null,
+            'phone' => $fields['phone'],
+            'accomodation_id' => $accomodation,
+        ]);
+
+        return redirect()->back()->with('success', 'you have successfully booked for this lodge. You will be contacted very soon');
     }
 }

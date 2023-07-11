@@ -6,6 +6,8 @@ use App\Orchid\Screens\Accomodation\AccomodationEditScreen;
 use App\Orchid\Screens\Accomodation\AccomodationListScreen;
 use App\Orchid\Screens\Article\ArticleEditScreen;
 use App\Orchid\Screens\Article\ArticleListScreen;
+use App\Orchid\Screens\Booking\BookingEditScreen;
+use App\Orchid\Screens\Booking\BookingListScreen;
 use App\Orchid\Screens\Contact\ContactEditScreen;
 use App\Orchid\Screens\Contact\ContactListScreen;
 use App\Orchid\Screens\Cso\CsoEditScreen;
@@ -125,3 +127,9 @@ Route::screen('contacts', ContactListScreen::class)
 
 Route::screen('event-registrations', EventRegistrationListScreen::class)
     ->name('platform.event-registration.list');
+
+Route::screen('booking/{booking?}', BookingEditScreen::class)
+    ->name('platform.booking.edit');
+
+Route::screen('bookings', BookingListScreen::class)
+    ->name('platform.booking.list');
