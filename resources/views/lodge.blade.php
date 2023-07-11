@@ -76,32 +76,32 @@
                                 <h4>equipments</h4>
                                 <ul>
                                     <li>
-                                        <div class="left"><input type="checkbox" name="swimming-pool"
+                                        <div class="left"><input type="checkbox" name="equipment_names[]" value="swimming pool"
                                                 id="swimming-pool">
                                             <label for="swimming-pool">swimming pool</label>
                                         </div>
                                         <div class="right">16</div>
                                     </li>
                                     <li>
-                                        <div class="left"><input type="checkbox" name="smoking" id="smoking">
+                                        <div class="left"><input type="checkbox" name="equipment_names[]" value="smoking" id="smoking">
                                             <label for="smoking">smoking</label>
                                         </div>
                                         <div class="right">26</div>
                                     </li>
                                     <li>
-                                        <div class="left"><input type="checkbox" name="wifi" id="wifi">
+                                        <div class="left"><input type="checkbox" name="equipment_names[]" value="wifi" id="wifi">
                                             <label for="wifi">wifi</label>
                                         </div>
                                         <div class="right">216</div>
                                     </li>
                                     <li>
-                                        <div class="left"><input type="checkbox" name="restaurant" id="restaurant">
+                                        <div class="left"><input type="checkbox" name="equipment_names[]" value="restaurant" id="restaurant">
                                             <label for="restaurant">restaurant</label>
                                         </div>
                                         <div class="right">26</div>
                                     </li>
                                     <li>
-                                        <div class="left"><input type="checkbox" name="parking" id="parking">
+                                        <div class="left"><input type="checkbox" name="equipment_names[]" value="parking" id="parking">
                                             <label for="parking">parking</label>
                                         </div>
                                         <div class="right">26</div>
@@ -118,7 +118,11 @@
                     <div class="lodges">
                         @foreach ($accomodations as $accomodation)
                             <div class="lodge-card">
-                                <img src="{{ asset($accomodation->attachment[0]->url()) }}" alt="">
+                            @foreach ($accomodation->attachment as $image)
+                                @if ($loop->first)
+                                    <img src="{{ asset($image->url()) }}" alt="">
+                                @endif
+                            @endforeach
                                 <div class="content">
                                     <h2>{{ $accomodation->name }}</h2>
                                     <div class="rating">
