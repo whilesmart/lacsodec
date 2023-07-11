@@ -3,6 +3,7 @@
 namespace App\Orchid\Screens\Accomodation;
 
 use App\Models\Accomodation;
+use App\Models\AccomodationEquipment;
 use Illuminate\Http\Request;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Fields\CheckBox;
@@ -17,7 +18,7 @@ use Orchid\Support\Facades\Layout;
 class AccomodationEditScreen extends Screen
 {
     /**
-     * @var Post
+     * @var Accomodation
      */
     public $accomodation;
 
@@ -26,7 +27,8 @@ class AccomodationEditScreen extends Screen
      */
     public function query(Accomodation $accomodation): array
     {
-        $accomodation->load('attachment');
+        $accomodation->load(['attachment', 'equipment']);
+        $accomodation->equipment = $accomodation->equipment->pluck('name')->toArray();
 
         return [
             'accomodation' => $accomodation,
@@ -96,6 +98,18 @@ class AccomodationEditScreen extends Screen
                     ])
                     ->required(),
 
+                Select::make('accomodation.selectedEquipment')
+                    ->title('Accomodation equipment')
+                    ->options([
+                        'Swimming pool' => 'Swimming pool',
+                        'Smoking' => 'Smoking',
+                        'Wifi' => 'Wifi',
+                        'Restaurant' => 'Restaurant',
+                        'Parking' => 'Parking',
+                    ])
+                    ->value($this->accomodation->equipment)
+                    ->multiple(),
+
                 Input::make('accomodation.city')
                     ->title('City')
                     ->placeholder('Douala'),
@@ -137,7 +151,20 @@ class AccomodationEditScreen extends Screen
      */
     public function createOrUpdate(Request $request)
     {
+        $equipment = $request->get('accomodation')['selectedEquipment'] ?? [];
+        unset($this->accomodation->equipment);
         $this->accomodation->fill($request->get('accomodation'))->save();
+
+        foreach (AccomodationEquipment::where('accomodation_id', $this->accomodation->id)->get() as $item) {
+            $item->delete();
+        }
+
+        foreach ($equipment as $item) {
+            AccomodationEquipment::create([
+                'accomodation_id' => $this->accomodation->id,
+                'name' => $item,
+            ]);
+        }
 
         $this->accomodation->attachment()->syncWithoutDetaching(
             $request->input('accomodation.attachment', [])
