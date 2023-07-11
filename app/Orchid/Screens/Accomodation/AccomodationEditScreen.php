@@ -101,11 +101,11 @@ class AccomodationEditScreen extends Screen
                 Select::make('accomodation.selectedEquipment')
                     ->title('Accomodation equipment')
                     ->options([
-                        'Swimming pool' => 'Swimming pool',
-                        'Smoking' => 'Smoking',
-                        'Wifi' => 'Wifi',
-                        'Restaurant' => 'Restaurant',
-                        'Parking' => 'Parking',
+                        'swimming pool' => 'Swimming pool',
+                        'smoking' => 'Smoking',
+                        'wifi' => 'Wifi',
+                        'restaurant' => 'Restaurant',
+                        'parking' => 'Parking',
                     ])
                     ->value($this->accomodation->equipment)
                     ->multiple(),
