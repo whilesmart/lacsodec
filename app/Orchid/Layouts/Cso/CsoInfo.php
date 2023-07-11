@@ -4,10 +4,9 @@ namespace App\Orchid\Layouts\Cso;
 
 use App\Models\CsoActivityDomain;
 use Orchid\Screen\Field;
+use Orchid\Screen\Fields\CheckBox;
 use Orchid\Screen\Fields\Group;
 use Orchid\Screen\Fields\Input;
-use Orchid\Screen\Fields\Label;
-use Orchid\Screen\Fields\Radio;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Layouts\Rows;
@@ -51,30 +50,25 @@ class CsoInfo extends Rows
                 ->title('Choose domain of activity')
                 ->required(),
 
-            Label::make('cso.board_directors')
-                ->title('Board of directors'),
-            Group::make([
-                Radio::make('cso.board_directors')
-                    ->value(1)
-                    ->title('yes'),
-                Radio::make('cso.board_directors')
-                    ->value(0)
-                    ->title('no'),
-            ]),
+            Select::make('cso.second_domain')
+                ->fromModel(CsoActivityDomain::class, 'name', 'name')
+                ->title('Choose second domain of activity'),
 
-            Label::make('cso.organization_leaderships')
-                ->title('Organization leadership'),
-            Group::make([
-                Radio::make('cso.organization_leaderships')
-                    ->value('Women headed organization')
-                    ->title('Women headed organization'),
-                Radio::make('cso.organization_leaderships')
-                    ->value('Youth lead organization')
-                    ->title('Youth lead organization'),
-                Radio::make('cso.organization_leaderships')
-                    ->value('General')
-                    ->title('General'),
-            ]),
+            Select::make('cso.third_domain')
+                ->fromModel(CsoActivityDomain::class, 'name', 'name')
+                ->title('Choose third domain of activity'),
+
+            CheckBox::make('cso.board_directors')
+                ->title('Board of directors?')
+                ->sendTrueOrFalse(),
+
+            Select::make('cso.organization_leaderships')
+                ->title('Organization leadership')
+                ->options([
+                    'Women headed organization' => 'Women headed organization',
+                    'Youth lead organization' => 'Youth lead organization',
+                    'General' => 'General',
+                ]),
 
             Select::make('cso.african_coverage')
                 ->options([
