@@ -142,11 +142,11 @@
 
                                     <div class="field">
                                 <label for="arrival">Arrival</label>
-                                <input type="date" name="arrival" id="" required>
+                                <input type="date" name="arrival" id="arrival" required>
                             </div>
                             <div class="field">
                                 <label for="departure">Departure</label>
-                                <input type="date" name="departure" id="" required>
+                                <input type="date" name="departure" id="departure" required>
                             </div>
                             <div class="field">
                                 <label for="name">Full name</label>
@@ -161,12 +161,12 @@
                                 <input type="tel" name="phone" id="" required>
                             </div>
 
-                                    <!-- <div class="info">
-                                        <p>Total Price for 4 nights</p>
-                                        <h1>XAF 84,000</h1>
-                                    </div> -->
+                                    <div class="info">
+                                        <p>Total Price for <span id="nights">0</span> nights</p>
+                                        <h1 id="total-price">XAF {{$accomodation->price}}</h1>
+                                    </div>
 
-                                    <button type="submit" class="custom-button secondary">Confirm Reservation</button>
+                                    <button type="submit" class="custom-button secondary">Confirm and pay upon arrival</button>
                                 </form>
                             </div>
                         </div>
@@ -177,3 +177,26 @@
 
     </div>
 </x-layouts.app>
+
+<script>
+    // Calculate total price based on arrival and departure dates
+    const arrivalInput = document.getElementById('arrival');
+    const departureInput = document.getElementById('departure');
+    const totalPriceElement = document.getElementById('total-price');
+    const nights = document.getElementById('nights');
+
+    function calculateTotalPrice() {
+        const arrivalDate = new Date(arrivalInput.value);
+        const departureDate = new Date(departureInput.value);
+        var accomodation = {!! $accomodation->toJson() !!};
+        const price = accomodation.price;
+        const differenceInDays = Math.ceil((departureDate - arrivalDate) / (1000 * 60 * 60 * 24));
+        const totalPrice = differenceInDays * price;
+        totalPriceElement.textContent = `XAF ${totalPrice??0}`;
+        nights.textContent = differenceInDays??0;
+    }
+
+    // Listen for changes in arrival and departure date inputs
+    arrivalInput.addEventListener('change', calculateTotalPrice);
+    departureInput.addEventListener('change', calculateTotalPrice);
+</script>

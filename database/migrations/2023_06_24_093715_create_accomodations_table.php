@@ -21,6 +21,7 @@ return new class extends Migration
             $table->boolean('available')->default(true);
             $table->string('accommodation_number');
             $table->integer('floor_number')->nullable();
+            $table->integer('price');
             $table->timestamps();
         });
     }
