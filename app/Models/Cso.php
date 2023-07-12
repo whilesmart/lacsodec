@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Orchid\Metrics\Chartable;
 use Orchid\Screen\AsSource;
 
 class Cso extends Model
 {
-    use HasFactory, AsSource;
+    use HasFactory, AsSource, Chartable;
 
     protected $fillable = [
         'name',
