@@ -32,7 +32,7 @@ class ExpertAchievements extends Rows
                 ->title('Date of certification')
                 ->format('Y-m-d'),
 
-            Cropper::make('expert.certificate_image')
+            Cropper::make('expert.certification_image')
                 ->title('Certification image')
                 ->targetUrl(),
         ];

@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Alert;
-use Orchid\Support\Facades\Toast;
 
 class ExpertProfileEditScreen extends Screen
 {
@@ -93,12 +92,6 @@ class ExpertProfileEditScreen extends Screen
     public function createOrUpdate(Request $request)
     {
         $this->expert->fill($request->get('expert'));
-        $experts = ExpertProfile::where('user_id', $this->expert->user_id)->count();
-        if ($experts > 0) {
-            Toast::error('The selected user is already an expert');
-
-            return;
-        }
 
         $this->expert->save();
 
