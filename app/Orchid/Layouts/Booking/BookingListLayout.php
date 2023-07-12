@@ -28,6 +28,7 @@ class BookingListLayout extends Table
     {
         return [
             TD::make('accomodation.name', 'Accomodation'),
+            TD::make('accomodation.accommodation_number', 'Room number'),
             TD::make('name', 'User name'),
             TD::make('phone', 'User phone number'),
             TD::make('email', 'User email address'),

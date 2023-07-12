@@ -139,6 +139,12 @@ class AccomodationEditScreen extends Screen
                     ->type('number')
                     ->required(),
 
+                Input::make('accomodation.price')
+                    ->title('Accomodation price per night (FCFA)')
+                    ->placeholder(10000)
+                    ->type('number')
+                    ->required(),
+
                 Upload::make('accomodation.attachment')
                     ->title('Accomodation images')
                     ->acceptedFiles('image/*')
