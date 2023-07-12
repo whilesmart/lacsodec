@@ -41,6 +41,8 @@ return new class extends Migration
             $table->string('primary_target_beneficiaries')->nullable();
             $table->string('secondary_target_beneficiaries')->nullable();
             $table->string('domain')->nullable();
+            $table->string('second_domain')->nullable();
+            $table->string('third_domain')->nullable();
             $table->boolean('board_directors')->default(false);
             $table->string('african_coverage')->nullable();
             $table->string('organization_leaderships')->nullable();

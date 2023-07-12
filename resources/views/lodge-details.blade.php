@@ -133,19 +133,41 @@
                     <div class="modal-dialog modal-dialog-centered modal-md">
                         <div class="modal-content">
                             <div class="modal-body">
-                                <div class="booking-modal">
+                                <form class="booking-modal" action="{{ route('book-lodge', ['accomodation' => $accomodation->id]) }}" method="POST">
+                                    @csrf
                                     <h3>Confim Reservation</h3>
 
-                                    <h2>RÉSIDENCE MARTHA</h2>
-                                    <p>Studio avec Balcon</p>
+                                    <h2>{{ $accomodation->name }}</h2>
+                                    <p>{{ $accomodation->type }}</p>
 
-                                    <div class="info">
+                                    <div class="field">
+                                <label for="arrival">Arrival</label>
+                                <input type="date" name="arrival" id="" required>
+                            </div>
+                            <div class="field">
+                                <label for="departure">Departure</label>
+                                <input type="date" name="departure" id="" required>
+                            </div>
+                            <div class="field">
+                                <label for="name">Full name</label>
+                                <input type="text" name="name" id="" required>
+                            </div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="">
+                            </div>
+                            <div class="field">
+                                <label for="phone">Phone number</label>
+                                <input type="tel" name="phone" id="" required>
+                            </div>
+
+                                    <!-- <div class="info">
                                         <p>Total Price for 4 nights</p>
                                         <h1>XAF 84,000</h1>
-                                    </div>
+                                    </div> -->
 
-                                    <a href="" class="custom-button secondary">Confirm Reservation</a>
-                                </div>
+                                    <button type="submit" class="custom-button secondary">Confirm Reservation</button>
+                                </form>
                             </div>
                         </div>
                     </div>
