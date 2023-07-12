@@ -141,7 +141,8 @@ class AccomodationEditScreen extends Screen
 
                 Upload::make('accomodation.attachment')
                     ->title('Accomodation images')
-                    ->acceptedFiles('image/*'),
+                    ->acceptedFiles('image/*')
+                    ->required(),
             ]),
         ];
     }

@@ -118,11 +118,11 @@
                     <div class="lodges">
                         @foreach ($accomodations as $accomodation)
                             <div class="lodge-card">
-                            @foreach ($accomodation->attachment as $image)
-                                @if ($loop->first)
-                                    <img src="{{ asset($image->url()) }}" alt="">
-                                @endif
-                            @endforeach
+                            @if (count($accomodation->attachment) > 0)
+                            <img src="{{ asset($accomodation->attachment[0]->url()) }}" alt="">
+                            @else
+                            <img src="{{ asset('images/lodge/lodge-1.jpg') }}" alt="">
+                            @endif
                                 <div class="content">
                                     <h2>{{ $accomodation->name }}</h2>
                                     <div class="rating">
