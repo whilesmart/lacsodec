@@ -4,12 +4,20 @@ namespace App\Orchid\Screens\Cso;
 
 use App\Models\Cso;
 use App\Orchid\Layouts\Cso\CsoListLayout;
+use App\Services\DataExportService;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Screen;
 
 class CsoListScreen extends Screen
 {
+    protected $dataExportService;
+
+    public function __construct(DataExportService $dataExportService)
+    {
+        $this->dataExportService = $dataExportService;
+    }
+
     /**
      * Fetch data to be displayed on the screen.
      *
@@ -71,22 +79,9 @@ class CsoListScreen extends Screen
 
     public function export()
     {
-        return response()->streamDownload(function () {
-            $csos = Cso::all();
-            $columnNames = ['id', 'name', 'assessment_score', 'status', 'acronym', 'registration_year', 'created_at'];
+        $csos = Cso::all();
+        $columnNames = ['id', 'name', 'assessment_score', 'status', 'acronym', 'registration_year', 'created_at'];
 
-            $csv = tap(fopen('php://output', 'wb'), function ($csv) use ($columnNames) {
-                fputcsv($csv, $columnNames);
-            });
-
-            $csos->each(function ($cso) use ($csv, $columnNames) {
-                $row = array_intersect_key($cso->toArray(), array_flip($columnNames));
-                fputcsv($csv, $row);
-            });
-
-            return tap($csv, function ($csv) {
-                fclose($csv);
-            });
-        }, 'all_csos.csv');
+        return $this->dataExportService->exportData($csos, $columnNames, 'all_csos');
     }
 }
