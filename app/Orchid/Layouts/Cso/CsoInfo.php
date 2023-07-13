@@ -65,15 +65,16 @@ class CsoInfo extends Rows
             Select::make('cso.organization_leaderships')
                 ->title('Organization leadership')
                 ->options([
-                    'Women headed organization' => 'Women headed organization',
-                    'Youth lead organization' => 'Youth lead organization',
+                    'Women-led organization' => 'Women-led organization',
+                    'Youth-led organization' => 'Youth-led organization',
                     'General' => 'General',
                 ]),
 
             Select::make('cso.african_coverage')
                 ->options([
+                    'local' => 'Local',
                     'national' => 'National',
-                    'regional' => 'Regional (more than one african country)',
+                    'global' => 'Global (more than one african country)',
                 ])
                 ->title('African coverage of CSO'),
         ];
