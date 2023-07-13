@@ -33,10 +33,10 @@
                         </div>
                         <div class="flex">
                             <div class="field">
-                                <label for="">Registration date</label>
-                                <input type="date" name="registration_date" id="registration-date"
-                                    placeholder="registration-date" value="{{ old('registration_date') }}" required>
-                                @error('registration_date')
+                                <label for="registration_year">Registration year</label>
+                                <input type="number" name="registration_year" id="registration-year"
+                                    placeholder="registration year" value="{{ old('registration_year') }}" required>
+                                @error('registration_year')
                                     <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -118,7 +118,7 @@
                         </div>
                         <div class="flex">
                             <label for="image">
-                                <span>Upload Logo( jpeg or PNG)</span>
+                                <span>Upload Logo( jpeg or PNG) Max:1mb</span>
                                 <input type="file" name="image" id="" accept="image/*" />
                                 @error('image')
                                     <span class="error-msg">{{ $message }}</span>
@@ -238,7 +238,7 @@
                         </div>
                         <div class="flex">
                             <div class="field">
-                                <label for="">Choose domain of activity</label>
+                                <label for="">Primary domain of activity</label>
                                 <select name="domain" id="domain-of-activity" value="{{ old('domain') }}" required>
                                     @foreach ($domains as $domain)
                                         <option value="{{ $domain->name }}">{{ $domain->name }}</option>

@@ -19,7 +19,7 @@ class Cso extends Model
         'partnership',
         'image',
         'acronym',
-        'registration_date',
+        'registration_year',
         'registration_number',
         'organization_type',
         'country',

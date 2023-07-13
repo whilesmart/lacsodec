@@ -4,10 +4,19 @@ namespace App\Orchid\Screens\EventRegistration;
 
 use App\Models\EventRegistration;
 use App\Orchid\Layouts\EventRegistration\EventRegistrationListLayout;
+use App\Services\DataExportService;
+use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Screen;
 
 class EventRegistrationListScreen extends Screen
 {
+    protected $dataExportService;
+
+    public function __construct(DataExportService $dataExportService)
+    {
+        $this->dataExportService = $dataExportService;
+    }
+
     /**
      * Fetch data to be displayed on the screen.
      *
@@ -35,7 +44,12 @@ class EventRegistrationListScreen extends Screen
      */
     public function commandBar(): iterable
     {
-        return [];
+        return [
+            Button::make('Export')
+                ->icon('bs.download')
+                ->method('export')
+                ->rawClick(),
+        ];
     }
 
     /**
@@ -48,5 +62,13 @@ class EventRegistrationListScreen extends Screen
         return [
             EventRegistrationListLayout::class,
         ];
+    }
+
+    public function export()
+    {
+        $eventRegistrations = EventRegistration::all();
+        $columnNames = ['id', 'name', 'email', 'phone', 'other_details', 'created_at'];
+
+        return $this->dataExportService->exportData($eventRegistrations, $columnNames, 'all_registrations');
     }
 }

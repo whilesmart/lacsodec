@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('assessment_score')->nullable();
-            $table->enum('status', ['approved', 'pending', 'rejected'])->default('pending');
+            $table->enum('status', ['verified', 'not verified'])->default('not verified');
             $table->string('partnership')->nullable();
             $table->string('image')->nullable();
             $table->string('acronym')->nullable();
-            $table->string('registration_date')->nullable();
+            $table->integer('registration_year')->nullable();
             $table->string('organization_type')->nullable();
             $table->string('registration_number')->nullable();
             $table->string('country')->nullable();
