@@ -8,13 +8,18 @@ use Illuminate\Http\Request;
 
 class CsoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $csos = Cso::where('status', 'verified')->paginate(20);
+        $domain = $request->query('domain');
+        $csosQuery = Cso::where('status', 'verified');
+        if ($domain) {
+            $csosQuery = $csosQuery->where('domain', $domain)->orWhere('second_domain', $domain)->orWhere('third_domain', $domain);
+        }
+        $csos = $csosQuery->paginate(20);
         $cso_domains = CsoActivityDomain::orderBy('name', 'asc')->get();
 
         foreach ($cso_domains as $item) {
-            $csoNumber = Cso::where('domain', $item->name)->count();
+            $csoNumber = Cso::where('status', 'verified')->where('domain', $item->name)->orWhere('second_domain', $item->name)->orWhere('third_domain', $item->name)->count();
             $item->csoNumber = $csoNumber;
         }
 

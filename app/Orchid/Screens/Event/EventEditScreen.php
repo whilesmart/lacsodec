@@ -9,6 +9,7 @@ use Orchid\Screen\Fields\Cropper;
 use Orchid\Screen\Fields\DateTimer;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Select;
+use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Alert;
 use Orchid\Support\Facades\Layout;
@@ -110,8 +111,17 @@ class EventEditScreen extends Screen
                     ->required(),
 
                 DateTimer::make('event.date')
-                    ->title('Event date')
-                    ->rows(3)
+                    ->title('Event start date')
+                    ->enableTime()
+                    ->required(),
+
+                DateTimer::make('event.end_date')
+                    ->title('Event end date')
+                    ->enableTime()
+                    ->required(),
+
+                TextArea::make('event.details')
+                    ->title('Event details')
                     ->required(),
 
                 Cropper::make('event.image')
