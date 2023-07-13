@@ -19,6 +19,8 @@ class Event extends Model
         'url',
         'entrance',
         'date',
+        'end_date',
+        'details',
     ];
 
     public function user(): BelongsTo

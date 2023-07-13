@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('image');
             $table->string('type');
             $table->string('date');
+            $table->string('end_date');
+            $table->longText('details');
             $table->string('url');
             $table->string('entrance');
             $table->timestamps();

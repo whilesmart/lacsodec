@@ -19,6 +19,8 @@ class EventRegistration extends Model
         'email',
         'phone',
         'other_details',
+        'sex',
+        'country',
     ];
 
     public function event(): BelongsTo

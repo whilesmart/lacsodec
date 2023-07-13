@@ -15,9 +15,12 @@ return new class extends Migration
             $table->id();
             $table->integer('event_id');
             $table->string('name');
+            $table->string('sex');
+            $table->string('country');
             $table->string('email');
+            $table->string('organization');
             $table->string('phone')->nullable();
-            $table->string('other_details')->nullable();
+            $table->longText('other_details')->nullable();
             $table->timestamps();
         });
     }

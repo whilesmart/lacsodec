@@ -11,7 +11,7 @@
             <div class="con">
                 <div class="events-grid">
                     @foreach ($events as $event)
-                    <div class="event-card">
+                    <a href="{{ route('event-participate', ['event' => $event->id]) }}" class="event-card">
                         <div class="img-con">
                             <img src="{{ asset($event->image) }}" alt="" />
                             <div class="type event">{{$event->type}}</div>
@@ -22,9 +22,8 @@
                         </div>
                         <div class="content">
                             <p>{{$event->name}}</p>
-                            <a href="{{ route('event-participate', ['event' => $event->id]) }}" class="custom-button primary"><span>Participate</span></a>
                         </div>
-                    </div>
+                    </a>
                     @endforeach
                 </div>
                 <div class="pagination">

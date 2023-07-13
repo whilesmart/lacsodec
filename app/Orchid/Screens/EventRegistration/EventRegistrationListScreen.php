@@ -67,7 +67,7 @@ class EventRegistrationListScreen extends Screen
     public function export()
     {
         $eventRegistrations = EventRegistration::all();
-        $columnNames = ['id', 'name', 'email', 'phone', 'other_details', 'created_at'];
+        $columnNames = ['id', 'name', 'email', 'phone', 'sex', 'organization', 'country', 'other_details', 'created_at'];
 
         return $this->dataExportService->exportData($eventRegistrations, $columnNames, 'all_registrations');
     }
