@@ -73,6 +73,10 @@ Route::get('/impact-stories', function () {
     return view('impact-stories');
 })->name('impact-stories');
 
+Route::get('/search-results', function () {
+    return view('search-results');
+})->name('search-results');
+
 Route::get('/locale/{locale}', [LocalizationController::class, 'changeLang'])->name('locale.setting');
 
 Route::group(['middleware' => ['auth']], function () {

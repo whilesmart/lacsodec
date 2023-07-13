@@ -3,19 +3,20 @@
         <div class="con">
             <h1>Login</h1>
             <form action="{{ route('login.perform') }}" method="post">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                <div class="field">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                <div class="field error">
                     <label for="">Email</label>
-                    <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required>
+                    <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}"
+                        required>
                     @if ($errors->has('email'))
-                    <span class="error-msg">{{ $errors->first('email') }}</span>
+                        <span class="error-msg">{{ $errors->first('email') }}</span>
                     @endif
                 </div>
                 <div class="field">
                     <label for="">Password</label>
                     <input type="password" name="password" id="password" placeholder="Enter password" required>
                     @if ($errors->has('password'))
-                    <span class="error-msg">{{ $errors->first('password') }}</span>
+                        <span class="error-msg">{{ $errors->first('password') }}</span>
                     @endif
                 </div>
                 <a href="" class="forgot-password">Forgot password?</a>

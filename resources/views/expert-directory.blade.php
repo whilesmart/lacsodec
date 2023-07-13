@@ -27,12 +27,12 @@
                                     </div>
                                     <div class="status {{ $expert->status }}">{{ $expert->status }}</div>
                                 </div>
-                                <p>{{ $expert->location }}, {{ $expert->nationality }}, {{ $expert->company }}</p>
+                                <p>{{ $expert->location }} - {{ $expert->nationality }} - {{ $expert->company }}</p>
                             </a>
                         @endforeach
                     </div>
                     <div class="pagination">
-                        {{$experts->links()}}
+                        {{ $experts->links() }}
                     </div>
                 </div>
             </div>
