@@ -52,10 +52,10 @@
                                     <option value="Association">Association</option>
                                     <option value="Accredited NGO">Accredited NGO (Non-governmental Organisation)</option>
                                     <option value="trade union">Trade union</option>
-                                    <option value="CIG">CIG ()</option>
+                                    <option value="CIG">CIG (Community Interest Group)</option>
                                     <option value="Cooperative">Cooperative</option>
                                     <option value="Media">Media</option>
-                                    <option value="CBO">CBO ()</option>
+                                    <option value="CBO">CBO (Community-based Organisation)</option>
                                     <option value="Village development Association">Village development Association
                                     </option>
                                     <option value="CSO Network">CSO Network</option>
