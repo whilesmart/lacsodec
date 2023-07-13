@@ -13,7 +13,7 @@
                     <nav>
                         <ul>
                             @foreach ($cso_domains as $domain)
-                                <li><a href="/">{{ $domain->name }}</a></li>
+                                <li><a href="/">{{ $domain->name }} ({{ $domain->csoNumber }})</a></li>
                             @endforeach
                         </ul>
                     </nav>

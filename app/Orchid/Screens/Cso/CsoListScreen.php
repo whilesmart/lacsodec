@@ -4,6 +4,7 @@ namespace App\Orchid\Screens\Cso;
 
 use App\Models\Cso;
 use App\Orchid\Layouts\Cso\CsoListLayout;
+use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Screen;
 
@@ -48,6 +49,11 @@ class CsoListScreen extends Screen
             Link::make('Create new Cso')
                 ->icon('pencil')
                 ->route('platform.cso.edit'),
+
+            Button::make('Export')
+                ->icon('bs.download')
+                ->method('export')
+                ->rawClick(),
         ];
     }
 
@@ -61,5 +67,26 @@ class CsoListScreen extends Screen
         return [
             CsoListLayout::class,
         ];
+    }
+
+    public function export()
+    {
+        return response()->streamDownload(function () {
+            $csos = Cso::all();
+            $columnNames = ['id', 'name', 'assessment_score', 'status', 'acronym', 'registration_year', 'created_at'];
+
+            $csv = tap(fopen('php://output', 'wb'), function ($csv) use ($columnNames) {
+                fputcsv($csv, $columnNames);
+            });
+
+            $csos->each(function ($cso) use ($csv, $columnNames) {
+                $row = array_intersect_key($cso->toArray(), array_flip($columnNames));
+                fputcsv($csv, $row);
+            });
+
+            return tap($csv, function ($csv) {
+                fclose($csv);
+            });
+        }, 'all_csos.csv');
     }
 }

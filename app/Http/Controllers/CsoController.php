@@ -10,8 +10,13 @@ class CsoController extends Controller
 {
     public function index()
     {
-        $csos = Cso::where('status', 'approved')->paginate(20);
-        $cso_domains = CsoActivityDomain::all();
+        $csos = Cso::where('status', 'verified')->paginate(20);
+        $cso_domains = CsoActivityDomain::orderBy('name', 'asc')->get();
+
+        foreach ($cso_domains as $item) {
+            $csoNumber = Cso::where('domain', $item->name)->count();
+            $item->csoNumber = $csoNumber;
+        }
 
         return view('cso-directory', [
             'csos' => $csos,
@@ -22,8 +27,8 @@ class CsoController extends Controller
     public function show($cso)
     {
         $cso = Cso::findOrFail($cso);
-        $otherCsos = Cso::where('id', '!=', $cso->id)->where('status', 'approved')->limit(3)->get();
-        $latestCsos = Cso::where('id', '!=', $cso->id)->where('status', 'approved')->orderBy('created_at', 'desc')->limit(4)->get();
+        $otherCsos = Cso::where('id', '!=', $cso->id)->where('status', 'verified')->limit(3)->get();
+        $latestCsos = Cso::where('id', '!=', $cso->id)->where('status', 'verified')->orderBy('created_at', 'desc')->limit(4)->get();
 
         return view('cso-directory-details', [
             'cso' => $cso,
@@ -34,7 +39,7 @@ class CsoController extends Controller
 
     public function create(Request $request)
     {
-        $domains = CsoActivityDomain::all();
+        $domains = CsoActivityDomain::orderBy('name', 'asc')->get();
 
         return view('register-cso', [
             'domains' => $domains,
@@ -46,7 +51,7 @@ class CsoController extends Controller
         $fields = $request->validate([
             'name' => ['required', 'string'],
             'partnership' => ['required', 'string'],
-            'registration_date' => ['required', 'string'],
+            'registration_year' => ['required', 'integer'],
             'organization_type' => ['required', 'string'],
             'registration_number' => ['required', 'string'],
             'country' => ['required', 'string'],
@@ -79,7 +84,7 @@ class CsoController extends Controller
         $cso = Cso::create([
             'name' => $fields['name'],
             'partnership' => $fields['partnership'],
-            'registration_date' => $fields['registration_date'],
+            'registration_year' => $fields['registration_year'],
             'organization_type' => $fields['organization_type'],
             'registration_number' => $fields['registration_number'],
             'country' => $fields['country'],
@@ -107,6 +112,8 @@ class CsoController extends Controller
             'image' => '/storage/'.$image_path,
             'user_id' => $request->user()->id,
             'created_by' => $request->user()->id,
+            'status' => 'not verified',
+            'assessment_score' => 'Not Assessed',
         ]);
 
         return redirect()->to('/cso-directory')->with('success', 'Cso registered successfully. It will be made public after approval by admins');
