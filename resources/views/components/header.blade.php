@@ -74,12 +74,18 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">HR Directory</a>
+                        <a href="{{ route('human-resource-directory') }}">
+                        @if (Request::routeIs('human-resource-directory'))
+                            <b style="font-size: large;">Human Resource</b>
+                            @else
+                            Human Resource
+                            @endif
+                        </a>
                     </li>
                 </ul>
             </div>
-            <form action="">
-                <input type="text" name="" id="" placeholder="Enter any Keyword">
+            <form action="{{ route('search-results') }}" method="GET">
+                <input type="text" name="search" id="" placeholder="Enter any Keyword">
                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
         </div>
@@ -97,7 +103,6 @@
                             us</a></li>
                     <li><a href="{{ route('services') }}" class="{{ request()->is('services') ? 'active' : '' }}">services</a></li>
                     <li><a href="{{ route('events') }}" class="{{ request()->is('events') ? 'active' : '' }}">events/Trainings</a></li>
-                    <li><a href="{{ route('grants') }}" class="{{ request()->is('grants') ? 'active' : '' }}">grants</a></li>
                     <li><a href="{{ route('blog') }}" class="{{ request()->is('blog') ? 'active' : '' }}">blog</a>
                     </li>
                     <li><a href="{{ route('lodge') }}" class="{{ request()->is('lodge') ? 'active' : '' }}">lodge</a>

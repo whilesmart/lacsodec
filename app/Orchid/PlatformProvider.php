@@ -46,13 +46,19 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('bs.file-earmark-post')
                 ->route('platform.article.list')
                 ->permission('platform.systems.roles')
+                ->title('Articles'),
+
+            Menu::make('Article tags')
+                ->icon('bs.file-earmark-post')
+                ->route('platform.articletag.list')
+                ->permission('platform.systems.roles')
                 ->divider(),
 
             Menu::make('Events')
                 ->icon('bs.file-earmark-post')
                 ->route('platform.event.list')
                 ->permission('platform.systems.roles')
-                ->divider(),
+                ->title('Events'),
 
             Menu::make('Event registrations')
                 ->icon('bs.file-earmark-check-fill')
@@ -64,13 +70,14 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('bs.buildings-fill')
                 ->route('platform.cso.list')
                 ->permission('platform.systems.roles')
+                ->title('CSO')
                 ->divider(),
 
             Menu::make('Accomodations')
                 ->icon('bs.buildings')
                 ->route('platform.accomodation.list')
                 ->permission('platform.systems.roles')
-                ->divider(),
+                ->title('Lodge'),
 
             Menu::make('Bookings')
                 ->icon('bs.buildings')
@@ -82,12 +89,17 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('bs.phone')
                 ->route('platform.contact.list')
                 ->permission('platform.systems.roles')
+                ->title('Info')
                 ->divider(),
 
             Menu::make('Expert Profiles')
                 ->icon('bs.people')
                 ->route('platform.expert.list')
                 ->title('Expert Profiles'),
+
+            Menu::make('Human Resource')
+                ->icon('bs.people')
+                ->route('platform.humanresource.list'),
         ];
     }
 
