@@ -9,6 +9,7 @@
 
         <div class="con">
             <section>
+                @if ($event->date >= now())
                 <form action="{{ route('event-participate-store', ['event' => $event->id]) }}" class="create-cso-form" method="POST">
                     @csrf
                     <div class="form-section">
@@ -84,6 +85,9 @@
                         <button type="submit" class="custom-button primary">Confirm Event Participation</button>
                     </div>
                 </form>
+                @else
+                    <div></div>
+                @endif
             </section>
         </div>
 

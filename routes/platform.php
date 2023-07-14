@@ -6,6 +6,8 @@ use App\Orchid\Screens\Accomodation\AccomodationEditScreen;
 use App\Orchid\Screens\Accomodation\AccomodationListScreen;
 use App\Orchid\Screens\Article\ArticleEditScreen;
 use App\Orchid\Screens\Article\ArticleListScreen;
+use App\Orchid\Screens\ArticleTag\ArticleTagEditScreen;
+use App\Orchid\Screens\ArticleTag\ArticleTagListScreen;
 use App\Orchid\Screens\Booking\BookingEditScreen;
 use App\Orchid\Screens\Booking\BookingListScreen;
 use App\Orchid\Screens\Contact\ContactEditScreen;
@@ -133,3 +135,9 @@ Route::screen('booking/{booking?}', BookingEditScreen::class)
 
 Route::screen('bookings', BookingListScreen::class)
     ->name('platform.booking.list');
+
+Route::screen('articletag/{articleTag?}', ArticleTagEditScreen::class)
+    ->name('platform.articletag.edit');
+
+Route::screen('articletags', ArticleTagListScreen::class)
+    ->name('platform.articletag.list');
