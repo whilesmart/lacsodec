@@ -3,6 +3,7 @@
 namespace App\Orchid\Screens\Article;
 
 use App\Models\Article;
+use App\Models\ArticleTag;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -95,14 +96,10 @@ class ArticleEditScreen extends Screen
                 Relation::make('article.author')
                     ->title('Author')
                     ->fromModel(User::class, 'name', 'id')
-                    ->required(),
+                    ->empty('none'),
 
                 Select::make('article.category')
-                    ->options([
-                        'sports' => 'Sports',
-                        'politics' => 'Politics',
-                        'entertainment' => 'Entertainment',
-                    ])
+                    ->fromModel(ArticleTag::class, 'name', 'name')
                     ->title('Select tags')
                     ->help('Allow search bots to index')
                     ->required(),

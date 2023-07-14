@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ContactInfo;
 use App\Models\Event;
 use App\Models\EventRegistration;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -12,7 +13,7 @@ class EventController extends Controller
 {
     public function index()
     {
-        $events = Event::paginate(20);
+        $events = Event::where('date', '>=', Carbon::now())->paginate(20);
 
         return view('events', [
             'events' => $events,

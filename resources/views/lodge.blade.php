@@ -137,6 +137,9 @@
                                         <div class="sub">{{ $accomodation->quarter }}</div>
                                     </div>
                                     <p>{{ $accomodation->description }}</p>
+                                    @if ($accomodation->available)
+                                    <p>Status: <b>available</b></p>
+                                    @endif
                                     <a href="{{ route('lodge-details', ['accomodation' => $accomodation->id]) }}"
                                         class="custom-button primary">View details</a>
                                 </div>

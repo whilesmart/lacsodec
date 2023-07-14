@@ -49,6 +49,9 @@
                     </div>
 
                     <p>{{ $accomodation->description }}</p>
+                    @if ($accomodation->available)
+                        <p>Status: <b>available</b></p>
+                    @endif
 
 
                     <!-- Image gallery Modal -->
