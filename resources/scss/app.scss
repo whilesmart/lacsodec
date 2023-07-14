@@ -3519,6 +3519,10 @@ table.custom-table {
                             color: $primary;
                         }
                     }
+                    .active {
+                        background-color: $primary-light;
+                            color: $primary;
+                    }
                 }
             }
         }

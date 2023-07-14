@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Orchid\Filters\Types\Like;
 use Orchid\Filters\Types\Where;
 use Orchid\Filters\Types\WhereDateStartEnd;
@@ -81,5 +82,10 @@ class User extends Authenticatable
     public function created_csos(): HasMany
     {
         return $this->hasMany(Cso::class, 'created_by');
+    }
+
+    public function expert(): HasOne
+    {
+        return $this->hasOne(ExpertProfile::class);
     }
 }

@@ -10,6 +10,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\ExpertController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocalizationController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /* |-------------------------------------------------------------------------- | Web Routes |-------------------------------------------------------------------------- | | Here is where you can register web routes for your application. These | routes are loaded by the RouteServiceProvider and all of them will | be assigned to the "web" middleware group. Make something great! | */
@@ -73,9 +74,7 @@ Route::get('/impact-stories', function () {
     return view('impact-stories');
 })->name('impact-stories');
 
-Route::get('/search-results', function () {
-    return view('search-results');
-})->name('search-results');
+Route::get('/search-results', [SearchController::class, 'search'])->name('search-results');
 
 Route::get('/locale/{locale}', [LocalizationController::class, 'changeLang'])->name('locale.setting');
 

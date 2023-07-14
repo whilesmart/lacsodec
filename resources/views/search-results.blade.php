@@ -3,7 +3,7 @@
         <!-- breadcrumb -->
         @component('components.breacrumb')
             @slot('current')
-                Results for "search query here"
+                Results for "{{$search}}"
             @endslot
         @endcomponent
 
@@ -13,171 +13,113 @@
                     <h3>Filter</h3>
                     <ul>
                         <li>
-                            <a href="">CSO</a>
+                            <a href="{{ url()->current() }}?{{ http_build_query(array_merge(request()->query(), ['filter' => 'csos'])) }}"
+                            @if ($filter == 'csos')
+                            class="active"
+                            @endif
+                            >CSO</a>
                         </li>
                         <li>
-                            <a href="">Experts</a>
+                            <a href="{{ url()->current() }}?{{ http_build_query(array_merge(request()->query(), ['filter' => 'experts'])) }}"
+                            @if ($filter == 'experts')
+                            class="active"
+                            @endif
+                            >Experts</a>
                         </li>
                         <li>
-                            <a href="">Services</a>
+                            <a href="{{ url()->current() }}?{{ http_build_query(array_merge(request()->query(), ['filter' => 'events'])) }}"
+                            @if ($filter == 'events')
+                            class="active"
+                            @endif
+                            >Events</a>
                         </li>
                         <li>
-                            <a href="">Events</a>
-                        </li>
-                        <li>
-                            <a href="">Publications</a>
-                        </li>
-                        <li>
-                            <a href="">Grants</a>
+                            <a href="{{ url()->current() }}?{{ http_build_query(array_merge(request()->query(), ['filter' => 'articles'])) }}"
+                            @if ($filter == 'articles')
+                            class="active"
+                            @endif
+                            >Publications</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="con">
+                @if ($filter == 'csos' || !$filter)
                 <div class="result-section">
                     <h2>CSO results:</h2>
                     <div class="cso-directory-grid">
-                        <a href="/" class="cso-card">
-                            <img src="{{ asset('images/home-img-1.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet.</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda vel ducimus eveniet
-                                debitis fuga nesciunt, sed, iusto, facilis id placeat enim. Numquam, itaque corporis sed
-                                distinctio delectus et perferendis exercitationem.</p>
+                        @foreach ($csos as $cso)
+                        <a href="{{ route('cso-directory-details', ['cso' => $cso->id]) }}" class="cso-card">
+                            <img src="{{ asset($cso->image) }}" alt="" />
+                            <h2>{{$cso->name}}</h2>
+                            <p>{{$cso->vision_statement}}</p>
                         </a>
-                        <a href="/" class="cso-card">
-                            <img src="{{ asset('images/home-img-1.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet.</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda vel ducimus eveniet
-                                debitis fuga nesciunt, sed, iusto, facilis id placeat enim. Numquam, itaque corporis sed
-                                distinctio delectus et perferendis exercitationem.</p>
-                        </a>
+                        @endforeach
                     </div>
                 </div>
+                @endif
 
+                @if ($filter == 'expert' || !$filter)
                 <div class="result-section">
                     <h2>Experts results:</h2>
                     <div class="expert-directory-grid">
-                        <a href="/" class="expert-card">
-                            <img src="{{ asset('images/home-img-1.png') }}" alt="">
-                            <h4>Expert name here</h4>
-                            <h5>position here</h5>
+                        @foreach ($experts as $expert)
+                        <a href="{{ route('expert-directory-details', ['expert' => $expert->id]) }}" class="expert-card">
+                            <img src="{{ asset($expert->image) }}" alt="">
+                            <h4>{{ $expert->user->name }}</h4>
+                            <h5>{{ $expert->position }}</h5>
                             <div class="flex">
                                 <div class="left">
-                                    <span>3 year(s)</span>
+                                    <span>{{ $expert->work_duration }}</span>
                                 </div>
-                                <div class="status available">available</div>
+                                <div class="status available">{{ $expert->status }}</div>
                             </div>
-                            <p>yaounde - Cameroon - company name</p>
+                            <p>{{ $expert->location }} - {{ $expert->nationality }} - {{ $expert->company }}</p>
                         </a>
-                        <a href="/" class="expert-card">
-                            <img src="{{ asset('images/home-img-1.png') }}" alt="">
-                            <h4>Expert name here</h4>
-                            <h5>position here</h5>
-                            <div class="flex">
-                                <div class="left">
-                                    <span>3 year(s)</span>
-                                </div>
-                                <div class="status available">available</div>
-                            </div>
-                            <p>yaounde - Cameroon - company name</p>
-                        </a>
-                        <a href="/" class="expert-card">
-                            <img src="{{ asset('images/home-img-1.png') }}" alt="">
-                            <h4>Expert name here</h4>
-                            <h5>position here</h5>
-                            <div class="flex">
-                                <div class="left">
-                                    <span>3 year(s)</span>
-                                </div>
-                                <div class="status available">available</div>
-                            </div>
-                            <p>yaounde - Cameroon - company name</p>
-                        </a>
+                        @endforeach
                     </div>
                 </div>
+                @endif
 
-                <div class="result-section">
-                    <h2>Services results:</h2>
-                    <div class="services-grid">
-                        <a href="/" class="service">
-                            S5: <br>
-                            Legal Advisory & support
-                        </a>
-                        <a href="/" class="service">
-                            S4: <br>
-                            Financial Management Support
-                        </a>
-                    </div>
-                </div>
-
+                @if ($filter == 'events' || !$filter)
                 <div class="result-section">
                     <h2>Events results:</h2>
                     <div class="events-grid">
+                        @foreach ($events as $event)
                         <div class="event-card">
                             <div class="img-con">
                                 <img src="{{ asset('images/home-img-1.png') }}" alt="" />
-                                <div class="type event">event type</div>
+                                <div class="type event">{{$event->type}}</div>
                             </div>
                             <div class="flex">
-                                <div class="label sponsored">sponsored</div>
-                                <p>Feb 13th 2024</p>
+                                <div class="label sponsored">{{$event->entrance}}</div>
+                                <p>{{$event->date}}</p>
                             </div>
                             <div class="content">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                                <a href="/" class="custom-button primary"><span>Participate</span></a>
+                                <p>{{$event->name}}</p>
+                                <a href="{{ route('event-participate', ['event' => $event->id]) }}" class="custom-button primary"><span>Participate</span></a>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
+                @endif
 
+                @if ($filter == 'articles' || !$filter)
                 <div class="result-section">
                     <h2>Publications results:</h2>
                     <div class="publications-grid">
+                        @foreach ($articles as $blog)
                         <div class="publication">
-                            <img src="{{ asset('images/publication-1.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur. Pretium turpis eget augue mauris scelerisque.</p>
-                            <a href="">Read More</a>
+                            <img src="{{ asset($blog->image) }}" alt="" />
+                            <h2>{{$blog->title}}</h2>
+                            <p>{{$blog->description}}</p>
+                            <a href="{{ route('blog-details', ['blog' => $blog->slug]) }}">Read More</a>
                         </div>
-                        <div class="publication">
-                            <img src="{{ asset('images/publication-2.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur. Pretium turpis eget augue mauris scelerisque.</p>
-                            <a href="">Read More</a>
-                        </div>
-                        <div class="publication">
-                            <img src="{{ asset('images/publication-3.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur. Pretium turpis eget augue mauris scelerisque.</p>
-                            <a href="">Read More</a>
-                        </div>
-                        <div class="publication">
-                            <img src="{{ asset('images/publication-4.png') }}" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur. Pretium turpis eget augue mauris scelerisque.</p>
-                            <a href="">Read More</a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
-
-                <div class="result-section">
-                    <h2>Grants results:</h2>
-                    <div class="grants-grid">
-                        <div class="grant-card">
-                            <div class="logo-con">
-                                <img src="{{ asset('images/logos/google_play.png') }}" alt="" />
-                            </div>
-                            <div class="rating">
-                                <i class="fa fa-star colored" aria-hidden="true"></i>
-                                <i class="fa fa-star colored" aria-hidden="true"></i>
-                                <i class="fa fa-star colored" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </div>
-                            <p>google play</p>
-                        </div>
-                    </div>
-                </div>
+                @endif
 
             </div>
         </section>
