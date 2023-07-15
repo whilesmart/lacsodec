@@ -49,7 +49,7 @@ class ExpertPersonalInfo extends Rows
                 ->help('Select the status of the expert'),
 
             TextArea::make('expert.details')
-                ->title('details')
+                ->title('Expert bio details')
                 ->placeholder('Enter Expert details')
                 ->rows(5)
                 ->required(),

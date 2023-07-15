@@ -4,8 +4,8 @@ namespace App\Orchid\Layouts\Cso;
 
 use Orchid\Screen\Field;
 use Orchid\Screen\Fields\Cropper;
-use Orchid\Screen\Fields\DateTimer;
 use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Label;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Layouts\Rows;
 
@@ -26,6 +26,9 @@ class CsoBasicInfo extends Rows
     protected function fields(): iterable
     {
         return [
+            Label::make('')
+                ->title('CSO basic information'),
+
             Input::make('cso.name')
                 ->title('Name')
                 ->placeholder('CSO name')
@@ -35,6 +38,7 @@ class CsoBasicInfo extends Rows
             Select::make('cso.assessment_score')
                 ->title('Assessment score')
                 ->options([
+                    'Not Assessed' => 'Not Assessed',
                     'Assessment Level 01' => 'Assessment Level 01',
                     'Assessment Level 02' => 'Assessment Level 02',
                     'Assessment Level 03' => 'Assessment Level 03',
@@ -51,16 +55,15 @@ class CsoBasicInfo extends Rows
 
             Select::make('cso.status')
                 ->options([
-                    'pending' => 'Pending',
-                    'approved' => 'Approved',
-                    'rejected' => 'Rejected',
+                    'verified' => 'verified',
+                    'not verified' => 'not verified',
                 ])
                 ->title('Select CSO status')
                 ->help('Select the status of the CSO'),
 
-            DateTimer::make('cso.registration_date')
-                ->title('Registration date')
-                ->format('Y-m-d')
+            Input::make('cso.registration_year')
+                ->title('Registration year')
+                ->type('number')
                 ->required(),
 
             Input::make('cso.registration_number')

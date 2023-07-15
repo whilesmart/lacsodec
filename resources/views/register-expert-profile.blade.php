@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <div class="field">
-                            <label for="">Details</label>
+                            <label for="">Bio details</label>
                             <textarea name="details" id="details" cols="30" rows="10" value="{{ old('details') }}" required></textarea>
                             @error('details')
                                 <span class="error-msg">{{$message}}</span>

@@ -4,11 +4,20 @@ namespace App\Orchid\Screens\Cso;
 
 use App\Models\Cso;
 use App\Orchid\Layouts\Cso\CsoListLayout;
+use App\Services\DataExportService;
+use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Screen;
 
 class CsoListScreen extends Screen
 {
+    protected $dataExportService;
+
+    public function __construct(DataExportService $dataExportService)
+    {
+        $this->dataExportService = $dataExportService;
+    }
+
     /**
      * Fetch data to be displayed on the screen.
      *
@@ -48,6 +57,11 @@ class CsoListScreen extends Screen
             Link::make('Create new Cso')
                 ->icon('pencil')
                 ->route('platform.cso.edit'),
+
+            Button::make('Export')
+                ->icon('bs.download')
+                ->method('export')
+                ->rawClick(),
         ];
     }
 
@@ -61,5 +75,13 @@ class CsoListScreen extends Screen
         return [
             CsoListLayout::class,
         ];
+    }
+
+    public function export()
+    {
+        $csos = Cso::all();
+        $columnNames = ['id', 'name', 'assessment_score', 'status', 'acronym', 'registration_year', 'created_at'];
+
+        return $this->dataExportService->exportData($csos, $columnNames, 'all_csos');
     }
 }

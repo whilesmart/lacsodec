@@ -5,6 +5,7 @@ namespace App\Orchid\Layouts\Cso;
 use App\Models\User;
 use Orchid\Screen\Field;
 use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Label;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Layouts\Rows;
 
@@ -25,6 +26,9 @@ class CsoContactInfo extends Rows
     protected function fields(): iterable
     {
         return [
+            Label::make('')
+                ->title('CSO contact information'),
+
             Input::make('cso.contact_person_name')
                 ->title('Name of contact person')
                 ->placeholder('John Paul')

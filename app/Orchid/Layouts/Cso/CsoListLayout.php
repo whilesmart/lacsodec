@@ -27,11 +27,11 @@ class CsoListLayout extends Table
     protected function columns(): iterable
     {
         return [
-            TD::make('name', 'Name'),
-            TD::make('organization_type', 'Organization type'),
-            TD::make('registration_number', 'Registration number'),
-            TD::make('country', 'Country'),
-            TD::make('created_at', 'Created'),
+            TD::make('image', 'Image')
+                ->width(200)
+                ->render(fn (Cso $cso) => "<img src=$cso->image alt=$cso->name class='mw-100 d-block img-fluid rounded-1 w-100'>"),
+            TD::make('name', 'Name')->filter(),
+            TD::make('created_at', 'Application date'),
             TD::make('Actions')
                 ->render(function (Cso $cso) {
                     return Link::make('Edit CSO')

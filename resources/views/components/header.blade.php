@@ -78,8 +78,10 @@
                     </li>
                 </ul>
             </div>
-            <form action="">
-                <input type="text" name="" id="" placeholder="{{__('header.Enter any keyword')}}">
+            <form action="{{ route('search-results') }}" method="GET">
+                <input type="text" name="search" id="" placeholder="{{__('header.Enter any keyword')}}">
+                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
         </div>
