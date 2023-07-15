@@ -25,9 +25,9 @@
                         </li>
                     </ul>
                 </div>
-                <a href="{{ route('contact-us') }}" class="custom-button transparent"><span>Contact us</span></a>
+                <a href="{{ route('contact-us') }}" class="custom-button transparent"><span>{{__('header.Contact us')}}</span></a>
                 @guest
-                <a href="{{ route('login') }}" class="custom-button primary"><span>Login</span></a>
+                <a href="{{ route('login') }}" class="custom-button primary"><span>{{__('header.Login')}}</span></a>
                 @endguest
                 @auth
                 <div class="dropdown">
@@ -36,11 +36,11 @@
                         {{Auth::user()->name}}
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('my-csos') }}">CSO's</a></li>
-                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">Expert Profile</a></li>
-                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">Human Resource</a></li>
-                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">Settings</a></li>
-                        <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                        <li><a class="dropdown-item" href="{{ route('my-csos') }}">{{__("header.CSO's")}}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">{{__('header.Experts Profile')}}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">{{__('header.Human Resource')}}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">{{__('header.Settings')}}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{__('header.Logout')}}</a></li>
                         <form action="{{ route('logout') }}" method="post" id="logout-form">
                             @csrf
                         </form>
@@ -58,28 +58,28 @@
                     <li>
                         <a href="{{ route('cso-directory') }}">
                             @if (Request::routeIs('cso-directory'))
-                            <b style="font-size: large;">CSO Directory</b>
+                            <b style="font-size: large;">{{__('header.CSO Directory')}}</b>
                             @else
-                            CSO Directory
+                            {{__('header.CSO Directory')}}
                             @endif
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('expert-directory') }}">
                             @if (Request::routeIs('expert-directory'))
-                            <b style="font-size: large;">Experts Directory</b>
+                            <b style="font-size: large;">{{__('header.Experts Directory')}}</b>
                             @else
-                            Experts Directory
+                            {{__('header.Experts Directory')}}
                             @endif
                         </a>
                     </li>
                     <li>
-                        <a href="">HR Directory</a>
+                        <a href="">{{__('header.HR Directory')}}</a>
                     </li>
                 </ul>
             </div>
             <form action="">
-                <input type="text" name="" id="" placeholder="Enter any Keyword">
+                <input type="text" name="" id="" placeholder="{{__('header.Enter any keyword')}}">
                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
         </div>
@@ -92,22 +92,21 @@
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </button>
                 <ul>
-                    <li><a href="/" class="{{ request()->is('/') ? 'active' : '' }}">home</a></li>
-                    <li><a href="{{ route('about-us') }}" class="{{ request()->is('about-us') ? 'active' : '' }}">about
-                            us</a></li>
-                    <li><a href="{{ route('services') }}" class="{{ request()->is('services') ? 'active' : '' }}">services</a></li>
-                    <li><a href="{{ route('events') }}" class="{{ request()->is('events') ? 'active' : '' }}">events/Trainings</a></li>
-                    <li><a href="{{ route('grants') }}" class="{{ request()->is('grants') ? 'active' : '' }}">grants</a></li>
-                    <li><a href="{{ route('blog') }}" class="{{ request()->is('blog') ? 'active' : '' }}">blog</a>
+                    <li><a href="/" class="{{ request()->is('/') ? 'active' : '' }}">{{__('header.home')}}</a></li>
+                    <li><a href="{{ route('about-us') }}" class="{{ request()->is('about-us') ? 'active' : '' }}">{{__('header.about us')}}</a></li>
+                    <li><a href="{{ route('services') }}" class="{{ request()->is('services') ? 'active' : '' }}">{{__('header.services')}}</a></li>
+                    <li><a href="{{ route('events') }}" class="{{ request()->is('events') ? 'active' : '' }}">{{__('header.events/Training')}}</a></li>
+                    <li><a href="{{ route('grants') }}" class="{{ request()->is('grants') ? 'active' : '' }}">{{__('header.grants')}}</a></li>
+                    <li><a href="{{ route('blog') }}" class="{{ request()->is('blog') ? 'active' : '' }}">{{__('header.blog')}}</a>
                     </li>
-                    <li><a href="{{ route('lodge') }}" class="{{ request()->is('lodge') ? 'active' : '' }}">lodge</a>
+                    <li><a href="{{ route('lodge') }}" class="{{ request()->is('lodge') ? 'active' : '' }}">{{__('header.lodge')}}</a>
                     </li>
-                    <li><a href="{{ route('lodge') }}" class="mobile-only {{ request()->is('contact-us') ? 'active' : '' }}">lodge</a></li>
-                    <li><a href="{{ route('contact-us') }}" class="{{ request()->is('contact-us') ? 'active' : '' }}">contact-us</a></li>
+                    <li><a href="{{ route('lodge') }}" class="mobile-only {{ request()->is('contact-us') ? 'active' : '' }}">{{__('header.lodge')}}</a></li>
+                    <li><a href="{{ route('contact-us') }}" class="{{ request()->is('contact-us') ? 'active' : '' }}">{{__('header.contact-us')}}</a></li>
                 </ul>
             </nav>
             <div class="right">
-                <a href="{{ route('donate') }}" class="custom-button primary-dark"><span>Donate</span></a>
+                <a href="{{ route('donate') }}" class="custom-button primary-dark"><span>{{__('header.Donate')}}</span></a>
                 <button type="button" class="toggler" id="navigation-toggler"><i class="fa fa-bars" aria-hidden="true"></i></button>
             </div>
         </div>

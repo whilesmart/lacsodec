@@ -16,13 +16,13 @@
     <section class="home-secton-1">
         <div class="con">
             <div class="left">
-                <h2>About Us</h2>
-                <p>CSO media space is our Main Goal</p>
+                <h2>{{__('home.About Us')}}</h2>
+                <p>{{__('home.CSO media space is our Main Goal')}}</p>
                 <div class="members">
                     <h3>8,000</h3>
-                    <p>Members</p>
+                    <p>{{__('home.Members')}}</p>
                 </div>
-                <a href="/" class="custom-button secondary"><span>Learn more</span></a>
+                <a href="/" class="custom-button secondary"><span>{{__('home.Learn more')}}</span></a>
             </div>
             <div class="right">
                 <p><b>{{__('home.WHO WE ARE')}}</b></p>
@@ -42,7 +42,7 @@
             <aside>
                 <div class="aside-section">
                     <div class="top">
-                        <h3>Recent Event</h3>
+                        <h3>{{__('home.Recent Event')}}</h3>
                     </div>
                     @if ($latestEvent)
                     <div class="event">
@@ -57,14 +57,14 @@
                         </div>
                     </div>
                     <a href="{{$latestEvent->url}}" target="__blank" class="custom-button white">
-                        <span>View more</span>
+                        <span>{{__('home.View more')}}</span>
                         <i class="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
                     @endif
                 </div>
                 <div class="aside-section">
                     <div class="top">
-                        <h3>Latest Experts</h3>
+                        <h3>{{__('home.Latest Experts')}}</h3>
                     </div>
                     @foreach ($latestExperts as $expert)
                     <div class="expert">
@@ -87,7 +87,7 @@
                             <div class="info">
                                 <div class="sub">
                                     <i class="fa fa-user" aria-hidden="true"></i>
-                                    <p>Posted by: {{$latestArticles[0]->user->name}}</p>
+                                    <p>{{__('Posted by')}}: {{$latestArticles[0]->user->name}}</p>
                                 </div>
                                 <div class="sub">
                                     <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -117,7 +117,7 @@
                                 </div>
                                 <p>{{$article->description}}</p>
                                 <a href="{{ route('blog-details', ['blog' => $article->slug]) }}" class="custom-button white">
-                                    <span>Read more</span>
+                                    <span>{{__('home.Read more')}}</span>
                                     <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -131,7 +131,7 @@
                 <x-donation-card />
                 <div class="aside-section">
     <div class="top">
-        <h3>Latest CSO</h3>
+        <h3>{{__('home.Latest CSO')}}</h3>
     </div>
     @foreach ($latestCsos as $cso)
     <div class="cso">
@@ -139,7 +139,6 @@
         <div class="info">
             <h5>{{$cso->name}}</h5>
             <p>{{$cso->created_at}}</p>
-        </div>
     </div>
     @endforeach
 </div>

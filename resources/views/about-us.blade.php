@@ -2,9 +2,9 @@
     <div class="about-us-page">
         <!-- breadcrumb -->
         @component('components.breacrumb')
-            @slot('current')
-                About us
-            @endslot
+        @slot('current')
+        {{__('home.About Us')}}
+        @endslot
         @endcomponent
 
         <section class="about-section-1">
@@ -14,13 +14,9 @@
                         <img src="{{ asset('images/home-img-1.png') }}" alt="" />
                         <img src="{{ asset('images/home-img-2.png') }}" alt="" />
                     </div>
-                    <p><b>
-                    WHO WE ARE
-</b></p>
-                    <p>
-                    The LUKMEF Africa Civil Society Development Centre (LACSODEC) is a Civil Society Organization (CSO) service providing agency facilitating knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind.
-</p>
-                    <p>LACSODEC was founded in {year} by Tanyi Christian under the LUKMEF vision for Sustainable Development and Empowerment of communities and other local civil society actors to improve on service delivery. LACSODEC is located in NGO Street, Molyko – Buea, in the SW Region of Cameroon with registration number {insert here}. </p>
+                    <p><b>{{__('about.WHO WE ARE')}}</b></p>
+                    <p>{{__('about.The LUKMEF Africa Civil Society Development Centre (LACSODEC) is a Civil Society Organization (CSO) service providing agency facilitating knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind.')}}</p>
+                    <p>{{__('about.LACSODEC was founded in {year} by Tanyi Christian under the LUKMEF vision for Sustainable Development and Empowerment of communities and other local civil society actors to improve on service delivery. LACSODEC is located in NGO Street, Molyko – Buea, in the SW Region of Cameroon with registration number {insert here}.')}}</p>
                 </div>
                 <div class="right">
                     <img src="{{ asset('images/home-img-2.png') }}" alt="" />
@@ -31,11 +27,11 @@
         <section class="about-section-2">
             <div class="con">
                 <div class="left">
-                    <h1>Our vision</h1>
-                    <p>To build a dependable and impactful Civil Society in Africa</p>
-                    <h1>Our Mission</h1>
-                    <p>Mission is to strengthen the institutional and operational capacity of CSOs, improve their operating environment in order to amplify their voices, and improve performance in addressing diverse issues of human development at local, national and regional level in West Africa and the Lake Chad Basin Countries using a rights-based approach.
-</p>
+                    <h1>{{__('about.Our vision')}}</h1>
+                    <p>{{__('about.To build a dependable and impactful Civil Society in Africa')}}</p>
+                    <h1>{{__('about.Our Mission')}}</h1>
+                    <p>{{__('about.Mission is to strengthen the institutional and operational capacity of CSOs, improve their operating environment in order to amplify their voices, and improve performance in addressing diverse issues of human development at local, national and regional level in West Africa and the Lake Chad Basin Countries using a rights-based approach.')}}
+                    </p>
                     <!-- <ul>
                         <li>
                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
@@ -58,7 +54,7 @@
                 <div class="right">
                     <div class="members">
                         <h3>8,000</h3>
-                        <p>Members</p>
+                        <p>{{__('home.Members')}}</p>
                     </div>
                     <img src="{{ asset('images/about-building.png') }}" alt="" />
                 </div>
@@ -70,35 +66,35 @@
         <section class="about-section-3">
             <div class="con">
                 <div class="left">
-                    <h1>WHY WE EXIST</h1>
+                    <h1>{{__('about.WHY WE EXIST')}}</h1>
                     <ul>
                         <li>
                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                             <div class="content">
-                                <h3>The 1990 law on Associations and the 1999 Law on NGOs are the two fundamental legal instruments used by the civil society in Cameroon.</h3>
+                                <h3>{{__('about.The 1990 law on Associations and the 1999 Law on NGOs are the two fundamental legal instruments used by the civil society in Cameroon.')}}</h3>
                             </div>
                         </li>
                         <li>
                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                             <div class="content">
-                                <h3>Within the framework of these two laws, over 55,602 organizations are registered in the books of the ministry of territorial administration at sub divisional (DO) and divisional levels (SDO) in Cameroon (Ref CSOSI-2019 by USAID).</h3>
+                                <h3>{{__('about.Within the framework of these two laws, over 55,602 organizations are registered in the books of the ministry of territorial administration at sub divisional (DO) and divisional levels (SDO) in Cameroon (Ref CSOSI-2019 by USAID).')}}</h3>
                             </div>
                         </li>
                         <li>
                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                             <div class="content">
-                                <h3>According to the National Governance Program, approximately 500,000 grassroots community organizations, private associations, common initiative groups, development committees, and economic interest groups, were thought to exist in 2019.</h3>
+                                <h3>{{__('about.According to the National Governance Program, approximately 500,000 grassroots community organizations, private associations, common initiative groups, development committees, and economic interest groups, were thought to exist in 2019.')}}</h3>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="right">
                     <div class="tabs">
-                        <div class="tab active">WHAT WE DO</div>
-                        <div class="tab">OUR APPROACH</div>
+                        <div class="tab active">{{__('about.WHAT WE DO')}}</div>
+                        <div class="tab">{{__('about.OUR APPROACH')}}</div>
                     </div>
                     <div class="content">
-                        <p>We facilitate knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind.
+                        <p>{{__('about.We facilitate knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind.')}}'
                         </p>
                     </div>
                 </div>
@@ -107,8 +103,10 @@
 
         <section class="team-section">
             <div class="con">
-                <h2>Our team</h2>
+                <h2>{{__('about.Our team')}}</h2>
 
+                <!-- WAITING FOR NAMES AND IMAGES OF TEAM MEMBERS AND THEIR POSTS
+                    
                 <div class="team-grid">
                     <div class="member-card">
                         <img src="{{ asset('images/team/team-member-1.png') }}" alt="">
@@ -165,7 +163,7 @@
                         <h4>Njie Yannick</h4>
                         <p>Security and Safety Officer</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
 
