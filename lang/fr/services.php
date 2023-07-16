@@ -25,5 +25,5 @@ return [
     'Meals' => 'Repas',
     'Lodging Facilities' => 'Hébergement',
     'Children Parliament' => 'Parlement des Enfants',
-    
+
 ];

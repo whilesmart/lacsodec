@@ -25,5 +25,5 @@ return [
     'Meals' => 'Meals',
     'Lodging Facilities' => 'Lodging Facilities',
     'Children Parliament' => 'Children Parliament',
-    
+
 ];

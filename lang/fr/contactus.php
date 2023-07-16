@@ -11,5 +11,5 @@ return [
     */
 
     'Contact us' => 'Contactez nous',
-    
+
 ];

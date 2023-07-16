@@ -30,7 +30,5 @@ return [
     'Posted by' => 'Posted by',
     'Read more' => 'Read more',
     'Latest CSO' => 'Latest CSO',
-    '' => '',
-
 
 ];
