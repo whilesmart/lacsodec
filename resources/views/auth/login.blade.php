@@ -4,7 +4,11 @@
             <h1>Login</h1>
             <form action="{{ route('login.perform') }}" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                <div class="field error">
+                <div class="field 
+                @if ($errors->has('email'))
+                        error
+                @endif
+                ">
                     <label for="">Email</label>
                     <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}"
                         required>
@@ -12,7 +16,11 @@
                         <span class="error-msg">{{ $errors->first('email') }}</span>
                     @endif
                 </div>
-                <div class="field">
+                <div class="field 
+                @if ($errors->has('password'))
+                        error
+                @endif
+                ">
                     <label for="">Password</label>
                     <input type="password" name="password" id="password" placeholder="Enter password" required>
                     @if ($errors->has('password'))
