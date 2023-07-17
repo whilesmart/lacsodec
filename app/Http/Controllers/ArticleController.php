@@ -9,7 +9,7 @@ class ArticleController extends Controller
 {
     public function index(Request $request)
     {
-        $blogs = Article::paginate(20);
+        $blogs = Article::orderBy('created_at', 'desc')->paginate(20);
         $featuredBlogs = Article::orderBy('created_at', 'desc')->limit(3)->get();
 
         return view('blog', [

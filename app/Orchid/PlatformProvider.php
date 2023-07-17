@@ -54,11 +54,11 @@ class PlatformProvider extends OrchidServiceProvider
                 ->permission('platform.systems.roles')
                 ->divider(),
 
-            Menu::make('Events')
+            Menu::make('Event')
                 ->icon('bs.file-earmark-post')
                 ->route('platform.event.list')
                 ->permission('platform.systems.roles')
-                ->title('Events'),
+                ->title('Event'),
 
             Menu::make('Event registrations')
                 ->icon('bs.file-earmark-check-fill')
@@ -73,11 +73,11 @@ class PlatformProvider extends OrchidServiceProvider
                 ->title('CSO')
                 ->divider(),
 
-            Menu::make('Accomodations')
+            Menu::make('Accommodations')
                 ->icon('bs.buildings')
                 ->route('platform.accomodation.list')
                 ->permission('platform.systems.roles')
-                ->title('Lodge'),
+                ->title('Lodges'),
 
             Menu::make('Bookings')
                 ->icon('bs.buildings')
