@@ -55,6 +55,7 @@ class ExpertController extends Controller
             'phone_number' => ['required', 'string'],
             'image' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg', 'max:2048'],
             'certification_image' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg', 'max:2048'],
+            'isHumanResource' => ['required', 'string'],
         ]);
 
         $image_path = $request->file('image')->store();
@@ -77,6 +78,7 @@ class ExpertController extends Controller
             'phone_number' => $fields['phone_number'],
             'image' => '/storage/'.$image_path,
             'certification_image' => '/storage/'.$certification_image_path,
+            'isHumanResource' => ($fields['isHumanResource'] == 'true') ? true : false,
         ]);
 
         return redirect()->to('/expert-directory')->with('success', 'you have successfuly submited your registration. Please wait for admin approval');

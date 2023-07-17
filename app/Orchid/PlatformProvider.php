@@ -96,6 +96,10 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('bs.people')
                 ->route('platform.expert.list')
                 ->title('Expert Profiles'),
+
+            Menu::make('Human Resource')
+                ->icon('bs.people')
+                ->route('platform.humanresource.list'),
         ];
     }
 

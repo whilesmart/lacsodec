@@ -30,6 +30,7 @@ class ExpertProfile extends Model
         'certification_image',
         'position',
         'phone_number',
+        'isHumanResource',
     ];
 
     public function user(): BelongsTo

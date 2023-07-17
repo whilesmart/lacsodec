@@ -150,6 +150,26 @@
                                     <span class="error-msg">{{$message}}</span>
                                 @enderror
                             </div>
+                            <div class="field">
+                                <label for="">Request to be listed on Human resource page"</label>
+                                <div class="radio-flex">
+                                    <div class="sub">
+                                        <input type="radio" name="isHumanResource" value="true" id="isHumanResource-yes">
+                                        <label for="board-of-directors-yes">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="sub">
+                                        <input type="radio" name="isHumanResource" value="false" id="isHumanResource-no">
+                                        <label for="board-of-directors-no">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                                @error('isHumanResource')
+                                <span class="error-msg">{{ $message }}</span>
+                                @enderror
+                            </div>
                         </div>
                     </div>
 
