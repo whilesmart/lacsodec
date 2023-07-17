@@ -14,64 +14,64 @@ class CsoActivitySeeder extends Seeder
     {
         DB::table('cso_activity_domains')->insert([
             [
-                'name' => 'Women empowerment',
+                'name' => "{{__('csoActivity.Women empowerment')}}",
             ],
             [
-                'name' => 'Youth empowerment',
+                'name' => "{{__('csoActivity.Youth empowerment')}}",
             ],
             [
-                'name' => 'Environmental protection',
+                'name' => "{{__('csoActivity.Environmental protection')}}",
             ],
             [
-                'name' => 'Governance',
+                'name' => "{{__('csoActivity.Governance')}}",
             ],
             [
-                'name' => 'Water',
+                'name' => "{{__('csoActivity.Water')}}",
             ],
             [
-                'name' => 'Human rights',
+                'name' => "{{__('csoActivity.Human rights')}}",
             ],
             [
-                'name' => 'Child protection',
+                'name' => "{{__('csoActivity.Child protection')}}",
             ],
             [
-                'name' => 'Peace Building',
+                'name' => "{{__('csoActivity.Peace Building')}}",
             ],
             [
-                'name' => 'Humanitarian response',
+                'name' => "{{__('csoActivity.Humanitarian response')}}",
             ],
             [
-                'name' => 'GBV prevention/response',
+                'name' => "{{__('csoActivity.GBV prevention/response')}}",
             ],
             [
-                'name' => 'Education',
+                'name' => "{{__('csoActivity.Education')}}",
             ],
             [
-                'name' => 'CSO strengthening',
+                'name' => "{{__('csoActivity.CSO strengthening')}}",
             ],
             [
-                'name' => 'ICT',
+                'name' => "{{__('csoActivity.ICT')}}",
             ],
             [
-                'name' => 'Climate protection',
+                'name' => "{{__('csoActivity.Climate protection')}}",
             ],
             [
-                'name' => 'Food security',
+                'name' => "{{__('csoActivity.Food security')}}",
             ],
             [
-                'name' => 'Animal protection',
+                'name' => "{{__('csoActivity.Animal protection')}}",
             ],
             [
-                'name' => 'Marine life protection',
+                'name' => "{{__('csoActivity.Marine life protection')}}",
             ],
             [
-                'name' => 'Renewable energy',
+                'name' => "{{__('csoActivity.Renewable energy')}}",
             ],
             [
-                'name' => 'Waste management',
+                'name' => "{{__('csoActivity.Waste management')}}",
             ],
             [
-                'name' => 'others',
+                'name' => "{{__('csoActivity.others')}}",
             ],
         ]);
     }

@@ -3,7 +3,7 @@
         <!-- breadcrumb -->
         @component('components.breacrumb')
             @slot('current')
-                CSO Directory
+                {{__('cso.CSO Directory')}}
             @endslot
         @endcomponent
 
@@ -20,8 +20,7 @@
                 </aside>
                 <div class="main-content">
                     <div class="cso-directory-top">
-                        <a href="{{ route('register-cso') }}" class="custom-button secondary"><span>Register
-                                CSO</span></a>
+                        <a href="{{ route('register-cso') }}" class="custom-button secondary"><span>{{__('cso.Register CSO')}}</span></a>
                     </div>
                     <div class="cso-directory-grid">
                         @foreach ($csos as $cso)
