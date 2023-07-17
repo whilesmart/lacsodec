@@ -3,7 +3,7 @@
         <!-- breadcrumb -->
         @component('components.breacrumb')
             @slot('current')
-                Events/Trainings
+                {{__('events.Events/Trainings')}}
             @endslot
         @endcomponent
 
@@ -23,9 +23,9 @@
                         <div class="content">
                             <p>{{$event->name}}</p>
                             @if ($event->date >= now())
-                            <a href="{{ route('event-participate', ['event' => $event->id]) }}" class="custom-button primary"><span>Participate</span></a>
+                            <a href="{{ route('event-participate', ['event' => $event->id]) }}" class="custom-button primary"><span>{{__('events.Participate')}}</span></a>
                             @else
-                            <a href="{{ route('event-participate', ['event' => $event->id]) }}" class="custom-button primary"><span>See event</span></a>
+                            <a href="{{ route('event-participate', ['event' => $event->id]) }}" class="custom-button primary"><span>{{__('events.See event')}}</span></a>
                             @endif
                         </div>
                     </div>
