@@ -35,6 +35,7 @@ class ExpertProfileFactory extends Factory
             'certification_image' => $this->faker->imageUrl(),
             'position' => $this->faker->jobTitle(),
             'phone_number' => $this->faker->phoneNumber(),
+            'isHumanResource' => $this->faker->randomElement([true, false]),
         ];
     }
 }

@@ -74,7 +74,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">{{__('header.HR Directory')}}</a>
+                        <a href="{{ route('human-resource-directory') }}">
+                        @if (Request::routeIs('human-resource-directory'))
+                            <b style="font-size: large;">Human Resource</b>
+                            @else
+                            Human Resource
+                            @endif
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -94,17 +100,17 @@
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </button>
                 <ul>
-                    <li><a href="/" class="{{ request()->is('/') ? 'active' : '' }}">{{__('header.home')}}</a></li>
-                    <li><a href="{{ route('about-us') }}" class="{{ request()->is('about-us') ? 'active' : '' }}">{{__('header.about us')}}</a></li>
-                    <li><a href="{{ route('services') }}" class="{{ request()->is('services') ? 'active' : '' }}">{{__('header.services')}}</a></li>
-                    <li><a href="{{ route('events') }}" class="{{ request()->is('events') ? 'active' : '' }}">{{__('header.events/Training')}}</a></li>
-                    <li><a href="{{ route('grants') }}" class="{{ request()->is('grants') ? 'active' : '' }}">{{__('header.grants')}}</a></li>
-                    <li><a href="{{ route('blog') }}" class="{{ request()->is('blog') ? 'active' : '' }}">{{__('header.blog')}}</a>
+                    <li><a href="/" class="{{ request()->is('/') ? 'active' : '' }}">home</a></li>
+                    <li><a href="{{ route('about-us') }}" class="{{ request()->is('about-us') ? 'active' : '' }}">about
+                            us</a></li>
+                    <li><a href="{{ route('services') }}" class="{{ request()->is('services') ? 'active' : '' }}">services</a></li>
+                    <li><a href="{{ route('events') }}" class="{{ request()->is('events') ? 'active' : '' }}">events/Trainings</a></li>
+                    <li><a href="{{ route('blog') }}" class="{{ request()->is('blog') ? 'active' : '' }}">blog</a>
                     </li>
-                    <li><a href="{{ route('lodge') }}" class="{{ request()->is('lodge') ? 'active' : '' }}">{{__('header.lodge')}}</a>
+                    <li><a href="{{ route('lodge') }}" class="{{ request()->is('lodge') ? 'active' : '' }}">lodge</a>
                     </li>
-                    <li><a href="{{ route('lodge') }}" class="mobile-only {{ request()->is('contact-us') ? 'active' : '' }}">{{__('header.lodge')}}</a></li>
-                    <li><a href="{{ route('contact-us') }}" class="{{ request()->is('contact-us') ? 'active' : '' }}">{{__('header.contact-us')}}</a></li>
+                    <li><a href="{{ route('lodge') }}" class="mobile-only {{ request()->is('contact-us') ? 'active' : '' }}">lodge</a></li>
+                    <li><a href="{{ route('contact-us') }}" class="{{ request()->is('contact-us') ? 'active' : '' }}">contact-us</a></li>
                 </ul>
             </nav>
             <div class="right">
