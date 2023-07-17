@@ -25,9 +25,9 @@
                         </li>
                     </ul>
                 </div>
-                <a href="{{ route('contact-us') }}" class="custom-button transparent"><span>Contact us</span></a>
+                <a href="{{ route('contact-us') }}" class="custom-button transparent"><span>{{__('header.Contact us')}}</span></a>
                 @guest
-                <a href="{{ route('login') }}" class="custom-button primary"><span>Login</span></a>
+                <a href="{{ route('login') }}" class="custom-button primary"><span>{{__('header.Login')}}</span></a>
                 @endguest
                 @auth
                 <div class="dropdown">
@@ -36,11 +36,11 @@
                         {{Auth::user()->name}}
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('my-csos') }}">CSO's</a></li>
-                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">Expert Profile</a></li>
-                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">Human Resource</a></li>
-                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">Settings</a></li>
-                        <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                        <li><a class="dropdown-item" href="{{ route('my-csos') }}">{{__("header.CSO's")}}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">{{__('header.Experts Profile')}}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">{{__('header.Human Resource')}}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">{{__('header.Settings')}}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{__('header.Logout')}}</a></li>
                         <form action="{{ route('logout') }}" method="post" id="logout-form">
                             @csrf
                         </form>
@@ -58,18 +58,18 @@
                     <li>
                         <a href="{{ route('cso-directory') }}">
                             @if (Request::routeIs('cso-directory'))
-                            <b style="font-size: large;">CSO Directory</b>
+                            <b style="font-size: large;">{{__('header.CSO Directory')}}</b>
                             @else
-                            CSO Directory
+                            {{__('header.CSO Directory')}}
                             @endif
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('expert-directory') }}">
                             @if (Request::routeIs('expert-directory'))
-                            <b style="font-size: large;">Experts Directory</b>
+                            <b style="font-size: large;">{{__('header.Experts Directory')}}</b>
                             @else
-                            Experts Directory
+                            {{__('header.Experts Directory')}}
                             @endif
                         </a>
                     </li>
@@ -85,7 +85,9 @@
                 </ul>
             </div>
             <form action="{{ route('search-results') }}" method="GET">
-                <input type="text" name="search" id="" placeholder="Enter any Keyword">
+                <input type="text" name="search" id="" placeholder="{{__('header.Enter any keyword')}}">
+                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
         </div>
@@ -112,7 +114,7 @@
                 </ul>
             </nav>
             <div class="right">
-                <a href="{{ route('donate') }}" class="custom-button primary-dark"><span>Donate</span></a>
+                <a href="{{ route('donate') }}" class="custom-button primary-dark"><span>{{__('header.Donate')}}</span></a>
                 <button type="button" class="toggler" id="navigation-toggler"><i class="fa fa-bars" aria-hidden="true"></i></button>
             </div>
         </div>

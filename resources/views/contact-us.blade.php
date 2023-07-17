@@ -3,7 +3,7 @@
         <!-- breadcrumb -->
         @component('components.breacrumb')
             @slot('current')
-                Contact us
+                {{__('contactus.Contact us')}}
             @endslot
         @endcomponent
 

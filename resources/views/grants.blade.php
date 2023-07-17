@@ -3,7 +3,7 @@
         <!-- breadcrumb -->
         @component('components.breacrumb')
             @slot('current')
-                Grants
+                {{__('grants.Grants')}}
             @endslot
         @endcomponent
 
