@@ -13,7 +13,11 @@
                     @csrf
                     <div class="form-section">
                         <div class="flex">
-                            <div class="field">
+                            <div class="field 
+                            @error('location')
+                                error
+                            @enderror
+                            ">
                                 <label for="">{{__('experts.Location')}}</label>
                                 <input type="text" name="location" id="location" placeholder="{{__('experts.Enter your location')}}"
                                     value="{{ old('location') }}" required>
@@ -21,7 +25,11 @@
                                         <span class="error-msg">{{$message}}</span>
                                     @enderror
                             </div>
-                            <div class="field">
+                            <div class="field 
+                            @error('phone_number')
+                                error
+                            @enderror
+                            ">
                                 <label for="">{{__('experts.Phone number')}}</label>
                                 <input type="text" name="phone_number" id="phone_number" placeholder="example: +237656000000"
                                     value="{{ old('phone_number') }}" required>
@@ -31,14 +39,22 @@
                             </div>
                         </div>
                         <div class="flex">
-                        <div class="field">
+                        <div class="field 
+                        @error('sex')
+                                error
+                        @enderror
+                        ">
                                 <label for="">{{__('experts.Sex')}}</label>
                                 <select name="sex" id="contact-sex" value="{{ old('sex') }}" required>
                                     <option value="male">{{__('experts.Male')}}</option>
                                     <option value="female">{{__('experts.Female')}}</option>
                                 </select>
                             </div>
-                            <div class="field">
+                            <div class="field 
+                            @error('birthday')
+                                error
+                            @enderror
+                            ">
                                 <label for="">{{__('experts.Date of birth')}}</label>
                                 <input type="date" name="birthday" id="date-of-birth"
                                     placeholder="{{__('experts.Enter your date-of-birth')}}" value="{{ old('birthday') }}" required>
@@ -48,7 +64,11 @@
                             </div>
                         </div>
                         <div class="flex">
-                            <div class="field">
+                            <div class="field 
+                            @error('birth_place')
+                                error
+                            @enderror
+                            ">
                                 <label for="">{{__('experts.Place of birth')}}</label>
                                 <input type="text" name="birth_place" id="place-of-birth"
                                     placeholder="{{__('experts.Enter your place-of-birth')}}" value="{{ old('birth_place') }}" required>
@@ -57,7 +77,11 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="field">
+                        <div class="field 
+                        @error('details')
+                                error
+                        @enderror
+                        ">
                             <label for="">Bio details</label>
                             <textarea name="details" id="details" cols="30" rows="10" value="{{ old('details') }}" required></textarea>
                             @error('details')
@@ -65,13 +89,21 @@
                             @enderror
                         </div>
                         <div class="flex">
-                            <div class="field">
+                            <div class="field 
+                            @error('nationality')
+                                error
+                            @enderror
+                            ">
                                 <label for="">{{__('experts.Nationality')}}</label>
                                 <select name="nationality" id="nationality" value="{{ old('nationality') }}" required>
                                     <option value="cameroonian">Cameroonian</option>
                                 </select>
                             </div>
-                            <div class="field">
+                            <div class="field 
+                            @error('language')
+                                error
+                            @enderror
+                            ">
                                 <label for="">{{__('experts.Language')}}</label>
                                 <select name="language" id="language" value="{{ old('language') }}" required>
                                     <option value="english">{{__('experts.English')}}</option>
@@ -93,7 +125,11 @@
 
                     <div class="form-section">
                         <div class="flex">
-                            <div class="field">
+                            <div class="field 
+                            @error('company')
+                                error
+                            @enderror
+                            ">
                                 <label for="">{{__('experts.Company')}}</label>
                                 <input type="text" name="company" id="company" placeholder="{{__('experts.Enter your company')}}"
                                 value="{{ old('company') }}" required>
@@ -101,7 +137,11 @@
                                         <span class="error-msg">{{$message}}</span>
                                 @enderror
                             </div>
-                            <div class="field">
+                            <div class="field 
+                            @error('work_duration')
+                                error
+                            @enderror
+                            ">
                                 <label for="">{{__('experts.Work duration')}}</label>
                                 <input type="text" name="work_duration" id="work-duration"
                                     placeholder="{{__('experts.Enter your work duration')}}" value="{{ old('work_duration') }}" required>
@@ -111,7 +151,11 @@
                             </div>
                         </div>
                         <div class="flex">
-                            <div class="field">
+                            <div class="field 
+                            @error('position')
+                                error
+                            @enderror
+                            ">
                                 <label for="">Role/Position</label>
                                 <input type="text" name="position" id="role" placeholder="{{__('experts.Enter your role/position')}}"
                                 value="{{ old('position') }}" required>
@@ -124,7 +168,11 @@
 
                     <div class="form-section">
                         <div class="flex">
-                            <div class="field">
+                            <div class="field 
+                            @error('certification')
+                                error
+                            @enderror
+                            ">
                                 <label for="">Certification</label>
                                 <input type="text" name="certification" id="certification"
                                     placeholder="{{__('experts.Enter your certification')}}" value="{{ old('certification') }}" required>
@@ -132,7 +180,11 @@
                                     <span class="error-msg">{{$message}}</span>
                                 @enderror
                             </div>
-                            <div class="field">
+                            <div class="field 
+                            @error('certification_date')
+                                error
+                            @enderror
+                            ">
                                 <label for="">{{__('experts.Date of certification')}}</label>
                                 <input type="date" name="certification_date" id="date-of-certification"
                                     placeholder="{{__('experts.Enter your date-of-certification')}}" value="{{ old('certification_date') }}" required>
@@ -150,7 +202,11 @@
                                     <span class="error-msg">{{$message}}</span>
                                 @enderror
                             </div>
-                            <div class="field">
+                            <div class="field 
+                            @error('isHumanResource')
+                                error
+                            @enderror
+                            ">
                                 <label for="">{{__('experts.Request to be listed on Human resource page')}}"</label>
                                 <div class="radio-flex">
                                     <div class="sub">
