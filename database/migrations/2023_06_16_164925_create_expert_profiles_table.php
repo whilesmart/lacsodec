@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('certification_image')->nullable();
             $table->string('position')->nullable();
             $table->string('phone_number')->nullable();
+            $table->boolean('isHumanResource')->default(false);
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Orchid\Layouts\ExpertProfile;
 
 use App\Models\User;
 use Orchid\Screen\Field;
+use Orchid\Screen\Fields\CheckBox;
 use Orchid\Screen\Fields\Cropper;
 use Orchid\Screen\Fields\DateTimer;
 use Orchid\Screen\Fields\Input;
@@ -47,6 +48,10 @@ class ExpertPersonalInfo extends Rows
                 ])
                 ->title('Select expert status')
                 ->help('Select the status of the expert'),
+
+            CheckBox::make('expert.isHumanResource')
+                ->title('Is a human resource')
+                ->sendTrueOrFalse(),
 
             TextArea::make('expert.details')
                 ->title('Expert bio details')

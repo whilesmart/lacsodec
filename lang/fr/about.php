@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | About Language Lines
+    | About French Language Lines
     |--------------------------------------------------------------------------
     |
     |
@@ -24,5 +24,6 @@ return [
     'WHAT WE DO' => 'CE QUE NOUS FAISONS',
     'OUR APPROACH' => 'NOTRE APPROCHE',
     'We facilitate knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind.' => "Nous facilitons l'acquisition de connaissances, le dialogue parmi et entre les OSC et leurs réseaux, la mutualisation des ressources, le partage d'informations et la promotion d'un accès équitable aux ressources par les OSC de toutes les catégories (niveaux) en utilisant le principe de besoin, d'égalité et d'équité avec la population en tant que bénéficiaires finaux à l'esprit.",
+    'Our team' => 'Notre équipe',
 
 ];

@@ -18,5 +18,6 @@ return [
     'Sign up' => 'Sign up',
     'Join our subscribers list to get the latest news and updates delivered directly in your inbox.' => 'Join our subscribers list to get the latest news and updates delivered directly in your inbox.',
     'Copyright © 2023 by' => 'Copyright © 2023 by',
+    'Your email address' => 'Your email address',
 
 ];

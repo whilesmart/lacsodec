@@ -19,6 +19,7 @@ use App\Orchid\Screens\Event\EventListScreen;
 use App\Orchid\Screens\EventRegistration\EventRegistrationListScreen;
 use App\Orchid\Screens\ExpertProfile\ExpertProfileEditScreen;
 use App\Orchid\Screens\ExpertProfile\ExpertProfileListScreen;
+use App\Orchid\Screens\HumanResource\HumanResourceListScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
@@ -108,6 +109,9 @@ Route::screen('expert/{expert?}', ExpertProfileEditScreen::class)
 
 Route::screen('experts', ExpertProfileListScreen::class)
     ->name('platform.expert.list');
+
+Route::screen('humanresource', HumanResourceListScreen::class)
+    ->name('platform.humanresource.list');
 
 Route::screen('accomodation/{accomodation?}', AccomodationEditScreen::class)
     ->name('platform.accomodation.edit');

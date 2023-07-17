@@ -9,9 +9,9 @@
                     <img src="{{ asset($expert->image) }}" alt="" class="top-image">
                     {{-- <h1>{{$expert->user->name}}</h1> --}}
                     <h2>{{ $expert->position }}</h2>
-                    <h4>Nationality: {{ $expert->nationality }}</h4>
-                    <h4>Language: {{ $expert->language }}</h4>
-                    <h4>Company: {{ $expert->company }}</h4>
+                    <h4>{{__('experts.Nationality')}}: {{ $expert->nationality }}</h4>
+                    <h4>{{__('experts.Language')}}: {{ $expert->language }}</h4>
+                    <h4>{{__('experts.Company')}}: {{ $expert->company }}</h4>
                     <br>
                     <p>{{ $expert->details }}</p>
                 </div>
@@ -24,7 +24,7 @@
 
         <section class="other-expert-section">
             <div class="con">
-                <h2>Other Expert</h2>
+                <h2>{{__('experts.Other Experts')}}</h2>
                 <div class="expert-grid">
                     @foreach ($otherExperts as $otherExpert)
                         <a href="{{ route('expert-directory-details', ['expert' => $expert->id]) }}"

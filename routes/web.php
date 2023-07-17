@@ -9,6 +9,7 @@ use App\Http\Controllers\CsoController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ExpertController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HumanResourceController;
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
@@ -54,6 +55,8 @@ Route::get('/cso-directory', [CsoController::class, 'index'])->name('cso-directo
 Route::get('/cso-directory-details/{cso}', [CsoController::class, 'show'])->name('cso-directory-details');
 
 Route::get('/expert-directory', [ExpertController::class, 'index'])->name('expert-directory');
+
+Route::get('/human-resource-directory', [HumanResourceController::class, 'index'])->name('human-resource-directory');
 
 Route::get('/expert-directory-details/{expert}', [ExpertController::class, 'show'])->name('expert-directory-details');
 
