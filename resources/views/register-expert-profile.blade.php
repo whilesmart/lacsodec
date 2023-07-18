@@ -104,11 +104,16 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__('experts.Language')}}</label>
-                                <select name="language" id="language" value="{{ old('language') }}" required>
+                                <label for="">{{__('experts.Language')}}s</label>
+                                <select name="languages[]" id="languages" value="{{ old('language') }}" multiple required>
                                     <option value="english">{{__('experts.English')}}</option>
                                     <option value="french">{{__('experts.French')}}</option>
+                                    <option value="spanish">Spanish</option>
+                                    <option value="german">German</option>
                                 </select>
+                                @error('language')
+                                    <span class="error-msg">{{$message}}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="flex">
@@ -211,13 +216,13 @@
                                 <div class="radio-flex">
                                     <div class="sub">
                                         <input type="radio" name="isHumanResource" value="true" id="isHumanResource-yes">
-                                        <label for="board-of-directors-yes">
+                                        <label for="isHumanResource-yes">
                                         {{__('experts.Yes')}}
                                         </label>
                                     </div>
                                     <div class="sub">
                                         <input type="radio" name="isHumanResource" value="false" id="isHumanResource-no">
-                                        <label for="board-of-directors-no">
+                                        <label for="isHumanResource-no">
                                         {{__('experts.No')}}
                                         </label>
                                     </div>

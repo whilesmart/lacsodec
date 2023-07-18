@@ -79,12 +79,15 @@ class ExpertPersonalInfo extends Rows
                 ])
                 ->title('Nationality'),
 
-            Select::make('expert.language')
+            Select::make('expert.languages')
                 ->options([
                     'english' => 'English',
                     'french' => 'French',
+                    'spanish' => 'Spanish',
                 ])
-                ->title('Language'),
+                ->multiple()
+                ->title('Language')
+                ->required(),
 
             Input::make('expert.phone_number')
                 ->title('Phone number'),
