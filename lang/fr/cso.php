@@ -72,5 +72,10 @@ return [
     'National' => 'Nationales',
     'Global (more than one African country)' => "Global (plus d'un pays africain)",
     'Confirm CSO Registration' => "Confirmer l'enregistrement de l'OSC",
+    'Registed in' => 'Enregistré en',
+    'Status' => 'Statut',
+    'Vision' => 'Vision',
+    'Mission' => 'Mission',
+    'Other CSOs' => 'Autres OSC',
 
 ];
