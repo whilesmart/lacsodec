@@ -369,6 +369,17 @@
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
+                            <div class="field 
+                            @error('background')
+                                error
+                            @enderror
+                            ">
+                                <label for="">Organization background and track record</label>
+                                <input type="text" name="background" id="background" placeholder="" value="{{ old('background') }}" required>
+                                @error('background')
+                                <span class="error-msg">{{ $message }}</span>
+                                @enderror
+                            </div>
                         </div>
                         <div class="field 
                         @error('board_directors')

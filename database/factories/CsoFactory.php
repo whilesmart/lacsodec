@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\CsoActivityDomain;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -45,10 +46,11 @@ class CsoFactory extends Factory
             'mission' => $this->faker->paragraph(),
             'primary_target_beneficiaries' => $this->faker->sentence(),
             'secondary_target_beneficiaries' => $this->faker->sentence(),
-            'domain' => $this->faker->randomElement(['Women empowerment', 'Youth empowerment', 'Environmental protection']),
+            'domain' => CsoActivityDomain::all()->random()->name,
             'board_directors' => $this->faker->boolean(),
             'african_coverage' => $this->faker->word(),
             'organization_leaderships' => $this->faker->sentence(),
+            'background' => $this->faker->paragraph(),
             'user_id' => User::all()->random()->id,
             'created_by' => User::all()->random()->id,
         ];

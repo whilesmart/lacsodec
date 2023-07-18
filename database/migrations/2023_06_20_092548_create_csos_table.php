@@ -46,6 +46,7 @@ return new class extends Migration
             $table->boolean('board_directors')->default(false);
             $table->string('african_coverage')->nullable();
             $table->string('organization_leaderships')->nullable();
+            $table->longText('background')->nullable();
             $table->integer('user_id');
             $table->integer('created_by');
             $table->timestamps();

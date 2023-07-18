@@ -81,6 +81,7 @@ class CsoController extends Controller
             'board_directors' => ['required', 'string'],
             'african_coverage' => ['required', 'string'],
             'organization_leaderships' => ['required', 'string'],
+            'background' => ['required', 'string'],
             'image' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg', 'max:2048'],
         ]);
 
@@ -114,6 +115,7 @@ class CsoController extends Controller
             'board_directors' => ($fields['board_directors'] == 'true') ? true : false,
             'african_coverage' => $fields['african_coverage'],
             'organization_leaderships' => $fields['organization_leaderships'],
+            'background' => $fields['background'],
             'image' => '/storage/'.$image_path,
             'user_id' => $request->user()->id,
             'created_by' => $request->user()->id,
