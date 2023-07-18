@@ -13,7 +13,7 @@ return [
     'Contact us' => 'Contactez-nous',
     'Login' => 'Connectez-vous',
     "CSO's" => 'OSC',
-    'Expert Profile' => 'Profil d’expert',
+    "Expert's Profile" => "Profil d'expert",
     'Human Resource' => 'Ressources humaines',
     'Settings' => 'Paramètres',
     'Logout' => 'Déconnexion',

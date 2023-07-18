@@ -37,7 +37,7 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('my-csos') }}">{{__("header.CSO's")}}</a></li>
-                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">{{__('header.Experts Profile')}}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('contact-us') }}">{{__("header.Expert's Profile")}}</a></li>
                         <li><a class="dropdown-item" href="{{ route('contact-us') }}">{{__('header.Human Resource')}}</a></li>
                         <li><a class="dropdown-item" href="{{ route('contact-us') }}">{{__('header.Settings')}}</a></li>
                         <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{__('header.Logout')}}</a></li>

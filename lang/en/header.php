@@ -13,7 +13,7 @@ return [
     'Contact us' => 'Contact us',
     'Login' => 'Login',
     "CSO's" => "CSO's",
-    'Expert Profile' => 'Expert Profile',
+    "Expert's Profile" => "Expert's Profile",
     'Human Resource' => 'Human Resource',
     'Settings' => 'Settings',
     'Logout' => 'Loguot',

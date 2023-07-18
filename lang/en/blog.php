@@ -12,5 +12,6 @@ return [
 
     'Blog' => 'Blog',
     'Featured' => 'Featured',
+    'Read More' => 'Read More',
 
 ];
