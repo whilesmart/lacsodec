@@ -41,6 +41,10 @@ class CsoInfo extends Rows
                 ->title('CSO mission')
                 ->placeholder('CSO mission'),
 
+            TextArea::make('cso.background')
+                ->title('CSO background and track record')
+                ->placeholder('background'),
+
             Group::make([
                 Input::make('cso.primary_target_beneficiaries')
                     ->title('Primary target beneficiaries')

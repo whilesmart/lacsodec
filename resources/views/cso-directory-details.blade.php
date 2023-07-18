@@ -16,10 +16,12 @@
                     <p>{{$cso->vision_statement}}</p>
                     <h6>Mission:</h6>
                     <p><b>{{$cso->mission}}</b></p>
+                    <h6>Background and track record:</h6>
+                    <p><b>{{$cso->background}}</b></p>
                 </div>
                 <aside>
                     <x-donation-card />
-                    <x-latest-cso />
+                    <x-latest-cso :csos="$latestCsos" />
                 </aside>
             </div>
         </section>

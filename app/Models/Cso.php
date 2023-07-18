@@ -46,6 +46,7 @@ class Cso extends Model
         'organization_leaderships',
         'board_directors',
         'african_coverage',
+        'background',
         'user_id',
         'created_by',
     ];
