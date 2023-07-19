@@ -3,7 +3,7 @@ Civil Society Registry Sofware
 
 ## Setup
 
-- `git clone https://github.com/whilesmart/lacsodec.git` (Alternatively, ssh may be used)
+- `git clone https://github.com/whilesmart/lasodec.git` (Alternatively, ssh may be used)
 - `cd lasodec`
 - `cp .env.example .env` [Set up database credentials and other configs in .env]
 - `composer install && php artisan key:generate`
