@@ -313,37 +313,29 @@
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="field 
-                            @error('primary_target_beneficiaries')
+                           
+                        </div>
+                        <div class="checkbox-field 
+                            @error('second_domain')
                                 error
                             @enderror
                             ">
-                                <!-- This is supposed to be in the form of a checkbox so that user can tick -->
-                                <label for="second_domain">{{__('cso.Other domains of activity')}}</label>
-                                <select name="second_domain" id="domain-of-activity" value="{{ old('second_domain') }}">
+                                    <label class="check-label">{{__('cso.Other domains of activity')}}</label>
+                                <div class="flex">
                                     @foreach ($domains as $domain)
-                                    <option value="{{ $domain->name }}">{{ $domain->name }}</option>
+                                    <div>
+                                        <input type="radio" name="second_domain" value="{{$domain->name}}" id="second_domain_{{$domain->name}}">
+                                        <label for="second_domain_{{$domain->name}}">
+                                            {{$domain->name}}
+                                        </label>
+                                    </div>
                                     @endforeach
-                                    <option value="">{{__('cso.None')}}</option>
-                                </select>
+                                </div>
                                 @error('second_domain')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
-                        </div>
                         <div class="flex">
-                            <!-- <div class="field">
-                                <label for="third_domain">Choose third domain of activity</label>
-                                <select name="third_domain" id="domain-of-activity" value="{{ old('third_domain') }}">
-                                    @foreach ($domains as $domain)
-                                    <option value="{{ $domain->name }}">{{ $domain->name }}</option>
-                                    @endforeach
-                                    <option value="">none</option>
-                                </select>
-                                @error('third_domain')
-                                <span class="error-msg">{{ $message }}</span>
-                                @enderror
-                            </div> -->
                             <div class="field 
                             @error('board_directors')
                                 error
