@@ -139,6 +139,24 @@ form {
             gap: 0;
         }
     }
+    .checkbox-field {
+        margin-bottom: 1rem;
+        .check-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: $text;
+            text-transform: lowercase;
+            &::first-letter {
+                text-transform: uppercase;
+            }
+            &.bold {
+                font-weight: 600;
+                color: $light-text;
+            }
+        }
+    }
     .radio-flex {
         display: flex;
         gap: 1rem;
