@@ -20,7 +20,7 @@
                             ">
                                 <label for="">{{__('experts.Location')}}</label>
                                 <input type="text" name="location" id="location" placeholder="{{__('experts.Enter your location')}}"
-                                    value="{{ old('location') }}" required>
+                                    value="{{ old('location') }}" >
                                     @error('location')
                                         <span class="error-msg">{{$message}}</span>
                                     @enderror
@@ -32,7 +32,7 @@
                             ">
                                 <label for="">{{__('experts.Phone number')}}</label>
                                 <input type="text" name="phone_number" id="phone_number" placeholder="example: +237656000000"
-                                    value="{{ old('phone_number') }}" required>
+                                    value="{{ old('phone_number') }}" >
                                     @error('phone_number')
                                         <span class="error-msg">{{$message}}</span>
                                     @enderror
@@ -45,7 +45,7 @@
                         @enderror
                         ">
                                 <label for="">{{__('experts.Sex')}}</label>
-                                <select name="sex" id="contact-sex" value="{{ old('sex') }}" required>
+                                <select name="sex" id="contact-sex" value="{{ old('sex') }}" >
                                     <option value="male">{{__('experts.Male')}}</option>
                                     <option value="female">{{__('experts.Female')}}</option>
                                 </select>
@@ -57,7 +57,7 @@
                             ">
                                 <label for="">{{__('experts.Date of birth')}}</label>
                                 <input type="date" name="birthday" id="date-of-birth"
-                                    placeholder="{{__('experts.Enter your date-of-birth')}}" value="{{ old('birthday') }}" required>
+                                    placeholder="{{__('experts.Enter your date-of-birth')}}" value="{{ old('birthday') }}" >
                                     @error('birthday')
                                         <span class="error-msg">{{$message}}</span>
                                     @enderror
@@ -71,7 +71,7 @@
                             ">
                                 <label for="">{{__('experts.Place of birth')}}</label>
                                 <input type="text" name="birth_place" id="place-of-birth"
-                                    placeholder="{{__('experts.Enter your place-of-birth')}}" value="{{ old('birth_place') }}" required>
+                                    placeholder="{{__('experts.Enter your place-of-birth')}}" value="{{ old('birth_place') }}" >
                                     @error('birth_place')
                                         <span class="error-msg">{{$message}}</span>
                                 @enderror
@@ -83,7 +83,7 @@
                         @enderror
                         ">
                             <label for="">Bio details</label>
-                            <textarea name="details" id="details" cols="30" rows="10" value="{{ old('details') }}" required></textarea>
+                            <textarea name="details" id="details" cols="30" rows="10" value="{{ old('details') }}" ></textarea>
                             @error('details')
                                 <span class="error-msg">{{$message}}</span>
                             @enderror
@@ -95,7 +95,7 @@
                             @enderror
                             ">
                                 <label for="">{{__('experts.Nationality')}}</label>
-                                <select name="nationality" id="nationality" value="{{ old('nationality') }}" required>
+                                <select name="nationality" id="nationality" value="{{ old('nationality') }}" >
                                     <option value="cameroonian">Cameroonian</option>
                                 </select>
                             </div>
@@ -105,7 +105,7 @@
                             @enderror
                             ">
                                 <label for="">{{__('experts.Language')}}s</label>
-                                <select name="languages[]" id="languages" value="{{ old('language') }}" multiple required>
+                                <select name="languages[]" id="languages" value="{{ old('language') }}" multiple >
                                     <option value="english">{{__('experts.English')}}</option>
                                     <option value="french">{{__('experts.French')}}</option>
                                     <option value="spanish">Spanish</option>
@@ -137,7 +137,7 @@
                             ">
                                 <label for="">{{__('experts.Company')}}</label>
                                 <input type="text" name="company" id="company" placeholder="{{__('experts.Enter your company')}}"
-                                value="{{ old('company') }}" required>
+                                value="{{ old('company') }}" >
                                 @error('company')
                                         <span class="error-msg">{{$message}}</span>
                                 @enderror
@@ -149,7 +149,7 @@
                             ">
                                 <label for="">{{__('experts.Work duration')}}</label>
                                 <input type="text" name="work_duration" id="work-duration"
-                                    placeholder="{{__('experts.Enter your work duration')}}" value="{{ old('work_duration') }}" required>
+                                    placeholder="{{__('experts.Enter your work duration')}}" value="{{ old('work_duration') }}" >
                                 @error('work_duration')
                                     <span class="error-msg">{{$message}}</span>
                                 @enderror
@@ -163,7 +163,7 @@
                             ">
                                 <label for="">Role/Position</label>
                                 <input type="text" name="position" id="role" placeholder="{{__('experts.Enter your role/position')}}"
-                                value="{{ old('position') }}" required>
+                                value="{{ old('position') }}" >
                                 @error('position')
                                         <span class="error-msg">{{$message}}</span>
                                 @enderror
@@ -180,7 +180,7 @@
                             ">
                                 <label for="">Certification</label>
                                 <input type="text" name="certification" id="certification"
-                                    placeholder="{{__('experts.Enter your certification')}}" value="{{ old('certification') }}" required>
+                                    placeholder="{{__('experts.Enter your certification')}}" value="{{ old('certification') }}" >
                                 @error('certification')
                                     <span class="error-msg">{{$message}}</span>
                                 @enderror
@@ -192,7 +192,7 @@
                             ">
                                 <label for="">{{__('experts.Date of certification')}}</label>
                                 <input type="date" name="certification_date" id="date-of-certification"
-                                    placeholder="{{__('experts.Enter your date-of-certification')}}" value="{{ old('certification_date') }}" required>
+                                    placeholder="{{__('experts.Enter your date-of-certification')}}" value="{{ old('certification_date') }}" >
                                 @error('certification_date')
                                     <span class="error-msg">{{$message}}</span>
                                 @enderror

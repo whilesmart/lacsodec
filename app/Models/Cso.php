@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Orchid\Metrics\Chartable;
 use Orchid\Screen\AsSource;
 
@@ -59,5 +60,10 @@ class Cso extends Model
     public function creator(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
+    }
+
+    public function domains(): HasMany
+    {
+        return $this->hasMany(CsoDomain::class);
     }
 }

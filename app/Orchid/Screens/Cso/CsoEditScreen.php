@@ -3,6 +3,7 @@
 namespace App\Orchid\Screens\Cso;
 
 use App\Models\Cso;
+use App\Models\CsoDomain;
 use App\Orchid\Layouts\Cso\CsoBasicInfo;
 use App\Orchid\Layouts\Cso\CsoContactInfo;
 use App\Orchid\Layouts\Cso\CsoInfo;
@@ -26,6 +27,9 @@ class CsoEditScreen extends Screen
      */
     public function query(Cso $cso): iterable
     {
+        $cso->load(['domains']);
+        $cso->domains = $cso->domains->pluck('name')->toArray();
+
         return [
             'cso' => $cso,
         ];
@@ -91,9 +95,22 @@ class CsoEditScreen extends Screen
      */
     public function createOrUpdate(Request $request)
     {
+        $domains = $request->get('cso')['domains'] ?? [];
+        unset($this->cso->domains);
         $this->cso->fill(array_merge($request->get('cso'), [
             'created_by' => $request->user()->id,
         ]))->save();
+
+        foreach (CsoDomain::where('cso_id', $this->cso->id)->get() as $item) {
+            $item->delete();
+        }
+
+        foreach ($domains as $item) {
+            CsoDomain::create([
+                'cso_id' => $this->cso->id,
+                'name' => $item,
+            ]);
+        }
 
         Alert::info('You have successfully created a cso.');
 
