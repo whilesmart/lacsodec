@@ -7,9 +7,11 @@ namespace App\Orchid\Screens\User;
 use App\Orchid\Layouts\User\UserEditLayout;
 use App\Orchid\Layouts\User\UserFiltersLayout;
 use App\Orchid\Layouts\User\UserListLayout;
+use App\Services\DataExportService;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Orchid\Platform\Models\User;
+use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
@@ -17,6 +19,13 @@ use Orchid\Support\Facades\Toast;
 
 class UserListScreen extends Screen
 {
+    protected $dataExportService;
+
+    public function __construct(DataExportService $dataExportService)
+    {
+        $this->dataExportService = $dataExportService;
+    }
+
     /**
      * Fetch data to be displayed on the screen.
      *
@@ -66,6 +75,11 @@ class UserListScreen extends Screen
             Link::make(__('Add'))
                 ->icon('bs.plus-circle')
                 ->route('platform.systems.users.create'),
+
+            Button::make('Export')
+                ->icon('bs.download')
+                ->method('export')
+                ->rawClick(),
         ];
     }
 
@@ -114,5 +128,13 @@ class UserListScreen extends Screen
         User::findOrFail($request->get('id'))->delete();
 
         Toast::info(__('User was removed'));
+    }
+
+    public function export()
+    {
+        $users = User::all();
+        $columnNames = ['id', 'name', 'email', 'country', 'created_at'];
+
+        return $this->dataExportService->exportData($users, $columnNames, 'all_users');
     }
 }

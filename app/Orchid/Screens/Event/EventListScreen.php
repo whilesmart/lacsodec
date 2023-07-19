@@ -26,7 +26,7 @@ class EventListScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'Events';
+        return 'Event';
     }
 
     /**
