@@ -111,7 +111,7 @@
                 </ul>
             </nav>
             <div class="right">
-                <a href="{{ route('donate') }}" class="custom-button primary-dark"><span>{{__('header.Donate')}}</span></a>
+                <a href="{{ route('donate') }}" class="custom-button primary-dark "><span>{{__('header.Donate')}}</span></a>
                 <button type="button" class="toggler" id="navigation-toggler"><i class="fa fa-bars" aria-hidden="true"></i></button>
             </div>
         </div>
