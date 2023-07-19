@@ -1,4 +1,4 @@
-# lasodec
+# lacsodec
 Civil Society Registry Sofware
 
 ## Setup
