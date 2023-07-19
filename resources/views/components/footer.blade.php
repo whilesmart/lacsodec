@@ -4,7 +4,7 @@
             <div class="sub">
                 <img src="{{ asset('images/logos/lacsodec-logo-white.png') }}" alt="" class="logo">
                 <p>{{__('footer.We promote knowledge acquisition, resource sharing and fairness among CSOs of all levels, with the ultimate goal of benefiting the populace.')}}</p>
-                <a href="/" class="custom-button secondary"><span>{{__('footer.Donate now')}}</span></a>
+                <a href="{{ route('donate') }}" class="custom-button secondary"><span>{{__('footer.Donate now')}}</span></a>
             </div>
             <div class="sub">
                 <h3>{{__('footer.Follow us on')}}</h3>

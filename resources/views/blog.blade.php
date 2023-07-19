@@ -16,7 +16,7 @@
                             <img src="{{ asset($blog->image) }}" alt="" />
                             <h2>{{$blog->title}}</h2>
                             <p>{{$blog->description}}</p>
-                            <a href="{{ route('blog-details', ['blog' => $blog->slug]) }}">{{__('home.Read More')}}</a>
+                            <a href="{{ route('blog-details', ['blog' => $blog->slug]) }}">{{__('blog.Read More')}}</a>
                         </div>
                         @endforeach
                     </div>
@@ -34,7 +34,7 @@
                         <img src="{{ asset($blog->image) }}" alt="" />
                             <h2>{{$blog->title}}</h2>
                             <p>{{$blog->description}}</p>
-                            <a href="{{ route('blog-details', ['blog' => $blog->slug]) }}">{{__('home.Read More')}}</a>
+                            <a href="{{ route('blog-details', ['blog' => $blog->slug]) }}">{{__('blog.Read More')}}</a>
                         </div>
                         @endforeach
                     </div>

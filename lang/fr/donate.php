@@ -4,14 +4,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Blog Language Lines
+    | Donate French Language Lines
     |--------------------------------------------------------------------------
     |
     |
     */
 
-    'Blog' => 'Blog',
-    'Featured' => 'À la une',
-    'Read More' => 'En savoir plus',
+    'Donate' => 'Faire un don',
 
 ];

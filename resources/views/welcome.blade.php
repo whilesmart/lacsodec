@@ -88,7 +88,7 @@
                                 <div class="sub">
                                     <i class="fa fa-user" aria-hidden="true"></i>
                                     @if ($latestArticles[0]->user)
-                                    <p>Posted by: {{$latestArticles[0]->user->name}}</p>
+                                    <p>{{__('home.Posted by')}}: {{$latestArticles[0]->user->name}}</p>
                                     @endif
                                 </div>
                                 <div class="sub">
@@ -111,7 +111,7 @@
                                     <div class="sub">
                                         <i class="fa fa-user" aria-hidden="true"></i>
                                         @if ($article->user)
-                                        <p>Posted by: {{$article->user->name}}</p>
+                                        <p>{{__('home.Posted by')}}: {{$article->user->name}}</p>
                                         @endif
                                     </div>
                                     <div class="sub">

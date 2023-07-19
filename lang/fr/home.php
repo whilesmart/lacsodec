@@ -28,8 +28,8 @@ return [
     'View more' => 'Voir plus',
     'Latest Experts' => 'Récentes Experts',
     'Posted by' => 'Posté par',
-    'Read more' => 'Lire la suite',
+    'Read more' => 'En savoir plus',
     'Latest CSO' => 'Récente OSC',
-    '' => '',
+    'Posted by' => 'Publié par',
 
 ];
