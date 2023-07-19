@@ -15,7 +15,7 @@ return [
     'Password' => 'Mot de passe',
     'Enter password' => 'Entrez mot de pass',
     'Forgot password?' => 'Mot de passe oublié?',
-    "Don't have an Account?" => "Pas de compte?",
+    "Don't have an Account?" => 'Pas de compte?',
     'Sign Up' => "S'inscrire",
 
 ];
