@@ -47,17 +47,17 @@
             <div class="sub">
                 <h3>{{__('footer.contact us')}}</h3>
                 <p>
-                    Email: info@lacsodec.org,<br>
-                    Address: NGO Street, <br>
+                    {{__('contact.Email')}}: info@lacsodec.org,<br>
+                    {{__('contact.Address')}}: NGO Street, <br>
                     Molyko - Buea
                 </p>
-                <p>Phone: +237 677947449</p>
+                <p>{{__('contact.Phone')}}: +237 677947449</p>
             </div>
             <div class="sub">
                 <h3>{{__('footer.Newsletter')}}</h3>
                 <p>{{__('footer.Join our subscribers list to get the latest news and updates delivered directly in your inbox.')}}</p>
                 <form action="">
-                    <input type="text" name="" id="" placeholder="Your email address">
+                    <input type="text" name="" id="" placeholder="{{__('footer.Your email address')}}">
                     <button type="submit">{{__('footer.Sign up')}}</button>
                 </form>
             </div>

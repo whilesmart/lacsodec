@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ExpertLanguage;
 use App\Models\ExpertProfile;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class ExpertController extends Controller
 
     public function show($expert)
     {
-        $expert = ExpertProfile::with('user')->findOrFail($expert);
+        $expert = ExpertProfile::with(['user', 'languages'])->findOrFail($expert);
         $otherExperts = ExpertProfile::with('user')->where('id', '!=', $expert->id)->where('status', 'approved')->limit(4)->get();
 
         return view('expert-directory-details', [
@@ -45,7 +46,7 @@ class ExpertController extends Controller
             'sex' => ['required', 'string'],
             'birth_place' => ['required', 'string'],
             'nationality' => ['required', 'string'],
-            'language' => ['required', 'string'],
+            'languages' => ['required', 'array'],
             'nationality' => ['required', 'string'],
             'company' => ['required', 'string'],
             'work_duration' => ['required', 'string'],
@@ -55,6 +56,7 @@ class ExpertController extends Controller
             'phone_number' => ['required', 'string'],
             'image' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg', 'max:2048'],
             'certification_image' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg', 'max:2048'],
+            'isHumanResource' => ['required', 'string'],
         ]);
 
         $image_path = $request->file('image')->store();
@@ -77,7 +79,15 @@ class ExpertController extends Controller
             'phone_number' => $fields['phone_number'],
             'image' => '/storage/'.$image_path,
             'certification_image' => '/storage/'.$certification_image_path,
+            'isHumanResource' => ($fields['isHumanResource'] == 'true') ? true : false,
         ]);
+
+        foreach ($fields['languages'] as $item) {
+            ExpertLanguage::create([
+                'expert_id' => $expert->id,
+                'name' => $item,
+            ]);
+        }
 
         return redirect()->to('/expert-directory')->with('success', 'you have successfuly submited your registration. Please wait for admin approval');
     }

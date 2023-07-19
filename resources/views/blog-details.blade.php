@@ -10,7 +10,7 @@
         <section class="impact-stories-section">
             <div class="con">
                 <div class="main-content">
-                    <img src="{{ asset('images/publication-3.png') }}" alt="" />
+                    <img src="{{ asset($blog->image) }}" alt="" />
                     <h1>{{$blog->title}}</h1>
                     <div class="info-container">
                         <div class="info">

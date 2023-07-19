@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('assessment_score')->nullable();
-            $table->enum('status', ['approved', 'pending', 'rejected'])->default('pending');
+            $table->enum('status', ['verified', 'not verified'])->default('not verified');
             $table->string('partnership')->nullable();
             $table->string('image')->nullable();
             $table->string('acronym')->nullable();
-            $table->string('registration_date')->nullable();
+            $table->integer('registration_year')->nullable();
             $table->string('organization_type')->nullable();
             $table->string('registration_number')->nullable();
             $table->string('country')->nullable();
@@ -46,6 +46,7 @@ return new class extends Migration
             $table->boolean('board_directors')->default(false);
             $table->string('african_coverage')->nullable();
             $table->string('organization_leaderships')->nullable();
+            $table->longText('background')->nullable();
             $table->integer('user_id');
             $table->integer('created_by');
             $table->timestamps();

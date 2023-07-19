@@ -3,7 +3,7 @@
         <!-- breadcrumb -->
         @component('components.breacrumb')
             @slot('current')
-                Expert Directory
+                {{__('experts.Expert Directory')}}
             @endslot
         @endcomponent
 
@@ -11,8 +11,7 @@
             <div class="con">
                 <div class="main-content">
                     <div class="expert-directory-top">
-                        <a href="{{ route('register-expert-profile') }}" class="custom-button secondary"><span>Register
-                                expert profile</span></a>
+                        <a href="{{ route('register-expert-profile') }}" class="custom-button secondary"><span>{{__('experts.Register expert profile')}}</span></a>
                     </div>
                     <div class="expert-directory-grid">
                         @foreach ($experts as $expert)
@@ -27,12 +26,12 @@
                                     </div>
                                     <div class="status {{ $expert->status }}">{{ $expert->status }}</div>
                                 </div>
-                                <p>{{ $expert->location }}, {{ $expert->nationality }}, {{ $expert->company }}</p>
+                                <p>{{ $expert->location }} - {{ $expert->nationality }} - {{ $expert->company }}</p>
                             </a>
                         @endforeach
                     </div>
                     <div class="pagination">
-                        {{$experts->links()}}
+                        {{ $experts->links() }}
                     </div>
                 </div>
             </div>

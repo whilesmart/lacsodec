@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('sex')->nullable();
             $table->string('birth_place')->nullable();
             $table->string('nationality')->nullable();
-            $table->string('language')->nullable();
             $table->string('image')->nullable();
             $table->string('company')->nullable();
             $table->string('work_duration')->nullable();
@@ -30,6 +29,7 @@ return new class extends Migration
             $table->string('certification_image')->nullable();
             $table->string('position')->nullable();
             $table->string('phone_number')->nullable();
+            $table->boolean('isHumanResource')->default(false);
             $table->timestamps();
         });
     }

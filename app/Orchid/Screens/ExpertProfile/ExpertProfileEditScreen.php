@@ -2,6 +2,7 @@
 
 namespace App\Orchid\Screens\ExpertProfile;
 
+use App\Models\ExpertLanguage;
 use App\Models\ExpertProfile;
 use App\Orchid\Layouts\ExpertProfile\ExpertAchievements;
 use App\Orchid\Layouts\ExpertProfile\ExpertPersonalInfo;
@@ -26,6 +27,9 @@ class ExpertProfileEditScreen extends Screen
      */
     public function query(ExpertProfile $expert): iterable
     {
+        $expert->load(['languages']);
+        $expert->languages = $expert->languages->pluck('name')->toArray();
+
         return [
             'expert' => $expert,
         ];
@@ -91,9 +95,22 @@ class ExpertProfileEditScreen extends Screen
      */
     public function createOrUpdate(Request $request)
     {
+        $languages = $request->get('expert')['languages'] ?? [];
+        unset($this->expert->languages);
         $this->expert->fill($request->get('expert'));
 
         $this->expert->save();
+
+        foreach (ExpertLanguage::where('expert_id', $this->expert->id)->get() as $item) {
+            $item->delete();
+        }
+
+        foreach ($languages as $item) {
+            ExpertLanguage::create([
+                'expert_id' => $this->expert->id,
+                'name' => $item,
+            ]);
+        }
 
         Alert::info('You have successfully created an expert');
 

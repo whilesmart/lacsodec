@@ -3,7 +3,7 @@
         <!-- breadcrumb -->
         @component('components.breacrumb')
             @slot('current')
-                Events/Trainings
+                {{__('events.Events/Trainings')}}
             @endslot
         @endcomponent
 
@@ -11,7 +11,7 @@
             <div class="con">
                 <div class="events-grid">
                     @foreach ($events as $event)
-                    <div class="event-card">
+                    <div href="{{ route('event-participate', ['event' => $event->id]) }}" class="event-card">
                         <div class="img-con">
                             <img src="{{ asset($event->image) }}" alt="" />
                             <div class="type event">{{$event->type}}</div>
@@ -22,7 +22,11 @@
                         </div>
                         <div class="content">
                             <p>{{$event->name}}</p>
-                            <a href="{{ route('event-participate', ['event' => $event->id]) }}" class="custom-button primary"><span>Participate</span></a>
+                            @if ($event->date >= now())
+                            <a href="{{ route('event-participate', ['event' => $event->id]) }}" class="custom-button primary"><span>{{__('events.Participate')}}</span></a>
+                            @else
+                            <a href="{{ route('event-participate', ['event' => $event->id]) }}" class="custom-button primary"><span>{{__('events.See event')}}</span></a>
+                            @endif
                         </div>
                     </div>
                     @endforeach

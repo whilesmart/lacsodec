@@ -8,10 +8,20 @@ use Illuminate\Http\Request;
 
 class CsoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $csos = Cso::where('status', 'approved')->paginate(20);
-        $cso_domains = CsoActivityDomain::all();
+        $domain = $request->query('domain');
+        $csosQuery = Cso::where('status', 'verified');
+        if ($domain) {
+            $csosQuery = $csosQuery->where('domain', $domain)->orWhere('second_domain', $domain)->orWhere('third_domain', $domain);
+        }
+        $csos = $csosQuery->paginate(20);
+        $cso_domains = CsoActivityDomain::orderBy('name', 'asc')->get();
+
+        foreach ($cso_domains as $item) {
+            $csoNumber = Cso::where('status', 'verified')->where('domain', $item->name)->orWhere('second_domain', $item->name)->orWhere('third_domain', $item->name)->count();
+            $item->csoNumber = $csoNumber;
+        }
 
         return view('cso-directory', [
             'csos' => $csos,
@@ -22,8 +32,8 @@ class CsoController extends Controller
     public function show($cso)
     {
         $cso = Cso::findOrFail($cso);
-        $otherCsos = Cso::where('id', '!=', $cso->id)->where('status', 'approved')->limit(3)->get();
-        $latestCsos = Cso::where('id', '!=', $cso->id)->where('status', 'approved')->orderBy('created_at', 'desc')->limit(4)->get();
+        $otherCsos = Cso::where('id', '!=', $cso->id)->where('status', 'verified')->limit(3)->get();
+        $latestCsos = Cso::where('id', '!=', $cso->id)->where('status', 'verified')->orderBy('created_at', 'desc')->limit(4)->get();
 
         return view('cso-directory-details', [
             'cso' => $cso,
@@ -34,7 +44,7 @@ class CsoController extends Controller
 
     public function create(Request $request)
     {
-        $domains = CsoActivityDomain::all();
+        $domains = CsoActivityDomain::orderBy('name', 'asc')->get();
 
         return view('register-cso', [
             'domains' => $domains,
@@ -46,7 +56,7 @@ class CsoController extends Controller
         $fields = $request->validate([
             'name' => ['required', 'string'],
             'partnership' => ['required', 'string'],
-            'registration_date' => ['required', 'string'],
+            'registration_year' => ['required', 'integer'],
             'organization_type' => ['required', 'string'],
             'registration_number' => ['required', 'string'],
             'country' => ['required', 'string'],
@@ -71,6 +81,7 @@ class CsoController extends Controller
             'board_directors' => ['required', 'string'],
             'african_coverage' => ['required', 'string'],
             'organization_leaderships' => ['required', 'string'],
+            'background' => ['required', 'string'],
             'image' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg', 'max:2048'],
         ]);
 
@@ -79,7 +90,7 @@ class CsoController extends Controller
         $cso = Cso::create([
             'name' => $fields['name'],
             'partnership' => $fields['partnership'],
-            'registration_date' => $fields['registration_date'],
+            'registration_year' => $fields['registration_year'],
             'organization_type' => $fields['organization_type'],
             'registration_number' => $fields['registration_number'],
             'country' => $fields['country'],
@@ -104,9 +115,12 @@ class CsoController extends Controller
             'board_directors' => ($fields['board_directors'] == 'true') ? true : false,
             'african_coverage' => $fields['african_coverage'],
             'organization_leaderships' => $fields['organization_leaderships'],
+            'background' => $fields['background'],
             'image' => '/storage/'.$image_path,
             'user_id' => $request->user()->id,
             'created_by' => $request->user()->id,
+            'status' => 'not verified',
+            'assessment_score' => 'Not Assessed',
         ]);
 
         return redirect()->to('/cso-directory')->with('success', 'Cso registered successfully. It will be made public after approval by admins');

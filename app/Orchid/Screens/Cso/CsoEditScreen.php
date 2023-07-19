@@ -44,7 +44,7 @@ class CsoEditScreen extends Screen
      */
     public function description(): ?string
     {
-        return 'Cso';
+        return 'Csos';
     }
 
     /**

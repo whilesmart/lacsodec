@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             ExpertProfileSeeder::class,
             ArticleSeeder::class,
             ContactInfoSeeder::class,
+            ArticleTagSeeder::class,
         ]);
     }
 }

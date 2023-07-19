@@ -26,7 +26,6 @@ class ExpertProfileFactory extends Factory
             'sex' => $this->faker->randomElement(['Male', 'Female']),
             'birth_place' => $this->faker->city(),
             'nationality' => $this->faker->country(),
-            'language' => $this->faker->languageCode(),
             'image' => 'https://img.freepik.com/free-icon/user_318-159711.jpg',
             'company' => $this->faker->company(),
             'work_duration' => $this->faker->numerify('# year(s)'),
@@ -35,6 +34,7 @@ class ExpertProfileFactory extends Factory
             'certification_image' => $this->faker->imageUrl(),
             'position' => $this->faker->jobTitle(),
             'phone_number' => $this->faker->phoneNumber(),
+            'isHumanResource' => $this->faker->randomElement([true, false]),
         ];
     }
 }

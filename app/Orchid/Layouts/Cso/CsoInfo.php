@@ -7,6 +7,7 @@ use Orchid\Screen\Field;
 use Orchid\Screen\Fields\CheckBox;
 use Orchid\Screen\Fields\Group;
 use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Label;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Layouts\Rows;
@@ -28,6 +29,9 @@ class CsoInfo extends Rows
     protected function fields(): iterable
     {
         return [
+            Label::make('')
+                ->title('CSO general information'),
+
             TextArea::make('cso.vision_statement')
                 ->title('CSO Vision statement')
                 ->placeholder('CSO vision statement')
@@ -36,6 +40,10 @@ class CsoInfo extends Rows
             TextArea::make('cso.mission')
                 ->title('CSO mission')
                 ->placeholder('CSO mission'),
+
+            TextArea::make('cso.background')
+                ->title('CSO background and track record')
+                ->placeholder('background'),
 
             Group::make([
                 Input::make('cso.primary_target_beneficiaries')
@@ -46,17 +54,19 @@ class CsoInfo extends Rows
             ]),
 
             Select::make('cso.domain')
-                ->fromModel(CsoActivityDomain::class, 'name', 'name')
-                ->title('Choose domain of activity')
+                ->fromModel(CsoActivityDomain::orderBy('name', 'asc'), 'name', 'name')
+                ->title('Primary domain of activity')
                 ->required(),
 
             Select::make('cso.second_domain')
-                ->fromModel(CsoActivityDomain::class, 'name', 'name')
-                ->title('Choose second domain of activity'),
+                ->fromModel(CsoActivityDomain::orderBy('name', 'asc'), 'name', 'name')
+                ->title('Choose second domain of activity')
+                ->empty('none'),
 
             Select::make('cso.third_domain')
-                ->fromModel(CsoActivityDomain::class, 'name', 'name')
-                ->title('Choose third domain of activity'),
+                ->fromModel(CsoActivityDomain::orderBy('name', 'asc'), 'name', 'name')
+                ->title('Choose third domain of activity')
+                ->empty('none'),
 
             CheckBox::make('cso.board_directors')
                 ->title('Board of directors?')

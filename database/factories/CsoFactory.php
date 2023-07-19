@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\CsoActivityDomain;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,12 +20,12 @@ class CsoFactory extends Factory
     {
         return [
             'name' => $this->faker->company(),
-            'assessment_score' => $this->faker->randomElement(['Assessment Level 01', 'Assessment Level 02', 'Assessment Level 03', 'Assessment Level 04', 'Assessment Level 05']),
-            'status' => $this->faker->randomElement(['approved', 'pending', 'rejected']),
+            'assessment_score' => $this->faker->randomElement(['Not Assessed', 'Assessment Level 01', 'Assessment Level 02', 'Assessment Level 03', 'Assessment Level 04', 'Assessment Level 05']),
+            'status' => $this->faker->randomElement(['verified', 'not verified']),
             'partnership' => $this->faker->sentence(),
             'image' => $this->faker->imageUrl(),
             'acronym' => $this->faker->word(),
-            'registration_date' => $this->faker->date(),
+            'registration_year' => intval($this->faker->year()),
             'organization_type' => $this->faker->word(),
             'registration_number' => $this->faker->uuid(),
             'country' => $this->faker->country(),
@@ -45,10 +46,11 @@ class CsoFactory extends Factory
             'mission' => $this->faker->paragraph(),
             'primary_target_beneficiaries' => $this->faker->sentence(),
             'secondary_target_beneficiaries' => $this->faker->sentence(),
-            'domain' => $this->faker->word(),
+            'domain' => CsoActivityDomain::all()->random()->name,
             'board_directors' => $this->faker->boolean(),
             'african_coverage' => $this->faker->word(),
             'organization_leaderships' => $this->faker->sentence(),
+            'background' => $this->faker->paragraph(),
             'user_id' => User::all()->random()->id,
             'created_by' => User::all()->random()->id,
         ];

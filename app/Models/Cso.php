@@ -19,7 +19,7 @@ class Cso extends Model
         'partnership',
         'image',
         'acronym',
-        'registration_date',
+        'registration_year',
         'registration_number',
         'organization_type',
         'country',
@@ -46,6 +46,7 @@ class Cso extends Model
         'organization_leaderships',
         'board_directors',
         'african_coverage',
+        'background',
         'user_id',
         'created_by',
     ];

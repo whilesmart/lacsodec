@@ -49,6 +49,9 @@
                     </div>
 
                     <p>{{ $accomodation->description }}</p>
+                    @if ($accomodation->available)
+                        <p>Status: <b>available</b></p>
+                    @endif
 
 
                     <!-- Image gallery Modal -->
@@ -90,14 +93,6 @@
                             <h3>Reserve</h3>
                         </div>
                         <form action="" class="book-form">
-                            <div class="field">
-                                <label for="">Arrival</label>
-                                <input type="date" name="" id="">
-                            </div>
-                            <div class="field">
-                                <label for="">Departure</label>
-                                <input type="date" name="" id="">
-                            </div>
                             <button type="button" class="custom-button primary" data-bs-toggle="modal"
                                 data-bs-target="#bookingModal">Book now</button>
                         </form>
