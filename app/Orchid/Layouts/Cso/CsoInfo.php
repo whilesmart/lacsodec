@@ -58,15 +58,10 @@ class CsoInfo extends Rows
                 ->title('Primary domain of activity')
                 ->required(),
 
-            Select::make('cso.second_domain')
+            Select::make('cso.domains')
                 ->fromModel(CsoActivityDomain::orderBy('name', 'asc'), 'name', 'name')
-                ->title('Choose second domain of activity')
-                ->empty('none'),
-
-            Select::make('cso.third_domain')
-                ->fromModel(CsoActivityDomain::orderBy('name', 'asc'), 'name', 'name')
-                ->title('Choose third domain of activity')
-                ->empty('none'),
+                ->title('Choose other domains of activity')
+                ->multiple(),
 
             CheckBox::make('cso.board_directors')
                 ->title('Board of directors?')

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cso;
 use App\Models\CsoActivityDomain;
+use App\Models\CsoDomain;
 use Illuminate\Http\Request;
 
 class CsoController extends Controller
@@ -76,7 +77,7 @@ class CsoController extends Controller
             'vision_statement' => ['required', 'string'],
             'primary_target_beneficiaries' => ['required', 'string'],
             'domain' => ['required', 'string'],
-            'second_domain' => ['nullable', 'string'],
+            'second_domain' => ['nullable', 'array'],
             'third_domain' => ['nullable', 'string'],
             'board_directors' => ['required', 'string'],
             'african_coverage' => ['required', 'string'],
@@ -110,7 +111,6 @@ class CsoController extends Controller
             'vision_statement' => $fields['vision_statement'],
             'primary_target_beneficiaries' => $fields['primary_target_beneficiaries'],
             'domain' => $fields['domain'],
-            'second_domain' => $fields['second_domain'] ?? null,
             'third_domain' => $fields['third_domain'] ?? null,
             'board_directors' => ($fields['board_directors'] == 'true') ? true : false,
             'african_coverage' => $fields['african_coverage'],
@@ -122,6 +122,15 @@ class CsoController extends Controller
             'status' => 'not verified',
             'assessment_score' => 'Not Assessed',
         ]);
+
+        if (isset($fields['second_domain'])) {
+            foreach ($fields['second_domain'] as $item) {
+                CsoDomain::create([
+                    'cso_id' => $cso->id,
+                    'name' => $item,
+                ]);
+            }
+        }
 
         return redirect()->to('/cso-directory')->with('success', 'Cso registered successfully. It will be made public after approval by admins');
     }
