@@ -97,7 +97,7 @@
                                 @if (Lang::locale() == 'en')
                                 <option value="{{$country->name}}" {{ old('country') == $country->name ? 'selected' : '' }}>{{$country->name}}</option>
                                 @else
-                                <option value="{{$country->french_name}}" {{ old('country') == $country->french_name ? 'selected' : '' }}>{{$country->french_name}}</option>
+                                <option value="{{$country->name}}" {{ old('country') == $country->name ? 'selected' : '' }}>{{$country->french_name}}</option>
                                 @endif
                                     
                                 @endforeach
@@ -380,8 +380,8 @@
                                 error
                             @enderror
                             ">
-                                <label for="">Organization background and track record *</label>
-                                <input type="text" name="background" id="background" placeholder="" value="{{ old('background') }}" >
+                                <label for="">Organization background and track record</label>
+                                <input type="text" name="background" id="background" placeholder="{{__('cso.Type')}}" value="{{ old('background') }}" >
                                 @error('background')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror

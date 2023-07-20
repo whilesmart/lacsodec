@@ -83,7 +83,7 @@
                         @enderror
                         ">
                             <label for="">Bio details *</label>
-                            <textarea name="details" id="details" cols="30" rows="10" value="{{ old('details') }}" ></textarea>
+                            <textarea name="details" id="details" cols="30" rows="10">{{ old('details') }}</textarea>
                             @error('details')
                                 <span class="error-msg">{{$message}}</span>
                             @enderror
@@ -102,7 +102,7 @@
                                 @if (Lang::locale() == 'en')
                                 <option value="{{$country->name}}" {{ old('nationality') == $country->name ? 'selected' : '' }}>{{$country->name}}</option>
                                 @else
-                                <option value="{{$country->french_name}}" {{ old('nationality') == $country->french_name ? 'selected' : '' }}>{{$country->french_name}}</option>
+                                <option value="{{$country->name}}" {{ old('nationality') == $country->name ? 'selected' : '' }}>{{$country->french_name}}</option>
                                 @endif
                                     
                                 @endforeach
@@ -114,11 +114,11 @@
                             @enderror
                             ">
                                 <label for="">{{__('experts.Language')}}s *</label>
-                                <select name="languages[]" id="languages" value="{{ old('language') }}" multiple >
+                                <select name="languages[]" id="languages" value="{{ old('language') }}" class="form-select" multiple aria-label="Select multiple languages">
                                     <option value="english" {{ in_array('english', old('languages')??[]) ? 'selected' : '' }}>{{__('experts.English')}}</option>
                                     <option value="french" {{ in_array('french', old('languages')??[]) ? 'selected' : '' }}>{{__('experts.French')}}</option>
-                                    <option value="spanish" {{ in_array('spanish', old('languages')??[]) ? 'selected' : '' }}>Spanish</option>
-                                    <option value="german" {{ in_array('german', old('languages')??[]) ? 'selected' : '' }}>German</option>
+                                    <option value="spanish" {{ in_array('spanish', old('languages')??[]) ? 'selected' : '' }}>{{__('experts.Spanish')}}</option>
+                                    <option value="german" {{ in_array('german', old('languages')??[]) ? 'selected' : '' }}>{{__('experts.German')}}</option>
                                 </select>
                                 @error('language')
                                     <span class="error-msg">{{$message}}</span>
@@ -221,7 +221,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__('experts.Request to be listed on Human resource page')}}"</label>
+                                <label for="">{{__('experts.Request to be listed on Human resource page')}}</label>
                                 <div class="radio-flex">
                                     <div class="sub">
                                         <input type="radio" name="isHumanResource" value="true" id="isHumanResource-yes" {{old('isHumanResource') == 'true'? 'checked':''}}>

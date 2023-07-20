@@ -32,7 +32,11 @@
                             <a href="{{ route('cso-directory-details', ['cso' => $cso->id]) }}" class="cso-card">
                                 <img src="{{ asset($cso->image) }}" alt="" />
                                 <h2>{{ $cso->name }}</h2>
+                                @if (Lang::locale() == 'en')
                                 <p>{{ $cso->domain }}</p>
+                                @else
+                                <p>{{ $cso_domains->firstWhere('name', $cso->domain)->french_name }}</p>
+                                @endif
                             </a>
                         @endforeach
                     </div>

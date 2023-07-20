@@ -82,7 +82,7 @@
                         <div class="flex">
                         <div class="field">
                                 <label for="other_details">Your motivation to attend</label>
-                                <textarea name="other_details" id="other_details" value="{{ old('other_details') }}"></textarea>
+                                <textarea name="other_details" id="other_details">{{ old('other_details') }}</textarea>
                                 @error('other_details')
                                     <span class="error-msg">{{ $message }}</span>
                                 @enderror

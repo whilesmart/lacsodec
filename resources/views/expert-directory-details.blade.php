@@ -31,7 +31,7 @@
                     @foreach ($otherExperts as $otherExpert)
                         <a href="{{ route('expert-directory-details', ['expert' => $otherExpert->id]) }}"
                             class="expert-card">
-                            <img src="{{ asset($expert->image) }}" alt="">
+                            <img src="{{ asset($otherExpert->image) }}" alt="">
                             <h4>{{ $otherExpert->user->name }}</h4>
                             <h5>{{ $otherExpert->position }}</h5>
                             <div class="flex">

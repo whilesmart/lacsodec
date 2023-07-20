@@ -3,15 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\ContactInfo;
-use App\Models\Country;
 use App\Models\Event;
 use App\Models\EventRegistration;
+use App\Services\CountryService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class EventController extends Controller
 {
+    protected $countryService;
+
+    public function __construct(CountryService $countryService)
+    {
+        $this->countryService = $countryService;
+    }
+
     public function index()
     {
         $events = Event::where('date', '>=', Carbon::now())->paginate(20);
@@ -24,7 +31,7 @@ class EventController extends Controller
     public function createRegistration($event)
     {
         $event = Event::findOrFail($event);
-        $countries = Country::all();
+        $countries = $this->countryService->getAllCountries();
 
         return view('event-participate', [
             'event' => $event,

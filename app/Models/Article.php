@@ -12,6 +12,8 @@ class Article extends Model
 {
     use HasFactory, AsSource;
 
+    public $with = ['tags'];
+
     protected $fillable = [
         'title',
         'content',
