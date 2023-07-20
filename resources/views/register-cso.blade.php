@@ -316,7 +316,7 @@
                            
                         </div>
                         <div class="checkbox-field 
-                            @error('second_domain')
+                            @error('other_domains')
                                 error
                             @enderror
                             ">
@@ -324,14 +324,14 @@
                                 <div class="flex">
                                     @foreach ($domains as $domain)
                                     <div>
-                                        <input type="checkbox" name="second_domain[]" value="{{$domain->name}}" id="second_domain_{{$domain->name}}">
-                                        <label for="second_domain_{{$domain->name}}">
+                                        <input type="checkbox" name="other_domains[]" value="{{$domain->name}}" id="other_domains_{{$domain->name}}">
+                                        <label for="other_domains_{{$domain->name}}">
                                             {{$domain->name}}
                                         </label>
                                     </div>
                                     @endforeach
                                 </div>
-                                @error('second_domain')
+                                @error('other_domains')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>

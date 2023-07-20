@@ -42,8 +42,6 @@ class Cso extends Model
         'primary_target_beneficiaries',
         'secondary_target_beneficiaries',
         'domain',
-        'second_domain',
-        'third_domain',
         'organization_leaderships',
         'board_directors',
         'african_coverage',
