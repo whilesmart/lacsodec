@@ -54,6 +54,7 @@ class CsoController extends Controller
 
     public function store(Request $request)
     {
+        $otherDomains = $request->other_domains ?? [];
         $fields = $request->validate([
             'name' => ['required', 'string'],
             'partnership' => ['required', 'string'],
@@ -77,8 +78,6 @@ class CsoController extends Controller
             'vision_statement' => ['required', 'string'],
             'primary_target_beneficiaries' => ['required', 'string'],
             'domain' => ['required', 'string'],
-            'second_domain' => ['nullable', 'array'],
-            'third_domain' => ['nullable', 'string'],
             'board_directors' => ['required', 'string'],
             'african_coverage' => ['required', 'string'],
             'organization_leaderships' => ['required', 'string'],
@@ -111,7 +110,6 @@ class CsoController extends Controller
             'vision_statement' => $fields['vision_statement'],
             'primary_target_beneficiaries' => $fields['primary_target_beneficiaries'],
             'domain' => $fields['domain'],
-            'third_domain' => $fields['third_domain'] ?? null,
             'board_directors' => ($fields['board_directors'] == 'true') ? true : false,
             'african_coverage' => $fields['african_coverage'],
             'organization_leaderships' => $fields['organization_leaderships'],
@@ -123,13 +121,11 @@ class CsoController extends Controller
             'assessment_score' => 'Not Assessed',
         ]);
 
-        if (isset($fields['second_domain'])) {
-            foreach ($fields['second_domain'] as $item) {
-                CsoDomain::create([
-                    'cso_id' => $cso->id,
-                    'name' => $item,
-                ]);
-            }
+        foreach ($otherDomains as $item) {
+            CsoDomain::create([
+                'cso_id' => $cso->id,
+                'name' => $item,
+            ]);
         }
 
         return redirect()->to('/cso-directory')->with('success', 'Cso registered successfully. It will be made public after approval by admins');
