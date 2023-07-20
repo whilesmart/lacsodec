@@ -38,10 +38,13 @@ return [
     'Enter your role/position' => 'Enter your role/position',
     'Enter your certification' => 'Enter your certification',
     'Enter your date-of-certification' => 'Enter your date-of-certification',
+    'Date of certification' => 'Date of certification',
     'Image of the Certificate' => 'Image of the Certificate',
     'Request to be listed on Human resource page' => 'Request to be listed on Human resource page',
     'Yes' => 'Yes',
     'No' => 'No',
     'Confirm your Registration' => 'Confirm your Registration',
+    'Spanish' => 'Spanish',
+    'German' => 'German',
 
 ];

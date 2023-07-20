@@ -46,6 +46,7 @@
                         ">
                                 <label for="">{{__('experts.Sex')}}</label>
                                 <select name="sex" id="contact-sex" value="{{ old('sex') }}" >
+                                    <option value="" disabled selected hidden>{{__('cso.Choose')}}</option>
                                     <option value="male">{{__('experts.Male')}}</option>
                                     <option value="female">{{__('experts.Female')}}</option>
                                 </select>
@@ -108,8 +109,8 @@
                                 <select name="languages[]" id="languages" value="{{ old('language') }}" multiple >
                                     <option value="english">{{__('experts.English')}}</option>
                                     <option value="french">{{__('experts.French')}}</option>
-                                    <option value="spanish">Spanish</option>
-                                    <option value="german">German</option>
+                                    <option value="spanish">{{__('experts.Spanish')}}</option>
+                                    <option value="german">{{__('experts.German')}}</option>
                                 </select>
                                 @error('language')
                                     <span class="error-msg">{{$message}}</span>
@@ -212,7 +213,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__('experts.Request to be listed on Human resource page')}}"</label>
+                                <label for="">{{__('experts.Request to be listed on Human resource page')}}</label>
                                 <div class="radio-flex">
                                     <div class="sub">
                                         <input type="radio" name="isHumanResource" value="true" id="isHumanResource-yes">

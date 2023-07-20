@@ -70,12 +70,13 @@ return [
     'Select' => 'Select',
     'Local' => 'Local',
     'National' => 'National',
-    'Global (more than one African country)' => 'Global (more than one African country)',
+    'Global (more than one african country)' => 'Global (more than one African country)',
     'Confirm CSO Registration' => 'Confirm CSO Registration',
     'Registed in' => 'Registered in',
     'Status' => 'Status',
     'Vision' => 'Vision',
     'Mission' => 'Mission',
     'Other CSOs' => 'Other CSOs',
+    'Type' => 'Type',
 
 ];
