@@ -57,6 +57,7 @@ class PlatformProvider extends OrchidServiceProvider
             Menu::make('Event')
                 ->icon('bs.file-earmark-post')
                 ->route('platform.event.list')
+                ->permission('platform.modules.events')
                 ->permission('platform.systems.roles')
                 ->title('Event'),
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Country;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +12,11 @@ class RegisterController extends Controller
 {
     public function create()
     {
-        return view('auth.register');
+        $countries = Country::all();
+
+        return view('auth.register', [
+            'countries' => $countries,
+        ]);
     }
 
     public function store(Request $request)

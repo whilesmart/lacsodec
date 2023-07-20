@@ -53,10 +53,18 @@
                 @endif
                 ">
                     <label for="">{{__('register.Country')}}</label>
-                    <input type="text" name="country" id="country" placeholder="{{__('register.Country')}}" value="{{ old('country') }}" required>
-                    @if ($errors->has('country'))
-                    <span class="error-msg">{{ $errors->first('country') }}</span>
-                    @endif
+                    <select name="country" id="country" value="{{ old('country') }}" >
+                                    <option value="" disabled hidden>{{__('cso.Choose')}}</option>
+                                @foreach ($countries as $country)
+                                <option value="" disabled hidden>{{__('cso.Choose')}}</option>
+                                @if (Lang::locale() == 'en')
+                                <option value="{{$country->name}}" {{ old('country') == $country->name ? 'selected' : '' }}>{{$country->name}}</option>
+                                @else
+                                <option value="{{$country->french_name}}" {{ old('country') == $country->french_name ? 'selected' : '' }}>{{$country->french_name}}</option>
+                                @endif
+                                    
+                                @endforeach
+                                </select>
                 </div>
                 <button type="submit" class="custom-button secondary">
                     <span>{{__('register.Create Account')}}</span>

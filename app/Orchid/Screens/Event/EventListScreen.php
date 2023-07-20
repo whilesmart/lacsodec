@@ -62,4 +62,12 @@ class EventListScreen extends Screen
             EventListLayout::class,
         ];
     }
+
+    public function permission(): ?iterable
+    {
+        return [
+            'systems.roles',
+            'modules.events',
+        ];
+    }
 }

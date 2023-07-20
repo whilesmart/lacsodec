@@ -116,4 +116,12 @@ class PlatformScreen extends Screen
             ]),
         ];
     }
+
+    public function permission(): ?iterable
+    {
+        return [
+            'platform.systems.roles',
+            'platform.modules.events',
+        ];
+    }
 }
