@@ -47,7 +47,7 @@ return [
     'position/role' => 'position/rôle',
     "CSO's physical address" => "Adresse physique de l'OSC",
     'Address' => 'Adresse',
-    "CSO's Website" => 'Site web du CSO',
+    "CSO's Website" => "Site web de l'OSC",
     'Website' => 'Site web',
     "CSO's email address" => "Adresse e-mail de l'OSC",
     "CSO's phone number" => "Numéro de téléphone de l'OSC",
@@ -70,12 +70,13 @@ return [
     'Select' => 'Sélectionner',
     'Local' => 'Locale',
     'National' => 'Nationales',
-    'Global (more than one African country)' => "Global (plus d'un pays africain)",
+    'Global (more than one african country)' => "Globale (plus d'un pays africain)",
     'Confirm CSO Registration' => "Confirmer l'enregistrement de l'OSC",
     'Registed in' => 'Enregistré en',
     'Status' => 'Statut',
     'Vision' => 'Vision',
     'Mission' => 'Mission',
     'Other CSOs' => 'Autres OSC',
+    'Type' => 'Saisie',
 
 ];
