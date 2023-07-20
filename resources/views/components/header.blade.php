@@ -57,7 +57,7 @@
                 <ul>
                     <li>
                         <a href="{{ route('cso-directory') }}">
-                            @if (Request::routeIs('cso-directory'))
+                            @if (Request::routeIs('cso-directory') || Request::routeIs('cso-directory-details'))
                             <b style="font-size: large;">{{__('header.CSO Directory')}}</b>
                             @else
                             {{__('header.CSO Directory')}}
@@ -66,7 +66,7 @@
                     </li>
                     <li>
                         <a href="{{ route('expert-directory') }}">
-                            @if (Request::routeIs('expert-directory'))
+                            @if (Request::routeIs('expert-directory') || Request::routeIs('expert-directory-details'))
                             <b style="font-size: large;">{{__('header.Experts Directory')}}</b>
                             @else
                             {{__('header.Experts Directory')}}

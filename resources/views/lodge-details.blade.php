@@ -161,7 +161,7 @@
                                         <h1 id="total-price">XAF {{$accomodation->price}}</h1>
                                     </div>
 
-                                    <button type="submit" class="custom-button secondary">Confirm and pay upon arrival</button>
+                                    <button type="submit" class="custom-button secondary">Book and pay upon arrival</button>
                                 </form>
                             </div>
                         </div>

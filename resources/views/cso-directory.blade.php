@@ -12,6 +12,7 @@
                 <aside>
                     <nav>
                         <ul>
+                        <li><a href="/cso-directory">All</a></li>
                             @foreach ($cso_domains as $domain)
                                 <li><a href="/cso-directory?domain={{$domain->name}}">{{ $domain->name }} ({{ $domain->csoNumber }})</a></li>
                             @endforeach

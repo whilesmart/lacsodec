@@ -18,7 +18,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__('experts.Location')}}</label>
+                                <label for="">{{__('experts.Location')}} *</label>
                                 <input type="text" name="location" id="location" placeholder="{{__('experts.Enter your location')}}"
                                     value="{{ old('location') }}" >
                                     @error('location')
@@ -30,7 +30,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__('experts.Phone number')}}</label>
+                                <label for="">{{__('experts.Phone number')}} *</label>
                                 <input type="text" name="phone_number" id="phone_number" placeholder="example: +237656000000"
                                     value="{{ old('phone_number') }}" >
                                     @error('phone_number')
@@ -44,10 +44,10 @@
                                 error
                         @enderror
                         ">
-                                <label for="">{{__('experts.Sex')}}</label>
+                                <label for="">{{__('experts.Sex')}} *</label>
                                 <select name="sex" id="contact-sex" value="{{ old('sex') }}" >
-                                    <option value="male">{{__('experts.Male')}}</option>
-                                    <option value="female">{{__('experts.Female')}}</option>
+                                    <option value="male" {{ old('sex') == 'male' ? 'selected' : '' }}>{{__('experts.Male')}}</option>
+                                    <option value="female"  {{ old('sex') == 'female' ? 'selected' : '' }}>{{__('experts.Female')}}</option>
                                 </select>
                             </div>
                             <div class="field 
@@ -55,7 +55,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__('experts.Date of birth')}}</label>
+                                <label for="">{{__('experts.Date of birth')}} *</label>
                                 <input type="date" name="birthday" id="date-of-birth"
                                     placeholder="{{__('experts.Enter your date-of-birth')}}" value="{{ old('birthday') }}" >
                                     @error('birthday')
@@ -69,7 +69,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__('experts.Place of birth')}}</label>
+                                <label for="">{{__('experts.Place of birth')}} *</label>
                                 <input type="text" name="birth_place" id="place-of-birth"
                                     placeholder="{{__('experts.Enter your place-of-birth')}}" value="{{ old('birth_place') }}" >
                                     @error('birth_place')
@@ -82,7 +82,7 @@
                                 error
                         @enderror
                         ">
-                            <label for="">Bio details</label>
+                            <label for="">Bio details *</label>
                             <textarea name="details" id="details" cols="30" rows="10" value="{{ old('details') }}" ></textarea>
                             @error('details')
                                 <span class="error-msg">{{$message}}</span>
@@ -94,7 +94,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__('experts.Nationality')}}</label>
+                                <label for="">{{__('experts.Nationality')}} *</label>
                                 <select name="nationality" id="nationality" value="{{ old('nationality') }}" >
                                     <option value="cameroonian">Cameroonian</option>
                                 </select>
@@ -104,12 +104,12 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__('experts.Language')}}s</label>
+                                <label for="">{{__('experts.Language')}}s *</label>
                                 <select name="languages[]" id="languages" value="{{ old('language') }}" multiple >
-                                    <option value="english">{{__('experts.English')}}</option>
-                                    <option value="french">{{__('experts.French')}}</option>
-                                    <option value="spanish">Spanish</option>
-                                    <option value="german">German</option>
+                                    <option value="english" {{ in_array('english', old('languages')??[]) ? 'selected' : '' }}>{{__('experts.English')}}</option>
+                                    <option value="french" {{ in_array('french', old('languages')??[]) ? 'selected' : '' }}>{{__('experts.French')}}</option>
+                                    <option value="spanish" {{ in_array('spanish', old('languages')??[]) ? 'selected' : '' }}>Spanish</option>
+                                    <option value="german" {{ in_array('german', old('languages')??[]) ? 'selected' : '' }}>German</option>
                                 </select>
                                 @error('language')
                                     <span class="error-msg">{{$message}}</span>
@@ -118,7 +118,7 @@
                         </div>
                         <div class="flex">
                             <div class="field">
-                                <label for="">Image</label>
+                                <label for="">Image *</label>
                                 <input type="file" name="image" id="image" placeholder="image" value="" accept="image/*"
                                 >
                                 @error('image')
@@ -135,7 +135,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__('experts.Company')}}</label>
+                                <label for="">{{__('experts.Company')}} *</label>
                                 <input type="text" name="company" id="company" placeholder="{{__('experts.Enter your company')}}"
                                 value="{{ old('company') }}" >
                                 @error('company')
@@ -147,8 +147,8 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__('experts.Work duration')}}</label>
-                                <input type="text" name="work_duration" id="work-duration"
+                                <label for="">{{__('experts.Work duration')}} *</label>
+                                <input type="number" name="work_duration" id="work-duration"
                                     placeholder="{{__('experts.Enter your work duration')}}" value="{{ old('work_duration') }}" >
                                 @error('work_duration')
                                     <span class="error-msg">{{$message}}</span>
@@ -161,7 +161,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">Role/Position</label>
+                                <label for="">Role/Position *</label>
                                 <input type="text" name="position" id="role" placeholder="{{__('experts.Enter your role/position')}}"
                                 value="{{ old('position') }}" >
                                 @error('position')
@@ -178,7 +178,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">Certification</label>
+                                <label for="">Certification *</label>
                                 <input type="text" name="certification" id="certification"
                                     placeholder="{{__('experts.Enter your certification')}}" value="{{ old('certification') }}" >
                                 @error('certification')
@@ -190,7 +190,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__('experts.Date of certification')}}</label>
+                                <label for="">{{__('experts.Date of certification')}} *</label>
                                 <input type="date" name="certification_date" id="date-of-certification"
                                     placeholder="{{__('experts.Enter your date-of-certification')}}" value="{{ old('certification_date') }}" >
                                 @error('certification_date')
@@ -200,7 +200,7 @@
                         </div>
                         <div class="flex">
                             <div class="field">
-                                <label for="">{{__('experts.Image of the Certificate')}}</label>
+                                <label for="">{{__('experts.Image of the Certificate')}} *</label>
                                 <input type="file" name="certification_image" id="image" placeholder="image" accept="image/*"
                                     value="">
                                 @error('certification_image')
@@ -215,13 +215,13 @@
                                 <label for="">{{__('experts.Request to be listed on Human resource page')}}"</label>
                                 <div class="radio-flex">
                                     <div class="sub">
-                                        <input type="radio" name="isHumanResource" value="true" id="isHumanResource-yes">
+                                        <input type="radio" name="isHumanResource" value="true" id="isHumanResource-yes" {{old('isHumanResource') == 'true'? 'checked':''}}>
                                         <label for="isHumanResource-yes">
                                         {{__('experts.Yes')}}
                                         </label>
                                     </div>
                                     <div class="sub">
-                                        <input type="radio" name="isHumanResource" value="false" id="isHumanResource-no">
+                                        <input type="radio" name="isHumanResource" value="false" id="isHumanResource-no" {{old('isHumanResource') == 'false'? 'checked':''}}>
                                         <label for="isHumanResource-no">
                                         {{__('experts.No')}}
                                         </label>

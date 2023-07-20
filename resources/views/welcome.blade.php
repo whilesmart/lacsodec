@@ -22,7 +22,7 @@
                     <h3>8,000</h3>
                     <p>{{__('home.Members')}}</p>
                 </div>
-                <a href="/" class="custom-button secondary"><span>{{__('home.Learn more')}}</span></a>
+                <a href="/about-us" class="custom-button secondary"><span>{{__('home.Learn more')}}</span></a>
             </div>
             <div class="right">
                 <p><b>{{__('home.WHO WE ARE')}}</b></p>
@@ -67,13 +67,13 @@
                         <h3>{{__('home.Latest Experts')}}</h3>
                     </div>
                     @foreach ($latestExperts as $expert)
-                    <div class="expert">
+                    <a href="{{ route('expert-directory-details', ['expert' => $expert->id]) }}" class="expert">
                         <img src="{{ asset($expert->image) }}" alt="" />
                         <div class="info">
                             <h5>{{$expert->user->name}}</h5>
                             <p>{{$expert->position}}</p>
                         </div>
-                    </div>
+                    </a>
                     @endforeach
                 </div>
             </aside>
@@ -138,12 +138,13 @@
         <h3>{{__('home.Latest CSO')}}</h3>
     </div>
     @foreach ($latestCsos as $cso)
-    <div class="cso">
-        <img src="{{ asset('images/cso-1.png') }}" alt="" />
+    <a href="{{ route('cso-directory-details', ['cso' => $cso->id]) }}" class="cso">
+        <img src="{{ asset($cso->image) }}" alt="{{$cso->name}}" />
         <div class="info">
             <h5>{{$cso->name}}</h5>
             <p>{{$cso->created_at}}</p>
     </div>
+    </a>
     @endforeach
 </div>
             </aside>
