@@ -56,7 +56,7 @@
                             <p>{{$latestEvent->date}}</p>
                         </div>
                     </div>
-                    <a href="{{$latestEvent->url}}" target="__blank" class="custom-button white">
+                    <a href="/events" class="custom-button white">
                         <span>{{__('home.View more')}}</span>
                         <i class="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>

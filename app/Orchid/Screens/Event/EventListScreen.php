@@ -66,8 +66,8 @@ class EventListScreen extends Screen
     public function permission(): ?iterable
     {
         return [
-            'systems.roles',
-            'modules.events',
+            'platform.systems.roles',
+            'platform.modules.events',
         ];
     }
 }

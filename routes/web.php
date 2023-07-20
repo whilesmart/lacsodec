@@ -12,6 +12,7 @@ use App\Http\Controllers\ExpertController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HumanResourceController;
 use App\Http\Controllers\LocalizationController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
@@ -79,6 +80,8 @@ Route::get('/impact-stories', function () {
 Route::get('/search-results', [SearchController::class, 'search'])->name('search-results');
 
 Route::get('/locale/{locale}', [LocalizationController::class, 'changeLang'])->name('locale.setting');
+
+Route::post('/newsletter/subscribe', [NewsletterController::class, 'store'])->name('newsletter-subscribe');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');

@@ -56,8 +56,9 @@
             <div class="sub">
                 <h3>{{__('footer.Newsletter')}}</h3>
                 <p>{{__('footer.Join our subscribers list to get the latest news and updates delivered directly in your inbox.')}}</p>
-                <form action="">
-                    <input type="text" name="" id="" placeholder="{{__('footer.Your email address')}}">
+                <form action="{{ route('newsletter-subscribe') }}" method="POST">
+                    @csrf
+                    <input type="text" name="email" id="" placeholder="{{__('footer.Your email address')}}" required>
                     <button type="submit">{{__('footer.Sign up')}}</button>
                 </form>
             </div>

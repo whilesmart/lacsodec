@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ContactInfo;
+use App\Models\Country;
 use App\Models\Event;
 use App\Models\EventRegistration;
 use Carbon\Carbon;
@@ -23,9 +24,11 @@ class EventController extends Controller
     public function createRegistration($event)
     {
         $event = Event::findOrFail($event);
+        $countries = Country::all();
 
         return view('event-participate', [
             'event' => $event,
+            'countries' => $countries,
         ]);
     }
 
