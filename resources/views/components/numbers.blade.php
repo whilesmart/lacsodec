@@ -2,15 +2,15 @@
     <div class="con">
         <div class="number">
             <h1>{{$csos??0}}+</h1>
-            <p>CSO registered</p>
+            <p>{{__('about.CSO registered')}}</p>
         </div>
         <div class="number">
             <h1>{{$events??0}}</h1>
-            <p>Events organized</p>
+            <p>{{__('about.Events organized')}}</p>
         </div>
         <div class="number">
             <h1>{{$trainings??0}}+</h1>
-            <p>Trainings carried out</p>
+            <p>{{__('about.Trainings carried out')}}</p>
         </div>
     </div>
 </section>

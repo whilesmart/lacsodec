@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Orchid\Screens\ArticleTag;
+namespace App\Orchid\Screens\ArticleCategory;
 
-use App\Models\ArticleTag;
+use App\Models\ArticleCategory;
 use Illuminate\Http\Request;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Fields\Input;
@@ -10,23 +10,20 @@ use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Alert;
 use Orchid\Support\Facades\Layout;
 
-class ArticleTagEditScreen extends Screen
+class ArticleCategoryEditScreen extends Screen
 {
     /**
-     * @var ArticleTag
+     * @var ArticleCategory
      */
-    public $articleTag;
+    public $articleCategory;
 
     /**
      * Query data.
-     *
-     *
-     * @return array
      */
-    public function query(ArticleTag $articleTag): iterable
+    public function query(ArticleCategory $articleCategory): array
     {
         return [
-            'articleTag' => $articleTag,
+            'articleCategory' => $articleCategory,
         ];
     }
 
@@ -35,15 +32,7 @@ class ArticleTagEditScreen extends Screen
      */
     public function name(): ?string
     {
-        return $this->articleTag->exists ? 'Edit article tag' : 'Creating a new article tag';
-    }
-
-    /**
-     * The description is displayed on the user's screen under the heading
-     */
-    public function description(): ?string
-    {
-        return 'Article tags';
+        return $this->articleCategory->exists ? 'Edit article category' : 'Creating a new article category';
     }
 
     /**
@@ -54,20 +43,20 @@ class ArticleTagEditScreen extends Screen
     public function commandBar(): iterable
     {
         return [
-            Button::make('Create article tag')
+            Button::make('Create article category')
                 ->icon('pencil')
                 ->method('createOrUpdate')
-                ->canSee(! $this->articleTag->exists),
+                ->canSee(! $this->articleCategory->exists),
 
             Button::make('Update')
                 ->icon('note')
                 ->method('createOrUpdate')
-                ->canSee($this->articleTag->exists),
+                ->canSee($this->articleCategory->exists),
 
             Button::make('Delete')
                 ->icon('trash')
                 ->method('delete')
-                ->canSee($this->articleTag->exists),
+                ->canSee($this->articleCategory->exists),
         ];
     }
 
@@ -80,7 +69,7 @@ class ArticleTagEditScreen extends Screen
     {
         return [
             Layout::rows([
-                Input::make('articleTag.name')
+                Input::make('articleCategory.name')
                     ->title('Tag name')
                     ->required(),
             ]),
@@ -89,11 +78,11 @@ class ArticleTagEditScreen extends Screen
 
     public function createOrUpdate(Request $request)
     {
-        $this->articleTag->fill($request->get('articleTag'))->save();
+        $this->articleCategory->fill($request->get('articleCategory'))->save();
 
-        Alert::info('You have successfully created an article tag.');
+        Alert::info('You have successfully created an article category.');
 
-        return redirect()->route('platform.articletag.list');
+        return redirect()->route('platform.articlecategory.list');
     }
 
     /**
@@ -101,10 +90,10 @@ class ArticleTagEditScreen extends Screen
      */
     public function delete()
     {
-        $this->articleTag->delete();
+        $this->articleCategory->delete();
 
-        Alert::info('You have successfully deleted the article tag.');
+        Alert::info('You have successfully deleted the article category.');
 
-        return redirect()->route('platform.articletag.list');
+        return redirect()->route('platform.articlecategory.list');
     }
 }

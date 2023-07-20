@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Country;
+use App\Models\Cso;
 use App\Models\ExpertLanguage;
 use App\Models\ExpertProfile;
 use Illuminate\Http\Request;
@@ -22,10 +23,14 @@ class ExpertController extends Controller
     {
         $expert = ExpertProfile::with(['user', 'languages'])->findOrFail($expert);
         $otherExperts = ExpertProfile::with('user')->where('id', '!=', $expert->id)->where('status', 'approved')->limit(4)->get();
+        $otherCsos = Cso::where('status', 'verified')->limit(3)->get();
+        $latestCsos = Cso::where('status', 'verified')->orderBy('created_at', 'desc')->limit(4)->get();
 
         return view('expert-directory-details', [
             'expert' => $expert,
             'otherExperts' => $otherExperts,
+            'otherCsos' => $otherCsos,
+            'latestCsos' => $latestCsos,
         ]);
     }
 

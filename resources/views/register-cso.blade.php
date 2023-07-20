@@ -309,9 +309,13 @@
                             ">
                                 <label for="">{{__('cso.Primary domain of activity')}} *</label>
                                 <select name="domain" id="domain-of-activity" value="{{ old('domain') }}">
-                                    <option value="" disabled selected hidden>{{__('cso.Choose')}}</option>
+                                    <option value="" disabled hidden>{{__('cso.Choose')}}</option>
                                     @foreach ($domains as $domain)
-                                    <option value="{{ $domain->name }}">{{ $domain->name }}</option>
+                                    @if (Lang::locale() == 'en')
+                                    <option value="{{ $domain->name }}" {{ old('domain') == $domain->name ? 'selected' : '' }}>{{ $domain->name }}</option>
+                                    @else
+                                    <option value="{{ $domain->name }}" {{ old('domain') == $domain->name ? 'selected' : '' }}>{{ $domain->french_name }}</option>
+                                    @endif
                                     @endforeach
                                 </select>
                                 @error('domain')
@@ -330,9 +334,15 @@
                                     @foreach ($domains as $domain)
                                     <div>
                                         <input type="checkbox" name="other_domains[]" value="{{$domain->name}}" id="other_domains_{{$domain->name}}" {{ in_array($domain->name, old('other_domains')??[]) ? 'checked' : '' }}>
+                                        @if (Lang::locale() == 'en')
                                         <label for="other_domains_{{$domain->name}}">
                                             {{$domain->name}}
                                         </label>
+                                        @else
+                                        <label for="other_domains_{{$domain->name}}">
+                                            {{$domain->french_name}}
+                                        </label>
+                                        @endif
                                     </div>
                                     @endforeach
                                 </div>

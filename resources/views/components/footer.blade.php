@@ -59,6 +59,9 @@
                 <form action="{{ route('newsletter-subscribe') }}" method="POST">
                     @csrf
                     <input type="text" name="email" id="" placeholder="{{__('footer.Your email address')}}" required>
+                    @if ($errors->has('email'))
+                    <span class="error-msg">{{ $errors->first('email') }}</span>
+                    @endif
                     <button type="submit">{{__('footer.Sign up')}}</button>
                 </form>
             </div>

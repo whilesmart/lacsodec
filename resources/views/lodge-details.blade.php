@@ -102,22 +102,12 @@
                             <h3>Home Facilities</h3>
                         </div>
                         <div class="facilities">
+                            @foreach ($accomodation->equipment as $equipment)
                             <div class="info">
-                                <img src="{{ asset('images/icons/wifi.svg') }}" alt="" />
-                                <p>Free wifi</p>
+                                <!-- <img src="{{ asset('images/icons/wifi.svg') }}" alt="" /> -->
+                                <p>{{$equipment->name}}</p>
                             </div>
-                            <div class="info">
-                                <img src="{{ asset('images/icons/bottle.svg') }}" alt="" />
-                                <p>Baby Shower</p>
-                            </div>
-                            <div class="info">
-                                <img src="{{ asset('images/icons/save.svg') }}" alt="" />
-                                <p>Watching machine</p>
-                            </div>
-                            <div class="info">
-                                <img src="{{ asset('images/icons/no-smooking.svg') }}" alt="" />
-                                <p>No Smoking</p>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </aside>
@@ -154,6 +144,13 @@
                             <div class="field">
                                 <label for="phone">Phone number</label>
                                 <input type="tel" name="phone" id="" required>
+                            </div>
+                            <div class="field">
+                                <label for="cause">Select a cause to support</label>
+                                <select name="cause" id="">
+                                    <option value="climate change">Climate change</option>
+                                    <option value="">None</option>
+                                </select>
                             </div>
 
                                     <div class="info">

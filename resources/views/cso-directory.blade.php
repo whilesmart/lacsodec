@@ -12,9 +12,13 @@
                 <aside>
                     <nav>
                         <ul>
-                        <li><a href="/cso-directory">All</a></li>
+                        <li><a href="/cso-directory">{{__('cso.All')}}</a></li>
                             @foreach ($cso_domains as $domain)
+                                @if (Lang::locale() == 'en')
                                 <li><a href="/cso-directory?domain={{$domain->name}}">{{ $domain->name }} ({{ $domain->csoNumber }})</a></li>
+                                @else
+                                <li><a href="/cso-directory?domain={{$domain->name}}">{{ $domain->french_name }} ({{ $domain->csoNumber }})</a></li>
+                                @endif
                             @endforeach
                         </ul>
                     </nav>

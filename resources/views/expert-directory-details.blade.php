@@ -19,7 +19,7 @@
                 </div>
                 <aside>
                     <x-donation-card />
-                    <x-latest-cso />
+                    <x-latest-cso :csos="$latestCsos"/>
                 </aside>
             </div>
         </section>

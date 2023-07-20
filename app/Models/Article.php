@@ -32,4 +32,9 @@ class Article extends Model
     {
         return $this->hasMany(BlogComment::class);
     }
+
+    public function tags(): HasMany
+    {
+        return $this->hasMany(ArticleSelectedTag::class);
+    }
 }
