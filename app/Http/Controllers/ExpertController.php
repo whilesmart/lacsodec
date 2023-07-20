@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\ExpertLanguage;
 use App\Models\ExpertProfile;
 use Illuminate\Http\Request;
@@ -30,7 +31,11 @@ class ExpertController extends Controller
 
     public function create(Request $request)
     {
-        return view('register-expert-profile');
+        $countries = Country::all();
+
+        return view('register-expert-profile', [
+            'countries' => $countries,
+        ]);
     }
 
     public function store(Request $request)

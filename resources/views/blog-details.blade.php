@@ -13,10 +13,12 @@
                     <img src="{{ asset($blog->image) }}" alt="" />
                     <h1>{{$blog->title}}</h1>
                     <div class="info-container">
+                        @if ($blog->user)
                         <div class="info">
                             <i class="fa fa-user" aria-hidden="true"></i>
-                            <p>Posted By: Emako</p>
+                            <p>Posted By: {{$blog->user->name}}</p>
                         </div>
+                        @endif
                         <div class="info">
                             <i class="fa fa-calendar" aria-hidden="true"></i>
                             <p>{{$blog->created_at}}</p>

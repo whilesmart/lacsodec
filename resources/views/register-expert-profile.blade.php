@@ -96,7 +96,16 @@
                             ">
                                 <label for="">{{__('experts.Nationality')}} *</label>
                                 <select name="nationality" id="nationality" value="{{ old('nationality') }}" >
-                                    <option value="cameroonian">Cameroonian</option>
+                                    <option value="" disabled hidden>{{__('cso.Choose')}}</option>
+                                @foreach ($countries as $country)
+                                <option value="" disabled hidden>{{__('cso.Choose')}}</option>
+                                @if (Lang::locale() == 'en')
+                                <option value="{{$country->name}}" {{ old('nationality') == $country->name ? 'selected' : '' }}>{{$country->name}}</option>
+                                @else
+                                <option value="{{$country->french_name}}" {{ old('nationality') == $country->french_name ? 'selected' : '' }}>{{$country->french_name}}</option>
+                                @endif
+                                    
+                                @endforeach
                                 </select>
                             </div>
                             <div class="field 

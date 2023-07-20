@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\Cso;
 use App\Models\CsoActivityDomain;
 use App\Models\CsoDomain;
@@ -46,9 +47,11 @@ class CsoController extends Controller
     public function create(Request $request)
     {
         $domains = CsoActivityDomain::orderBy('name', 'asc')->get();
+        $countries = Country::all();
 
         return view('register-cso', [
             'domains' => $domains,
+            'countries' => $countries,
         ]);
     }
 

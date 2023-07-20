@@ -19,7 +19,7 @@
                 <h2>{{__('home.About Us')}}</h2>
                 <p>{{__('home.CSO media space is our Main Goal')}}</p>
                 <div class="members">
-                    <h3>8,000</h3>
+                    <h3>{{$members}}</h3>
                     <p>{{__('home.Members')}}</p>
                 </div>
                 <a href="/about-us" class="custom-button secondary"><span>{{__('home.Learn more')}}</span></a>
@@ -151,7 +151,7 @@
         </div>
     </section>
 
-    <x-numbers />
+    <x-numbers :members="$members" :csos="$csos" :events="$events" :trainings="$trainings" />
     <x-contact :contactInfo="$contactInfo"></x-contact>
 
 </x-layouts.app>

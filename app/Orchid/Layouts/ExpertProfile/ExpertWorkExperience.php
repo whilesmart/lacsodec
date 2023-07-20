@@ -27,7 +27,8 @@ class ExpertWorkExperience extends Rows
                 ->title('Company'),
 
             Input::make('expert.work_duration')
-                ->title('Work duration'),
+                ->title('Work duration')
+                ->type('number'),
 
             Input::make('expert.position')
                 ->title('Role/Position')

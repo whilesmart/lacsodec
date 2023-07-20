@@ -92,10 +92,15 @@
                                 <label for="">{{__('cso.Country')}} *</label>
                                 <select name="country" id="country" value="{{ old('country') }}" >
                                     <option value="" disabled hidden>{{__('cso.Choose')}}</option>
-                                    <option value="cameroon">Cameroon</option>
-                                    <option value="nigeria">Nigeria</option>
-                                    <option value="ghana">Ghana</option>
-                                    <option value="rwanda">Rwanda</option>
+                                @foreach ($countries as $country)
+                                <option value="" disabled hidden>{{__('cso.Choose')}}</option>
+                                @if (Lang::locale() == 'en')
+                                <option value="{{$country->name}}" {{ old('country') == $country->name ? 'selected' : '' }}>{{$country->name}}</option>
+                                @else
+                                <option value="{{$country->french_name}}" {{ old('country') == $country->french_name ? 'selected' : '' }}>{{$country->french_name}}</option>
+                                @endif
+                                    
+                                @endforeach
                                 </select>
                                 @error('country')
                                 <span class="error-msg">{{ $message }}</span>

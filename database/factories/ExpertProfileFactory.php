@@ -28,7 +28,7 @@ class ExpertProfileFactory extends Factory
             'nationality' => $this->faker->country(),
             'image' => 'https://img.freepik.com/free-icon/user_318-159711.jpg',
             'company' => $this->faker->company(),
-            'work_duration' => $this->faker->numerify('# year(s)'),
+            'work_duration' => 5,
             'certification' => $this->faker->sentence(),
             'certification_date' => $this->faker->date(),
             'certification_image' => $this->faker->imageUrl(),

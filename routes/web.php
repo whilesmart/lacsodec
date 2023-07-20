@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AccomodationController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\auth\LoginController;
@@ -18,9 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 
-Route::get('/about-us', function () {
-    return view('about-us');
-})->name('about-us');
+Route::get('/about-us', [AboutController::class, 'index'])->name('about-us');
 
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact-us');
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact-mail');

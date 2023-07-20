@@ -53,7 +53,7 @@
                 </div>
                 <div class="right">
                     <div class="members">
-                        <h3>8,000</h3>
+                        <h3>{{$members}}</h3>
                         <p>{{__('home.Members')}}</p>
                     </div>
                     <img src="{{ asset('images/about-building.png') }}" alt="" />
@@ -61,7 +61,7 @@
             </div>
         </section>
 
-        <x-numbers />
+        <x-numbers :members="$members" :csos="$csos" :events="$events" :trainings="$trainings" />
 
         <section class="about-section-3">
             <div class="con">

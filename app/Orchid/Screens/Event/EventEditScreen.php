@@ -107,8 +107,7 @@ class EventEditScreen extends Screen
 
                 Input::make('event.url')
                     ->type('url')
-                    ->title('Event website link')
-                    ->required(),
+                    ->title('Event website link'),
 
                 DateTimer::make('event.date')
                     ->title('Event start date')

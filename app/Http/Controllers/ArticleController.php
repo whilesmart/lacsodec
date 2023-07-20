@@ -20,7 +20,7 @@ class ArticleController extends Controller
 
     public function show(Request $request, $blog)
     {
-        $blog = Article::where('slug', $blog)->first();
+        $blog = Article::with('user')->where('slug', $blog)->first();
         $featuredBlogs = Article::orderBy('created_at', 'desc')->where('id', '!=', $blog->id)->limit(3)->get();
 
         return view('blog-details', [

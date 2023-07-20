@@ -12,7 +12,6 @@ use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Fields\Cropper;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Quill;
-use Orchid\Screen\Fields\Relation;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Screen;
@@ -93,7 +92,7 @@ class ArticleEditScreen extends Screen
                     ->placeholder('Brief description for preview')
                     ->required(),
 
-                Relation::make('article.author')
+                Select::make('article.author')
                     ->title('Author')
                     ->fromModel(User::class, 'name', 'id')
                     ->empty('none'),

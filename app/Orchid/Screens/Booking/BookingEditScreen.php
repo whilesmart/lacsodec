@@ -111,6 +111,13 @@ class BookingEditScreen extends Screen
                     ->type('tel')
                     ->required(),
 
+                Select::make('booking.status')
+                    ->options([
+                        'pending' => 'Penidng',
+                        'confirmed' => 'Confirmed',
+                    ])
+                    ->required(),
+
             ]),
         ];
     }
