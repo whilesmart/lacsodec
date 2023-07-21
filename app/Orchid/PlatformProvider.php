@@ -45,67 +45,63 @@ class PlatformProvider extends OrchidServiceProvider
             Menu::make('Articles')
                 ->icon('bs.file-earmark-post')
                 ->route('platform.article.list')
-                ->permission('platform.systems.roles')
+                ->permission(['platform.systems.roles', 'articles.list'])
                 ->title('Articles'),
 
             Menu::make('Article tags')
                 ->icon('bs.file-earmark-post')
                 ->route('platform.articletag.list')
-                ->permission('platform.systems.roles'),
-
-            Menu::make('Article categories')
-                ->icon('bs.file-earmark-post')
-                ->route('platform.articlecategory.list')
-                ->permission('platform.systems.roles')
+                ->permission(['platform.systems.roles', 'articles.list'])
                 ->divider(),
 
             Menu::make('Event')
                 ->icon('bs.file-earmark-post')
+                ->permission(['platform.systems.roles', 'events.list'])
                 ->route('platform.event.list')
-                ->permission('platform.modules.events')
-                ->permission('platform.systems.roles')
                 ->title('Event'),
 
             Menu::make('Event registrations')
                 ->icon('bs.file-earmark-check-fill')
                 ->route('platform.event-registration.list')
-                ->permission('platform.systems.roles')
+                ->permission(['platform.systems.roles', 'events.list'])
                 ->divider(),
 
             Menu::make('Csos')
                 ->icon('bs.buildings-fill')
                 ->route('platform.cso.list')
-                ->permission('platform.systems.roles')
+                ->permission(['platform.systems.roles', 'csos.list'])
                 ->title('CSOS')
                 ->divider(),
 
             Menu::make('Accommodations')
                 ->icon('bs.buildings')
                 ->route('platform.accomodation.list')
-                ->permission('platform.systems.roles')
+                ->permission(['platform.systems.roles', 'lodges.list'])
                 ->title('Lodges'),
 
             Menu::make('Bookings')
                 ->icon('bs.buildings')
                 ->route('platform.booking.list')
-                ->permission('platform.systems.roles')
+                ->permission(['platform.systems.roles', 'bookings.list'])
                 ->divider(),
 
             Menu::make('Contacts')
                 ->icon('bs.phone')
                 ->route('platform.contact.list')
-                ->permission('platform.systems.roles')
+                ->permission(['platform.systems.roles', 'info.list'])
                 ->title('Info')
                 ->divider(),
 
             Menu::make('Expert Profiles')
                 ->icon('bs.people')
                 ->route('platform.expert.list')
+                ->permission(['platform.systems.roles', 'experts.list'])
                 ->title('Expert Profiles'),
 
             Menu::make('Human Resource')
                 ->icon('bs.people')
-                ->route('platform.humanresource.list'),
+                ->route('platform.humanresource.list')
+                ->permission(['platform.systems.roles', 'experts.list']),
         ];
     }
 

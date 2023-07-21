@@ -54,4 +54,15 @@ class BookingListScreen extends Screen
             BookingListLayout::class,
         ];
     }
+
+    /**
+     * Permission
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'bookings.list',
+            'platform.systems.roles',
+        ];
+    }
 }

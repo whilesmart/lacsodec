@@ -158,4 +158,15 @@ class EventEditScreen extends Screen
 
         return redirect()->route('platform.event.list');
     }
+
+    /**
+     * Permission
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'events.edit',
+            'platform.systems.roles',
+        ];
+    }
 }

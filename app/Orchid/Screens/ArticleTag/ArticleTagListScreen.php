@@ -54,4 +54,15 @@ class ArticleTagListScreen extends Screen
             ArticleTagListLayout::class,
         ];
     }
+
+    /**
+     * Permission
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'articles.list',
+            'platform.systems.roles',
+        ];
+    }
 }

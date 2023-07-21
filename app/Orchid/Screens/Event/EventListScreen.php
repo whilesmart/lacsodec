@@ -63,11 +63,14 @@ class EventListScreen extends Screen
         ];
     }
 
+    /**
+     * Permission
+     */
     public function permission(): ?iterable
     {
         return [
+            'events.list',
             'platform.systems.roles',
-            'platform.modules.events',
         ];
     }
 }

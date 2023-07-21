@@ -10,8 +10,8 @@
                         error
                 @endif
                 ">
-                    <label for="">{{__('login.Email')}}</label>
-                    <input type="text" name="email" id="email" placeholder="{{__('login.Email')}}" value="{{ old('email') }}"
+                    <label for="">{{__('front_login.Email')}}</label>
+                    <input type="text" name="email" id="email" placeholder="{{__('front_login.Email')}}" value="{{ old('email') }}"
                         required>
                     @if ($errors->has('email'))
                         <span class="error-msg">{{ $errors->first('email') }}</span>
@@ -22,8 +22,8 @@
                         error
                 @endif
                 ">
-                    <label for="">{{__('login.Password')}}</label>
-                    <input type="password" name="password" id="password" placeholder="{{__('login.Enter password')}}" required>
+                    <label for="">{{__('front_login.Password')}}</label>
+                    <input type="password" name="password" id="password" placeholder="{{__('front_login.Enter password')}}" required>
                     @if ($errors->has('password'))
                         <span class="error-msg">{{ $errors->first('password') }}</span>
                     @endif

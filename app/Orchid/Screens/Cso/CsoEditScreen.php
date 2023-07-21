@@ -128,4 +128,15 @@ class CsoEditScreen extends Screen
 
         return redirect()->route('platform.cso.list');
     }
+
+    /**
+     * Permission
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'csos.edit',
+            'platform.systems.roles',
+        ];
+    }
 }

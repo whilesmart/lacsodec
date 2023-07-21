@@ -193,4 +193,15 @@ class AccomodationEditScreen extends Screen
 
         return redirect()->route('platform.accomodation.list');
     }
+
+    /**
+     * Permission
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'lodges.edit',
+            'platform.systems.roles',
+        ];
+    }
 }

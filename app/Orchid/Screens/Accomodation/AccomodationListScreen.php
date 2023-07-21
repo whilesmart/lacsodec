@@ -62,4 +62,15 @@ class AccomodationListScreen extends Screen
             AccomodationListLayout::class,
         ];
     }
+
+    /**
+     * Permission
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'lodges.list',
+            'platform.systems.roles',
+        ];
+    }
 }
