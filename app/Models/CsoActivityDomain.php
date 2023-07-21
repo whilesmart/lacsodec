@@ -11,5 +11,6 @@ class CsoActivityDomain extends Model
 
     protected $fillable = [
         'name',
+        'french_name',
     ];
 }

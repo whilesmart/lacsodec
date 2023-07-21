@@ -57,7 +57,7 @@
                 <ul>
                     <li>
                         <a href="{{ route('cso-directory') }}">
-                            @if (Request::routeIs('cso-directory'))
+                            @if (Request::routeIs('cso-directory') || Request::routeIs('cso-directory-details'))
                             <b style="font-size: large;">{{__('header.CSO Directory')}}</b>
                             @else
                             {{__('header.CSO Directory')}}
@@ -66,7 +66,7 @@
                     </li>
                     <li>
                         <a href="{{ route('expert-directory') }}">
-                            @if (Request::routeIs('expert-directory'))
+                            @if (Request::routeIs('expert-directory') || Request::routeIs('expert-directory-details'))
                             <b style="font-size: large;">{{__('header.Experts Directory')}}</b>
                             @else
                             {{__('header.Experts Directory')}}
@@ -101,10 +101,10 @@
                     <li><a href="/" class="{{ request()->is('/') ? 'active' : '' }}">{{__('header.home')}}</a></li>
                     <li><a href="{{ route('about-us') }}" class="{{ request()->is('about-us') ? 'active' : '' }}">{{__('header.about us')}}</a></li>
                     <li><a href="{{ route('services') }}" class="{{ request()->is('services') ? 'active' : '' }}">{{__('header.services')}}</a></li>
-                    <li><a href="{{ route('events') }}" class="{{ request()->is('events') ? 'active' : '' }}">{{__('header.events/Trainings')}}</a></li>
-                    <li><a href="{{ route('blog') }}" class="{{ request()->is('blog') ? 'active' : '' }}">{{__('header.blog')}}</a>
+                    <li><a href="{{ route('events') }}" class="{{ Request::routeIs('events') || Request::routeIs('event-participate') ? 'active' : '' }}">{{__('header.events/Trainings')}}</a></li>
+                    <li><a href="{{ route('blog') }}" class="{{ Request::routeIs('blog') || Request::routeIs('blog-details') ? 'active' : '' }}">{{__('header.blog')}}</a>
                     </li>
-                    <li><a href="{{ route('lodge') }}" class="{{ request()->is('lodge') ? 'active' : '' }}">{{__('header.lodge')}}</a>
+                    <li><a href="{{ route('lodge') }}" class="{{ Request::routeIs('lodge') || Request::routeIs('lodge-details') ? 'active' : '' }}">{{__('header.lodge')}}</a>
                     </li>
                     <li><a href="{{ route('lodge') }}" class="mobile-only {{ request()->is('contact-us') ? 'active' : '' }}">{{__('header.lodge')}}</a></li>
                     <li><a href="{{ route('contact-us') }}" class="{{ request()->is('contact-us') ? 'active' : '' }}">{{__('header.contact-us')}}</a></li>

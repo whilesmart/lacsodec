@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cso;
 use App\Models\ExpertLanguage;
 use App\Models\ExpertProfile;
+use App\Services\CountryService;
 use Illuminate\Http\Request;
 
 class ExpertController extends Controller
 {
+    protected $countryService;
+
+    public function __construct(CountryService $countryService)
+    {
+        $this->countryService = $countryService;
+    }
+
     public function index()
     {
         $experts = ExpertProfile::with('user')->where('status', 'approved')->paginate(20);
@@ -21,16 +30,24 @@ class ExpertController extends Controller
     {
         $expert = ExpertProfile::with(['user', 'languages'])->findOrFail($expert);
         $otherExperts = ExpertProfile::with('user')->where('id', '!=', $expert->id)->where('status', 'approved')->limit(4)->get();
+        $otherCsos = Cso::where('status', 'verified')->limit(3)->get();
+        $latestCsos = Cso::where('status', 'verified')->orderBy('created_at', 'desc')->limit(4)->get();
 
         return view('expert-directory-details', [
             'expert' => $expert,
             'otherExperts' => $otherExperts,
+            'otherCsos' => $otherCsos,
+            'latestCsos' => $latestCsos,
         ]);
     }
 
     public function create(Request $request)
     {
-        return view('register-expert-profile');
+        $countries = $this->countryService->getAllCountries();
+
+        return view('register-expert-profile', [
+            'countries' => $countries,
+        ]);
     }
 
     public function store(Request $request)

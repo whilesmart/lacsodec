@@ -20,6 +20,8 @@ class Booking extends Model
         'accomodation_id',
         'email',
         'phone',
+        'status',
+        'cause',
     ];
 
     public function accomodation(): BelongsTo

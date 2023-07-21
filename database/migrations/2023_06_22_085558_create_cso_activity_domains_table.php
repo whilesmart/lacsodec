@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('cso_activity_domains', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('french_name');
             $table->timestamps();
         });
     }

@@ -53,70 +53,18 @@
                 @endif
                 ">
                     <label for="">{{__('register.Country')}}</label>
-                    <select name="country" id="country" value="{{ old('country') }}">
-                        <option value="" disabled selected hidden>{{__('cso.Choose')}}</option>
-                        <option value="algeria">{{__('countries.Algeria')}}</option>
-                        <option value="angola">{{__('countries.Angola')}}</option>
-                        <option value="benin">{{__('countries.Benin')}}</option>
-                        <option value="botswana">{{__('countries.Botswana')}}</option>
-                        <option value="burkina faso">{{__('countries.Burkina Faso')}}</option>
-                        <option value="burundi">{{__('countries.Burundi')}}</option>
-                        <option value="cameroon">{{__('countries.Cameroon')}}</option>
-                        <option value="cape verde">{{__('countries.Cape Verde')}}</option>
-                        <option value="central african republic">{{__('countries.Central African Republic')}}</option>
-                        <option value="chad">{{__('countries.Chad')}}</option>
-                        <option value="comoros">{{__('countries.Comoros')}}</option>
-                        <option value="democratic republic of congo">{{__('countries.Democratic Republic of Congo')}}</option>
-                        <option value="republic of congo">{{__('countries.Republic of Congo')}}</option>
-                        <option value="djibouti">{{__('countries.Djibouti')}}</option>
-                        <option value="egypt">{{__('countries.Egypt')}}</option>
-                        <option value="equatorial guinea">{{__('countries.Equatorial Guinea')}}</option>
-                        <option value="eritrea">{{__('countries.Eritrea')}}</option>
-                        <option value="ethiopia">{{__('countries.Ethiopia')}}</option>
-                        <option value="gabon">{{__('countries.Gabon')}}</option>
-                        <option value="gambia">{{__('countries.Gambia')}}</option>
-                        <option value="ghana">{{__('countries.Ghana')}}</option>
-                        <option value="guinea">{{__('countries.Guinea')}}</option>
-                        <option value="guinea-bissau">{{__('countries.Guinea-Bissau')}}</option>
-                        <option value="ivory coast">{{__('countries.Ivory Coast')}}</option>
-                        <option value="kenya">{{__('countries.Kenya')}}</option>
-                        <option value="lesotho">{{__('countries.Lesotho')}}</option>
-                        <option value="liberia">{{__('countries.Liberia')}}</option>
-                        <option value="libya">{{__('countries.Libya')}}</option>
-                        <option value="madagascar">{{__('countries.Madagascar')}}</option>
-                        <option value="malawi">{{__('countries.Malawi')}}</option>
-                        <option value="mali">{{__('countries.Mali')}}</option>
-                        <option value="mauritania">{{__('countries.Mauritania')}}</option>
-                        <option value="mauritius">{{__('countries.Mauritius')}}</option>
-                        <option value="morocco">{{__('countries.Morocco')}}</option>
-                        <option value="mozambique">{{__('countries.Mozambique')}}</option>
-                        <option value="namibia">{{__('countries.Namibia')}}</option>
-                        <option value="niger">{{__('countries.Niger')}}</option>
-                        <option value="nigeria">{{__('countries.Nigeria')}}</option>
-                        <option value="rwanda">{{__('countries.Rwanda')}}</option>
-                        <option value="sao tome and principe">{{__('countries.Sao Tome and Principe')}}</option>
-                        <option value="senegal">{{__('countries.Senegal')}}</option>
-                        <option value="seychelles">{{__('countries.Seychelles')}}</option>
-                        <option value="sierra leone">{{__('countries.Sierra Leone')}}</option>
-                        <option value="somalie">{{__('countries.Somalia')}}</option>
-                        <option value="south africa">{{__('countries.South Africa')}}</option>
-                        <option value="south sudan">{{__('countries.South Sudan')}}</option>
-                        <option value="sudan">{{__('countries.Sudan')}}</option>
-                        <option value="swaziland">{{__('countries.Swaziland')}}</option>
-                        <option value="tanzania">{{__('countries.Tanzania')}}</option>
-                        <option value="togo">{{__('countries.Togo')}}</option>
-                        <option value="tunisia">{{__('countries.Tunisia')}}</option>
-                        <option value="uganda">{{__('countries.Uganda')}}</option>
-                        <option value="zambia">{{__('countries.Zambia')}}</option>
-                        <option value="zimbabwe">{{__('countries.Zimbabwe')}}</option>
-                    </select>
-                    @error('country')
-                    <span class="error-msg">{{ $message }}</span>
-                    @enderror
-                    <!-- <input type="text" name="country" id="country" placeholder="{{__('register.Country')}}" value="{{ old('country') }}" required>
-                    @if ($errors->has('country'))
-                    <span class="error-msg">{{ $errors->first('country') }}</span>
-                    @endif -->
+                    <select name="country" id="country" value="{{ old('country') }}" >
+                                    <option value="" disabled hidden>{{__('cso.Choose')}}</option>
+                                @foreach ($countries as $country)
+                                <option value="" disabled hidden>{{__('cso.Choose')}}</option>
+                                @if (Lang::locale() == 'en')
+                                <option value="{{$country->name}}" {{ old('country') == $country->name ? 'selected' : '' }}>{{$country->name}}</option>
+                                @else
+                                <option value="{{$country->french_name}}" {{ old('country') == $country->french_name ? 'selected' : '' }}>{{$country->french_name}}</option>
+                                @endif
+                                    
+                                @endforeach
+                                </select>
                 </div>
                 <button type="submit" class="custom-button secondary">
                     <span>{{__('register.Create Account')}}</span>

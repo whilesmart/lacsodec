@@ -4,7 +4,9 @@ namespace App\Orchid\Screens\Booking;
 
 use App\Models\Accomodation;
 use App\Models\Booking;
+use App\Models\ContactInfo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Fields\DateTimer;
 use Orchid\Screen\Fields\Input;
@@ -57,6 +59,11 @@ class BookingEditScreen extends Screen
     public function commandBar(): iterable
     {
         return [
+            Button::make('Send confirmation mail')
+                ->icon('envelope')
+                ->method('sendMail')
+                ->canSee($this->booking->exists),
+
             Button::make('Create booking')
                 ->icon('pencil')
                 ->method('createOrUpdate')
@@ -111,6 +118,21 @@ class BookingEditScreen extends Screen
                     ->type('tel')
                     ->required(),
 
+                Select::make('booking.cause')
+                    ->title('Booking cause')
+                    ->options([
+                        'climate change' => 'Climate change',
+                    ])
+                    ->empty('none'),
+
+                Select::make('booking.status')
+                    ->title('Booking status')
+                    ->options([
+                        'pending' => 'Pending',
+                        'confirmed' => 'Confirmed',
+                    ])
+                    ->required(),
+
             ]),
         ];
     }
@@ -123,6 +145,33 @@ class BookingEditScreen extends Screen
         $this->booking->fill($request->get('booking'))->save();
 
         Alert::info('You have successfully created a booking.');
+
+        return redirect()->route('platform.booking.list');
+    }
+
+    public function sendMail(Request $request)
+    {
+        $this->booking->status = 'confirmed';
+        $this->booking->save();
+
+        $contactInfo = ContactInfo::first();
+        $booking = $this->booking;
+
+        Mail::send(
+            'mail.booking-confirmation',
+            [
+                'name' => $this->booking->name,
+                'lodge' => $this->booking->accomodation->name,
+                'room' => $this->booking->accomodation->accommodation_number,
+            ],
+            function ($message) use ($contactInfo, $booking) {
+                $message->from($contactInfo->listed_email_address);
+                $message->to($booking['email'], $booking['name'])
+                    ->subject('Booking confirmation');
+            }
+        );
+
+        Alert::info('You have successfully sent a booking confirmation mail.');
 
         return redirect()->route('platform.booking.list');
     }

@@ -20,6 +20,7 @@ class EventRegistration extends Model
         'phone',
         'other_details',
         'sex',
+        'organization',
         'country',
     ];
 

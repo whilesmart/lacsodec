@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('departure');
             $table->string('name');
             $table->string('email')->nullable();
+            $table->string('status')->default('pending');
             $table->string('phone');
+            $table->string('cause')->nullable();
             $table->timestamps();
         });
     }

@@ -77,6 +77,7 @@ return [
     'Vision' => 'Vision',
     'Mission' => 'Mission',
     'Other CSOs' => 'Autres OSC',
+    'All' => 'Tout',
     'Type' => 'Saisie',
 
 ];

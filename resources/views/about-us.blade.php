@@ -53,7 +53,7 @@
                 </div>
                 <div class="right">
                     <div class="members">
-                        <h3>8,000</h3>
+                        <h3>{{$members}}</h3>
                         <p>{{__('home.Members')}}</p>
                     </div>
                     <img src="{{ asset('images/about-building.png') }}" alt="" />
@@ -61,7 +61,7 @@
             </div>
         </section>
 
-        <x-numbers />
+        <x-numbers :members="$members" :csos="$csos" :events="$events" :trainings="$trainings" />
 
         <section class="about-section-3">
             <div class="con">
@@ -90,11 +90,15 @@
                 </div>
                 <div class="right">
                     <div class="tabs">
-                        <div class="tab active">{{__('about.WHAT WE DO')}}</div>
-                        <div class="tab">{{__('about.OUR APPROACH')}}</div>
+                        <button class="tab active">{{__('about.WHAT WE DO')}}</button>
+                        <button class="tab">{{__('about.OUR APPROACH')}}</button>
                     </div>
-                    <div class="content">
+                    <div class="content tab-content">
                         <p>{{__('about.We facilitate knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind.')}}'
+                        </p>
+                    </div>
+                    <div class="content tab-content" style="display: none;">
+                        <p>{{__('about.Mission is to strengthen the institutional and operational capacity of CSOs, improve their operating environment in order to amplify their voices, and improve performance in addressing diverse issues of human development at local, national and regional level in West Africa and the Lake Chad Basin Countries using a rights-based approach.')}}'
                         </p>
                     </div>
                 </div>
@@ -169,3 +173,22 @@
 
     </div>
 </x-layouts.app>
+
+<script>
+    const tabs = document.querySelectorAll('.tabs .tab');
+    const content = document.querySelectorAll('.tab-content');
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+            tabs.forEach((tab) => {
+                tab.classList.remove('active');
+            });
+
+            tab.classList.add('active');
+            content.forEach((contentItem) => {
+                contentItem.style.display = 'none';
+            });
+            content[index].style.display = 'block';
+        });
+    });
+</script>

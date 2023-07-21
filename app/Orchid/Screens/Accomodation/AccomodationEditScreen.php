@@ -91,7 +91,7 @@ class AccomodationEditScreen extends Screen
                     ->required(),
 
                 Select::make('accomodation.type')
-                    ->title('Accomodation type')
+                    ->title('Accommodation type')
                     ->options([
                         'hall' => 'Hall',
                         'room' => 'Room',
@@ -99,7 +99,7 @@ class AccomodationEditScreen extends Screen
                     ->required(),
 
                 Select::make('accomodation.selectedEquipment')
-                    ->title('Accomodation equipment')
+                    ->title('Accommodation equipment')
                     ->options([
                         'swimming pool' => 'Swimming pool',
                         'smoking' => 'Smoking',
@@ -129,24 +129,24 @@ class AccomodationEditScreen extends Screen
                     ->sendTrueOrFalse(),
 
                 Input::make('accomodation.accommodation_number')
-                    ->title('Accomodation number')
+                    ->title('Accommodation number')
                     ->placeholder('A01')
                     ->required(),
 
                 Input::make('accomodation.floor_number')
-                    ->title('Accomodation floor number')
+                    ->title('Accommodation floor number')
                     ->placeholder(1)
                     ->type('number')
                     ->required(),
 
                 Input::make('accomodation.price')
-                    ->title('Accomodation price per night (FCFA)')
+                    ->title('Accommodation price per night (FCFA)')
                     ->placeholder(10000)
                     ->type('number')
                     ->required(),
 
                 Upload::make('accomodation.attachment')
-                    ->title('Accomodation images')
+                    ->title('Accommodation images')
                     ->acceptedFiles('image/*')
                     ->required(),
             ]),

@@ -14,10 +14,10 @@ class ArticleTagSeeder extends Seeder
     {
         DB::table('article_tags')->insert([
             [
-                'name' => 'sport',
+                'name' => 'tips',
             ],
             [
-                'name' => 'politics',
+                'name' => 'affiliate',
             ],
             [
                 'name' => 'news',

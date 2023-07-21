@@ -15,17 +15,17 @@
                     <div class="form-section">
                         <div class="flex">
                             <div class="field">
-                                <label for="">Name</label>
+                                <label for="">Name *</label>
                                 <input type="text" name="name" id="name" placeholder=""
-                                    value="{{ old('name') }}" required>
+                                    value="{{ old('name') }}">
                                 @error('name')
                                     <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
-                                <label for="email">Email</label>
+                                <label for="email">Email *</label>
                                 <input type="email" name="email" id="partnership" placeholder=""
-                                    value="{{ old('email') }}" required>
+                                    value="{{ old('email') }}">
                                 @error('email')
                                     <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -33,19 +33,28 @@
                         </div>
                         <div class="flex">
                             <div class="field">
-                                <label for="sex">Sex</label>
-                               <select name="sex" id="" required>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
+                                <label for="sex">Sex *</label>
+                               <select name="sex" id="">
+                               <option value="male" {{ old('sex') == 'male' ? 'selected' : '' }}>{{__('experts.Male')}}</option>
+                                    <option value="female"  {{ old('sex') == 'female' ? 'selected' : '' }}>{{__('experts.Female')}}</option>
                                </select>
                                 @error('sex')
                                     <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="field">
-                                <label for="country">Country of origin</label>
-                                <select name="country" id="" required>
-                                    <option value="cameroon" selected>Cameroon</option>
+                                <label for="country">Country of origin *</label>
+                                <select name="country" id="country" value="{{ old('country') }}" >
+                                    <option value="" disabled hidden>{{__('cso.Choose')}}</option>
+                                @foreach ($countries as $country)
+                                <option value="" disabled hidden>{{__('cso.Choose')}}</option>
+                                @if (Lang::locale() == 'en')
+                                <option value="{{$country->name}}" {{ old('country') == $country->name ? 'selected' : '' }}>{{$country->name}}</option>
+                                @else
+                                <option value="{{$country->french_name}}" {{ old('country') == $country->french_name ? 'selected' : '' }}>{{$country->french_name}}</option>
+                                @endif
+                                    
+                                @endforeach
                                 </select>
                                 @error('country')
                                     <span class="error-msg">{{ $message }}</span>
@@ -62,9 +71,9 @@
                                 @enderror
                             </div>
                             <div class="field">
-                                <label for="organization">Organization</label>
+                                <label for="organization">Organization *</label>
                                 <input type="text" name="organization" id="organization" placeholder=""
-                                    value="{{ old('organization') }}" required>
+                                    value="{{ old('organization') }}">
                                 @error('organization')
                                     <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -73,7 +82,7 @@
                         <div class="flex">
                         <div class="field">
                                 <label for="other_details">Your motivation to attend</label>
-                                <textarea name="other_details" id="other_details" value="{{ old('other_details') }}"></textarea>
+                                <textarea name="other_details" id="other_details">{{ old('other_details') }}</textarea>
                                 @error('other_details')
                                     <span class="error-msg">{{ $message }}</span>
                                 @enderror

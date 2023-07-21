@@ -3,6 +3,8 @@
 namespace App\Orchid\Screens\Article;
 
 use App\Models\Article;
+use App\Models\ArticleCategory;
+use App\Models\ArticleSelectedTag;
 use App\Models\ArticleTag;
 use App\Models\User;
 use Carbon\Carbon;
@@ -12,7 +14,6 @@ use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Fields\Cropper;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Quill;
-use Orchid\Screen\Fields\Relation;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Screen;
@@ -34,6 +35,9 @@ class ArticleEditScreen extends Screen
      */
     public function query(Article $article): iterable
     {
+        $article->load(['tags']);
+        $article->tags = $article->tags->pluck('name')->toArray();
+
         return [
             'article' => $article,
         ];
@@ -93,15 +97,21 @@ class ArticleEditScreen extends Screen
                     ->placeholder('Brief description for preview')
                     ->required(),
 
-                Relation::make('article.author')
+                Select::make('article.author')
                     ->title('Author')
                     ->fromModel(User::class, 'name', 'id')
                     ->empty('none'),
 
                 Select::make('article.category')
+                    ->fromModel(ArticleCategory::class, 'name', 'name')
+                    ->title('Select category')
+                    ->help('Allow search bots to index')
+                    ->required(),
+
+                Select::make('article.tags')
                     ->fromModel(ArticleTag::class, 'name', 'name')
                     ->title('Select tags')
-                    ->help('Allow search bots to index')
+                    ->multiple()
                     ->required(),
 
                 Quill::make('article.content')
@@ -124,10 +134,23 @@ class ArticleEditScreen extends Screen
     {
         $slug = $this->article->exists ? $this->article->slug : Str::slug($request->article['title']);
         $published_at = $this->article->exists ? $this->article->published_at : Carbon::now();
+        $tags = $request->get('article')['tags'] ?? [];
+        unset($this->article->tags);
         $this->article->fill(array_merge($request->get('article'), [
             'published_at' => $published_at,
             'slug' => $slug,
         ]))->save();
+
+        foreach (ArticleSelectedTag::where('article_id', $this->article->id)->get() as $item) {
+            $item->delete();
+        }
+
+        foreach ($tags as $item) {
+            ArticleSelectedTag::create([
+                'article_id' => $this->article->id,
+                'name' => $item,
+            ]);
+        }
 
         Alert::info('You have successfully created an article.');
 

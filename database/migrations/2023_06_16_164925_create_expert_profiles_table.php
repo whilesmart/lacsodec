@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('nationality')->nullable();
             $table->string('image')->nullable();
             $table->string('company')->nullable();
-            $table->string('work_duration')->nullable();
+            $table->integer('work_duration')->nullable();
             $table->string('certification')->nullable();
             $table->string('certification_date')->nullable();
             $table->string('certification_image')->nullable();

@@ -2,6 +2,7 @@
 
 namespace App\Orchid\Layouts\Cso;
 
+use App\Services\CountryService;
 use Orchid\Screen\Field;
 use Orchid\Screen\Fields\Cropper;
 use Orchid\Screen\Fields\Input;
@@ -17,6 +18,16 @@ class CsoBasicInfo extends Rows
      * @var string|null
      */
     protected $title;
+
+    protected $countryService;
+
+    protected $countries;
+
+    public function __construct(CountryService $countryService)
+    {
+        $this->countryService = $countryService;
+        $this->countries = $countryService->getAllCountries();
+    }
 
     /**
      * Get the fields elements to be displayed.
@@ -89,12 +100,7 @@ class CsoBasicInfo extends Rows
                 ->help('Select the type of organization'),
 
             Select::make('cso.country')
-                ->options([
-                    'cameroon' => 'Cameroon',
-                    'nigeria' => 'Nigeria',
-                    'ghana' => 'Ghana',
-                    'rwanda' => 'Rwanda',
-                ])
+                ->options(collect($this->countries)->pluck('name', 'name')->toArray())
                 ->title('Country')
                 ->required(),
 

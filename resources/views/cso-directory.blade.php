@@ -12,8 +12,13 @@
                 <aside>
                     <nav>
                         <ul>
+                        <li><a href="/cso-directory">{{__('cso.All')}}</a></li>
                             @foreach ($cso_domains as $domain)
+                                @if (Lang::locale() == 'en')
                                 <li><a href="/cso-directory?domain={{$domain->name}}">{{ $domain->name }} ({{ $domain->csoNumber }})</a></li>
+                                @else
+                                <li><a href="/cso-directory?domain={{$domain->name}}">{{ $domain->french_name }} ({{ $domain->csoNumber }})</a></li>
+                                @endif
                             @endforeach
                         </ul>
                     </nav>
@@ -27,7 +32,11 @@
                             <a href="{{ route('cso-directory-details', ['cso' => $cso->id]) }}" class="cso-card">
                                 <img src="{{ asset($cso->image) }}" alt="" />
                                 <h2>{{ $cso->name }}</h2>
+                                @if (Lang::locale() == 'en')
                                 <p>{{ $cso->domain }}</p>
+                                @else
+                                <p>{{ $cso_domains->firstWhere('name', $cso->domain)->french_name }}</p>
+                                @endif
                             </a>
                         @endforeach
                     </div>

@@ -11,7 +11,7 @@
             <div class="con">
                 <div class="events-grid">
                     @foreach ($events as $event)
-                    <div href="{{ route('event-participate', ['event' => $event->id]) }}" class="event-card">
+                    <a href="{{ route('event-participate', ['event' => $event->id]) }}" class="event-card">
                         <div class="img-con">
                             <img src="{{ asset($event->image) }}" alt="" />
                             <div class="type event">{{$event->type}}</div>
@@ -22,13 +22,8 @@
                         </div>
                         <div class="content">
                             <p>{{$event->name}}</p>
-                            @if ($event->date >= now())
-                            <a href="{{ route('event-participate', ['event' => $event->id]) }}" class="custom-button primary"><span>{{__('events.Participate')}}</span></a>
-                            @else
-                            <a href="{{ route('event-participate', ['event' => $event->id]) }}" class="custom-button primary"><span>{{__('events.See event')}}</span></a>
-                            @endif
                         </div>
-                    </div>
+                    </a>
                     @endforeach
                 </div>
                 <div class="pagination">

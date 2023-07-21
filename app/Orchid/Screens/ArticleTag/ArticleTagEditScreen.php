@@ -99,7 +99,7 @@ class ArticleTagEditScreen extends Screen
     /**
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function remove()
+    public function delete()
     {
         $this->articleTag->delete();
 

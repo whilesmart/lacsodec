@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AccomodationController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\auth\LoginController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\ExpertController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HumanResourceController;
 use App\Http\Controllers\LocalizationController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,9 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 
-Route::get('/about-us', function () {
-    return view('about-us');
-})->name('about-us');
+Route::get('/about-us', [AboutController::class, 'index'])->name('about-us');
 
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact-us');
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact-mail');
@@ -81,6 +81,8 @@ Route::get('/search-results', [SearchController::class, 'search'])->name('search
 
 Route::get('/locale/{locale}', [LocalizationController::class, 'changeLang'])->name('locale.setting');
 
+Route::post('/newsletter/subscribe', [NewsletterController::class, 'store'])->name('newsletter-subscribe');
+
 Route::group(['middleware' => ['auth']], function () {
     Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
 
@@ -91,4 +93,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/register-cso', [CsoController::class, 'store'])->name('store-cso');
     Route::get('/my-csos', [CsoController::class, 'userCsos'])->name('my-csos');
     Route::post('/cso/delete/{cso}', [CsoController::class, 'delete'])->name('delete-cso');
+
+    Route::post('/blog/{blog}/comment', [ArticleController::class, 'comment'])->name('post-comment');
 });

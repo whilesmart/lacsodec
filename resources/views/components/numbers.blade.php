@@ -1,16 +1,16 @@
 <section class="numbers-section">
     <div class="con">
         <div class="number">
-            <h1>17+</h1>
-            <p>{{__('numbers.Projects Completed')}}</p>
+            <h1>{{$csos??0}}+</h1>
+            <p>{{__('about.CSO registered')}}</p>
         </div>
         <div class="number">
-            <h1>475</h1>
-            <p>{{__('numbers.Raided to Date')}}</p>
+            <h1>{{$events??0}}</h1>
+            <p>{{__('about.Events organized')}}</p>
         </div>
         <div class="number">
-            <h1>80+</h1>
-            <p>{{__('numbers.Partners')}}</p>
+            <h1>{{$trainings??0}}+</h1>
+            <p>{{__('about.Trainings carried out')}}</p>
         </div>
     </div>
 </section>

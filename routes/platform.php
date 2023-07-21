@@ -6,6 +6,8 @@ use App\Orchid\Screens\Accomodation\AccomodationEditScreen;
 use App\Orchid\Screens\Accomodation\AccomodationListScreen;
 use App\Orchid\Screens\Article\ArticleEditScreen;
 use App\Orchid\Screens\Article\ArticleListScreen;
+use App\Orchid\Screens\ArticleCategory\ArticleCategoryEditScreen;
+use App\Orchid\Screens\ArticleCategory\ArticleCategoryListScreen;
 use App\Orchid\Screens\ArticleTag\ArticleTagEditScreen;
 use App\Orchid\Screens\ArticleTag\ArticleTagListScreen;
 use App\Orchid\Screens\Booking\BookingEditScreen;
@@ -145,3 +147,9 @@ Route::screen('articletag/{articleTag?}', ArticleTagEditScreen::class)
 
 Route::screen('articletags', ArticleTagListScreen::class)
     ->name('platform.articletag.list');
+
+Route::screen('articlecategory/{articleCategory?}', ArticleCategoryEditScreen::class)
+    ->name('platform.articlecategory.edit');
+
+Route::screen('articlecategories', ArticleCategoryListScreen::class)
+    ->name('platform.articlecategory.list');

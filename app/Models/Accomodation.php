@@ -13,6 +13,8 @@ class Accomodation extends Model
 {
     use HasFactory, AsSource, Attachable, Chartable;
 
+    public $with = ['equipment'];
+
     protected $fillable = [
         'name',
         'city',

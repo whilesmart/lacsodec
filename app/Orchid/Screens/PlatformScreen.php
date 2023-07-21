@@ -44,7 +44,7 @@ class PlatformScreen extends Screen
                 'approvedCsos' => ['value' => number_format($approvedCsos), 'diff' => 0],
                 'allExperts' => ['value' => number_format($allExperts), 'diff' => 0],
                 'approvedExperts' => ['value' => number_format($approvedExperts), 'diff' => 0],
-                'accomodations' => ['value' => number_format($accomodations), 'diff' => 0],
+                'accommodations' => ['value' => number_format($accomodations), 'diff' => 0],
                 'bookings' => ['value' => number_format($bookings), 'diff' => 0],
                 'events' => ['value' => number_format($events), 'diff' => 0],
                 'eventRegistrations' => ['value' => number_format($eventRegistrations), 'diff' => 0],
@@ -103,7 +103,7 @@ class PlatformScreen extends Screen
                 'All Csos' => 'metrics.allCsos',
                 'Approved Csos' => 'metrics.approvedCsos',
                 'Total experts' => 'metrics.allExperts',
-                'Total accomodations' => 'metrics.accomodations',
+                'Total accommodations' => 'metrics.accommodations',
                 'Total bookings' => 'metrics.bookings',
             ]),
             Layout::columns([
@@ -112,8 +112,16 @@ class PlatformScreen extends Screen
             ]),
             Layout::columns([
                 BasicLineChart::make('new_experts', 'New experts'),
-                BasicLineChart::make('new_accomodations', 'New Accomodations'),
+                BasicLineChart::make('new_accomodations', 'New Accommodations'),
             ]),
+        ];
+    }
+
+    public function permission(): ?iterable
+    {
+        return [
+            'platform.systems.roles',
+            'platform.modules.events',
         ];
     }
 }

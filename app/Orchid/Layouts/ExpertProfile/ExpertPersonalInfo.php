@@ -3,6 +3,7 @@
 namespace App\Orchid\Layouts\ExpertProfile;
 
 use App\Models\User;
+use App\Services\CountryService;
 use Orchid\Screen\Field;
 use Orchid\Screen\Fields\CheckBox;
 use Orchid\Screen\Fields\Cropper;
@@ -20,6 +21,16 @@ class ExpertPersonalInfo extends Rows
      * @var string|null
      */
     protected $title;
+
+    protected $countryService;
+
+    protected $countries;
+
+    public function __construct(CountryService $countryService)
+    {
+        $this->countryService = $countryService;
+        $this->countries = $countryService->getAllCountries();
+    }
 
     /**
      * Get the fields elements to be displayed.
@@ -74,9 +85,7 @@ class ExpertPersonalInfo extends Rows
                 ->title('Place of birth'),
 
             Select::make('expert.nationality')
-                ->options([
-                    'cameroonian' => 'Cameroonian',
-                ])
+                ->options(collect($this->countries)->pluck('name', 'name')->toArray())
                 ->title('Nationality'),
 
             Select::make('expert.languages')
@@ -84,6 +93,7 @@ class ExpertPersonalInfo extends Rows
                     'english' => 'English',
                     'french' => 'French',
                     'spanish' => 'Spanish',
+                    'german' => 'German',
                 ])
                 ->multiple()
                 ->title('Language')

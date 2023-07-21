@@ -5,10 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Cso;
 use App\Models\CsoActivityDomain;
 use App\Models\CsoDomain;
+use App\Services\CountryService;
 use Illuminate\Http\Request;
 
 class CsoController extends Controller
 {
+    protected $countryService;
+
+    public function __construct(CountryService $countryService)
+    {
+        $this->countryService = $countryService;
+    }
+
     public function index(Request $request)
     {
         $domain = $request->query('domain');
@@ -46,9 +54,11 @@ class CsoController extends Controller
     public function create(Request $request)
     {
         $domains = CsoActivityDomain::orderBy('name', 'asc')->get();
+        $countries = $this->countryService->getAllCountries();
 
         return view('register-cso', [
             'domains' => $domains,
+            'countries' => $countries,
         ]);
     }
 

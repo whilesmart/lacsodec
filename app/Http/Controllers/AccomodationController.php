@@ -40,22 +40,33 @@ class AccomodationController extends Controller
 
     public function book(Request $request, $accomodation)
     {
+        $accomodation = Accomodation::findOrFail($accomodation);
+        if (! $accomodation->available) {
+            return redirect()->back()->with('error', 'This lodge is not available for booking for the moment');
+        }
         $fields = $request->validate([
             'name' => ['string', 'required'],
             'arrival' => ['string', 'required'],
             'departure' => ['string', 'required'],
             'email' => ['email', 'nullable'],
             'phone' => ['string', 'required'],
+            'cause' => ['string', 'nullable'],
         ]);
+        $overlapArrivalBookings = Booking::where('accomodation_id', $accomodation->id)->where('arrival', '<=', $fields['arrival'])->where('departure', '>=', $fields['arrival'])->count();
+        $overlapDepartureBookings = Booking::where('accomodation_id', $accomodation->id)->where('arrival', '<=', $fields['departure'])->where('departure', '>=', $fields['departure'])->count();
+        if ($overlapArrivalBookings > 0 || $overlapDepartureBookings > 0) {
+            return redirect()->back()->with('error', 'This lodge will be occupied during this period');
+        }
         $booking = Booking::create([
             'name' => $fields['name'],
             'arrival' => $fields['arrival'],
             'departure' => $fields['departure'],
             'email' => $fields['email'] ?? null,
             'phone' => $fields['phone'],
-            'accomodation_id' => $accomodation,
+            'accomodation_id' => $accomodation->id,
+            'cause' => $fields['cause'] ?? null,
         ]);
 
-        return redirect()->back()->with('success', 'you have successfully booked for this lodge. You will be contacted very soon');
+        return redirect()->back()->with('success', 'Thanks for booking. You will receive a mail confirmation');
     }
 }

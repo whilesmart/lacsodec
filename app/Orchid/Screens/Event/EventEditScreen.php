@@ -107,8 +107,7 @@ class EventEditScreen extends Screen
 
                 Input::make('event.url')
                     ->type('url')
-                    ->title('Event website link')
-                    ->required(),
+                    ->title('Event website link'),
 
                 DateTimer::make('event.date')
                     ->title('Event start date')
@@ -126,6 +125,7 @@ class EventEditScreen extends Screen
 
                 Cropper::make('event.image')
                     ->title('Event image')
+                    ->value('https://www.crucial.com.au/blog/wp-content/uploads/2014/12/events_medium.jpg')
                     ->width(400)
                     ->height(400)
                     ->required(),
