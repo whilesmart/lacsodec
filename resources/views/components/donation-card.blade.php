@@ -1,6 +1,6 @@
 <div class="aside-section">
     <div class="top">
-        <h3>{{__('home.Get your Civil Society Listed')}}...</h3>
+        <h3>{{__('welcome.Get your Civil Society Listed')}}...</h3>
     </div>
     <div class="donation-datails">
         {{-- <p>Nisl tincidunt eget nullam non nisi est sit amet facilisis.</p>
@@ -14,7 +14,7 @@
             </div>
         </div> --}}
         <a href="{{ route('register-cso') }}" class="custom-button secondary">
-            <span>{{__('home.Register a CSO')}}</span>
+            <span>{{__('welcome.Register a CSO')}}</span>
         </a>
     </div>
 </div>

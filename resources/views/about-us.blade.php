@@ -3,7 +3,7 @@
         <!-- breadcrumb -->
         @component('components.breacrumb')
         @slot('current')
-        {{__('home.About Us')}}
+        {{__('welcome.About Us')}}
         @endslot
         @endcomponent
 
@@ -54,7 +54,7 @@
                 <div class="right">
                     <div class="members">
                         <h3>{{$members}}</h3>
-                        <p>{{__('home.Members')}}</p>
+                        <p>{{__('welcome.Members')}}</p>
                     </div>
                     <img src="{{ asset('images/about-building.png') }}" alt="" />
                 </div>

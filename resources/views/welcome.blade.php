@@ -3,11 +3,11 @@
     <div class="hero home">
         <div class="sub">
             <div class="con">
-                <h1><b>{{ __('home.Our helping') }}</b><br>{{__('home.around the world.')}}</h1>
-                <p>{{__('home.We facilitate knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind.')}}</p>
+                <h1><b>{{ __('welcome.Our helping') }}</b><br>{{__('welcome.around the world.')}}</h1>
+                <p>{{__('welcome.We facilitate knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind.')}}</p>
                 <div class="buttons">
-                    <a href="{{ route('register-cso') }}" class="custom-button secondary"><span>{{__('home.Register a CSO')}}</span></a>
-                    <a href="{{ route('register') }}" class="custom-button white-border"><span>{{__('home.join us')}}</span></a>
+                    <a href="{{ route('register-cso') }}" class="custom-button secondary"><span>{{__('welcome.Register a CSO')}}</span></a>
+                    <a href="{{ route('register') }}" class="custom-button white-border"><span>{{__('welcome.join us')}}</span></a>
                 </div>
             </div>
         </div>
@@ -16,18 +16,18 @@
     <section class="home-secton-1">
         <div class="con">
             <div class="left">
-                <h2>{{__('home.About Us')}}</h2>
-                <p>{{__('home.CSO media space is our Main Goal')}}</p>
+                <h2>{{__('welcome.About Us')}}</h2>
+                <p>{{__('welcome.CSO media space is our Main Goal')}}</p>
                 <div class="members">
                     <h3>{{$members}}</h3>
-                    <p>{{__('home.Members')}}</p>
+                    <p>{{__('welcome.Members')}}</p>
                 </div>
-                <a href="/about-us" class="custom-button secondary"><span>{{__('home.Learn more')}}</span></a>
+                <a href="/about-us" class="custom-button secondary"><span>{{__('welcome.Learn more')}}</span></a>
             </div>
             <div class="right">
-                <p><b>{{__('home.WHO WE ARE')}}</b></p>
-                <p>{{__('home.The LUKMEF Africa Civil Society Development Centre (LACSODEC) is a Civil Society Organization (CSO) service providing agency facilitating knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind.')}}</p>
-                <p>{{__('home.LACSODEC was founded in {year} by Tanyi Christian under the LUKMEF vision for Sustainable Development and Empowerment of communities and other local civil society actors to improve on service delivery. LACSODEC is located in NGO Street, Molyko – Buea, in the SW Region of Cameroon with registration number {insert here}.')}}</p>
+                <p><b>{{__('welcome.WHO WE ARE')}}</b></p>
+                <p>{{__('welcome.The LUKMEF Africa Civil Society Development Centre (LACSODEC) is a Civil Society Organization (CSO) service providing agency facilitating knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind.')}}</p>
+                <p>{{__('welcome.LACSODEC was founded in {year} by Tanyi Christian under the LUKMEF vision for Sustainable Development and Empowerment of communities and other local civil society actors to improve on service delivery. LACSODEC is located in NGO Street, Molyko – Buea, in the SW Region of Cameroon with registration number {insert here}.')}}</p>
 
                 <div class="images">
                     <img src="{{ asset('images/home-img-1.png') }}" alt="" />
@@ -42,7 +42,7 @@
             <aside>
                 <div class="aside-section">
                     <div class="top">
-                        <h3>{{__('home.Recent Event')}}</h3>
+                        <h3>{{__('welcome.Recent Event')}}</h3>
                     </div>
                     @if ($latestEvent)
                     <div class="event">
@@ -57,14 +57,14 @@
                         </div>
                     </div>
                     <a href="/events" class="custom-button white">
-                        <span>{{__('home.View more')}}</span>
+                        <span>{{__('welcome.View more')}}</span>
                         <i class="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
                     @endif
                 </div>
                 <div class="aside-section">
                     <div class="top">
-                        <h3>{{__('home.Latest Experts')}}</h3>
+                        <h3>{{__('welcome.Latest Experts')}}</h3>
                     </div>
                     @foreach ($latestExperts as $expert)
                     <a href="{{ route('expert-directory-details', ['expert' => $expert->id]) }}" class="expert">
@@ -88,7 +88,7 @@
                                 <div class="sub">
                                     <i class="fa fa-user" aria-hidden="true"></i>
                                     @if ($latestArticles[0]->user)
-                                    <p>{{__('home.Posted by')}}: {{$latestArticles[0]->user->name}}</p>
+                                    <p>{{__('welcome.Posted by')}}: {{$latestArticles[0]->user->name}}</p>
                                     @endif
                                 </div>
                                 <div class="sub">
@@ -111,7 +111,7 @@
                                     <div class="sub">
                                         <i class="fa fa-user" aria-hidden="true"></i>
                                         @if ($article->user)
-                                        <p>{{__('home.Posted by')}}: {{$article->user->name}}</p>
+                                        <p>{{__('welcome.Posted by')}}: {{$article->user->name}}</p>
                                         @endif
                                     </div>
                                     <div class="sub">
@@ -121,7 +121,7 @@
                                 </div>
                                 <p>{{$article->description}}</p>
                                 <a href="{{ route('blog-details', ['blog' => $article->slug]) }}" class="custom-button white">
-                                    <span>{{__('home.Read more')}}</span>
+                                    <span>{{__('welcome.Read more')}}</span>
                                     <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -135,7 +135,7 @@
                 <x-donation-card />
                 <div class="aside-section">
     <div class="top">
-        <h3>{{__('home.Latest CSO')}}</h3>
+        <h3>{{__('welcome.Latest CSO')}}</h3>
     </div>
     @foreach ($latestCsos as $cso)
     <a href="{{ route('cso-directory-details', ['cso' => $cso->id]) }}" class="cso">
