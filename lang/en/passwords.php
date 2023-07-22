@@ -20,5 +20,6 @@ return [
     "We can't find a user with that email address." => "We can't find a user with that email address.",
     'Forgot password' => 'Forgot password',
     'Reset password' => 'Reset password',
+    'Send password reset mail' => 'Send password reset mail',
 
 ];

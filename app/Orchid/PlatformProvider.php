@@ -66,7 +66,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->permission(['platform.systems.roles', 'events.list'])
                 ->divider(),
 
-            Menu::make('Csos')
+            Menu::make('CSOS')
                 ->icon('bs.buildings-fill')
                 ->route('platform.cso.list')
                 ->permission(['platform.systems.roles', 'csos.list'])

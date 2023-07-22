@@ -1,17 +1,28 @@
 <x-layouts.app>
-    <div class="regsiter-cso-page">
+    <div class="cso-directory-details-page">
         <!-- breadcrumb -->
-        @component('components.breacrumb')
-            @slot('current')
-                Register for event
-            @endslot
-        @endcomponent
+        <div class="top"></div>
 
         <div class="con">
+        <section class="cso-directory-details-section">
+            <div class="con">
+                <div class="main-content">
+                    <img src="{{ asset($event->image) }}" alt="" class="top-image">
+                    <h1>{{$event->name}}</h1>
+                    <h3>Type of event: {{$event->type}}</h3>
+                    <h6>Start date : <b>{{$event->date}}</b></h6>
+                    <h6>End date: <b>{{$event->end_date}}</b></h6>
+                    <br>
+                    <p>{{$event->details}}</p>
+                </div>
+            </div>
+        </section>
+        <hr>
             <section>
                 @if ($event->date >= now())
                 <form action="{{ route('event-participate-store', ['event' => $event->id]) }}" class="create-cso-form" method="POST">
                     @csrf
+                    <h4>Register to participate</h4>
                     <div class="form-section">
                         <div class="flex">
                             <div class="field">
@@ -35,6 +46,7 @@
                             <div class="field">
                                 <label for="sex">Sex *</label>
                                <select name="sex" id="">
+                               <option value="" disabled hidden selected>{{__('cso.Choose')}}</option>
                                <option value="male" {{ old('sex') == 'male' ? 'selected' : '' }}>{{__('experts.Male')}}</option>
                                     <option value="female"  {{ old('sex') == 'female' ? 'selected' : '' }}>{{__('experts.Female')}}</option>
                                </select>
@@ -45,9 +57,8 @@
                             <div class="field">
                                 <label for="country">Country of origin *</label>
                                 <select name="country" id="country" value="{{ old('country') }}" >
-                                    <option value="" disabled hidden>{{__('cso.Choose')}}</option>
+                                    <option value="" disabled hidden selected>{{__('cso.Choose')}}</option>
                                 @foreach ($countries as $country)
-                                <option value="" disabled hidden>{{__('cso.Choose')}}</option>
                                 @if (Lang::locale() == 'en')
                                 <option value="{{$country->name}}" {{ old('country') == $country->name ? 'selected' : '' }}>{{$country->name}}</option>
                                 @else

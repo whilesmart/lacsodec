@@ -126,30 +126,30 @@
                                     <p>{{ $accomodation->type }}</p>
 
                                     <div class="field">
-                                <label for="arrival">Arrival</label>
+                                <label for="arrival">Arrival *</label>
                                 <input type="date" name="arrival" id="arrival" required>
                             </div>
                             <div class="field">
-                                <label for="departure">Departure</label>
+                                <label for="departure">Departure *</label>
                                 <input type="date" name="departure" id="departure" required>
                             </div>
                             <div class="field">
-                                <label for="name">Full name</label>
+                                <label for="name">Full name *</label>
                                 <input type="text" name="name" id="" required>
                             </div>
                             <div class="field">
-                                <label for="email">Email</label>
+                                <label for="email">Email *</label>
                                 <input type="email" name="email" id="">
                             </div>
                             <div class="field">
-                                <label for="phone">Phone number</label>
+                                <label for="phone">Phone number *</label>
                                 <input type="tel" name="phone" id="" required>
                             </div>
                             <div class="field">
                                 <label for="cause">Select a cause to support</label>
                                 <select name="cause" id="">
                                     <option value="climate change">Climate change</option>
-                                    <option value="">None</option>
+                                    <option value="" disabled hidden selected>{{__('cso.Choose')}}</option>
                                 </select>
                             </div>
 

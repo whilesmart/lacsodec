@@ -40,7 +40,7 @@ class CsoEditScreen extends Screen
      */
     public function name(): ?string
     {
-        return $this->cso->exists ? 'Edit cso '.$this->cso->name : 'Creating a new CSO';
+        return $this->cso->exists ? 'Edit CSO '.$this->cso->name : 'Creating a new CSO';
     }
 
     /**
@@ -59,7 +59,7 @@ class CsoEditScreen extends Screen
     public function commandBar(): iterable
     {
         return [
-            Button::make('Save Cso')
+            Button::make('Save CSO')
                 ->icon('pencil')
                 ->method('createOrUpdate')
                 ->canSee(! $this->cso->exists),

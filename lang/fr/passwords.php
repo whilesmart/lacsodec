@@ -20,5 +20,6 @@ return [
     "We can't find a user with that email address." => "Nous ne trouvons pas d'utilisateur avec cette adresse e-mail.",
     'Forgot password' => 'Mot de passe oublié',
     'Reset password' => 'Réinitialiser le mot de passe',
+    'Send password reset mail' => 'Envoyer un e-mail de réinitialisation du mot de passe',
 
 ];
