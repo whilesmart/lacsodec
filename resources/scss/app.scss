@@ -227,6 +227,9 @@ form {
                 color: $light-text;
             }
         }
+        .no-text-transform {
+            text-transform: none;
+        }
         input,
         select {
             width: 100%;

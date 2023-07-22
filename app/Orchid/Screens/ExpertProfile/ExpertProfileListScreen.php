@@ -26,7 +26,7 @@ class ExpertProfileListScreen extends Screen
     public function query(): iterable
     {
         return [
-            'experts' => ExpertProfile::paginate(),
+            'experts' => ExpertProfile::filters()->paginate(),
         ];
     }
 

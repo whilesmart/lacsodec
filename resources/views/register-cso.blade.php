@@ -228,7 +228,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__("cso.CSO's physical address")}} *</label>
+                                <label for="" class="no-text-transform">{{__("cso.CSO's physical address")}} *</label>
                                 <input type="text" name="address" id="cso-address" placeholder="{{__('cso.Address')}}" value="{{ old('address') }}" >
                                 @error('address')
                                 <span class="error-msg">{{ $message }}</span>
@@ -241,7 +241,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__("cso.CSO's Website")}} *</label>
+                                <label for="" class="no-text-transform">{{__("cso.CSO's Website")}} *</label>
                                 <input type="text" name="website" id="cso-website" placeholder="{{__('cso.Website')}}" value="{{ old('website') }}" >
                                 @error('website')
                                 <span class="error-msg">{{ $message }}</span>
@@ -252,7 +252,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__("cso.CSO's email address")}} *</label>
+                                <label for="" class="no-text-transform">{{__("cso.CSO's email address")}} *</label>
                                 <input type="email" name="email" id="cso-email" placeholder="{{__('cso.Email address')}}" value="{{ old('email') }}" >
                                 @error('email')
                                 <span class="error-msg">{{ $message }}</span>
@@ -265,7 +265,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__("cso.CSO's phone number")}} *</label>
+                                <label for="" class="no-text-transform">{{__("cso.CSO's phone number")}} *</label>
                                 <input type="tel" name="tel" id="cso-contact" placeholder="{{__('cso.Phone number')}}" value="{{ old('tel') }}" >
                                 @error('tel')
                                 <span class="error-msg">{{ $message }}</span>
@@ -281,7 +281,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__("cso.CSO's Vision statement")}} *</label>
+                                <label for="" class="no-text-transform">{{__("cso.CSO's Vision statement")}} *</label>
                                 <textarea type="text" name="vision_statement" id="vision-statement" value="" oninput="countWords()">{{ old('vision_statement') }}</textarea>
                                 @error('vision_statement')
                                 <span class="error-msg">{{ $message }}</span>
@@ -421,7 +421,7 @@
                                 error
                         @enderror
                         ">
-                            <label for="">{{__("cso.CSO's geographical coverage")}} *</label>
+                            <label for="" class="no-text-transform">{{__("cso.CSO's geographical coverage")}} *</label>
                             <select name="african_coverage" id="" value="{{ old('african_coverage') }}" >
                                 <option value="" disabled hidden selected>{{__('cso.Select')}}</option>
                                 <option value="local"  {{ old('african_coverage') == 'local' ? 'selected' : '' }}>{{__('cso.Local')}}</option>

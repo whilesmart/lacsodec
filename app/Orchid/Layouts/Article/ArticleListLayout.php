@@ -27,8 +27,8 @@ class ArticleListLayout extends Table
     protected function columns(): iterable
     {
         return [
-            TD::make('title', 'Title'),
-            TD::make('category', 'Category'),
+            TD::make('title', 'Title')->filter(),
+            TD::make('category', 'Category')->filter(),
             TD::make('created_at', 'Created'),
             TD::make('updated_at', 'Last edit'),
             TD::make('Actions')

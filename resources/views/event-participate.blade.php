@@ -9,9 +9,9 @@
                 <div class="main-content">
                     <img src="{{ asset($event->image) }}" alt="" class="top-image">
                     <h1>{{$event->name}}</h1>
-                    <h3>Type of event: {{$event->type}}</h3>
-                    <h6>Start date : <b>{{$event->date}}</b></h6>
-                    <h6>End date: <b>{{$event->end_date}}</b></h6>
+                    <h3>{{__('events.Type of event')}}: {{$event->type}}</h3>
+                    <h6>{{__('events.Start date')}}: <b>{{$event->date}}</b></h6>
+                    <h6>{{__('events.End date')}}: <b>{{$event->end_date}}</b></h6>
                     <br>
                     <p>{{$event->details}}</p>
                 </div>

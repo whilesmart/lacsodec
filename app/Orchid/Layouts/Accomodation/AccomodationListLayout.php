@@ -27,11 +27,11 @@ class AccomodationListLayout extends Table
     protected function columns(): iterable
     {
         return [
-            TD::make('name', 'Name'),
-            TD::make('city', 'City'),
-            TD::make('quarter', 'Quarter'),
-            TD::make('floor_number', 'Floor number'),
-            TD::make('price', 'Price per night'),
+            TD::make('name', 'Name')->filter(),
+            TD::make('city', 'City')->filter(),
+            TD::make('quarter', 'Quarter')->filter(),
+            TD::make('floor_number', 'Floor number')->filter(),
+            TD::make('price', 'Price per night')->filter(),
             TD::make('created_at', 'Created'),
             TD::make('Actions')
                 ->render(function (Accomodation $accomodation) {

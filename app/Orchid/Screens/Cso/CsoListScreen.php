@@ -26,7 +26,7 @@ class CsoListScreen extends Screen
     public function query(): iterable
     {
         return [
-            'csos' => Cso::paginate(),
+            'csos' => Cso::filters()->paginate(),
         ];
     }
 

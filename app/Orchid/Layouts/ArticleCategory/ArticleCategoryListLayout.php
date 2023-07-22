@@ -27,7 +27,7 @@ class ArticleCategoryListLayout extends Table
     protected function columns(): iterable
     {
         return [
-            TD::make('name', 'Name'),
+            TD::make('name', 'Name')->filter(),
             TD::make('Actions')
                 ->alignRight()
                 ->render(function (ArticleCategory $articleCategory) {

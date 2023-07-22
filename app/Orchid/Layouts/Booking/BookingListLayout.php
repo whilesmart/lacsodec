@@ -27,13 +27,13 @@ class BookingListLayout extends Table
     protected function columns(): iterable
     {
         return [
-            TD::make('accomodation.name', 'Accommodation'),
+            TD::make('accomodation.name', 'Accommodation')->filter(),
             TD::make('accomodation.accommodation_number', 'Room number'),
-            TD::make('name', 'User name'),
-            TD::make('phone', 'User phone number'),
-            TD::make('email', 'User email address'),
-            TD::make('arrival', 'Arrival'),
-            TD::make('departure', 'Departure'),
+            TD::make('name', 'User name')->filter(),
+            TD::make('phone', 'User phone number')->filter(),
+            TD::make('email', 'User email address')->filter(),
+            TD::make('arrival', 'Arrival')->filter(),
+            TD::make('departure', 'Departure')->filter(),
             TD::make('created_at', 'Created'),
             TD::make('Actions')
                 ->alignRight()

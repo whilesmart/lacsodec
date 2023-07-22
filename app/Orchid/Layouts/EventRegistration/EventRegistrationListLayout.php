@@ -25,13 +25,13 @@ class EventRegistrationListLayout extends Table
     protected function columns(): iterable
     {
         return [
-            TD::make('event.name', 'Event'),
-            TD::make('name', 'Name'),
-            TD::make('email', 'Email address'),
-            TD::make('phone', 'Phone number'),
+            TD::make('event.name', 'Event')->filter(),
+            TD::make('name', 'Name')->filter(),
+            TD::make('email', 'Email address')->filter(),
+            TD::make('phone', 'Phone number')->filter(),
             TD::make('sex', 'Sex'),
-            TD::make('organization', 'Organization'),
-            TD::make('country', 'Country'),
+            TD::make('organization', 'Organization')->filter(),
+            TD::make('country', 'Country')->filter(),
             TD::make('other_details', 'Motivation'),
             TD::make('created_at', 'Created'),
         ];

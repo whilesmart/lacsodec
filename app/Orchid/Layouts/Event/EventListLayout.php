@@ -27,9 +27,9 @@ class EventListLayout extends Table
     protected function columns(): iterable
     {
         return [
-            TD::make('name', 'Name'),
-            TD::make('type', 'Type'),
-            TD::make('entrance', 'Entrance'),
+            TD::make('name', 'Name')->filter(),
+            TD::make('type', 'Type')->filter(),
+            TD::make('entrance', 'Entrance')->filter(),
             TD::make('created_at', 'Created'),
             TD::make('Actions')
                 ->render(function (Event $event) {
