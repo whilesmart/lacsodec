@@ -59,7 +59,7 @@ class AccomodationEditScreen extends Screen
     public function commandBar(): iterable
     {
         return [
-            Button::make('Create accomodation')
+            Button::make('Save accomodation')
                 ->icon('pencil')
                 ->method('createOrUpdate')
                 ->canSee(! $this->accomodation->exists),

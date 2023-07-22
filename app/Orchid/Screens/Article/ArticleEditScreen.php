@@ -59,7 +59,7 @@ class ArticleEditScreen extends Screen
     public function commandBar(): iterable
     {
         return [
-            Button::make('Create article')
+            Button::make('Save article')
                 ->icon('pencil')
                 ->method('createOrUpdate')
                 ->canSee(! $this->article->exists),

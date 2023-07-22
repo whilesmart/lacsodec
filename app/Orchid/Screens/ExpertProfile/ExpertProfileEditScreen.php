@@ -59,7 +59,7 @@ class ExpertProfileEditScreen extends Screen
     public function commandBar(): iterable
     {
         return [
-            Button::make('Create expert')
+            Button::make('Save expert')
                 ->icon('pencil')
                 ->method('createOrUpdate')
                 ->canSee(! $this->expert->exists),

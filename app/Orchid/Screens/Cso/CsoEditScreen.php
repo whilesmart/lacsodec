@@ -59,7 +59,7 @@ class CsoEditScreen extends Screen
     public function commandBar(): iterable
     {
         return [
-            Button::make('Create Cso')
+            Button::make('Save Cso')
                 ->icon('pencil')
                 ->method('createOrUpdate')
                 ->canSee(! $this->cso->exists),

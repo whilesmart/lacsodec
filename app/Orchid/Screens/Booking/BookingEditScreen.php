@@ -64,7 +64,7 @@ class BookingEditScreen extends Screen
                 ->method('sendMail')
                 ->canSee($this->booking->exists),
 
-            Button::make('Create booking')
+            Button::make('Save booking')
                 ->icon('pencil')
                 ->method('createOrUpdate')
                 ->canSee(! $this->booking->exists),
