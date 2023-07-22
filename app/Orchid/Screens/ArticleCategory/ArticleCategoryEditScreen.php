@@ -43,7 +43,7 @@ class ArticleCategoryEditScreen extends Screen
     public function commandBar(): iterable
     {
         return [
-            Button::make('Create article category')
+            Button::make('Save article category')
                 ->icon('pencil')
                 ->method('createOrUpdate')
                 ->canSee(! $this->articleCategory->exists),

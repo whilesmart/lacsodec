@@ -17,7 +17,7 @@ class EventListScreen extends Screen
     public function query(): iterable
     {
         return [
-            'events' => Event::paginate(),
+            'events' => Event::filters()->paginate(),
         ];
     }
 

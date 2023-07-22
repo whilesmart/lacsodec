@@ -49,7 +49,7 @@ class EventEditScreen extends Screen
     public function commandBar(): iterable
     {
         return [
-            Button::make('Create event')
+            Button::make('Save event')
                 ->icon('pencil')
                 ->method('createOrUpdate')
                 ->canSee(! $this->event->exists),

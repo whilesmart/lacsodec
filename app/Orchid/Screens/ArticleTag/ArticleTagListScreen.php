@@ -17,7 +17,7 @@ class ArticleTagListScreen extends Screen
     public function query(): iterable
     {
         return [
-            'articleTags' => ArticleTag::paginate(),
+            'articleTags' => ArticleTag::filters()->paginate(),
         ];
     }
 

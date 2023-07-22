@@ -27,9 +27,9 @@ class ExpertListLayout extends Table
     protected function columns(): iterable
     {
         return [
-            TD::make('user_id', 'User'),
-            TD::make('status', 'Status'),
-            TD::make('position', 'Position'),
+            TD::make('user_id', 'User')->filter(),
+            TD::make('status', 'Status')->filter(),
+            TD::make('position', 'Position')->filter(),
             TD::make('created_at', 'Created'),
             TD::make('Actions')
                 ->render(function (ExpertProfile $expert) {

@@ -68,7 +68,7 @@
                             ">
                                 <label for="">{{__('cso.Type of organization')}} *</label>
                                 <select name="organization_type" id="organization-type" value="{{ old('organization_type') }}" >
-                                    <option value="" disabled hidden>{{__('cso.Choose')}}</option>
+                                    <option value="" disabled hidden selected>{{__('cso.Choose')}}</option>
                                     <option value="Association" {{ old('organization_type') == 'Association' ? 'selected' : '' }}>{{__('cso.Association')}}</option>
                                     <option value="Accredited NGO" {{ old('organization_type') == 'Accredited NGO' ? 'selected' : '' }}>{{__('cso.Accredited NGO (Non-governmental Organisation)')}}</option>
                                     <option value="trade union" {{ old('organization_type') == 'trade union' ? 'selected' : '' }}>{{__('cso.Trade union')}}</option>
@@ -91,9 +91,8 @@
                             ">
                                 <label for="">{{__('cso.Country')}} *</label>
                                 <select name="country" id="country" value="{{ old('country') }}" >
-                                    <option value="" disabled hidden>{{__('cso.Choose')}}</option>
+                                    <option value="" disabled hidden selected>{{__('cso.Choose')}}</option>
                                 @foreach ($countries as $country)
-                                <option value="" disabled hidden>{{__('cso.Choose')}}</option>
                                 @if (Lang::locale() == 'en')
                                 <option value="{{$country->name}}" {{ old('country') == $country->name ? 'selected' : '' }}>{{$country->name}}</option>
                                 @else
@@ -179,7 +178,7 @@
                             ">
                                 <label for="">{{__('cso.Sex')}} *</label>
                                 <select name="contact_person_sex" id="contact-sex" value="{{ old('contact_person_sex') }}" >
-                                    <option value="" disabled hidden>choose</option>
+                                    <option value="" disabled hidden selected>choose</option>
                                     <option value="male" {{ old('contact_person_sex') == 'male' ? 'selected' : '' }}>{{__('cso.Male')}}</option>
                                     <option value="female" {{ old('contact_person_sex') == 'female' ? 'selected' : '' }}>{{__('cso.Female')}}</option>
                                 </select>
@@ -229,7 +228,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__("cso.CSO's physical address")}} *</label>
+                                <label for="" class="no-text-transform">{{__("cso.CSO's physical address")}} *</label>
                                 <input type="text" name="address" id="cso-address" placeholder="{{__('cso.Address')}}" value="{{ old('address') }}" >
                                 @error('address')
                                 <span class="error-msg">{{ $message }}</span>
@@ -242,7 +241,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__("cso.CSO's Website")}} *</label>
+                                <label for="" class="no-text-transform">{{__("cso.CSO's Website")}} *</label>
                                 <input type="text" name="website" id="cso-website" placeholder="{{__('cso.Website')}}" value="{{ old('website') }}" >
                                 @error('website')
                                 <span class="error-msg">{{ $message }}</span>
@@ -253,7 +252,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__("cso.CSO's email address")}} *</label>
+                                <label for="" class="no-text-transform">{{__("cso.CSO's email address")}} *</label>
                                 <input type="email" name="email" id="cso-email" placeholder="{{__('cso.Email address')}}" value="{{ old('email') }}" >
                                 @error('email')
                                 <span class="error-msg">{{ $message }}</span>
@@ -266,7 +265,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__("cso.CSO's phone number")}} *</label>
+                                <label for="" class="no-text-transform">{{__("cso.CSO's phone number")}} *</label>
                                 <input type="tel" name="tel" id="cso-contact" placeholder="{{__('cso.Phone number')}}" value="{{ old('tel') }}" >
                                 @error('tel')
                                 <span class="error-msg">{{ $message }}</span>
@@ -282,8 +281,8 @@
                                 error
                             @enderror
                             ">
-                                <label for="">{{__("cso.CSO's Vision statement")}} *</label>
-                                <input type="text" name="vision_statement" id="vision-statement" placeholder="{{__('cso.Vision statement')}}" value="{{ old('vision_statement') }}" oninput="countWords()" >
+                                <label for="" class="no-text-transform">{{__("cso.CSO's Vision statement")}} *</label>
+                                <textarea type="text" name="vision_statement" id="vision-statement" value="" oninput="countWords()">{{ old('vision_statement') }}</textarea>
                                 @error('vision_statement')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -309,7 +308,7 @@
                             ">
                                 <label for="">{{__('cso.Primary domain of activity')}} *</label>
                                 <select name="domain" id="domain-of-activity" value="{{ old('domain') }}">
-                                    <option value="" disabled hidden>{{__('cso.Choose')}}</option>
+                                    <option value="" disabled hidden selected>{{__('cso.Choose')}}</option>
                                     @foreach ($domains as $domain)
                                     @if (Lang::locale() == 'en')
                                     <option value="{{ $domain->name }}" {{ old('domain') == $domain->name ? 'selected' : '' }}>{{ $domain->name }}</option>
@@ -381,7 +380,7 @@
                             @enderror
                             ">
                                 <label for="">Organization background and track record</label>
-                                <input type="text" name="background" id="background" placeholder="{{__('cso.Type')}}" value="{{ old('background') }}" >
+                                <textarea type="text" name="background" id="background" placeholder="{{__('cso.Type')}}">{{ old('background') }}</textarea>
                                 @error('background')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -422,9 +421,9 @@
                                 error
                         @enderror
                         ">
-                            <label for="">{{__("cso.CSO's geographical coverage")}} *</label>
+                            <label for="" class="no-text-transform">{{__("cso.CSO's geographical coverage")}} *</label>
                             <select name="african_coverage" id="" value="{{ old('african_coverage') }}" >
-                                <option value="" disabled hidden>{{__('cso.Select')}}</option>
+                                <option value="" disabled hidden selected>{{__('cso.Select')}}</option>
                                 <option value="local"  {{ old('african_coverage') == 'local' ? 'selected' : '' }}>{{__('cso.Local')}}</option>
                                 <option value="national"  {{ old('african_coverage') == 'national' ? 'selected' : '' }}>{{__('cso.National')}}</option>
                                 <option value="global"  {{ old('african_coverage') == 'global' ? 'selected' : '' }}>{{__('cso.Global (more than one african country)')}}</option>

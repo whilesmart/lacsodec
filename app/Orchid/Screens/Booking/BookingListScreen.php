@@ -17,7 +17,7 @@ class BookingListScreen extends Screen
     public function query(): iterable
     {
         return [
-            'bookings' => Booking::paginate(),
+            'bookings' => Booking::filters()->paginate(),
         ];
     }
 

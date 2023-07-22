@@ -46,6 +46,7 @@
                         ">
                                 <label for="">{{__('experts.Sex')}} *</label>
                                 <select name="sex" id="contact-sex" value="{{ old('sex') }}" >
+                                <option value="" disabled hidden selected>{{__('cso.Choose')}}</option>
                                     <option value="male" {{ old('sex') == 'male' ? 'selected' : '' }}>{{__('experts.Male')}}</option>
                                     <option value="female"  {{ old('sex') == 'female' ? 'selected' : '' }}>{{__('experts.Female')}}</option>
                                 </select>
@@ -96,9 +97,8 @@
                             ">
                                 <label for="">{{__('experts.Nationality')}} *</label>
                                 <select name="nationality" id="nationality" value="{{ old('nationality') }}" >
-                                    <option value="" disabled hidden>{{__('cso.Choose')}}</option>
+                                    <option value="" disabled hidden selected>{{__('cso.Choose')}}</option>
                                 @foreach ($countries as $country)
-                                <option value="" disabled hidden>{{__('cso.Choose')}}</option>
                                 @if (Lang::locale() == 'en')
                                 <option value="{{$country->name}}" {{ old('nationality') == $country->name ? 'selected' : '' }}>{{$country->name}}</option>
                                 @else

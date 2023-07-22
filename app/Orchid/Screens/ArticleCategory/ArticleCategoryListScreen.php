@@ -17,7 +17,7 @@ class ArticleCategoryListScreen extends Screen
     public function query(): iterable
     {
         return [
-            'articleCategories' => ArticleCategory::paginate(),
+            'articleCategories' => ArticleCategory::filters()->paginate(),
         ];
     }
 

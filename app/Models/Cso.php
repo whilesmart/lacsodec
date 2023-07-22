@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Orchid\Filters\Filterable;
+use Orchid\Filters\Types\Like;
 use Orchid\Metrics\Chartable;
 use Orchid\Screen\AsSource;
 
 class Cso extends Model
 {
-    use HasFactory, AsSource, Chartable;
+    use HasFactory, AsSource, Chartable, Filterable;
 
     protected $fillable = [
         'name',
@@ -64,4 +66,13 @@ class Cso extends Model
     {
         return $this->hasMany(CsoDomain::class);
     }
+
+    /**
+     * Name of columns to which http filter can be applied
+     *
+     * @var array
+     */
+    protected $allowedFilters = [
+        'name' => Like::class,
+    ];
 }

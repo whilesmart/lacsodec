@@ -6,11 +6,11 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                 <div class="flex">
                     <div class="field">
-                        <label for="">{{__('register.First name')}}</label>
+                        <label for="">{{__('register.First name')}} *</label>
                         <input type="text" name="first-name" id="first-name" placeholder="{{__('register.First name')}}" value="{{ old('first-name') }}" required>
                     </div>
                     <div class="field">
-                        <label for="">{{__('register.Last name')}}</label>
+                        <label for="">{{__('register.Last name')}} *</label>
                         <input type="text" name="last-name" id="last-name" placeholder="{{__('register.Last name')}}" value="{{ old('last-name') }}" required>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                     error
                 @endif
                 ">
-                    <label for="">{{__('register.Email')}}</label>
+                    <label for="">{{__('register.Email')}} *</label>
                     <input type="text" name="email" id="email" placeholder="{{__('register.Email')}}" value="{{ old('email') }}" required>
                     @if ($errors->has('email'))
                     <span class="error-msg">{{ $errors->first('email') }}</span>
@@ -30,7 +30,7 @@
                     error
                 @endif
                 ">
-                    <label for="">{{__('register.Password')}}</label>
+                    <label for="">{{__('register.Password')}} *</label>
                     <input type="password" name="password" id="password" placeholder="{{__('register.Enter password')}}" value="{{ old('password') }}" required>
                     @if ($errors->has('password'))
                     <span class="error-msg">{{ $errors->first('password') }}</span>
@@ -41,7 +41,7 @@
                     error
                 @endif
                 ">
-                    <label for="password_confirmation">{{__('register.Confirm password')}}</label>
+                    <label for="password_confirmation">{{__('register.Confirm password')}} *</label>
                     <input type="password" name="password_confirmation" id="password_confirmation" placeholder="{{__('register.Confirm password')}}" value="{{ old('password_confirmation') }}" required>
                     @if ($errors->has('password_confirmation'))
                     <span class="error-msg">{{ $errors->first('password_confirmation') }}</span>
@@ -52,11 +52,10 @@
                     error
                 @endif
                 ">
-                    <label for="">{{__('register.Country')}}</label>
+                    <label for="">{{__('register.Country')}} *</label>
                     <select name="country" id="country" value="{{ old('country') }}" >
-                                    <option value="" disabled hidden>{{__('cso.Choose')}}</option>
+                                    <option value="" disabled hidden selected>{{__('cso.Choose')}}</option>
                                 @foreach ($countries as $country)
-                                <option value="" disabled hidden>{{__('cso.Choose')}}</option>
                                 @if (Lang::locale() == 'en')
                                 <option value="{{$country->name}}" {{ old('country') == $country->name ? 'selected' : '' }}>{{$country->name}}</option>
                                 @else
@@ -65,6 +64,9 @@
                                     
                                 @endforeach
                                 </select>
+                                @if ($errors->has('country'))
+                    <span class="error-msg">{{ $errors->first('country') }}</span>
+                    @endif
                 </div>
                 <button type="submit" class="custom-button secondary">
                     <span>{{__('register.Create Account')}}</span>

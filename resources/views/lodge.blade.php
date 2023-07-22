@@ -18,6 +18,7 @@
                             <div class="sub">
                                 <h4>Location</h4>
                                 <select name="location" id="">
+                                    <option value="" disabled hidden selected>{{__('cso.Choose')}}</option>
                                     <option value="yaounde">Yaoundé</option>
                                     <option value="douala">Douala</option>
                                     <option value="buea">Buea</option>

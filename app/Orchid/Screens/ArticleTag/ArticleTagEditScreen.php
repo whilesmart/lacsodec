@@ -54,7 +54,7 @@ class ArticleTagEditScreen extends Screen
     public function commandBar(): iterable
     {
         return [
-            Button::make('Create article tag')
+            Button::make('Save article tag')
                 ->icon('pencil')
                 ->method('createOrUpdate')
                 ->canSee(! $this->articleTag->exists),

@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Orchid\Filters\Filterable;
+use Orchid\Filters\Types\Like;
 use Orchid\Screen\AsSource;
 
 class Article extends Model
 {
-    use HasFactory, AsSource;
+    use HasFactory, AsSource, Filterable;
 
     public $with = ['tags'];
 
@@ -39,4 +41,14 @@ class Article extends Model
     {
         return $this->hasMany(ArticleSelectedTag::class);
     }
+
+    /**
+     * Name of columns to which http filter can be applied
+     *
+     * @var array
+     */
+    protected $allowedFilters = [
+        'title' => Like::class,
+        'category' => Like::class,
+    ];
 }

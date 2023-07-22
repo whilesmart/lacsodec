@@ -28,5 +28,12 @@ return [
     'CSO registered' => 'CSO registered',
     'Events organized' => 'Events organized',
     'Trainings carried out' => 'Trainings carried out',
+    'Chief Executive Officer (CEO)' => 'Chief Executive Officer (CEO)',
+    'General Manager/Partnership & Collaboration' => 'General Manager/Partnership & Collaboration',
+    'Human Resource Manager' => 'Human Resource Manager',
+    'Finance administrator' => 'Finance administrator',
+    'IT Manager' => 'IT Manager',
+    'Logistics officer' => 'Logistics officer',
+    'Programs Focal Point' => 'Programs Focal Point',
 
 ];

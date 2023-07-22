@@ -40,7 +40,7 @@
                     @endif
                 </div>
                 <button type="submit" class="custom-button secondary">
-                    <span>Reset password</span>
+                    <span>{{__('passwords.Reset password')}}</span>
                 </button>
             </form>
         </div>

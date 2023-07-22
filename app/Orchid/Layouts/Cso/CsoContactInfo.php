@@ -79,7 +79,7 @@ class CsoContactInfo extends Rows
 
             Select::make('cso.user_id')
                 ->fromModel(User::class, 'name', 'id')
-                ->title('Cso user')
+                ->title('CSO user')
                 ->required(),
         ];
     }

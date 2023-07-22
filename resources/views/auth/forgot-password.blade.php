@@ -17,7 +17,7 @@
                     @endif
                 </div>
                 <button type="submit" class="custom-button secondary">
-                    <span>Send password reset mail</span>
+                    <span>{{__('passwords.Send password reset mail')}}</span>
                 </button>
             </form>
         </div>
