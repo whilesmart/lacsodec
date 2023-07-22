@@ -11,8 +11,8 @@ return [
     */
 
     'Donate' => 'Faire un don',
-    'Bank details' => 'coordonnées bancaires',
-    'Bank code' => 'code bancaire',
+    'Bank details' => 'Coordonnées bancaires',
+    'Bank code' => 'Code bancaire',
     'Branch Code' => 'Indicatif de succursale',
     'Account Number' => 'Numéro de compte',
     'RIB Key' => 'Clé RIB',

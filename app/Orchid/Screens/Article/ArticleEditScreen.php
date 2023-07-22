@@ -92,9 +92,10 @@ class ArticleEditScreen extends Screen
                     ->required(),
 
                 TextArea::make('article.description')
-                    ->title('Description')
+                    ->title('Excerpt')
                     ->rows(3)
                     ->placeholder('Brief description for preview')
+                    ->maxlength(200)
                     ->required(),
 
                 Select::make('article.author')
