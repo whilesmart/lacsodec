@@ -22,12 +22,20 @@ class PermissionServiceProvider extends ServiceProvider
     public function boot(Dashboard $dashboard): void
     {
         $permissions = ItemPermission::group('modules')
-            ->addPermission('articles', 'artcles')
-            ->addPermission('events', 'events')
-            ->addPermission('csos', 'csos ')
-            ->addPermission('lodges', 'lodges')
-            ->addPermission('info', 'info')
-            ->addPermission('expert', 'expert');
+            ->addPermission('articles.edit', 'artcles edit permission')
+            ->addPermission('articles.list', 'artcles list permission')
+            ->addPermission('events.edit', 'events edit permission')
+            ->addPermission('events.list', 'events list permission')
+            ->addPermission('csos.edit', 'csos edit permission')
+            ->addPermission('csos.list', 'csos list permission')
+            ->addPermission('lodges.edit', 'lodges edit permission')
+            ->addPermission('lodges.list', 'lodges list permission')
+            ->addPermission('bookings.edit', 'bookings edit permission')
+            ->addPermission('bookings.list', 'bookings list permission')
+            ->addPermission('info.edit', 'info edit permission')
+            ->addPermission('info.list', 'info list permission')
+            ->addPermission('experts.edit', 'expert edit permission')
+            ->addPermission('experts.list', 'expert list permission');
 
         $dashboard->registerPermissions($permissions);
     }

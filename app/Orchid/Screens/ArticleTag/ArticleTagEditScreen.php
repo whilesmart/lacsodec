@@ -107,4 +107,15 @@ class ArticleTagEditScreen extends Screen
 
         return redirect()->route('platform.articletag.list');
     }
+
+    /**
+     * Permission
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'articles.edit',
+            'platform.systems.roles',
+        ];
+    }
 }

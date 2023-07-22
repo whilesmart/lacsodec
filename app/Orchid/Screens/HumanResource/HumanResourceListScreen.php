@@ -74,4 +74,15 @@ class HumanResourceListScreen extends Screen
 
         return $this->dataExportService->exportData($experts, $columnNames, 'all_humanresources');
     }
+
+    /**
+     * Permission
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'experts.list',
+            'platform.systems.roles',
+        ];
+    }
 }

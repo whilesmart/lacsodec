@@ -121,7 +121,7 @@ class PlatformScreen extends Screen
     {
         return [
             'platform.systems.roles',
-            'platform.modules.events',
+            'platform.index',
         ];
     }
 }

@@ -84,4 +84,15 @@ class ExpertProfileListScreen extends Screen
 
         return $this->dataExportService->exportData($experts, $columnNames, 'all_experts');
     }
+
+    /**
+     * Permission
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'experts.list',
+            'platform.systems.roles',
+        ];
+    }
 }

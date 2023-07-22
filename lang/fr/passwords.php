@@ -18,5 +18,7 @@ return [
     'Please wait before retrying.' => 'Veuillez patienter avant de réessayer.',
     'This password reset token is invalid.' => "Ce jeton de réinitialisation de mot de passe n'est pas valide.",
     "We can't find a user with that email address." => "Nous ne trouvons pas d'utilisateur avec cette adresse e-mail.",
+    'Forgot password' => 'Mot de passe oublié',
+    'Reset password' => 'Réinitialiser le mot de passe',
 
 ];

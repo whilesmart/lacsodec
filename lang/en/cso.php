@@ -10,7 +10,7 @@ return [
     |
     */
 
-    'CSO Directory' => 'Annuaire des OSC',
+    'CSO Directory' => 'CSO Directory',
     'Register CSO' => 'Register CSO',
     'Full name' => 'Full name',
     'CSO name' => 'CSO name',

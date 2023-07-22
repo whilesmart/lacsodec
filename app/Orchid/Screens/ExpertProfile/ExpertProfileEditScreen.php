@@ -128,4 +128,15 @@ class ExpertProfileEditScreen extends Screen
 
         return redirect()->route('platform.expert.list');
     }
+
+    /**
+     * Permission
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'experts.edit',
+            'platform.systems.roles',
+        ];
+    }
 }
