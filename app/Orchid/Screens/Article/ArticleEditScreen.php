@@ -168,4 +168,15 @@ class ArticleEditScreen extends Screen
 
         return redirect()->route('platform.article.list');
     }
+
+    /**
+     * Permission
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'articles.edit',
+            'platform.systems.roles',
+        ];
+    }
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AccomodationController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\auth\LoginController;
+use App\Http\Controllers\auth\PasswordResetController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CsoController;
@@ -64,6 +65,12 @@ Route::get('/login', [LoginController::class, 'create'])->name('login');
 Route::post('/login', [LoginController::class, 'store'])->name('login.perform');
 Route::get('/register', [RegisterController::class, 'create'])->name('register');
 Route::post('/signup', [RegisterController::class, 'store'])->name('register.perform');
+Route::get('/forgot-password', function () {
+    return view('auth.forgot-password');
+})->name('forgot-password');
+Route::post('/forgot-password', [PasswordResetController::class, 'sendResetMail'])->name('password-reset-mail');
+Route::get('/reset-password/{token}', [PasswordResetController::class, 'create'])->name('password.reset');
+Route::post('/reset-password', [PasswordResetController::class, 'store'])->name('password.update');
 
 Route::get('/services', function () {
     return view('services');

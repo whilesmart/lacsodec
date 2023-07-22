@@ -187,4 +187,15 @@ class BookingEditScreen extends Screen
 
         return redirect()->route('platform.booking.list');
     }
+
+    /**
+     * Permission
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'bookings.edit',
+            'platform.systems.roles',
+        ];
+    }
 }

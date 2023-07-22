@@ -84,4 +84,15 @@ class CsoListScreen extends Screen
 
         return $this->dataExportService->exportData($csos, $columnNames, 'all_csos');
     }
+
+    /**
+     * Permission
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'csos.list',
+            'platform.systems.roles',
+        ];
+    }
 }

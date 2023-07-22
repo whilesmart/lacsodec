@@ -71,4 +71,15 @@ class EventRegistrationListScreen extends Screen
 
         return $this->dataExportService->exportData($eventRegistrations, $columnNames, 'all_registrations');
     }
+
+    /**
+     * Permission
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'events.list',
+            'platform.systems.roles',
+        ];
+    }
 }

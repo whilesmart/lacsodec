@@ -18,5 +18,7 @@ return [
     'Please wait before retrying.' => 'Please wait before retrying.',
     'This password reset token is invalid.' => 'This password reset token is invalid.',
     "We can't find a user with that email address." => "We can't find a user with that email address.",
+    'Forgot password' => 'Forgot password',
+    'Reset password' => 'Reset password',
 
 ];
