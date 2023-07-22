@@ -113,66 +113,44 @@
         <section class="team-section">
             <div class="con">
                 <h2>{{ __('about.Our team') }}</h2>
-
-                <!-- WAITING FOR NAMES AND IMAGES OF TEAM MEMBERS AND THEIR POSTS
                     
                 <div class="team-grid">
                     <div class="member-card">
-                        <img src="{{ asset('images/team/team-member-1.png') }}" alt="">
-                        <h4>Tanyi Christian</h4>
-                        <p>Chief Executive Officer</p>
+                        <img src="{{ asset('images/team/1.jpg') }}" alt="">
+                        <h4>Tanyi Christian Esselekwe</h4>
+                        <p>{{__('about.Chief Executive Officer (CEO)')}}</p>
                     </div>
                     <div class="member-card">
-                        <img src="{{ asset('images/team/team-member-2.png') }}" alt="">
-                        <h4>Akwese Nkatmbi</h4>
-                        <p>General Manager</p>
+                        <img src="{{ asset('images/team/2.jpg') }}" alt="">
+                        <h4>Akwese Nkatnbi</h4>
+                        <p>{{__('about.General Manager/Partnership & Collaboration')}}</p>
                     </div>
                     <div class="member-card">
-                        <img src="{{ asset('images/team/team-member-3.png') }}" alt="">
+                        <img src="{{ asset('images/team/3.jpg') }}" alt="">
                         <h4>Bate Godwill Bate</h4>
-                        <p>Human Resource Manager</p>
+                        <p>{{__('about.Human Resource Manager')}}</p>
                     </div>
                     <div class="member-card">
-                        <img src="{{ asset('images/team/team-member-4.png') }}" alt="">
+                        <img src="{{ asset('images/team/4.jpg') }}" alt="">
                         <h4>Ngwathe Modest</h4>
-                        <p>Finance Manager</p>
+                        <p>{{__('about.Finance administrator')}}</p>
                     </div>
                     <div class="member-card">
-                        <img src="{{ asset('images/team/team-member-5.png') }}" alt="">
+                        <img src="{{ asset('images/team/5.jpg') }}" alt="">
                         <h4>Chita Brine Chita</h4>
-                        <p>IT Manager</p>
+                        <p>{{__('about.IT Manager')}}</p>
                     </div>
                     <div class="member-card">
-                        <img src="{{ asset('images/team/team-member-6.png') }}" alt="">
-                        <h4>Kolle</h4>
-                        <p>Logistics Manager</p>
+                        <img src="{{ asset('images/team/6.jpg') }}" alt="">
+                        <h4>Kole Eugene</h4>
+                        <p>{{__('about.Logistics officer')}}</p>
                     </div>
                     <div class="member-card">
-                        <img src="{{ asset('images/team/team-member-6.png') }}" alt="">
-                        <h4>Efeti Zita</h4>
-                        <p>Facility Manager</p>
+                        <img src="{{ asset('images/team/7.jpg') }}" alt="">
+                        <h4>Walter Keletchi N</h4>
+                        <p>{{__('about.Programs Focal Point')}}</p>
                     </div>
-                    <div class="member-card">
-                        <img src="{{ asset('images/team/team-member-6.png') }}" alt="">
-                        <h4>Olive Bobga</h4>
-                        <p>Gender Expert</p>
-                    </div>
-                    <div class="member-card">
-                        <img src="{{ asset('images/team/team-member-6.png') }}" alt="">
-                        <h4>Simine Borner</h4>
-                        <p>Child Protection Expert</p>
-                    </div>
-                    <div class="member-card">
-                        <img src="{{ asset('images/team/team-member-6.png') }}" alt="">
-                        <h4>Wabo kevin</h4>
-                        <p>MEAL Officer</p>
-                    </div>
-                    <div class="member-card">
-                        <img src="{{ asset('images/team/team-member-6.png') }}" alt="">
-                        <h4>Njie Yannick</h4>
-                        <p>Security and Safety Officer</p>
-                    </div>
-                </div> -->
+                </div>
             </div>
         </section>
 

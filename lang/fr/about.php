@@ -28,5 +28,12 @@ return [
     'CSO registered' => 'OSC enregistré',
     'Events organized' => 'Événements organisés',
     'Trainings carried out' => 'Les formations réalisées',
+    'Chief Executive Officer (CEO)' => 'Président Directeur-Général (PDG)',
+    'General Manager/Partnership & Collaboration' => 'Directeur général/Partenariat et collaboration',
+    'Human Resource Manager' => 'Directeur des ressources humaines',
+    'Finance administrator' => 'Administrateur financier',
+    'IT Manager' => 'Responsable informatique',
+    'Logistics officer' => 'Agent logistique',
+    'Programs Focal Point' => 'Point focal des programmes',
 
 ];
