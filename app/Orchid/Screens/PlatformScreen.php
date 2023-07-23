@@ -24,7 +24,7 @@ class PlatformScreen extends Screen
     {
         $users = User::count();
         $allCsos = Cso::count();
-        $approvedCsos = Cso::where('status', 'approved')->count();
+        $approvedCsos = Cso::where('status', 'verified')->count();
         $allExperts = ExpertProfile::count();
         $approvedExperts = ExpertProfile::where('status', 'approved')->count();
         $accomodations = Accomodation::count();
