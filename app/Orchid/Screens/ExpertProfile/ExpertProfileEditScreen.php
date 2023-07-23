@@ -71,6 +71,7 @@ class ExpertProfileEditScreen extends Screen
 
             Button::make('Remove')
                 ->icon('trash')
+                ->confirm('Are you sure you want to delete this expert?')
                 ->method('delete')
                 ->canSee($this->expert->exists),
         ];

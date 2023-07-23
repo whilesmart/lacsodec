@@ -76,6 +76,7 @@ class BookingEditScreen extends Screen
 
             Button::make('Delete')
                 ->icon('trash')
+                ->confirm('Are you sure you want to delete this booking?')
                 ->method('delete')
                 ->canSee($this->booking->exists),
         ];

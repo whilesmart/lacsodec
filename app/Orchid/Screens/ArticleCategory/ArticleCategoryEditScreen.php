@@ -55,6 +55,7 @@ class ArticleCategoryEditScreen extends Screen
 
             Button::make('Delete')
                 ->icon('trash')
+                ->confirm('Are you sure you want to delete this article category?')
                 ->method('delete')
                 ->canSee($this->articleCategory->exists),
         ];

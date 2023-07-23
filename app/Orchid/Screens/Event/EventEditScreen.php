@@ -61,6 +61,7 @@ class EventEditScreen extends Screen
 
             Button::make('Delete')
                 ->icon('trash')
+                ->confirm('Are you sure you want to delete this event?')
                 ->method('delete')
                 ->canSee($this->event->exists),
         ];
