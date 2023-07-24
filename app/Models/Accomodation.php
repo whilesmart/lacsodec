@@ -26,6 +26,7 @@ class Accomodation extends Model
         'accommodation_number',
         'floor_number',
         'price',
+        'type',
     ];
 
     public function equipment(): HasMany

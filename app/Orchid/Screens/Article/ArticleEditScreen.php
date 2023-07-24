@@ -122,8 +122,6 @@ class ArticleEditScreen extends Screen
 
                 Cropper::make('article.image')
                     ->title('Article image')
-                    ->width(400)
-                    ->height(400)
                     ->required(),
             ]),
         ];

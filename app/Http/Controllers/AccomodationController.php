@@ -11,10 +11,14 @@ class AccomodationController extends Controller
     public function index(Request $request)
     {
         $location = $request->query('location', 'all');
+        $type = $request->query('type', 'all');
         $equipmentNames = $request->query('equipment_names', []);
         $accomodationsQuery = Accomodation::with(['attachment', 'equipment']);
         if ($location != 'all') {
             $accomodationsQuery = $accomodationsQuery->where('city', $location);
+        }
+        if ($type != 'all') {
+            $accomodationsQuery = $accomodationsQuery->where('type', $type);
         }
         if (count($equipmentNames) > 0) {
             $accomodationsQuery = $accomodationsQuery->whereHas('equipment', function ($query) use ($equipmentNames) {

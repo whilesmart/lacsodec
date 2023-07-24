@@ -120,9 +120,7 @@ class CsoBasicInfo extends Rows
                 ->title('Village')
                 ->required(),
 
-            Cropper::make('cso.image')
-                ->width(200)
-                ->height(200),
+            Cropper::make('cso.image'),
         ];
     }
 }

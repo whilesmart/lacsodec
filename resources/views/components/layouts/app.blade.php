@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ config('app.name') }}</title>
+    <link rel="icon" href="{{ asset('images/logos/lacsodec-logo.ico') }}" />
+
+    <!-- SEO -->
+    <meta name="description" content="The LUKMEF Africa Civil Society Development Centre (LACSODEC) is a Civil Society Organization (CSO) service providing agency facilitating knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind.">
+    <meta property="twitter:site" content="@lukmefcameroon" />
+    <meta property="og:title" content="LACSODEC" />
+    <meta property="og:description" content="The LUKMEF Africa Civil Society Development Centre (LACSODEC) is a Civil Society Organization (CSO) service providing agency facilitating knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind." />
+    <meta property="twitter:description" content="The LUKMEF Africa Civil Society Development Centre (LACSODEC) is a Civil Society Organization (CSO) service providing agency facilitating knowledge acquisition, dialogue among and between CSOs and their networks, mutualization of resources, information sharing and promotion of fair access to resources by CSOs of all categories (levels) using the principle of need, equality and equity with the population as final beneficiaries in mind." />
+    <meta property="og:image" content="{{ asset('images/logos/lacsodec-logo.png') }}" />
+    <meta property="twitter:image" content="{{ asset('images/logos/lacsodec-logo.png') }}" />
+    <meta name="keywords" content="civil society, development, Africa, LUKMEF, LACSODEC, CSO, knowledge, dialogue, network, resource, information, access">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">

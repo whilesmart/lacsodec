@@ -11,13 +11,6 @@
             <div class="con">
                 <div class="main-content">
                     <h1>{{ $accomodation->name }}</h1>
-                    <div class="rating">
-                        <i class="fa fa-star colored" aria-hidden="true"></i>
-                        <i class="fa fa-star colored" aria-hidden="true"></i>
-                        <i class="fa fa-star colored" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
                     <div class="location">
                         <div class="sub">{{ $accomodation->city }}</div>
                         <div class="sub">{{ $accomodation->quarter }}</div>
@@ -48,10 +41,11 @@
                         </div>
                     </div>
 
-                    <p>{{ $accomodation->description }}</p>
                     @if ($accomodation->available)
                         <p>Status: <b>available</b></p>
                     @endif
+                    <p>Type: <b>{{$accomodation->type}}</b></p>
+                    <p>{{ $accomodation->description }}</p>
 
 
                     <!-- Image gallery Modal -->
