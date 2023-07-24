@@ -71,6 +71,7 @@ class CsoEditScreen extends Screen
 
             Button::make('Delete')
                 ->icon('trash')
+                ->confirm('Are you sure you want to delete this CSO?')
                 ->method('delete')
                 ->canSee($this->cso->exists),
         ];

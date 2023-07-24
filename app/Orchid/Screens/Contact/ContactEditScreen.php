@@ -63,6 +63,7 @@ class ContactEditScreen extends Screen
 
             Button::make('Delete')
                 ->icon('trash')
+                ->confirm('Are you sure you want to delete this contact?')
                 ->method('delete')
                 ->canSee($this->contactInfo->exists),
         ];

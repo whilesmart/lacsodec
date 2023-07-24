@@ -26,7 +26,7 @@ class AccomodationListScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'Accomodations';
+        return 'Accommodations';
     }
 
     /**
@@ -34,7 +34,7 @@ class AccomodationListScreen extends Screen
      */
     public function description(): ?string
     {
-        return 'All accomodations';
+        return 'All accommodations';
     }
 
     /**

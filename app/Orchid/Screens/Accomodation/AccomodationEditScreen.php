@@ -40,7 +40,7 @@ class AccomodationEditScreen extends Screen
      */
     public function name(): ?string
     {
-        return $this->accomodation->exists ? 'Edit Accomodation' : 'Creating a new accomodation';
+        return $this->accomodation->exists ? 'Edit Accommodation' : 'Creating a new accommodation';
     }
 
     /**
@@ -48,7 +48,7 @@ class AccomodationEditScreen extends Screen
      */
     public function description(): ?string
     {
-        return 'Accomodations';
+        return 'Accommodations';
     }
 
     /**
@@ -59,7 +59,7 @@ class AccomodationEditScreen extends Screen
     public function commandBar(): iterable
     {
         return [
-            Button::make('Save accomodation')
+            Button::make('Save accommodation')
                 ->icon('pencil')
                 ->method('createOrUpdate')
                 ->canSee(! $this->accomodation->exists),
@@ -71,6 +71,7 @@ class AccomodationEditScreen extends Screen
 
             Button::make('Remove')
                 ->icon('trash')
+                ->confirm('Are you sure you want to delete this Accommodation?')
                 ->method('delete')
                 ->canSee($this->accomodation->exists),
         ];

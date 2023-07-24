@@ -71,6 +71,7 @@ class ArticleEditScreen extends Screen
 
             Button::make('Delete')
                 ->icon('trash')
+                ->confirm('Are you sure you want to delete this article?')
                 ->method('delete')
                 ->canSee($this->article->exists),
         ];
@@ -92,9 +93,10 @@ class ArticleEditScreen extends Screen
                     ->required(),
 
                 TextArea::make('article.description')
-                    ->title('Description')
+                    ->title('Excerpt')
                     ->rows(3)
                     ->placeholder('Brief description for preview')
+                    ->maxlength(200)
                     ->required(),
 
                 Select::make('article.author')

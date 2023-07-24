@@ -41,9 +41,9 @@ class CsoBasicInfo extends Rows
                 ->title('CSO basic information'),
 
             Input::make('cso.name')
-                ->title('Name')
+                ->title('CSO full name')
                 ->placeholder('CSO name')
-                ->help('Give the name of the CSO')
+                ->help('Give the full name of the CSO')
                 ->required(),
 
             Select::make('cso.assessment_score')
@@ -105,7 +105,7 @@ class CsoBasicInfo extends Rows
                 ->required(),
 
             Input::make('cso.region')
-                ->title('State/Region/Country')
+                ->title('State/Region/County')
                 ->required(),
 
             Input::make('cso.division')

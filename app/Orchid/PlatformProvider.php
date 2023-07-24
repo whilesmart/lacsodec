@@ -48,6 +48,11 @@ class PlatformProvider extends OrchidServiceProvider
                 ->permission(['platform.systems.roles', 'articles.list'])
                 ->title('Articles'),
 
+            Menu::make('Article categories')
+                ->icon('bs.file-earmark-post')
+                ->route('platform.articlecategory.list')
+                ->permission(['platform.systems.roles', 'articles.list']),
+
             Menu::make('Article tags')
                 ->icon('bs.file-earmark-post')
                 ->route('platform.articletag.list')

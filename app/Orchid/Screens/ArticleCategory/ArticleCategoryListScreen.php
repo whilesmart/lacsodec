@@ -26,7 +26,7 @@ class ArticleCategoryListScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'ArticleCategoryListScreen';
+        return 'Article categories';
     }
 
     /**
