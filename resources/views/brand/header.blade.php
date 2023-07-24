@@ -13,6 +13,6 @@
 
     <p class="my-0 {{ auth()->check() ? 'd-none d-xl-block' : '' }}">
         LACSODEC
-        <!-- <small class="align-top opacity">{{ config('app.env') }}</small> -->
+        <small class="align-top opacity">dashboard</small>
     </p>
 </div>
