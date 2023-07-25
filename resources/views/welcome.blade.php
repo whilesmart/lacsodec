@@ -80,7 +80,7 @@
             <div class="main-content">
                 <div class="news-feed">
                     <div class="main">
-                        @if ($latestArticles[0])
+                        @if (isset($latestArticles[0]))
                         <img src="{{ asset($latestArticles[0]->image) }}" alt="">
                         <div class="content">
                             <h2>{{$latestArticles[0]->name}}</h2>
