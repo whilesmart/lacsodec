@@ -69,7 +69,7 @@
     </div>
     <div class="bottom">
         <div class="con">
-            <p>{{__('footer.Copyright © 2023 by')}} <a href="https://whilesmart.com" target="__blank">whilesmart</a></p>
+            <p>{{__('footer.Developed by')}} <a href="https://whilesmart.com" target="__blank">WhileSmart</a></p>
         </div>
     </div>
 </footer>
