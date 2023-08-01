@@ -25,32 +25,6 @@
                             @endforeach
                         </ul>
                     </nav>
-                    <div class="aside-section tablet">
-                        <div class="top">
-                            <h3>CSO contacts</h3>
-                        </div>
-                        <a href="/" class="cso">
-                            <img src="{{ asset('images/library/library-3.png') }}" alt="CSo image" />
-                            <div class="info">
-                                <h5>Blick Inc</h5>
-                                <p>Children protection</p>
-                            </div>
-                        </a>
-                        <a href="/" class="cso">
-                            <img src="{{ asset('images/library/library-2.png') }}" alt="CSo image" />
-                            <div class="info">
-                                <h5>Blick Inc</h5>
-                                <p>Children protection</p>
-                            </div>
-                        </a>
-                        <a href="/" class="cso">
-                            <img src="{{ asset('images/library/library-1.png') }}" alt="CSo image" />
-                            <div class="info">
-                                <h5>Blick Inc</h5>
-                                <p>Children protection</p>
-                            </div>
-                        </a>
-                    </div>
                 </aside>
                 <div class="main-content">
                     <div class="cso-directory-top">
@@ -74,34 +48,6 @@
                         {{ $csos->links() }}
                     </div>
                 </div>
-                <aside class="desktop-only">
-                    <div class="aside-section">
-                        <div class="top">
-                            <h3>CSO contacts</h3>
-                        </div>
-                        <a href="/" class="cso">
-                            <img src="{{ asset('images/library/library-3.png') }}" alt="CSo image" />
-                            <div class="info">
-                                <h5>Blick Inc</h5>
-                                <p>Children protection</p>
-                            </div>
-                        </a>
-                        <a href="/" class="cso">
-                            <img src="{{ asset('images/library/library-2.png') }}" alt="CSo image" />
-                            <div class="info">
-                                <h5>Blick Inc</h5>
-                                <p>Children protection</p>
-                            </div>
-                        </a>
-                        <a href="/" class="cso">
-                            <img src="{{ asset('images/library/library-1.png') }}" alt="CSo image" />
-                            <div class="info">
-                                <h5>Blick Inc</h5>
-                                <p>Children protection</p>
-                            </div>
-                        </a>
-                    </div>
-                </aside>
             </div>
         </section>
 
