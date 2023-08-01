@@ -8,7 +8,7 @@
                         <li>
                             <a href="{{ route('locale.setting', 'en') }}">
                                 @if (Lang::locale() == 'en')
-                                    <b style="font-size: larger;">en</b>
+                                    <b>en</b>
                                 @else
                                     en
                                 @endif
@@ -17,7 +17,7 @@
                         <li>
                             <a href="{{ route('locale.setting', 'fr') }}">
                                 @if (Lang::locale() == 'fr')
-                                    <b style="font-size: large;">fr</b>
+                                    <b>fr</b>
                                 @else
                                     fr
                                 @endif
@@ -58,8 +58,8 @@
     <div class="section-2">
         <div class="con">
             <div class="left">
-                <a href="{{ route('welcome') }}"><img src="{{ asset('images/logos/lacsodec-logo.png') }}"
-                        alt="" class="logo"></a>
+                <a href="{{ route('welcome') }}" class="logo"><img
+                        src="{{ asset('images/logos/lacsodec-logo.png') }}" alt=""></a>
                 <ul>
                     <li>
                         <a href="{{ route('cso-directory') }}">
