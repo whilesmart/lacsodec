@@ -30,7 +30,7 @@
                         <h2>Biography</h2>
                         <p>{{ $expert->details }}</p>
                     </div>
-                    <x-contact-expert name="{{ $expert->user->name }}" />
+                    <x-contact-expert name="{{ $expert->user->name }}" expertId="{{$expert->id}}" />
                 </div>
                 <aside>
                     <x-donation-card />

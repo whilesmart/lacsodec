@@ -52,6 +52,7 @@
                     Molyko - Buea
                 </p>
                 <p>{{__('contact.Phone')}}: +237 677947449</p>
+                <a href="{{ route('privacy-policy') }}" class="privacy-link">{{__('privacy.Privacy policy')}}</a>
             </div>
             <div class="sub">
                 <h3>{{__('footer.Newsletter')}}</h3>

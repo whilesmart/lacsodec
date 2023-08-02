@@ -72,12 +72,14 @@ return [
     'National' => 'National',
     'Global (more than one african country)' => 'Global (more than one African country)',
     'Confirm CSO Registration' => 'Confirm CSO Registration',
-    'Registed in' => 'Registered in',
+    'Registered in' => 'Registered in',
     'Status' => 'Status',
     'Vision' => 'Vision',
     'Mission' => 'Mission',
     'Other CSOs' => 'Other CSOs',
     'All' => 'All',
     'Type' => 'Type',
+    'Background and track record' => 'Background and track record',
+    'Write email' => 'Write email',
 
 ];

@@ -122,9 +122,6 @@
                     <li><a href="{{ route('lodge') }}"
                             class="{{ Request::routeIs('lodge') || Request::routeIs('lodge-details') ? 'active' : '' }}">{{ __('header.lodge') }}</a>
                     </li>
-                    <li><a href="{{ route('lodge') }}"
-                            class="mobile-only {{ request()->is('contact-us') ? 'active' : '' }}">{{ __('header.lodge') }}</a>
-                    </li>
                     <li><a href="{{ route('contact-us') }}"
                             class="{{ request()->is('contact-us') ? 'active' : '' }}">{{ __('header.contact-us') }}</a>
                     </li>
