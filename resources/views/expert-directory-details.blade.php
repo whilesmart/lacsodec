@@ -6,27 +6,42 @@
         <section class="expert-directory-details-section">
             <div class="con">
                 <div class="main-content">
-                    <img src="{{ asset($expert->image) }}" alt="" class="top-image">
-                    {{-- <h1>{{$expert->user->name}}</h1> --}}
-                    <h2>{{ $expert->position }}</h2>
-                    <h4>{{__('experts.Nationality')}}: {{ $expert->nationality }}</h4>
-                    <h4>{{__('experts.Language')}}s: @foreach ($expert->languages as $lang)
-                        {{$lang->name}},
-                    @endforeach</h4>
-                    <h4>{{__('experts.Company')}}: {{ $expert->company }}</h4>
+                    <div class="top-card">
+                        <img src="{{ asset($expert->image) }}" alt="" class="top-image">
+                        <div class="content">
+                            <h1>{{ $expert->user->name }}</h1>
+                            <h2>{{ $expert->position }}</h2>
+                            <h3>{{ $expert->location }}, {{ $expert->nationality }}</h3>
+                            <ul>
+                                <li><b>{{ __('experts.Nationality') }}: </b> {{ $expert->nationality }}</li>
+                                <li><b>{{ __('experts.Language') }}s: </b>
+                                    @foreach ($expert->languages as $lang)
+                                        {{ $lang->name }},
+                                    @endforeach
+                                </li>
+                                <li><b>{{ __('experts.Company') }}:</b> {{ $expert->company }}</li>
+                                <li><b>Experience:</b> {{ $expert->work_duration }}</li>
+                                <li><b>Gender:</b> {{ $expert->sex }}</li>
+                            </ul>
+                        </div>
+                    </div>
                     <br>
-                    <p>{{ $expert->details }}</p>
+                    <div class="bio">
+                        <h2>Biography</h2>
+                        <p>{{ $expert->details }}</p>
+                    </div>
+                    <x-contact-expert name="{{ $expert->user->name }}" />
                 </div>
                 <aside>
                     <x-donation-card />
-                    <x-latest-cso :csos="$latestCsos"/>
+                    <x-latest-cso :csos="$latestCsos" />
                 </aside>
             </div>
         </section>
 
         <section class="other-expert-section">
             <div class="con">
-                <h2>{{__('experts.Other Experts')}}</h2>
+                <h2>{{ __('experts.Other Experts') }}</h2>
                 <div class="expert-grid">
                     @foreach ($otherExperts as $otherExpert)
                         <a href="{{ route('expert-directory-details', ['expert' => $otherExpert->id]) }}"
@@ -36,11 +51,13 @@
                             <h5>{{ $otherExpert->position }}</h5>
                             <div class="flex">
                                 <div class="left">
-                                    <span>{{ $otherExpert->sex }}</span> <span>{{ $otherExpert->work_duration }}</span>
+                                    <span>{{ $otherExpert->sex }}</span>
+                                    <span>{{ $otherExpert->work_duration }}</span>
                                 </div>
                                 <div class="status {{ $expert->status }}">{{ $otherExpert->status }}</div>
                             </div>
-                            <p>{{ $otherExpert->location }} - {{ $otherExpert->nationality }} - {{ $otherExpert->company }}</p>
+                            <p>{{ $otherExpert->location }} - {{ $otherExpert->nationality }} -
+                                {{ $otherExpert->company }}</p>
                         </a>
                     @endforeach
                 </div>
