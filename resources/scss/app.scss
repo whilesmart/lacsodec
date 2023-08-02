@@ -681,6 +681,10 @@ header {
 
 footer {
     background-color: $primary;
+    .privacy-link {
+        color: white;
+        text-decoration: underline;
+    }
     .top {
         padding: 2rem 0;
         @include for-mobile {

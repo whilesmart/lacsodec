@@ -51,6 +51,10 @@ Route::get('/donate', function () {
     return view('donate');
 })->name('donate');
 
+Route::get('/privacy-policy', function () {
+    return view('privacy-policy');
+})->name('privacy-policy');
+
 Route::get('/cso-directory', [CsoController::class, 'index'])->name('cso-directory');
 
 Route::get('/cso-directory-details/{cso}', [CsoController::class, 'show'])->name('cso-directory-details');
@@ -60,6 +64,8 @@ Route::get('/expert-directory', [ExpertController::class, 'index'])->name('exper
 Route::get('/human-resource-directory', [HumanResourceController::class, 'index'])->name('human-resource-directory');
 
 Route::get('/expert-directory-details/{expert}', [ExpertController::class, 'show'])->name('expert-directory-details');
+
+Route::post('/expert/mail/{expert}', [ExpertController::class, 'sendMail'])->name('send-expert-mail');
 
 Route::get('/login', [LoginController::class, 'create'])->name('login');
 Route::post('/login', [LoginController::class, 'store'])->name('login.perform');

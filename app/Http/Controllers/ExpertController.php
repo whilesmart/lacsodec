@@ -7,6 +7,7 @@ use App\Models\ExpertLanguage;
 use App\Models\ExpertProfile;
 use App\Services\CountryService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ExpertController extends Controller
 {
@@ -107,5 +108,35 @@ class ExpertController extends Controller
         }
 
         return redirect()->to('/expert-directory')->with('success', 'you have successfuly submited your registration. Please wait for admin approval');
+    }
+
+    public function sendMail(Request $request, $expert)
+    {
+        $expert = ExpertProfile::findOrFail($expert);
+        $fields = $request->validate([
+            'name' => ['string', 'required'],
+            'phone' => ['string', 'required'],
+            'email' => ['email', 'required'],
+            'message' => ['string', 'required'],
+            'subject' => ['string', 'required'],
+        ]);
+
+        Mail::send(
+            'mail.mail',
+            [
+                'name' => $fields['name'],
+                'email' => $fields['email'],
+                'phone' => $fields['phone'],
+                'subject' => $fields['subject'],
+                'comment' => $fields['message'],
+            ],
+            function ($message) use ($fields, $expert) {
+                $message->from($fields['email'], $fields['name']);
+                $message->to($expert->user->email, $expert->user->name)
+                    ->subject($fields['subject']);
+            }
+        );
+
+        return back()->with('success', 'Your email has been successfully sent');
     }
 }

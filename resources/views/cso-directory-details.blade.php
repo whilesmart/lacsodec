@@ -16,16 +16,16 @@
                     <p>{{ $cso->vision_statement }}</p>
                     <h6>{{ __('cso.Mission') }}:</h6>
                     <p><b>{{ $cso->mission }}</b></p>
-                    <h6>Background and track record:</h6>
+                    <h6>{{__('cso.Background and track record')}}:</h6>
                     <p><b>{{ $cso->background }}</b></p>
                     <div class="title">
                         <h2>CSO Contacts</h2>
-                        <a class="custom-button primary"><span>Write email</span></a>
+                        <a class="custom-button primary" href="mailto:{{$cso->email}}"><span>{{__('cso.Write email')}}</span></a>
                     </div>
                     <ul>
-                        <li><b>Email:</b> example@email.com</li>
-                        <li><b>Website:</b> example.com</li>
-                        <li><b>Phone number:</b> +234612344567</li>
+                        <li><b>Email:</b> {{$cso->email}}</li>
+                        <li><b>Website:</b> <a href="{{$cso->website}}" target="__blank">{{$cso->website}}</a></li>
+                        <li><b>Phone number:</b> {{$cso->contact_person_tel}}</li>
                     </ul>
                 </div>
                 <aside>
@@ -40,11 +40,11 @@
                 <h2>{{ __('cso.Other CSOs') }}</h2>
                 <div class="cso-grid">
                     @foreach ($otherCsos as $otherCso)
-                        <a href="{{ route('cso-directory-details', ['cso' => $otherCso->id]) }}" class="cso-card">
-                            <img src="{{ asset($otherCso->image) }}" alt="" />
-                            <h2>{{ $otherCso->name }}</h2>
-                            <p>{{ $otherCso->domain }}</p>
-                        </a>
+                    <a href="{{ route('cso-directory-details', ['cso' => $otherCso->id]) }}" class="cso-card">
+                        <img src="{{ asset($otherCso->image) }}" alt="" />
+                        <h2>{{ $otherCso->name }}</h2>
+                        <p>{{ $otherCso->domain }}</p>
+                    </a>
                     @endforeach
                 </div>
         </section>

@@ -32,7 +32,7 @@
                     <span>{{__('front_login.Login')}}</span>
                 </button>
             </form>
-            <p>{{__("login.Don't have an Account?")}} <a href="{{ route('register') }}">{{__('front_login.Sign Up')}}</a></p>
+            <p>{{__("front_login.Don't have an Account?")}} <a href="{{ route('register') }}">{{__('front_login.Sign Up')}}</a></p>
         </div>
     </div>
 </x-layouts.app>
