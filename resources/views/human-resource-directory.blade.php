@@ -11,6 +11,7 @@
             <div class="con">
                 <div class="main-content">
                     <div class="expert-directory-grid">
+                        @if (isset($experts))
                         @foreach ($experts as $expert)
                             <a href="{{ route('expert-directory-details', ['expert' => $expert->id]) }}"
                                 class="expert-card">
@@ -26,6 +27,7 @@
                                 <p>{{ $expert->location }} - {{ $expert->nationality }} - {{ $expert->company }}</p>
                             </a>
                         @endforeach
+                        @endif
                     </div>
                     <div class="pagination">
                         {{ $experts->links() }}

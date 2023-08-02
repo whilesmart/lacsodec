@@ -43,6 +43,7 @@
             <div class="con">
                 <h2>{{ __('experts.Other Experts') }}</h2>
                 <div class="expert-grid">
+                    @if (isset($otherExperts))
                     @foreach ($otherExperts as $otherExpert)
                         <a href="{{ route('expert-directory-details', ['expert' => $otherExpert->id]) }}"
                             class="expert-card">
@@ -60,6 +61,7 @@
                                 {{ $otherExpert->company }}</p>
                         </a>
                     @endforeach
+                    @endif
                 </div>
             </div>
         </section>
