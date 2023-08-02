@@ -66,6 +66,7 @@
                     <div class="top">
                         <h3>{{__('welcome.Latest Experts')}}</h3>
                     </div>
+                    @if (isset($latestExperts))
                     @foreach ($latestExperts as $expert)
                     <a href="{{ route('expert-directory-details', ['expert' => $expert->id]) }}" class="expert">
                         <img src="{{ asset($expert->image) }}" alt="" />
@@ -75,6 +76,7 @@
                         </div>
                     </a>
                     @endforeach
+                    @endif
                 </div>
             </aside>
             <div class="main-content">
@@ -134,19 +136,19 @@
             <aside>
                 <x-donation-card />
                 <div class="aside-section">
-    <div class="top">
-        <h3>{{__('welcome.Latest CSO')}}</h3>
-    </div>
-    @foreach ($latestCsos as $cso)
-    <a href="{{ route('cso-directory-details', ['cso' => $cso->id]) }}" class="cso">
-        <img src="{{ asset($cso->image) }}" alt="{{$cso->name}}" />
-        <div class="info">
-            <h5>{{$cso->name}}</h5>
-            <p>{{$cso->created_at}}</p>
-    </div>
-    </a>
-    @endforeach
-</div>
+                    <div class="top">
+                        <h3>{{__('welcome.Latest CSO')}}</h3>
+                    </div>
+                    @foreach ($latestCsos as $cso)
+                    <a href="{{ route('cso-directory-details', ['cso' => $cso->id]) }}" class="cso">
+                        <img src="{{ asset($cso->image) }}" alt="{{$cso->name}}" />
+                        <div class="info">
+                            <h5>{{$cso->name}}</h5>
+                            <p>{{$cso->created_at}}</p>
+                        </div>
+                    </a>
+                    @endforeach
+                </div>
             </aside>
         </div>
     </section>
