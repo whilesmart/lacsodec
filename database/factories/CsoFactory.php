@@ -48,6 +48,7 @@ class CsoFactory extends Factory
             'secondary_target_beneficiaries' => $this->faker->sentence(),
             'domain' => CsoActivityDomain::all()->random()->name,
             'board_directors' => $this->faker->boolean(),
+            'office' => $this->faker->boolean(),
             'african_coverage' => $this->faker->word(),
             'organization_leaderships' => $this->faker->sentence(),
             'background' => $this->faker->paragraph(),

@@ -46,6 +46,7 @@ class Cso extends Model
         'domain',
         'organization_leaderships',
         'board_directors',
+        'office',
         'african_coverage',
         'background',
         'user_id',

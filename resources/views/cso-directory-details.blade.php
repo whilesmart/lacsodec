@@ -9,22 +9,22 @@
                     <img src="{{ asset($cso->image) }}" alt="" class="top-image">
                     <h1>{{ $cso->name }}</h1>
                     <h1>{{ $cso->partnership }}</h1>
-                    <h4>{{ __('cso.Registered in') }} <b>{{ $cso->registration_year }}</b></h4>
-                    <h5>{{ __('cso.Status') }}: <b>{{ $cso->status }}</b></h5>
-                    <br>
-                    <h6>{{ __('cso.Vision') }}:</h6>
-                    <p>{{ $cso->vision_statement }}</p>
-                    <h6>{{ __('cso.Mission') }}:</h6>
-                    <p><b>{{ $cso->mission }}</b></p>
-                    <h6>{{__('cso.Background and track record')}}:</h6>
-                    <p><b>{{ $cso->background }}</b></p>
+                    <h4>{{__('cso.Registered in')}} <b>{{$cso->registration_year}}</b></h4>
+                    <h5>{{__('cso.Status')}}: <b>{{$cso->status}}</b></h5>
+		            <br>
+                    <h5>{{__('cso.Vision')}}:</h5>
+                    <p>{{$cso->vision_statement}}</p>
+                    <h5>{{__('cso.Mission')}}:</h5>
+                    <p><b>{{$cso->mission}}</b></p>
+                    <h5>Background and track record:</h5>
+                    <p>{{$cso->background}}</p>
                     <div class="title">
                         <h2>CSO Contacts</h2>
                         <a class="custom-button primary" href="mailto:{{$cso->email}}"><span>{{__('cso.Write email')}}</span></a>
                     </div>
                     <ul>
                         <li><b>Email:</b> {{$cso->email}}</li>
-                        <li><b>Website:</b> <a href="{{$cso->website}}" target="__blank">{{$cso->website}}</a></li>
+                        <li><b>Website:</b> <a href="{{$cso->website}}" target="_blank">{{$cso->website}}</a></li>
                         <li><b>Phone number:</b> {{$cso->contact_person_tel}}</li>
                     </ul>
                 </div>

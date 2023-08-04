@@ -66,6 +66,9 @@ class CsoInfo extends Rows
             CheckBox::make('cso.board_directors')
                 ->title('Board of directors?')
                 ->sendTrueOrFalse(),
+            CheckBox::make('cso.office')
+                ->title('Do you have an office?')
+                ->sendTrueOrFalse(),
 
             Select::make('cso.organization_leaderships')
                 ->title('Organization leadership')
