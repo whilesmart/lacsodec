@@ -71,7 +71,6 @@ class CsoInfo extends Rows
                 ->title('Do you have an office?')
                 ->sendTrueOrFalse(),
 
-
             Select::make('cso.staff')
                 ->options([
                     'zero' => '0',
@@ -81,7 +80,7 @@ class CsoInfo extends Rows
                     'fifty+' => '50+',
                 ])
                 ->title('How many staff do you have on your payrole?')
-                ->help('Select your number of staff'),            
+                ->help('Select your number of staff'),
 
             CheckBox::make('cso.cnps-registered')
                 ->title('Are your staffs registered with CNPS?')
