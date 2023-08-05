@@ -85,5 +85,7 @@ return [
     'Do you have a physical office?' => 'Avez-vous un bureau physique?',
     'How many staffs do you have on your payrole?' => "Combien d'employés avez-vous sur votre rôle de paie?",
     'Are your staffs registered with CNPS?' => 'Vos personnels sont-ils immatriculés à la CNPS?',
+    "CSO's Contacts" => "Contacts de l'OSC",
+    'Website' => 'Site web',
 
 ];

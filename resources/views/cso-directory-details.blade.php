@@ -16,16 +16,16 @@
                     <p>{{$cso->vision_statement}}</p>
                     <h5>{{__('cso.Mission')}}:</h5>
                     <p><b>{{$cso->mission}}</b></p>
-                    <h5>Background and track record:</h5>
+                    <h5>{{__('cso.Background and track record')}}:</h5>
                     <p>{{$cso->background}}</p>
                     <div class="title">
-                        <h2>CSO Contacts</h2>
+                        <h2>{{__('cso.CSO's Contacts')}}</h2>
                         <a class="custom-button primary" href="mailto:{{$cso->email}}"><span>{{__('cso.Write email')}}</span></a>
                     </div>
                     <ul>
-                        <li><b>Email:</b> {{$cso->email}}</li>
-                        <li><b>Website:</b> <a href="{{$cso->website}}" target="_blank">{{$cso->website}}</a></li>
-                        <li><b>Phone number:</b> {{$cso->contact_person_tel}}</li>
+                        <li><b>{{__('cso.Email address')}}:</b> {{$cso->email}}</li>
+                        <li><b>{{__('cso.Website')}}:</b> <a href="{{$cso->website}}" target="_blank">{{$cso->website}}</a></li>
+                        <li><b>{{__('cso.Phone number')}}:</b> {{$cso->contact_person_tel}}</li>
                     </ul>
                 </div>
                 <aside>
