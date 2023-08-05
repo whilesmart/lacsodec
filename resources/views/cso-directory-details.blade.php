@@ -19,7 +19,7 @@
                     <h5>{{__('cso.Background and track record')}}:</h5>
                     <p>{{$cso->background}}</p>
                     <div class="title">
-                        <h2>{{__('cso.CSO's Contacts')}}</h2>
+                        <h2>{{__("cso.CSO's Contacts")}}</h2>
                         <a class="custom-button primary" href="mailto:{{$cso->email}}"><span>{{__('cso.Write email')}}</span></a>
                     </div>
                     <ul>
