@@ -379,7 +379,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">Organization background and track record</label>
+                                <label for="">{{__("cso.Organization's background and track record")}} *</label>
                                 <textarea type="text" name="background" id="background" placeholder="{{__('cso.Type')}}">{{ old('background') }}</textarea>
                                 @error('background')
                                 <span class="error-msg">{{ $message }}</span>
@@ -390,7 +390,7 @@
                                 error
                             @enderror
                             ">
-                                <label for="">Do you have a physical office?</label>
+                                <label for="">{{__('cso.Do you have a physical office?')}} *</label>
                                 <div class="radio-flex">
                                     <div class="sub">
                                         <input type="radio" name="office" value="true" id="office-yes" {{old('office') == 'true'? 'checked':''}}>
@@ -406,6 +406,48 @@
                                     </div>
                                 </div>
                                 @error('office')
+                                <span class="error-msg">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="field 
+                            @error('staff')
+                                error
+                            @enderror
+                            ">
+                                <label for="">{{__('cso.How many staffs do you have on your payrole?')}} *</label>
+                                <select name="staff" id="staff" value="{{ old('staff') }}">
+                                    <option value="" disabled hidden selected>{{__('cso.Choose')}}</option>
+                                    <option value="zero" {{ old('staff') == 'zero' ? 'selected' : '' }}>0</option>
+                                    <option value="two" {{ old('staff') == 'two' ? 'selected' : '' }}>2</option>
+                                    <option value="three-ten" {{ old('staff') == 'three-ten' ? 'selected' : '' }}>3 - 10</option>
+                                    <option value="eleven-fifty" {{ old('staff') == 'eleven-fifty' ? 'selected' : '' }}>11 - 50</option>
+                                    <option value="fifty+" {{ old('staff') == 'fifty+' ? 'selected' : '' }}>50+</option>
+                                </select>
+                                @error('staff')
+                                <span class="error-msg">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="field
+                            @error('office')
+                                error
+                            @enderror
+                            ">
+                                <label for="">{{__('cso.Are your staffs registered with CNPS?')}} *</label>
+                                <div class="radio-flex">
+                                    <div class="sub">
+                                        <input type="radio" name="cnps-registered" value="true" id="cnps-registered-yes" {{old('cnps-registered') == 'true'? 'checked':''}}>
+                                        <label for="cnps-registered-yes">
+                                            {{__('cso.Yes')}}
+                                        </label>
+                                    </div>
+                                    <div class="sub">
+                                        <input type="radio" name="cnps-registered" value="false" id="cnps-registered-no" {{old('cnps-registered') == 'false'? 'checked':''}}>
+                                        <label for="cnps-registered-no">
+                                            {{__('cso.No')}}
+                                        </label>
+                                    </div>
+                                </div>
+                                @error('cnps-registered')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>

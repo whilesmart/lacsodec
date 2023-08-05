@@ -81,5 +81,9 @@ return [
     'Type' => 'Saisie',
     'Background and track record' => 'Antécédents et palmarès',
     'Write email' => 'Écrire un mail',
+    "Organization's background and track record" => "Contexte et antécédents de l'organisation",
+    'Do you have a physical office?' => 'Avez-vous un bureau physique?',
+    'How many staffs do you have on your payrole?' => "Combien d'employés avez-vous sur votre rôle de paie?",
+    'Are your staffs registered with CNPS?' => 'Vos personnels sont-ils immatriculés à la CNPS?'
 
 ];

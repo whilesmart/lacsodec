@@ -49,6 +49,8 @@ class CsoFactory extends Factory
             'domain' => CsoActivityDomain::all()->random()->name,
             'board_directors' => $this->faker->boolean(),
             'office' => $this->faker->boolean(),
+            'staff' => $this->faker->word(),
+            'cnps-registered' => $this->faker->boolean(),
             'african_coverage' => $this->faker->word(),
             'organization_leaderships' => $this->faker->sentence(),
             'background' => $this->faker->paragraph(),
