@@ -48,7 +48,7 @@ class Cso extends Model
         'board_directors',
         'office',
         'staff',
-        'cnps-registered',
+        'cnps_registered',
         'african_coverage',
         'background',
         'user_id',

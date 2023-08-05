@@ -82,7 +82,7 @@ class CsoInfo extends Rows
                 ->title('How many staff do you have on your payrole?')
                 ->help('Select your number of staff'),
 
-            CheckBox::make('cso.cnps-registered')
+            CheckBox::make('cso.cnps_registered')
                 ->title('Are your staffs registered with CNPS?')
                 ->sendTrueOrFalse(),
 

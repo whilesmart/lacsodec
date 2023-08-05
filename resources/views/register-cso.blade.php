@@ -435,19 +435,19 @@
                                 <label for="">{{__('cso.Are your staffs registered with CNPS?')}} *</label>
                                 <div class="radio-flex">
                                     <div class="sub">
-                                        <input type="radio" name="cnps-registered" value="true" id="cnps-registered-yes" {{old('cnps-registered') == 'true'? 'checked':''}}>
+                                        <input type="radio" name="cnps_registered" value="true" id="cnps-registered-yes" {{old('cnps_registered') == 'true'? 'checked':''}}>
                                         <label for="cnps-registered-yes">
                                             {{__('cso.Yes')}}
                                         </label>
                                     </div>
                                     <div class="sub">
-                                        <input type="radio" name="cnps-registered" value="false" id="cnps-registered-no" {{old('cnps-registered') == 'false'? 'checked':''}}>
+                                        <input type="radio" name="cnps_registered" value="false" id="cnps-registered-no" {{old('cnps_registered') == 'false'? 'checked':''}}>
                                         <label for="cnps-registered-no">
                                             {{__('cso.No')}}
                                         </label>
                                     </div>
                                 </div>
-                                @error('cnps-registered')
+                                @error('cnps_registered')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>

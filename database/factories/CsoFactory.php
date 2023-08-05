@@ -50,7 +50,7 @@ class CsoFactory extends Factory
             'board_directors' => $this->faker->boolean(),
             'office' => $this->faker->boolean(),
             'staff' => $this->faker->word(),
-            'cnps-registered' => $this->faker->boolean(),
+            'cnps_registered' => $this->faker->boolean(),
             'african_coverage' => $this->faker->word(),
             'organization_leaderships' => $this->faker->sentence(),
             'background' => $this->faker->paragraph(),
