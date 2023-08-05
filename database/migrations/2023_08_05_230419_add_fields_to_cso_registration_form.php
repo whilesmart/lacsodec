@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::table('csos', function (Blueprint $table) {
             $table->boolean('office')->default(false);
+            $table->string('staff')->nullable();
+            $table->boolean('cnps_registered')->default(false);
         });
     }
 
@@ -22,7 +24,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('csos', function (Blueprint $table) {
-            //
+            Schema::dropIfExists('csos');
         });
     }
 };
