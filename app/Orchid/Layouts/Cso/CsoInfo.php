@@ -75,8 +75,8 @@ class CsoInfo extends Rows
                 ->options([
                     'zero' => '0',
                     'two' => '2',
-                    'three - ten' => '3 - 10',
-                    'eleven - fifty' => '11 - 50',
+                    'three-ten' => '3 - 10',
+                    'eleven-fifty' => '11 - 50',
                     'fifty+' => '50+',
                 ])
                 ->title('How many staff do you have on your payrole?')
