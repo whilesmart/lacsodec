@@ -75,8 +75,8 @@ class CsoInfo extends Rows
                 ->options([
                     'zero' => '0',
                     'two' => '2',
-                    'three - ten' => '3 - 10',
-                    'eleven - fifty' => '11 - 50',
+                    'three-ten' => '3 - 10',
+                    'eleven-fifty' => '11 - 50',
                     'fifty+' => '50+',
                 ])
                 ->title('How many staff do you have on your payrole?')
@@ -89,8 +89,8 @@ class CsoInfo extends Rows
             Select::make('cso.organization_leaderships')
                 ->title('Organization leadership')
                 ->options([
-                    'Women-led organization' => 'Women-led organization',
-                    'Youth-led organization' => 'Youth-led organization',
+                    'Women headed organization' => 'Women-led organization',
+                    'Youth lead organization' => 'Youth-led organization',
                     'General' => 'General',
                 ]),
 
