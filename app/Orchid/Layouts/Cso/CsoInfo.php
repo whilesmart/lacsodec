@@ -89,8 +89,8 @@ class CsoInfo extends Rows
             Select::make('cso.organization_leaderships')
                 ->title('Organization leadership')
                 ->options([
-                    'Women-led organization' => 'Women-led organization',
-                    'Youth-led organization' => 'Youth-led organization',
+                    'Women headed organization' => 'Women-led organization',
+                    'Youth lead organization' => 'Youth-led organization',
                     'General' => 'General',
                 ]),
 
