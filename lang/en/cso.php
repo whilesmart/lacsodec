@@ -81,5 +81,11 @@ return [
     'Type' => 'Type',
     'Background and track record' => 'Background and track record',
     'Write email' => 'Write email',
+    "Organization's background and track record" => "Organization's background and track record",
+    'Do you have a physical office?' => 'Do you have a physical office?',
+    'How many staffs do you have on your payrole?' => 'How many staff do you have on your payrole?',
+    'Are your staffs registered with CNPS?' => 'Are your staffs registered with CNPS?',
+    "CSO's Contacts" => "CSO's Contacts",
+    'Website' => 'Website',
 
 ];

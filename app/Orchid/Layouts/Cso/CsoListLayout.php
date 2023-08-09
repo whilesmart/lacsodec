@@ -32,6 +32,7 @@ class CsoListLayout extends Table
                 ->render(fn (Cso $cso) => "<img src=$cso->image alt=$cso->name class='mw-100 d-block img-fluid rounded-1 w-100'>"),
             TD::make('name', 'Name')->filter(),
             TD::make('created_at', 'Application date'),
+            TD::make('status', 'Status'),
             TD::make('Actions')
                 ->render(function (Cso $cso) {
                     return Link::make('Edit CSO')

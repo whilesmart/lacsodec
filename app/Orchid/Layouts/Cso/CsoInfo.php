@@ -67,11 +67,30 @@ class CsoInfo extends Rows
                 ->title('Board of directors?')
                 ->sendTrueOrFalse(),
 
+            CheckBox::make('cso.office')
+                ->title('Do you have an office?')
+                ->sendTrueOrFalse(),
+
+            Select::make('cso.staff')
+                ->options([
+                    'zero' => '0',
+                    'two' => '2',
+                    'three-ten' => '3 - 10',
+                    'eleven-fifty' => '11 - 50',
+                    'fifty+' => '50+',
+                ])
+                ->title('How many staff do you have on your payrole?')
+                ->help('Select your number of staff'),
+
+            CheckBox::make('cso.cnps_registered')
+                ->title('Are your staffs registered with CNPS?')
+                ->sendTrueOrFalse(),
+
             Select::make('cso.organization_leaderships')
                 ->title('Organization leadership')
                 ->options([
-                    'Women-led organization' => 'Women-led organization',
-                    'Youth-led organization' => 'Youth-led organization',
+                    'Women headed organization' => 'Women-led organization',
+                    'Youth lead organization' => 'Youth-led organization',
                     'General' => 'General',
                 ]),
 

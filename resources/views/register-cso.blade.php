@@ -19,7 +19,7 @@
                             @endif
                             ">
                                 <label for="">{{__('cso.Full name')}} *</label>
-                                <input type="text" name="name" id="name" placeholder="{{__('cso.CSO name')}}" value="{{ old('name') }}" >
+                                <input type="text" name="name" id="name" placeholder="{{__('cso.CSO name')}}" value="{{ old('name') }}">
                                 @error('name')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -30,7 +30,7 @@
                             @endif
                             ">
                                 <label for="">{{__('cso.Acronym')}} *</label>
-                                <input type="text" name="partnership" id="partnership" placeholder="{{__('cso.Acronym')}}" value="{{ old('partnership') }}" >
+                                <input type="text" name="partnership" id="partnership" placeholder="{{__('cso.Acronym')}}" value="{{ old('partnership') }}">
                                 @error('partnership')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -43,7 +43,7 @@
                             @endif
                             ">
                                 <label for="registration_year">{{__('cso.Registration year')}} *</label>
-                                <input type="number" name="registration_year" id="registration-year" placeholder="{{__('cso.Registration year')}}" value="{{ old('registration_year') }}" >
+                                <input type="number" name="registration_year" id="registration-year" placeholder="{{__('cso.Registration year')}}" value="{{ old('registration_year') }}">
                                 @error('registration_year')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -54,7 +54,7 @@
                             @enderror
                             ">
                                 <label for="">{{__('cso.Registration number')}} *</label>
-                                <input type="text" name="registration_number" id="registration-number" placeholder="{{__('cso.Registration number')}}" value="{{ old('registration_number') }}" >
+                                <input type="text" name="registration_number" id="registration-number" placeholder="{{__('cso.Registration number')}}" value="{{ old('registration_number') }}">
                                 @error('registration_number')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -67,7 +67,7 @@
                             @enderror
                             ">
                                 <label for="">{{__('cso.Type of organization')}} *</label>
-                                <select name="organization_type" id="organization-type" value="{{ old('organization_type') }}" >
+                                <select name="organization_type" id="organization-type" value="{{ old('organization_type') }}">
                                     <option value="" disabled hidden selected>{{__('cso.Choose')}}</option>
                                     <option value="Association" {{ old('organization_type') == 'Association' ? 'selected' : '' }}>{{__('cso.Association')}}</option>
                                     <option value="Accredited NGO" {{ old('organization_type') == 'Accredited NGO' ? 'selected' : '' }}>{{__('cso.Accredited NGO (Non-governmental Organisation)')}}</option>
@@ -90,16 +90,16 @@
                             @enderror
                             ">
                                 <label for="">{{__('cso.Country')}} *</label>
-                                <select name="country" id="country" value="{{ old('country') }}" >
+                                <select name="country" id="country" value="{{ old('country') }}">
                                     <option value="" disabled hidden selected>{{__('cso.Choose')}}</option>
-                                @foreach ($countries as $country)
-                                @if (Lang::locale() == 'en')
-                                <option value="{{$country->name}}" {{ old('country') == $country->name ? 'selected' : '' }}>{{$country->name}}</option>
-                                @else
-                                <option value="{{$country->name}}" {{ old('country') == $country->name ? 'selected' : '' }}>{{$country->french_name}}</option>
-                                @endif
-                                    
-                                @endforeach
+                                    @foreach ($countries as $country)
+                                    @if (Lang::locale() == 'en')
+                                    <option value="{{$country->name}}" {{ old('country') == $country->name ? 'selected' : '' }}>{{$country->name}}</option>
+                                    @else
+                                    <option value="{{$country->name}}" {{ old('country') == $country->name ? 'selected' : '' }}>{{$country->french_name}}</option>
+                                    @endif
+
+                                    @endforeach
                                 </select>
                                 @error('country')
                                 <span class="error-msg">{{ $message }}</span>
@@ -113,7 +113,7 @@
                             @enderror
                             ">
                                 <label for="">{{__('cso.State/Region')}} *</label>
-                                <input type="text" name="region" id="region" placeholder="{{__('cso.State/Region')}}" value="{{ old('region') }}" >
+                                <input type="text" name="region" id="region" placeholder="{{__('cso.State/Region')}}" value="{{ old('region') }}">
                                 @error('region')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -124,7 +124,7 @@
                             @enderror
                             ">
                                 <label for="">{{__('cso.Division')}} *</label>
-                                <input type="text" name="division" id="division" placeholder="{{__('cso.Division')}}" value="{{ old('division') }}" >
+                                <input type="text" name="division" id="division" placeholder="{{__('cso.Division')}}" value="{{ old('division') }}">
                                 @error('division')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -133,7 +133,7 @@
                         <div class="flex">
                             <div class="field">
                                 <label for="">{{__('cso.Sub Division')}} *</label>
-                                <input type="text" name="sub_division" id="sub-division" placeholder="{{__('cso.Sub Division')}}" value="{{ old('sub_division') }}" >
+                                <input type="text" name="sub_division" id="sub-division" placeholder="{{__('cso.Sub Division')}}" value="{{ old('sub_division') }}">
                             </div>
                             <div class="field 
                             @error('village')
@@ -141,7 +141,7 @@
                             @enderror
                             ">
                                 <label for="">{{__('cso.Village')}} *</label>
-                                <input type="text" name="village" id="village" placeholder="{{__('cso.Village')}}" value="{{ old('village') }}" >
+                                <input type="text" name="village" id="village" placeholder="{{__('cso.Village')}}" value="{{ old('village') }}">
                                 @error('village')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -166,7 +166,7 @@
                             @enderror
                             ">
                                 <label for="">{{__('cso.Who to contact')}} *</label>
-                                <input type="text" name="contact_person_name" id="contact-name" placeholder="{{__("cso.Contact's name")}}" value="{{ old('contact_person_name') }}" >
+                                <input type="text" name="contact_person_name" id="contact-name" placeholder="{{__("cso.Contact's name")}}" value="{{ old('contact_person_name') }}">
                                 @error('contact_person_name')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -177,7 +177,7 @@
                             @enderror
                             ">
                                 <label for="">{{__('cso.Sex')}} *</label>
-                                <select name="contact_person_sex" id="contact-sex" value="{{ old('contact_person_sex') }}" >
+                                <select name="contact_person_sex" id="contact-sex" value="{{ old('contact_person_sex') }}">
                                     <option value="" disabled hidden selected>choose</option>
                                     <option value="male" {{ old('contact_person_sex') == 'male' ? 'selected' : '' }}>{{__('cso.Male')}}</option>
                                     <option value="female" {{ old('contact_person_sex') == 'female' ? 'selected' : '' }}>{{__('cso.Female')}}</option>
@@ -194,7 +194,7 @@
                             @enderror
                             ">
                                 <label for="">{{__('cso.Email address')}} *</label>
-                                <input type="email" name="contact_person_email" id="contact-email" placeholder="{{__("cso.Contact's email address")}}" value="{{ old('contact_person_email') }}" >
+                                <input type="email" name="contact_person_email" id="contact-email" placeholder="{{__("cso.Contact's email address")}}" value="{{ old('contact_person_email') }}">
                                 @error('contact_person_email')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -205,7 +205,7 @@
                             @enderror
                             ">
                                 <label for="">{{__('cso.Phone number')}} *</label>
-                                <input type="tel" name="contact_person_tel" id="contact-phone" placeholder="{{__('cso.Phone number')}}" value="{{ old('contact_person_tel') }}" >
+                                <input type="tel" name="contact_person_tel" id="contact-phone" placeholder="{{__('cso.Phone number')}}" value="{{ old('contact_person_tel') }}">
                                 @error('contact_person_tel')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -218,7 +218,7 @@
                             @enderror
                             ">
                                 <label for="">{{__("cso.Person's position/role")}} *</label>
-                                <input type="text" name="contact_person_position" id="contact-position" placeholder="{{__('cso.position/role')}}" value="{{ old('contact_person_position') }}" >
+                                <input type="text" name="contact_person_position" id="contact-position" placeholder="{{__('cso.position/role')}}" value="{{ old('contact_person_position') }}">
                                 @error('contact_person_position')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -229,7 +229,7 @@
                             @enderror
                             ">
                                 <label for="" class="no-text-transform">{{__("cso.CSO's physical address")}} *</label>
-                                <input type="text" name="address" id="cso-address" placeholder="{{__('cso.Address')}}" value="{{ old('address') }}" >
+                                <input type="text" name="address" id="cso-address" placeholder="{{__('cso.Address')}}" value="{{ old('address') }}">
                                 @error('address')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -242,7 +242,7 @@
                             @enderror
                             ">
                                 <label for="" class="no-text-transform">{{__("cso.CSO's Website")}} *</label>
-                                <input type="text" name="website" id="cso-website" placeholder="{{__('cso.Website')}}" value="{{ old('website') }}" >
+                                <input type="text" name="website" id="cso-website" placeholder="{{__('cso.Website')}}" value="{{ old('website') }}">
                                 @error('website')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -253,7 +253,7 @@
                             @enderror
                             ">
                                 <label for="" class="no-text-transform">{{__("cso.CSO's email address")}} *</label>
-                                <input type="email" name="email" id="cso-email" placeholder="{{__('cso.Email address')}}" value="{{ old('email') }}" >
+                                <input type="email" name="email" id="cso-email" placeholder="{{__('cso.Email address')}}" value="{{ old('email') }}">
                                 @error('email')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -266,7 +266,7 @@
                             @enderror
                             ">
                                 <label for="" class="no-text-transform">{{__("cso.CSO's phone number")}} *</label>
-                                <input type="tel" name="tel" id="cso-contact" placeholder="{{__('cso.Phone number')}}" value="{{ old('tel') }}" >
+                                <input type="tel" name="tel" id="cso-contact" placeholder="{{__('cso.Phone number')}}" value="{{ old('tel') }}">
                                 @error('tel')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
@@ -321,34 +321,34 @@
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
-                           
+
                         </div>
                         <div class="checkbox-field 
                             @error('other_domains')
                                 error
                             @enderror
                             ">
-                                    <label class="check-label">{{__('cso.Other domains of activity')}}</label>
-                                <div class="flex">
-                                    @foreach ($domains as $domain)
-                                    <div>
-                                        <input type="checkbox" name="other_domains[]" value="{{$domain->name}}" id="other_domains_{{$domain->name}}" {{ in_array($domain->name, old('other_domains')??[]) ? 'checked' : '' }}>
-                                        @if (Lang::locale() == 'en')
-                                        <label for="other_domains_{{$domain->name}}">
-                                            {{$domain->name}}
-                                        </label>
-                                        @else
-                                        <label for="other_domains_{{$domain->name}}">
-                                            {{$domain->french_name}}
-                                        </label>
-                                        @endif
-                                    </div>
-                                    @endforeach
+                            <label class="check-label">{{__('cso.Other domains of activity')}}</label>
+                            <div class="flex">
+                                @foreach ($domains as $domain)
+                                <div>
+                                    <input type="checkbox" name="other_domains[]" value="{{$domain->name}}" id="other_domains_{{$domain->name}}" {{ in_array($domain->name, old('other_domains')??[]) ? 'checked' : '' }}>
+                                    @if (Lang::locale() == 'en')
+                                    <label for="other_domains_{{$domain->name}}">
+                                        {{$domain->name}}
+                                    </label>
+                                    @else
+                                    <label for="other_domains_{{$domain->name}}">
+                                        {{$domain->french_name}}
+                                    </label>
+                                    @endif
                                 </div>
-                                @error('other_domains')
-                                <span class="error-msg">{{ $message }}</span>
-                                @enderror
+                                @endforeach
                             </div>
+                            @error('other_domains')
+                            <span class="error-msg">{{ $message }}</span>
+                            @enderror
+                        </div>
                         <div class="flex">
                             <div class="field 
                             @error('board_directors')
@@ -360,13 +360,13 @@
                                     <div class="sub">
                                         <input type="radio" name="board_directors" value="true" id="board-of-directors-yes" {{old('board_directors') == 'true'? 'checked':''}}>
                                         <label for="board-of-directors-yes">
-                                        {{__('cso.Yes')}}
+                                            {{__('cso.Yes')}}
                                         </label>
                                     </div>
                                     <div class="sub">
                                         <input type="radio" name="board_directors" value="false" id="board-of-directors-no" {{old('board_directors') == 'false'? 'checked':''}}>
                                         <label for="board-of-directors-no">
-                                        {{__('cso.No')}}
+                                            {{__('cso.No')}}
                                         </label>
                                     </div>
                                 </div>
@@ -379,9 +379,75 @@
                                 error
                             @enderror
                             ">
-                                <label for="">Organization background and track record</label>
+                                <label for="">{{__("cso.Organization's background and track record")}} *</label>
                                 <textarea type="text" name="background" id="background" placeholder="{{__('cso.Type')}}">{{ old('background') }}</textarea>
                                 @error('background')
+                                <span class="error-msg">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="field
+                            @error('office')
+                                error
+                            @enderror
+                            ">
+                                <label for="">{{__('cso.Do you have a physical office?')}} *</label>
+                                <div class="radio-flex">
+                                    <div class="sub">
+                                        <input type="radio" name="office" value="true" id="office-yes" {{old('office') == 'true'? 'checked':''}}>
+                                        <label for="office-yes">
+                                            {{__('cso.Yes')}}
+                                        </label>
+                                    </div>
+                                    <div class="sub">
+                                        <input type="radio" name="office" value="false" id="office-no" {{old('office') == 'false'? 'checked':''}}>
+                                        <label for="office-no">
+                                            {{__('cso.No')}}
+                                        </label>
+                                    </div>
+                                </div>
+                                @error('office')
+                                <span class="error-msg">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="field 
+                            @error('staff')
+                                error
+                            @enderror
+                            ">
+                                <label for="">{{__('cso.How many staffs do you have on your payrole?')}} *</label>
+                                <select name="staff" id="staff" value="{{ old('staff') }}">
+                                    <option value="" disabled hidden selected>{{__('cso.Choose')}}</option>
+                                    <option value="zero" {{ old('staff') == 'zero' ? 'selected' : '' }}>0</option>
+                                    <option value="two" {{ old('staff') == 'two' ? 'selected' : '' }}>2</option>
+                                    <option value="three-ten" {{ old('staff') == 'three-ten' ? 'selected' : '' }}>3 - 10</option>
+                                    <option value="eleven-fifty" {{ old('staff') == 'eleven-fifty' ? 'selected' : '' }}>11 - 50</option>
+                                    <option value="fifty+" {{ old('staff') == 'fifty+' ? 'selected' : '' }}>50+</option>
+                                </select>
+                                @error('staff')
+                                <span class="error-msg">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="field
+                            @error('office')
+                                error
+                            @enderror
+                            ">
+                                <label for="">{{__('cso.Are your staffs registered with CNPS?')}} *</label>
+                                <div class="radio-flex">
+                                    <div class="sub">
+                                        <input type="radio" name="cnps_registered" value="true" id="cnps-registered-yes" {{old('cnps_registered') == 'true'? 'checked':''}}>
+                                        <label for="cnps-registered-yes">
+                                            {{__('cso.Yes')}}
+                                        </label>
+                                    </div>
+                                    <div class="sub">
+                                        <input type="radio" name="cnps_registered" value="false" id="cnps-registered-no" {{old('cnps_registered') == 'false'? 'checked':''}}>
+                                        <label for="cnps-registered-no">
+                                            {{__('cso.No')}}
+                                        </label>
+                                    </div>
+                                </div>
+                                @error('cnps_registered')
                                 <span class="error-msg">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -396,19 +462,19 @@
                                 <div class="sub">
                                     <input type="radio" name="organization_leaderships" id="leadership-women" value="Women headed organization" {{old('organization_leaderships') == 'Women headed organization'? 'checked':''}}>
                                     <label for="leadership-women">
-                                    {{__('cso.Women-led organization')}}
+                                        {{__('cso.Women-led organization')}}
                                     </label>
                                 </div>
                                 <div class="sub">
                                     <input type="radio" name="organization_leaderships" id="leadership-youth" value="Youth lead organization" {{old('organization_leaderships') == 'Youth lead organization'? 'checked':''}}>
                                     <label for="leadership-youth">
-                                    {{__('cso.Youth-led organization')}}
+                                        {{__('cso.Youth-led organization')}}
                                     </label>
                                 </div>
                                 <div class="sub">
                                     <input type="radio" name="organization_leaderships" id="leadership-General" value="General" {{old('organization_leaderships') == 'General'? 'checked':''}}>
                                     <label for="leadership-General">
-                                    {{__('cso.General')}}
+                                        {{__('cso.General')}}
                                     </label>
                                 </div>
                             </div>
@@ -422,11 +488,11 @@
                         @enderror
                         ">
                             <label for="" class="no-text-transform">{{__("cso.CSO's geographical coverage")}} *</label>
-                            <select name="african_coverage" id="" value="{{ old('african_coverage') }}" >
+                            <select name="african_coverage" id="" value="{{ old('african_coverage') }}">
                                 <option value="" disabled hidden selected>{{__('cso.Select')}}</option>
-                                <option value="local"  {{ old('african_coverage') == 'local' ? 'selected' : '' }}>{{__('cso.Local')}}</option>
-                                <option value="national"  {{ old('african_coverage') == 'national' ? 'selected' : '' }}>{{__('cso.National')}}</option>
-                                <option value="global"  {{ old('african_coverage') == 'global' ? 'selected' : '' }}>{{__('cso.Global (more than one african country)')}}</option>
+                                <option value="local" {{ old('african_coverage') == 'local' ? 'selected' : '' }}>{{__('cso.Local')}}</option>
+                                <option value="national" {{ old('african_coverage') == 'national' ? 'selected' : '' }}>{{__('cso.National')}}</option>
+                                <option value="global" {{ old('african_coverage') == 'global' ? 'selected' : '' }}>{{__('cso.Global (more than one african country)')}}</option>
                             </select>
                             @error('african_coverage')
                             <span class="error-msg">{{ $message }}</span>

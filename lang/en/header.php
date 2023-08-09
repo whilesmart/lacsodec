@@ -16,7 +16,7 @@ return [
     "Expert's Profile" => "Expert's Profile",
     'Human Resource' => 'Human Resource',
     'Settings' => 'Settings',
-    'Logout' => 'Loguot',
+    'Logout' => 'Logout',
     'CSO Directory' => 'CSO Directory',
     'Experts Directory' => 'Experts Directory',
     'Human Resource ' => 'Human Resource',
